@@ -1,0 +1,10 @@
+maintainer       "computerlyrik"
+maintainer_email "chef-cookbooks@computerlyrik.de"
+license          "Apache 2.0"
+description      "Installs and configures firefox mozilla sync server"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          "1.0.0"
+depends "mercurial"
+depends "mysql"
+depends "database"
+#depends "nginx"

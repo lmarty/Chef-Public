@@ -1,0 +1,29 @@
+{
+  "name": "smartos",
+  "description": "Installs/Configures smartos",
+  "long_description": "Description\n===========\nThis cookbook include resources to managing **Joyent smartos**.\n\nRequirements\n============\n## Platforms\n **Joyent SmartOS**\n\n### Providers\n* [JoyentCloud](http://www.joyentcloud.com/)\n* [Z Cloud](http://z-cloud.jp/)\n\nTested on:\n\n* SmartOS 1.4.7\n\nRecipes\n=======\n## default\n\nIncludes resource pkgin update.\n\n\nResources/Providers\n===================\n## pkgin repository\n\nnew_resource: smartos_pkgin\n\nUsage\n====\n    include_recipe \"smartos\"\n\nThis cookbook add resource smartos_pkgin for managiment SmartOS Packages.\n\n\n### example install and manage service nginx.\nTo install or remove, must set **full package name**.\n\nexample for nginx cookbook.  \n\n    include_recipe \"smartos\"\n\n    smartos_pkgin \"nginx-1.0.4\" do\n      action :install\n      provider \"smartos_repos\"\n    end\n    \n    service \"nginx\" do\n      action [ :enable, :start ]\n      provider Chef::Provider::Service::Solaris\n    end\n\nThis will install nginx and start under smf.\n\nSetup Chef on SmartOS\n====\n## require packages\n[ruby19, autoconf, gmake, gcc ]\n\n## commands\n\n    # gem install bundler\n    # mkdir /opt/chef && cd /opt/chef\n    # bundle init\n    # echo 'gem \"chef\"'>> Gemfile\n    # bundle install --path vendor/bundle\n\nIf you want to use Rake task to exec chef-client/solo.  \nAdd 1st line below, and write tasks.\n\n    require 'bundler/setup'\n\nChanges\n====\n##v0.0.1:\nImplement pkgin managing. install, remove and update.\n\nLicence/Author\n===\nLicence:: Apache 2.0\n\nAuthor:: Y.Sawanobori <sawanoboriyu@higanworks.com>\n\nCopyright 2012, HiganWorks LLC.\n",
+  "maintainer": "HiganWorks LLC",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,62 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+- name: centos-6.4
+  driver_config:
+    box: opscode-centos-6.4
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+
+suites:
+- name: default
+  run_list:
+    - "recipe[build-essential::default]"
+    - "recipe[mruby]"
+  attributes:
+    mruby:
+      force_rebuild: true
+      build_options:
+        user_gems:
+          -  [':git', 'https://github.com/iij/mruby-io.git']
+- name: rbenv
+  run_list:
+    - "recipe[build-essential::default]"
+    - "recipe[rbenv]"
+    - "recipe[rbenv::ruby_build]"
+    - "recipe[mruby::ruby_install]"
+    - "recipe[mruby]"
+  attributes:
+    rbenv_ruby:
+      user: root
+      group: root
+      root_path: "CONFIGURE_OPTS='--disable-install-doc' #{node[:rbenv][:install_prefix]}/rbenv"
+    mruby:
+      use_chef_ruby: false
+- name: ngx_mruby
+  run_list:
+    - "recipe[build-essential::default]"
+    - "recipe[mruby::ngx_mruby]"
+    - "recipe[nginx]"
+  attributes:
+    nginx:
+      install_method: source
+      version: 1.4.2
+      configure_flags: ["--with-debug"]
+      source:
+        modules:
+          - http_ssl_module
+          - http_geoip_module
+          - http_realip_module
+          - http_stub_status_module
+          - http_gzip_static_module
+    mruby:
+      force_rebuild: true
+      build_options:
+        user_gems:
+          -  [':git', 'https://github.com/iij/mruby-io.git']

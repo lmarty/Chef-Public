@@ -1,0 +1,29 @@
+{
+  "name": "authconfig",
+  "description": "Configures authconfig",
+  "long_description": "Description\n===========\n\nManages authentication configuration CentOS / RHEL 5.x.\n\nAuth libraries supported in this recipe:\nwinbind, nis, wins, ldap, kerberos, hesiod, smartcard, and more...\n\nRequirements\n============\n\nThis cookbook requires RHEL or CentOS 5.x, and newer.\nIt has not been tested on other platforms.\n\nNotes\n-----\n\nThis was developed for CentOS 6, some options do not work in previous versions\nLet me know if you find a bug, related to one of the recipes.\n\nIndividual Recipe Usage:\n=======================\n\nauthconfig::default\n----------------\n\n# Attributes\n\n- Look at attributes/defaults.rb, there are many many attributes.\n\nLicense and Author\n==================\n\nAuthor:: Jesse Campbell\nCopyright:: 2011\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Jesse Campbell",
+  "maintainer_email": "hikeit@gmail.com",
+  "license": "Apache License",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.0"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "sidekiq",
+  "description": "Installs/Configures sidekiq",
+  "long_description": "Sidekiq\n=======\n\n## Description\n\n## Requirements\n\n## Attributes\n\n## Usage\n\n```ruby\nsidekiq \"my-queue\" do\n  user \"deploy\"\n  concurrency 2\n  processes 2\n  queues \"job-queue\" => 5, \"other-queue\" => 1\nend\n```\n",
+  "maintainer": "Wanelo, Inc",
+  "maintainer_email": "ops@wanelo.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "smf": ">= 1.5.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.6.0"
+}

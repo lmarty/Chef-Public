@@ -1,0 +1,41 @@
+---
+mbus: <%= cf_mbus_url %>
+index: 0
+
+cloud_controller_uri: <%= cloud_controller_url %>
+
+service:
+  name: rabbitmq
+  version: "2.4"
+  description: "RabbitMQ message queue"
+  plans: ["free"]
+  default_plan: 'free'
+  tags: ["message-queue", "amqp"]
+  supported_versions: [<%= cfservicegw_supported_versions_string('rabbitmq') %>]
+  version_aliases:
+  <% node['cloudfoundry_rabbitmq_service']['gateway']['version_aliases'].each do |a, v| %>
+    "<%= a %>": "<%= v %>"
+  <% end %>
+  timeout: <%= node['cloudfoundry_rabbitmq_service']['gateway']['timeout'] %>
+
+<% if node['cloudfoundry_rabbitmq_service']['gateway']['ip_route'] %>
+ip_route: <%= node['cloudfoundry_rabbitmq_service']['gateway']['ip_route'] %>
+<% end %>
+token: <%= node['cloudfoundry']['service_token'] %>
+logging:
+  level: <%= node['cloudfoundry_rabbitmq_service']['gateway']['log_level'] %>
+  file: <%= @log_file %>
+
+pid: <%= @pid_file %>
+node_timeout: <%= node['cloudfoundry_rabbitmq_service']['gateway']['node_timeout'] %>
+z_interval: <%= node['cloudfoundry_rabbitmq_service']['gateway']['z_interval'] %>
+check_orphan_interval: <%= node['cloudfoundry_rabbitmq_service']['gateway']['check_orphan_interval'] %>
+double_check_orphan_interval: <%= node['cloudfoundry_rabbitmq_service']['gateway']['double_check_orphan_interval'] %>
+max_nats_payload: <%= node['cloudfoundry_rabbitmq_service']['node']['max_nats_payload'] %>
+
+plan_management:
+  plans:
+    free:
+      low_water: 10
+      high_water: 180
+      #allow_over_provisioning: false

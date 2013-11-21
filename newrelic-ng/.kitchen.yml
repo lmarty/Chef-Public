@@ -1,0 +1,114 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+  use_vagrant_berkshelf_plugin: true
+
+platforms:
+- name: centos-6.4
+  driver_config:
+    box: opscode-centos-6.4
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+
+- name: centos-5.9
+  driver_config:
+    box: opscode-centos-5.9
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
+
+- name: ubuntu-13.04
+  driver_config:
+    box: opscode-ubuntu-13.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box
+  run_list: recipe[apt]
+
+- name: ubuntu-12.10
+  driver_config:
+    box: opscode-ubuntu-12.10
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.10_provisionerless.box
+  run_list: recipe[apt]
+
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+  run_list: recipe[apt]
+
+- name: debian-7
+  driver_config:
+    box: opscode-debian-7
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-7.1.0_provisionerless.box
+  run_list: recipe[apt]
+
+suites:
+- name: nrsysmond-default
+  run_list:
+  - recipe[minitest-handler]
+  - recipe[newrelic-ng::nrsysmond-default]
+  attributes:
+    newrelic-ng:
+      license_key: TESTKEY_NRSYSMOND
+
+- name: plugin-agent-default
+  run_list:
+  - recipe[minitest-handler]
+  - recipe[newrelic-ng::plugin-agent-default]
+  attributes:
+    newrelic-ng:
+      license_key: TESTKEY_PLUGIN_AGENT
+      plugin-agent:
+        service_config: >
+          postgresql:
+            host: localhost
+            port: 5432
+            dbname: postgres
+            user: newrelic
+
+- name: generic-agent-default
+  run_list:
+  - recipe[ruby::1.9.1]
+  - recipe[minitest-handler]
+  - recipe[newrelic-ng::generic-agent-default]
+  attributes:
+    newrelic-ng:
+      license_key: TESTKEY_GENERIC_AGENT
+      generic-agent:
+        agents:
+          nginx_status_agent:
+            source: http://nginx.com/download/newrelic/newrelic_nginx_agent.tar.gz
+            config: >
+              - instance_name: nginx_agent_test
+                status_url: http://localhost/nginx_stub_status
+          sidekiq_status_agent:
+            source: https://github.com/eksoverzero/newrelic_sidekiq_agent/archive/V2.0.tar.gz
+            config: >
+              - instance_name: sidekiq_agent_test
+                uri: redis://localhost:6379
+                namespace: namespace
+
+- name: php-agent-default
+  run_list:
+  - recipe[minitest-handler]
+  - recipe[apache2]
+  - recipe[newrelic-ng::php-agent-default]
+  attributes:
+    apache:
+      default_modules:
+      - status
+      - alias
+      - auth_basic
+      - authn_file
+      - authz_groupfile
+      - authz_host
+      - authz_user
+      - dir
+      - env
+      - mime
+      - setenvif
+      - deflate
+      - expires
+      - headers
+      - log_config
+      - logio
+      - php5
+    newrelic-ng:
+      license_key: TESTKEY_PHP_AGENT

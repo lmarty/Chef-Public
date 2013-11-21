@@ -1,0 +1,32 @@
+{
+  "name": "diamond_lwrp",
+  "description": "Installs/Configures diamond",
+  "long_description": "",
+  "maintainer": "Scott M. Likens",
+  "maintainer_email": "scott at likens dot us",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "python": ">= 0.0.0",
+    "git": ">= 0.0.0",
+    "build-essential": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.3"
+}

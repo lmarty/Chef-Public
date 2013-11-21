@@ -1,0 +1,15 @@
+.rakeTasks
+.vagrant
+Berksfile.lock
+Gemfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+
+test/test_error.txt
+.kitchen/
+.kitchen.local.yml

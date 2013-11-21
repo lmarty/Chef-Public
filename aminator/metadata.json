@@ -1,0 +1,11 @@
+{
+  "name": "aminator",
+  "version": "0.0.1",
+  "description": "Netflix AMI bakery",
+  "license": "Apache 2.0",
+  "maintainer": "Simple Finance",
+  "maintainer_email": "ops@simple.com",
+  "dependencies": {
+    "python": ">= 0.0.0"
+  }
+}

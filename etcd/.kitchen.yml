@@ -1,0 +1,64 @@
+---
+driver_plugin: vagrant
+driver_config: 
+  provisioner: chef_zero
+
+platforms:
+- name: centos-6.4_chef-11.4.4
+  run_list:
+    - recipe[yum::epel]
+  driver_config: 
+    box: opscode-centos-6.4_chef-11.4.4
+    box_url:  https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_chef-11.4.4.box
+
+- name: ubuntu-12.04_chef-11.4.4
+  run_list:
+    - recipe[ubuntu]
+  driver_config:
+    box: opscode-ubuntu-12.04_chef-11.4.4
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.4.box
+
+suites:
+- name: release
+  run_list:
+    - recipe[curl]
+    - recipe[etcd]
+  attributes:
+    etcd:
+      args: "-s 127.0.0.1:4001 -c 127.0.0.1:7001"
+
+- name: custom
+  run_list:
+    - recipe[curl]
+    - recipe[etcd::compile_time]
+  attributes: {
+    etcd: {
+      url: "https://dl.dropboxusercontent.com/u/848501/etcd-130907.tar.gz",
+      sha256: "6867fc7b6a53d60d93f2c53c3a06d4f5d8143ad06ca26a76b8d5b4d830248c2d",
+      args: "-f -s 127.0.0.1:4001 -c 127.0.0.1:7001",
+      version: "130812"
+    }
+  }
+
+- name: compiletime
+  run_list:
+    - recipe[curl]
+    - recipe[etcd::compile_time]
+  attributes: {
+    etcd: {
+      args: "-s 127.0.0.1:4001 -c 127.0.0.1:7001",
+    }
+  }
+
+- name: cluster
+  run_list:
+    - recipe[curl]
+    - recipe[etcd]
+  attributes: {
+    etcd: {
+      args: "-s 127.0.0.1:4001 -c 127.0.0.1:7001",
+      seed_node: "#{node.name}"
+    }
+  }
+  
+

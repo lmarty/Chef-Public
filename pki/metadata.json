@@ -1,0 +1,29 @@
+{
+  "name": "pki",
+  "description": "Installs/Configures pki",
+  "long_description": "DESCRIPTION:\n============\nProof of concept PKI implementation, powered by inter-node convergence and stateful resource providers.\n\nREQUIREMENTS\n============\nRHEL6/Centos6 or higher\nhostname resolution taken care of earlier in the runlist (DNS, or a\ngenerated hostsfile)\n\nATTRIBUTES\n============\nnode['pki']['openssldir']\n\nUSAGE\n============\n\nClients check to see if they have an SSL keypair  for their FQDN.\nIf not, pki_servercert is called, which generates a private key and a CSR.\nThe node then posts it's CSR as a node attribute\n\nWhen the server side runs, it searches for a list of clients with the pki csr attribute\nset. When it finds a CSR, it signs it and places the resulting public key in a directory exposed by rsync. \nSince these are public keys, there are no security concerns here.\n\nWhen a client is satisfied about its certificate, it will remove the attribute.\n\n* https://github.com/someara/pki-cookbook\n",
+  "maintainer": "Sean OMeara",
+  "maintainer_email": "someara@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

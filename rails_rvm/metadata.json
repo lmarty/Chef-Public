@@ -1,0 +1,31 @@
+{
+  "name": "rails_rvm",
+  "description": "Installs/Configures rvm on rails",
+  "long_description": "Description\n===========\nInstalls System Wide RVM via RVM recipe (you can use an attribute to specify version of ruby to be installed).  RVM is configured for the user specified to work on boot.\n\nThen Rails is installed (again version can be specified by attribute).\n\nRequirements\n============\nPlatforms:\nI have only tested this recipe on Ubuntu 10.04, I put in metadata.rb that all version of Ubuntu are supported.\n\nDepends:\nThis recipe depends on the rvm recipes.\n\nAttributes\n==========\ndefault[:rails_rvm][:user] = user to install/setup rvm and rails under\n# You can get more info about creating a password hash at:\n# http://wiki.opscode.com/display/chef/Resources#Resources-User \ndefault[:rails_rvm][:password] = password hash for the user  \n# ironruby, jruby, rbx, ree, 1.8.7, 1.9.2, 1.9.3\ndefault[:rails_rvm][:rvm_version] = version of ruby to be installed.\ndefault[:rails_rvm][:rails_version] = version of rails to be installed.\n\nUsage\n=====\nThis recipe can be used by other recipes/applications and the default rails_rvm attributes can be overriden.  I will post locomotive_cms recipe as an example soon.\n",
+  "maintainer": "Braden Wright",
+  "maintainer_email": "bwright@hwahomewarranty.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "rvm": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

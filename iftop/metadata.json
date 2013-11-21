@@ -1,0 +1,43 @@
+{
+  "license": "Apache 2.0",
+  "recipes": {
+    "iftop": ""
+  },
+  "conflicting": {
+
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+    "iftop": [
+
+    ]
+  },
+  "long_description": "",
+  "description": "Installs iftop",
+  "replacing": {
+
+  },
+  "platforms": {
+    "debian": [
+
+    ],
+    "ubuntu": [
+
+    ]
+  },
+  "version": "0.0.1",
+  "maintainer": "Vitaly dark_dr4g0n Shishlyannikov",
+  "recommendations": {
+
+  },
+  "name": "iftop",
+  "maintainer_email": "dark.dr4g0n@gmail.com",
+  "attributes": {
+
+  },
+  "suggestions": {
+
+  }
+}

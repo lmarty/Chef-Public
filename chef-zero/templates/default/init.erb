@@ -1,0 +1,35 @@
+### BEGIN INIT INFO
+# Provides:          <%= node['chef-zero']['daemon'] %>
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: <%= node['chef-zero']['daemon'] %> initscript
+# Description:       <%= node['chef-zero']['daemon'] %>
+### END INIT INFO
+
+PID="/var/run/<%= node['chef-zero']['daemon'] %>.pid"
+
+sig () {
+  test -s "$PID" && kill -$1 `cat "$PID"`
+}
+
+case "$1" in
+  start)
+    sig 0 && echo >&2 "Chef Zero is already running!" && exit 1
+    <%= @command %>
+    echo $! > $PID
+    echo "   [OK]"
+    ;;
+  stop)
+    sig TERM  && echo "Stopping Chef Zero..." && rm -f $PID && exit 0
+    echo >&2 "Chef Zero is not running!" && exit 1
+    ;;
+  restart)
+    stop || start
+    ;;
+  *)
+    echo >&2 "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" />
+  <Listener className="org.apache.catalina.core.JasperListener" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <GlobalNamingResources>
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+       description="User database that can be updated and saved"
+           factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+          pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+  <Service name="Catalina">
+    <Connector port="<%= node[:tomcat6apr][:http_port] %>" maxHttpHeaderSize="<%= node[:tomcat6apr][:max_http_header_size] %>"
+               protocol="HTTP/1.1" compression="<%= node[:tomcat6apr][:compression] %>"
+                maxKeepAliveRequests="<%= node[:tomcat6apr][:max_keepalive_reqs] %>" URIEncoding="UTF-8"
+                bufferSize="<%= node[:tomcat6apr][:buffer_size] %>" socketBuffer="<%= node[:tomcat6apr][:socket_buffer] %>"
+               maxThreads="<%= node[:tomcat6apr][:max_threads] %>" minSpareThreads="<%= node[:tomcat6apr][:min_spare_threads] %>" maxSpareThreads="<%= node[:tomcat6apr][:max_spare_threads] %>"
+               enableLookups="<%= node[:tomcat6apr][:enable_lookups] %>" acceptCount="<%= node[:tomcat6apr][:accept_count_queue] %>"
+               connectionTimeout="<%= node[:tomcat6apr][:connection_timeout] %>" disableUploadTimeout="<%= node[:tomcat6apr][:disable_upload_timeout] %>" />
+
+<% if node[:tomcat6apr][:with_ssl] -%> 
+ 		<Connector port="<%= node[:tomcat6apr][:ssl_port] %>" maxHttpHeaderSize="<%= node[:tomcat6apr][:max_http_header_size] %>"
+               maxThreads="<%= node[:tomcat6apr][:max_threads] %>" minSpareThreads="<%= node[:tomcat6apr][:min_spare_threads] %>" maxSpareThreads="<%= node[:tomcat6apr][:max_spare_threads] %>"
+               enableLookups="<%= node[:tomcat6apr][:enable_lookups] %>" disableUploadTimeout="<%= node[:tomcat6apr][:disable_upload_timeout] %>"
+               acceptCount="<%= node[:tomcat6apr][:accept_count_queue] %>" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" keystoreFile="<%= node[:tomcat6apr][:keystore_path] %>"
+               keypass="<%= node[:tomcat6apr][:keystore_password] %>" />
+<% end -%>
+
+    <Engine name="Catalina" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+             resourceName="UserDatabase" />
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="<%= node[:tomcat6apr][:unpack_wars] %>" autoDeploy="<%= node[:tomcat6apr][:auto_deploy] %>"
+            xmlValidation="false" xmlNamespaceAware="false">
+        <Valve className="org.apache.catalina.valves.AccessLogValve" fileDateFormat="yyyy-MM-dd.HH"
+                 directory="logs"  prefix="localhost_access_log." suffix=".log"
+                 pattern="%a %l %u %t &quot;%r&quot; %s %b &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot;"
+                 resolveHosts="false" />
+      </Host>
+    </Engine>
+  </Service>
+</Server>

@@ -1,0 +1,6 @@
+maintainer        "DigiTar"
+maintainer_email  "info@digitar.com"
+license           "(c)DigiTar All Rights Reserved. Licensed under the BSD license."
+description      "Installs/configures OpenIndiana packaging and base system."
+long_description "Installs/configures OpenIndiana packaging and base system."
+version          "0.5.0"

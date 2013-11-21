@@ -1,0 +1,32 @@
+{
+  "name": "recognizer",
+  "description": "Installs/Configures Recognizer",
+  "long_description": "DESCRIPTION\n===========\n\nInstalls and configures Recognizer, a Graphite Carbon impostor that\nsends metrics to Librato Metrics. Recognizer was created at Sonian,\nto evaluate Librato Metrics without having to modify instrumentation.\n\nRecognizer is an executable JAR.\n\nPLATFORMS\n=========\n\n* Ubuntu\n\nCOOKBOOK DEPENDENCIES\n=====================\n\n* apt (available @ http://community.opscode.com/cookbooks/apt)\n* java (available @ http://community.opscode.com/cookbooks/java)\n\nRECIPES\n=======\n\nrecognizer::default\n-------------------\n\nInstalls, configures, and runs the Recognizer service.\n\nrecognizer::jar\n---------------\n\nInstalls Java and downloads the Recognizer executable JAR.\n\nATTRIBUTES\n==========\n\ndefault\n-------\n\n* `recognizer.version`       - Recognizer version\n* `recognizer.user`          - service user\n* `recognizer.directory`     - configuration directory\n* `recognizer.log.directory` - log directory\n* `recognizer.jar.directory` - JAR directory\n* `recognizer.jar.max_heap`  - max Java heap to allocate\n\n* `recognizer.librato.email`          - Librato Metrics email\n* `recognizer.librato.api_key`        - Librato Metrics API key\n* `recognizer.librato.flush_interval` - batch flush interval\n* `recognizer.librato.metric_source`  - metric source\n\n* `recognizer.tcp.port`    - TCP socket port\n* `recognizer.tcp.threads` - number of TCP server threads\n\n* `recognizer.amqp.host`  - RabbitMQ server host\n* `recognizer.amqp.port`  - RabbitMQ server port\n* `recognizer.amqp.ssl`   - RabbitMQ ssl settings\n* `recognizer.amqp.vhost` - RabbitMQ vhost\n* `recognizer.amqp.user`  - RabbitMQ user name\n* `recognizer.amqp.pass`  - RabbitMQ user password\n",
+  "maintainer": "Sean Porter Consulting",
+  "maintainer_email": "portertech@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.8"
+}

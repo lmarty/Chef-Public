@@ -1,0 +1,33 @@
+{
+  "name": "thruk",
+  "description": "Installs/Configures thruk",
+  "long_description": "Description\n===========\n\nThruk is a multibackend monitoring web interface which currently\nsupports Nagios, Icinga and Shinken as backend using the Livestatus\nAPI. It is designed to be a drop in replacement and covers almost all\nof the original features plus adds additional enhancements for large\ninstallations.\n\nSee http://www.thruk.org/ for more information.\n\nRequirements\n============\n\n#### cookbooks\n- `apache2`\n\nAttributes\n==========\n\nUsage\n=====\n#### thruk::default\nUse the recipe directly, or include it in a role to customize it:\n\n    % cat roles/thruk.rb\n    name \"thruk\"\n    run_list( \"recipe[thruk]\" )\n    override_attributes(\n      \"thruk\" => {\n        \"use_ssl\" => true,\n        \"htpasswd\" => \"/etc/shinken/htpasswd.users\",\n        \"cert_name\" => \"_.example.com\",\n        \"cert_ca_name\" => \"gd_bundle\",\n        \"start_page\" => \"/thruk/cgi-bin/tac.cgi\",\n        \"first_day_of_week\" => 0,\n        \"backends\" => {\n          \"shinken\" => {\n            \"name\" => \"External Shinken\",\n            \"type\" => \"livestatus\",\n            \"options\" => {\n              \"peer\" => \"127.0.0.01 =>50000\",\n            },\n          },\n        },\n        \"cmd_defaults\" => {\n          \"ahas\" => 1,\n          \"force_check\" => 1,\n          \"persistent_ack\" => 1,\n        },\n     },\n   )\n\nContributing\n============\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write your change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n===================\nAuthors: Martha Greenberg\n",
+  "maintainer": "Tech Financials",
+  "maintainer_email": "marthag@techfinancials.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "yum": ">= 0.0.0",
+    "apache2": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.1"
+}

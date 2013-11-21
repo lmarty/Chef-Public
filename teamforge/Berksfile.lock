@@ -1,0 +1,4 @@
+cookbook 'teamforge', :path => '/Users/juliandunn/Dropbox/devel/github/juliandunn/teamforge'
+cookbook 'dmg', :locked_version => '1.1.0'
+cookbook 'iptables', :locked_version => '0.12.0'
+cookbook 'yum', :locked_version => '2.2.0'

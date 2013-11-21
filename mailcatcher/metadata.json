@@ -1,0 +1,29 @@
+{
+  "name": "mailcatcher",
+  "description": "Installs mailcatcher",
+  "long_description": "Description\n===========\n\nInstalls mailcatcher",
+  "maintainer": "Chendil Kumar Manoharan",
+  "maintainer_email": "mkchendil@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "suse": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "tomcat::default": "Installs mailcatcher"
+  },
+  "version": "0.1.0"
+}

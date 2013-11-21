@@ -1,0 +1,31 @@
+{
+  "maintainer": "computerlyrik",
+  "replacing": {
+  },
+  "dependencies": {
+    "npm": ">= 0.0.0",
+    "openssh": ">= 0.0.0"
+  },
+  "platforms": {
+  },
+  "long_description": "# Description\n\nSets up sparkleshare dashboard (https://github.com/NewProggie/SparkleShare-Android/wiki/Testing-SparkleShare-for-Android)\n\nDashboard has the advanced capability to sync with mobile devices.\n\nCurrently Dashboard is tested in connection with GitLab. (TODO insert link to gitlab cookbook)\n\nCurrently only one repository (main sync repository) is supported.\n\n# Requirements\n```\nopenssh\n```\n\n# Attributes\nTarget repository\n```ruby\ndefault['sparkleshare']['repo_dir'] = \"/home/storage\"\ndefault['sparkleshare']['repo_name'] = \"SparkleShare\"\n```\nDirectory for source code of dashboard\n```ruby\ndefault['sparkleshare']['dashboard_dir'] = \"/home/storage/dashboard\"\n```\nSession secret for client/server communication\n```ruby\ndefault['sparkleshare']['session_secret'] = 'JustSomeRandomString'\n```\n\n# Usage\n- Set up ```node['sparkleshare']['session_secret']```\n- Run recipe ```sparkleshare::dashboard```\n\n# Ideas/Todo\n- Finish and test the server cookbook\n- use LWRP to share repositories \n\n```ruby\nsparkleshare_repository \"myCoolRepo\" do\n  visibility \"private\" #\"public\"\n  path \"/path/to/git/repo\" #defaults to node attr\nend\n```\n\n# Contact\nsee metadata.rb\n\n",
+  "description": "Configures sparkleshare and configures/installes dashboard http client",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "name": "sparkleshare",
+  "recipes": {
+  },
+  "suggestions": {
+  },
+  "version": "0.6.0",
+  "recommendations": {
+  },
+  "groupings": {
+  },
+  "providing": {
+  },
+  "conflicting": {
+  }
+}

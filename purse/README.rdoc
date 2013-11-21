@@ -1,0 +1,10 @@
+= DESCRIPTION:
+The purse cookbook is comical in nature. The intent is to make a select few laugh and not really much else. :)
+
+= REQUIREMENTS:
+Sense of humor.
+
+= ATTRIBUTES: 
+
+= USAGE:
+Don't. It doesn't *do* anything. 

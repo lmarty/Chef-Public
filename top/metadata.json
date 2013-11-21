@@ -1,0 +1,35 @@
+{
+  "name": "top",
+  "description": "Installs/Configures top",
+  "long_description": "Description\n===========\n\nInstalls and configures top.\n\nRequirements\n============\n\nPlatform:\n\n* Debian\n* Ubuntu\n* CentOS\n* RedHat\n* Fedora\n\nAt the moment there're no dependencies to other cookbooks.\n\nAttributes\n==========\n\n* node['top']['is_secure']    - Defines whether secure mode is enabled or not. Default is: true\n\nUsage\n=====\n\nAdd \"recipe[top]\" directly to a node or a role.\n\nIf you want to disable secure mode, set **is_secure** to **false** within a role:\n\n    default_attributes(\n      \"top\" => {\n        \"is_secure\" => false\n      }\n    )\n",
+  "maintainer": "Mike Adolphs",
+  "maintainer_email": "mike@fooforge.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "suse": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,24 @@
+# -*- conf -*-
+# Generated and committed automatically by Chef for <%= @node[:fqdn] %>.
+# Do not edit.
+
+[gitosis]
+
+# This is used for chef to push generated config to gitosis
+[group gitosis-admin]
+writable = gitosis-admin
+members = gitosis
+
+<% @rw.each_pair do |repo, users| %>
+
+[group <%= repo %>-rw]
+writable = <%= repo %>
+members = <%= users.join(' ') %>
+<% end %>
+
+<% @ro.each_pair do |repo, users| %>
+
+[group <%= repo %>-ro]
+writable = <%= repo %>
+members = <%= users.join(' ') %>
+<% end %>

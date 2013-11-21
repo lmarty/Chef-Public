@@ -1,0 +1,525 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chef",
+				"chef_version"
+			],
+			[
+				"get",
+				"get_objects_for_user"
+			],
+			[
+				"deis-",
+				"deis-controller"
+			],
+			[
+				"Formation",
+				"FormationViewSet"
+			],
+			[
+				"get_",
+				"get_objects_for_user"
+			],
+			[
+				"Gu",
+				"GuardedModelAdmin"
+			],
+			[
+				"DIGI",
+				"DIGITALOCEAN_API_KEY"
+			],
+			[
+				"DIGITL",
+				"DIGITALOCEAN_API_KEY"
+			],
+			[
+				"DIGITAL",
+				"DIGITALOCEAN_CLIENT_ID"
+			],
+			[
+				"RACKSPA",
+				"RACKSPACE_USERNAME"
+			],
+			[
+				"DIGIT",
+				"DIGITALOCEAN_API_KEY"
+			],
+			[
+				"client",
+				"client_id"
+			],
+			[
+				"pop",
+				"populate_creds"
+			],
+			[
+				"AWS",
+				"AWS_SECRET_KEY"
+			],
+			[
+				"DI",
+				"DIGITALOCEAN_API_KEY"
+			],
+			[
+				"RA",
+				"RACKSPACE_API_KEY"
+			],
+			[
+				"RACK",
+				"RACKSPACE_USERNAME"
+			],
+			[
+				"_create",
+				"_create_rackspace_connection"
+			],
+			[
+				"lo",
+				"logging"
+			],
+			[
+				"RACKSPACE",
+				"RACKSPACE_API_KEY"
+			],
+			[
+				"RACKS",
+				"RACKSPACE_API_KEY"
+			],
+			[
+				"Format",
+				"FormationNodeViewSet"
+			],
+			[
+				"Run",
+				"RuntimeError"
+			],
+			[
+				"Che",
+				"ChefAPI"
+			],
+			[
+				"sec",
+				"secret_key"
+			],
+			[
+				"provider",
+				"provider_id"
+			],
+			[
+				"con",
+				"containing"
+			],
+			[
+				"env",
+				"environ"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 181.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/matt/Projects/deis/Gemfile",
+		"/Users/matt/Projects/deis/contrib/vagrant/README.md",
+		"/Users/matt/Projects/deis/Berksfile",
+		"/Users/matt/Projects/deis/setup.cfg",
+		"/Users/matt/Projects/deis/client/deis.py",
+		"/Users/matt/Projects/deis/Berksfile.lock",
+		"/Users/matt/Projects/deis-cookbook/Berksfile",
+		"/Users/matt/Projects/deis-cookbook/Berksfile.lock",
+		"/Users/matt/Projects/deis-cookbook/attributes/default.rb",
+		"/Users/matt/Projects/sync_deis.sh",
+		"/Users/matt/Projects/deis/docs/installation/vagrant.rst",
+		"/Users/matt/Projects/deis/docs/installation/index.rst",
+		"/Users/matt/Projects/deis/docs/installation/ec2.rst",
+		"/Users/matt/Projects/deis/docs/installation/rackspace.rst",
+		"/Users/matt/Projects/deis/docs/Makefile",
+		"/Users/matt/Projects/deis-cookbook/recipes/docker.rb",
+		"/Users/matt/Projects/deis/cm/chef.py",
+		"/Users/matt/Projects/deis/contrib/digitalocean/provision-digitalocean-controller.sh",
+		"/Users/matt/Projects/deis/contrib/ec2/provision-ec2-controller.sh",
+		"/Users/matt/Projects/deis/contrib/rackspace/provision-rackspace-controller.sh",
+		"/Users/matt/Projects/deis/docs/installation/digitalocean.rst",
+		"/Users/matt/Projects/deis/contrib/vagrant/provision-vagrant-controller.sh",
+		"/Users/matt/Projects/deis/contrib/rackspace/prepare-rackspace-image.sh",
+		"/Users/matt/Projects/deis/contrib/vagrant/prepare-ubuntu-box.sh",
+		"/Users/matt/Projects/deis/contrib/digitalocean/prepare-digitalocean-snapshot.sh",
+		"/Users/matt/Projects/deis/contrib/ec2/prepare-ubuntu-ami.sh",
+		"/Users/matt/Projects/deis/docs/installation/steps3-4.txt",
+		"/Users/matt/Projects/deis/docs/installation/steps1-2.txt",
+		"/Users/matt/Projects/deis/docs/installation/step6.txt",
+		"/Users/matt/Projects/deis/docs/contributing/community.rst",
+		"/Users/matt/Projects/deis/client/README.rst",
+		"/Users/matt/Projects/gowork/src/example-go/.godir",
+		"/Users/matt/Projects/deis/docs/installation/prereqs.txt",
+		"/Users/matt/Projects/deis/docs/toctree.rst",
+		"/Users/matt/Projects/deis/docs/contributing/index.rst",
+		"/Users/matt/Projects/deis/docs/index.rst",
+		"/Users/matt/Projects/deis/docs/gettingstarted/index.rst",
+		"/Users/matt/Projects/deis-cookbook/recipes/nginx.rb",
+		"/Users/matt/Projects/deis-cookbook/templates/default/nginx-proxy.conf.erb",
+		"/Users/matt/Projects/deis-cookbook/templates/default/nginx-deis-proxy.conf.erb",
+		"/Users/matt/Projects/deis/.git/hooks/pre-commit",
+		"/Users/matt/Projects/deis/requirements.txt",
+		"/Users/matt/Projects/deis/api/admin.py",
+		"/Users/matt/Projects/deis/api/models.py",
+		"/Users/matt/Projects/deis/api/views.py",
+		"/Users/matt/Projects/deis/deis/settings.py",
+		"/Users/matt/Projects/deis/dev_requirements.txt",
+		"/Users/matt/Projects/deis/web/templates/web/base.html",
+		"/Users/matt/Projects/deis/docs/theme/deis/layout.html",
+		"/Users/matt/Projects/deis/web/static/js/adjustments.js",
+		"/Users/matt/Projects/deis/docs/theme/deis/static/searchtools.js",
+		"/Users/matt/Projects/deis/api/static/500.html",
+		"/Users/matt/Projects/deis/deis/context_processors.py",
+		"/Users/matt/Projects/deis/web/static/css/deis-controller.css",
+		"/Users/matt/Projects/deis/web/templates/web/account.html",
+		"/Users/matt/Projects/deis/web/templates/web/apps.html",
+		"/Users/matt/Projects/deis/web/templates/web/dashboard.html",
+		"/Users/matt/Projects/deis/web/templates/web/formations.html",
+		"/Users/matt/Projects/deis/web/urls.py",
+		"/Users/matt/Projects/deis/web/views.py",
+		"/Users/matt/Projects/deis/deis/local_settings.py",
+		"/Users/matt/Projects/deis/web/templates/web/support.html",
+		"/Users/matt/Projects/sync_do_deis.sh",
+		"/Users/matt/Projects/deis/web/static/css/main.css",
+		"/Users/matt/Projects/deis/provider/digitalocean.py",
+		"/Users/matt/Projects/deis/Gemfile.lock",
+		"/Users/matt/Projects/vagrantbox/Vagrantfile",
+		"/Users/matt/Projects/deis/Vagrantfile",
+		"/Users/matt/Projects/deis-cookbook/recipes/gitosis.rb",
+		"/Users/matt/Projects/deis-cookbook/templates/default/buildstep-hook.erb",
+		"/Users/matt/.chef/knife.rb",
+		"/Users/matt/Projects/deis/knife.rb",
+		"/Users/matt/Projects/deis-cookbook/recipes/default.rb",
+		"/Users/matt/Projects/deis-cookbook/recipes/server.rb",
+		"/Users/matt/Projects/deis/provider/vagrant.py",
+		"/Users/matt/Projects/deis/contrib/vagrant/Vagrantfile",
+		"/Users/matt/Projects/deis-cookbook/templates/default/local_settings.py.erb",
+		"/Users/matt/Projects/deis/api/tasks.py",
+		"/Users/matt/Projects/deis/cm/chef_api.py",
+		"/Users/matt/Projects/deis/api/tests/node.py",
+		"/Users/matt/Projects/deis/client/setup.py",
+		"/Users/matt/Projects/deis/deis/__init__.py",
+		"/Users/matt/Projects/deis/docs/releases.rst",
+		"/Users/matt/.bash_profile",
+		"/Users/matt/Projects/deis/provider/ec2.py",
+		"/Users/matt/Projects/deis/bin/push-hook",
+		"/Users/matt/Projects/deis-cookbook/metadata.rb",
+		"/Users/matt/Projects/deis-cookbook/metadata.json",
+		"/Users/matt/Projects/deis/api/tests/flavor.py",
+		"/Users/matt/Projects/deis/contrib/ec2/README.md",
+		"/Users/matt/Projects/deis-cookbook/recipes/postgresql.rb",
+		"/Users/matt/Library/Application Support/Sublime Text 2/Packages/User/HTML.sublime-settings",
+		"/Users/matt/Projects/deis/web/tests.py",
+		"/Users/matt/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/Users/matt/Projects/deis/web/templates/web/base_nav.html",
+		"/Users/matt/Projects/deis/contrib/rackspace/README.md",
+		"/Users/matt/Projects/deis/docs/gettingstarted/installation.rst",
+		"/Users/matt/Projects/sync_rackspace_deis.sh",
+		"/Users/matt/Projects/deis/provider/rackspace.py",
+		"/Users/matt/Projects/deis/contrib/digitalocean/README.md",
+		"/Users/matt/Library/Application Support/Sublime Text 2/Packages/GoSublime/CHANGELOG.md",
+		"/Users/matt/Projects/dobro/dobro.py",
+		"/Users/matt/Projects/dobro/tests/domains.py",
+		"/Users/matt/Projects/deis/docs/_build/dirhtml/_sources/contributing/devsetup.txt",
+		"/Users/matt/Projects/deis/docs/contributing/devsetup.rst",
+		"/Users/matt/Projects/deis/README.md",
+		"/Users/matt/Projects/deis/docs/_build/dirhtml/_sources/gettingstarted/installation.txt",
+		"/Users/matt/Projects/deis/docs/theme/deis/static/sitemap.xml",
+		"/Users/matt/Projects/deis/docs/_build/dirhtml/contributing/devsetup/index.html",
+		"/Users/matt/Projects/deis/deis.sublime-workspace",
+		"/Users/matt/Projects/deis/contrib/aws/README.md",
+		"/Users/matt/Projects/deis/contrib/aws/provision-ec2-controller.sh",
+		"/Users/matt/Projects/deis/contrib/provision-ec2-controller.sh",
+		"/Users/matt/Projects/deis/docs/server/provider.rackspace.rst",
+		"/Users/matt/Projects/deis/docs/server/index.rst",
+		"/Users/matt/Projects/deis/api/ssh.py",
+		"/Users/matt/Projects/deis/provider/mock.py",
+		"/Users/matt/Projects/deis/provider/models.py",
+		"/Users/matt/Projects/deis-cookbook/templates/default/postgresql.conf.erb",
+		"/Users/matt/Projects/deis/.coverage",
+		"/Users/matt/Projects/knife-rackspace/lib/chef/knife/rackspace_server_create.rb",
+		"/Users/matt/Projects/wipe-controller.sh",
+		"/Users/matt/Projects/example-php/index.php",
+		"/Users/matt/Projects/deis/client/tests/test_flavors.py",
+		"/Users/matt/Projects/deis/client/tests/test_git.py",
+		"/Users/matt/Projects/deis/api/urls.py",
+		"/Users/matt/Projects/deis/client/tests/test_apps.py",
+		"/Users/matt/Projects/deis/client/tests/test_nodes.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/matt/Projects/deis-cookbook",
+			"/Users/matt/Projects/deis,-venv/,-htmlcov/,/Users/matt/Projects/deis-cookbook",
+			"/Users/matt/Projects/deis,-venv/,-htmlcov/",
+			"/Users/matt/Projects/deis,-venv/",
+			"/Users/matt/Projects/deis,*.py,-venv/",
+			"/Users/matt/Projects/deis,*.py,-venv",
+			"/Users/matt/Projects/deis,*.py",
+			"/Users/matt/Projects/deis,*.rst",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"formation",
+			"providers:create",
+			"deis nodes:scale",
+			"0.6.4",
+			"11.4.4",
+			"lxc-docker",
+			"11.4.4",
+			"0.6.4",
+			"4",
+			"2",
+			"54-212-230-168",
+			"admin.ModelAdmin",
+			"10.1",
+			"console.log",
+			"favicon",
+			"bootstrap.",
+			"nodes_scale",
+			"0",
+			"cd buildstep",
+			"push-hook",
+			"build-",
+			"Layer matching query",
+			"403",
+			"delete",
+			"purge_node",
+			"destroy_node",
+			"purge_node",
+			"0.1.1",
+			"layers_",
+			"ami-",
+			"jsonip.com",
+			"git",
+			"layers_create",
+			"{%-block",
+			"footer",
+			"ec2-23-21-1-232",
+			"process.",
+			"0.1.1",
+			"2.0.3",
+			"jquery",
+			"class=\"messages\"",
+			"request.user",
+			"class Application",
+			"get_query",
+			"docs.html",
+			"base_nav",
+			"doc-content",
+			"formations",
+			"CHEF",
+			"USE_CHEF",
+			"CHEF",
+			"admin.ModelAdmin",
+			"ResponseError",
+			"Can't find",
+			"166.78.188.36",
+			"ec2/",
+			"aws/",
+			"aws",
+			"providers_",
+			".post",
+			"provision-",
+			"ResponseError",
+			"build_node",
+			"ResponseError",
+			"fqdn",
+			"8.8",
+			"jsonip",
+			"jsonip.com",
+			"TODO:",
+			"boto==",
+			"azure",
+			"54-202-75-231",
+			"ec2-",
+			"EOF",
+			">>",
+			"<<",
+			"0.1.1",
+			"0.1.0",
+			"EC2",
+			"ec2",
+			"digital",
+			"digitalocean",
+			"ssh_username",
+			"key_name",
+			"tag",
+			"tags",
+			"key_name",
+			"Rackspace",
+			"providers_dis",
+			"directory",
+			"data_directory",
+			"keys_add",
+			"ssh_password",
+			"Bootstrapping",
+			"is None",
+			"patch",
+			"_update",
+			"DEIS_SERVER",
+			"0.0.8",
+			"get_object",
+			"username",
+			"build_node",
+			"def flat",
+			"localhost",
+			"class Node",
+			"register",
+			"fqdn",
+			"application/json",
+			"register",
+			"class Node",
+			"import logging",
+			"provider_id",
+			"nodes_list",
+			"fqdn",
+			"build_node",
+			"CM.",
+			"def new",
+			"create",
+			"class Node",
+			"CM.",
+			"class Node",
+			"warning",
+			"log.",
+			"loggin",
+			"logger",
+			"NodeView",
+			"nodes_",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GoSublime-main-output":
+	{
+		"height": 148.0
+	},
+	"output.GoSublime-output":
+	{
+		"height": 273.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true
+}

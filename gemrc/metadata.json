@@ -1,0 +1,39 @@
+{
+  "name": "gemrc",
+  "description": "Configures rubygems to skip RI and RDoc installation.",
+  "long_description": "chef-gemrc\n==========\n\nConfigures rubygems to skip RI and RDoc installation.",
+  "maintainer": "OptimisCorp., Inc.",
+  "maintainer_email": "ops+cookbooks@optimiscorp.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "arch": ">= 0.0.0",
+    "freebsd": ">= 0.0.0",
+    "amazon": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "gemrc::default": "Configures rubygems to skip RI and RDoc installation."
+  },
+  "version": "0.0.1"
+}

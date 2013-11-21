@@ -1,0 +1,31 @@
+---
+<%
+  tools_cfg = node['cloudfoundry_service']['tools']
+  backup_cfg = node['cloudfoundry_service']['tools']['backup']
+%>
+mbus: <%= cf_mbus_url %>
+z_interval: <%= tools_cfg['z_interval'] %>
+logging:
+  level: <%= tools_cfg['log_level'] %>
+  file: <%= @log_file %>
+
+rotation:
+  max_days: <%= backup_cfg['max_days'] %>
+  unprovisioned_max_days: <%= backup_cfg['unprovisioned_max_days'] %>
+  cloud_controller_uri: <%= cloud_controller_url %>
+  services:
+    mongodb:
+      version: "1.8"
+      token: <%= node['cloudfoundry']['service_token'] %>
+    redis:
+      version: "2.2"
+      token: <%= node['cloudfoundry']['service_token'] %>
+    mysql:
+      version: "5.1"
+      token: <%= node['cloudfoundry']['service_token'] %>
+    postgresql:
+      version: "9.0"
+      token: <%= node['cloudfoundry']['service_token'] %>
+root: <%= backup_cfg['root'] %>
+wakeup_interval: <%= backup_cfg['wakeup_interval'] %>
+enable: <%= backup_cfg['enable'] %>

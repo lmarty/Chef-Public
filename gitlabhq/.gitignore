@@ -1,0 +1,18 @@
+tmp/
+.kitchen/
+.vagrant
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+.chef
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+.chef

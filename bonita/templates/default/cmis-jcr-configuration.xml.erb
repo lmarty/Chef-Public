@@ -1,0 +1,66 @@
+<repository-service default-repository="db1">
+  <repositories>
+    <repository name="db1" system-workspace="system" default-workspace="system">
+      <security-domain>exo-domain</security-domain>
+      <access-control>optional</access-control>
+      <session-max-age>5m</session-max-age>
+      <authentication-policy>org.exoplatform.services.jcr.impl.core.access.JAASAuthenticator</authentication-policy>
+      <workspaces>
+        <workspace name="system">
+          <!-- for system storage -->
+          <container class="org.exoplatform.services.jcr.impl.storage.jdbc.JDBCWorkspaceDataContainer">
+            <properties>
+              <property name="source-name" value="jdbcxcmis" />
+              <property name="dialect" value="<%= node["bonita"]["database"]["exo_jcr"]["dialect"] %>" />
+              <property name="multi-db" value="false" />
+              <property name="max-buffer-size" value="200k" />
+              <property name="swap-directory" value="${exo.data.dir}/swap/system" />
+            </properties>
+          </container>
+          <initializer class="org.exoplatform.services.jcr.impl.core.ScratchWorkspaceInitializer">
+            <properties>
+              <property name="root-nodetype" value="nt:unstructured" />
+            </properties>
+          </initializer>
+          <cache enabled="true" class="org.exoplatform.services.jcr.impl.dataflow.persistent.LinkedWorkspaceStorageCacheImpl">
+            <properties>
+              <property name="max-size" value="10k" />
+              <property name="live-time" value="1h" />
+            </properties>
+          </cache>
+          <lock-manager>
+            <time-out>15m</time-out>
+            <persister class="org.exoplatform.services.jcr.impl.core.lock.FileSystemLockPersister">
+              <properties>
+                <property name="path" value="${exo.data.dir}/lock/system" />
+              </properties>
+            </persister>
+          </lock-manager>
+        </workspace>
+
+        <workspace name="cmis1">
+          <container class="org.exoplatform.services.jcr.impl.storage.jdbc.JDBCWorkspaceDataContainer">
+            <properties>
+              <property name="source-name" value="jdbcxcmis" />
+              <property name="dialect" value="<%= node["bonita"]["database"]["exo_jcr"]["dialect"] %>" />
+              <property name="multi-db" value="false" />
+              <property name="max-buffer-size" value="200k" />
+              <property name="swap-directory" value="${exo.data.dir}/swap/cmis1" />
+            </properties>
+          </container>
+          <initializer class="org.exoplatform.services.jcr.impl.core.ScratchWorkspaceInitializer">
+            <properties>
+              <property name="root-nodetype" value="nt:unstructured" />
+            </properties>
+          </initializer>
+          <cache enabled="true" class="org.exoplatform.services.jcr.impl.dataflow.persistent.LinkedWorkspaceStorageCacheImpl">
+            <properties>
+              <property name="max-size" value="10k" />
+              <property name="live-time" value="1h" />
+            </properties>
+          </cache>
+        </workspace>
+      </workspaces>
+    </repository>
+  </repositories>
+</repository-service>

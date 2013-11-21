@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+  update-alternatives --install /usr/bin/repmgrd repmgrd <%= File.join(@pg_bindir, 'repmgrd') %> 10
+  update-alternatives --install /usr/bin/repmgr repmgr <%= File.join(@pg_bindir, 'repmgr') %> 10

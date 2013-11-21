@@ -1,0 +1,14 @@
+<VirtualHost *:<%= @server['apache']['port'] %>>
+  ServerName <%= @server['apache']['server_name'] %>
+  ServerAdmin <%= @server['apache']['server_admin'] %>
+  DocumentRoot <%= @server_dir %>/public
+
+  <Directory <%= @server_dir %>/public>
+    Allow from all
+    Options -MultiViews
+  </Directory>
+
+  LogLevel info
+  ErrorLog <%= node[:apache][:log_dir] %>/<%= @server['apache']['server_name'] %>-error.log
+  CustomLog <%= node[:apache][:log_dir] %>/<%= @server['apache']['server_name'] %>-access.log combined
+</VirtualHost>

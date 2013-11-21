@@ -1,0 +1,8 @@
+<%= @port %>= {
+ "hashAlgorithm": "<%= @hash_algorithm %>",
+ "numReplicas": <%= @num_replicas %>,
+ "serverList": <%= @server_list.inspect %>,
+ "vBucketMap": [
+   <%= @v_bucket_map %>
+ ]
+}

@@ -1,0 +1,5 @@
+site :opscode
+
+cookbook 'minitest-handler'
+
+metadata

@@ -1,0 +1,29 @@
+{
+  "maintainer": "Alexey Melezhik",
+  "description": "wrapper for cpanplus installer",
+  "version": "0.0.4",
+  "long_description": "# Description\nwrapper for cpanplus installer\n\n# Requirements\nCPANPLUS. run cpan-plus::bootstrap to satisfy\n\n# Attributes\n\n## default attributes:\n\n- `cpan_plus.deps` - list of dependencies (see cpan-plus::bootstrap)\n\n- `cpan_plus.mirrors` - cpan mirrors list \n\n# Definitions\n- `cpan_plus`\n\n## Definition's parameters\n- `action` :configure|:set_custom_sources|:reload_index|:install\n- `user`\n- `group`\n- `home`\n- `local_lib` - Array\n- `custom_sources` - Array\n- `environment` - Hash\n\n# Usage\n\n    cpan_plus \"configure cpanplus\" do\n        action :configure\n        user 'melezhik'\n        group 'users'\n        home '/home/melezhik/'\n    end\n\n    cpan_plus \"setup custom sources\" do\n        action :set_custom_sources\n        user 'melezhik'\n        group 'users'\n        home '/home/melezhik/'\n        local_lib ['/usr/local/rle', '/home/melezhik/cpanlib' ]\n        custom_sources ['http://localhost/cpan-plus-cs/']\n    end\n\n    cpan_plus \"install Moose\" do\n        action :install\n        user 'melezhik'\n        group 'users'\n        home '/home/melezhik/'\n        local_lib ['/usr/local/perllib', '/home/melezhik/cpanlib' ]\n        module_name 'Moose'\n    end\n\n\n\n",
+  "suggestions": {
+  },
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "dependencies": {
+  },
+  "maintainer_email": "melezhik@gmail.com",
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "name": "cpan-plus",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "license": "All rights reserved"
+}

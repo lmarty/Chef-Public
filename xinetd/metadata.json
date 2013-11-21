@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "xinetd",
+  "maintainer_email": "bryan.berry@gmail.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Bryan W. Berry",
+  "long_description": "= DESCRIPTION:\nSets up a basic xinetd configuration\n\n= REQUIREMENTS:\nThis only works for Enterprise Linux\n\n= ATTRIBUTES:\n\n\n= USAGE:\nSo far as a dependency to the nagios::client_xinetd recipe\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures xinetd",
+  "providing": {
+  }
+}

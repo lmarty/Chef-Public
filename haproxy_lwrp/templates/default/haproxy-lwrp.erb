@@ -1,0 +1,60 @@
+# options for global
+global
+<% @global.each_pair do |k,v| %>
+<%= k %> <%= v %>
+<% end %>
+
+# options for defaults
+defaults
+<% @defaults.each_pair do |l,m| %>
+<%= l %> <%= m %>
+<% end %>
+
+<% if @frontend %>
+# options for frontend
+<% @frontend.each do |f| %>
+frontend <%= f['name'] %>
+<% if f['default_backend'] %>
+default_backend <%= f['default_backend'] %>
+<% end %>
+<% if f['acl'] %>
+<%= f['acl'] %>
+<% end %>
+<% end %>
+<% end %>
+
+<% if @backend %>
+<% @backend.each do |b| %>
+backend <%= b['name'] %>
+mode <%= b['mode'] %>
+balance <%= b['balance'] %>
+<%= b['option'] %>
+<% b['server'].each do |c| %>
+<% (b["start_port"]).upto(b["start_port"] + (b["instance_count"] -1)) do |p| %>
+server <%= c %>_<%= p %> <%= c %>:<%= p %> <% if b["maxconn"] %>maxconn <%= b["maxconn"] %><% end %> <%= b["other"] %>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+
+<% if @listen %>
+<% @listen.each do |l| %>
+listen <%= l['name'] %>
+<% if l['bind'] %>
+<%= l['bind']  %>
+<% end %>
+<% if l['mode'] %>
+mode <%= l['mode'] %>
+<% end %>
+<% if l['server'] %>
+<% l['server'].each do |c| %>
+<% (l["start_port"]).upto(l["start_port"] + (l["instance_count"] -1)) do |p| %>
+server <%= c %>_<%= p %> <%= c %>:<%= p %> <% if l["maxconn"] %>maxconn <%= l["maxconn"] %><% end %> <% if l["other"] %><%= l["other"] %><% end %>
+<% end %>
+<% end %>
+<% end %>
+<% if l['stats'] %>
+<%= l['stats'] %>
+<% end %>
+<% end %>
+<% end %>

@@ -1,0 +1,31 @@
+{
+  "name": "s3fs-fuse",
+  "description": "Installs/Configures s3fs-fuse",
+  "long_description": "S3FS-FUSE\n=========\n\nProvides S3FS-FUSE with optional mount monitoring via bluepill.\n\nUsage\n=====\n\n```ruby\noverride_attributes(\n  's3fs-fuse' => {\n    :s3_key => 'key',\n    :s3_secret => 'secret',\n    :mounts => [\n      {:bucket => 'my-bucket', :path => '/mount/path', :tmp_dir => '/tmp/cache'}\n    ],\n    :bluepill => true,\n    :maxmemory => 50\n  }\n)\n\nMultiple buckets can be mounted (which is why the `:mounts` attribute is an Array\nof Hashes). Bluepill monitoring is optional and the maxmemory allows bluepill\nto kill off and remount any s3 mounts that misbehave.\n\nNote: Bluepill should be considered for any s3fs built bucket that has large number\nof entries within directories. Running an `ls` on these directories will cause the\nmount's memory to balloon. Bluepill will happily watch for this (ballooning memory)\nand remount the bucket.\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "bluepill": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.8"
+}

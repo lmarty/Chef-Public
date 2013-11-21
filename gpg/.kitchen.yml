@@ -1,0 +1,13 @@
+---
+driver_plugin: lxc
+platforms:
+  - name: ubuntu-12.04
+    driver_config:
+      base_container: ubuntu-1204
+      username: ubuntu
+      password: ubuntu
+suites:
+  - name: default
+    run_list:
+    - 'recipe[gpg]'
+    attributes: {}

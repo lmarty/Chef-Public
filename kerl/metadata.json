@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "kerl",
+  "maintainer_email": "d@unwiredcouch.com",
+  "attributes": {
+  },
+  "license": "MIT",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Daniel Schauenberg",
+  "long_description": "= DESCRIPTION:\nChef cookbook to install kerl with a default erlang installation (R14B02).\n\n= REQUIREMENTS:\n- curl\n- git\n- Erlang/OTP requirements\n\n= ATTRIBUTES:\n  default['kerl']['erlversion'] = \"R14B02\"\n  default['kerl']['installpath'] = \"~/bin\"\n  default['kerl']['defaultinstall'] = \"~/.kerl/installs/default\"\n\n= USAGE:\n\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures kerl with default erlang installation",
+  "providing": {
+  }
+}

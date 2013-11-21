@@ -1,0 +1,31 @@
+{
+  "name": "netkernel",
+  "description": "Installs/Configures netkernel",
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "maintainer": "Automated Labs, LLC",
+  "maintainer_email": "jeffh@automatedlabs.com",
+  "license": "MIT License",
+  "platforms": {
+    "ubuntu": ">= 11.04"
+  },
+  "dependencies": {
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

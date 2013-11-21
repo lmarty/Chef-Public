@@ -1,0 +1,29 @@
+{
+  "name": "smbfs",
+  "description": "Installs/Configures smbfs and adds mount points according to data driven pattern",
+  "long_description": "Description\n===========\n\n[![Build Status](https://secure.travis-ci.org/realityforge-cookbooks/smbfs.png?branch=master)](http://travis-ci.org/realityforge/-cookbooks/smbfs)\n\nA recipe that installs smbfs on linux hosts. It also includes a resource for mounting cifs shares and an attribute driven recipe managing smbfs mounts.\n\nRequirements\n============\n\nTested on Ubuntu 11.\n\nAttributes\n==========\n\n* `node['smbfs']['mounts']` - A map that describes zero or more cifs mounts. Used to drive the `attribtue_driven` recipe.\n\nUsage\n=====\n\nThere are two recipes provided:\n\n* `smbfs::default` - Install the smbfs package.\n* `smbfs::attribute_driven` - Invokes the `smbfs::default` recipe and then interprets the `node['smbfs']['mounts']`\n  attribtue and defines the resources for the mouts.\n\nResources\n=========\n\n`smbfs_mount`\n-------------\n\nThe `smbfs_mount` resource helps define a mount for a cifs share.\n\n- path: the path on which to mout the share. This is the name of the resource.\n- cifs_path: The url for cifs mount.\n- username: The username if authenticated access required to cifs share. Defaults to nil.\n- password: The password. Must be present iff username is present. Defaults to nil.\n- option: Arbitrary key value pairs passed to mount.\n\nThe simplest example for mounting a share;\n\n    smbfs_mount '/mnt' do\n      cifs_path '//san01.example.org/myshare$/Some/Path'\n      username 'MyUser',\n      password 'MyPass',\n      options {'rw' => nil}\n    end\n\nAttribute Driven Recipe\n=======================\n\nThe simplest example for mounting a share;\n\n    node['smbfs']['mounts']['/mnt'] =\n      {\n        'cifs_path' => '//san01.example.org/myshare$/Some/Path',\n        'username' => 'MyUser',\n        'password' => 'MyPass',\n        'options' =>\n          {\n            'rw' => nil\n          }\n      }\n\n    include_recipe 'smbfs::attribute_driven'\n",
+  "maintainer": "Peter Donald",
+  "maintainer_email": "peter@realityforge.org",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.0"
+}

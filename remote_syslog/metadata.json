@@ -1,0 +1,29 @@
+{
+  "name": "remote_syslog",
+  "description": "Installs/Configures remote_syslog",
+  "long_description": "Description\n===========\nSets up and configures:\nhttps://github.com/papertrail/remote_syslog\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "maintainer": "Blue Box Group, LLC",
+  "maintainer_email": "support@bluebox.net",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

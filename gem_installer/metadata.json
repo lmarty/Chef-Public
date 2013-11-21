@@ -1,0 +1,30 @@
+{
+  "name": "gem_installer",
+  "description": "Installs/Update Ruby Gems",
+  "long_description": "Gem Installer\n=============\n\nSimple cookbook for managing gem versions on a node.\n\nUsage\n=====\n\nAttributes\n----------\n\nDefine gems (and optionally version restrictions) within the role:\n\n```ruby\n  override_attributes(\n    :gem_installer => {\n      :gems => {\n        'pg' => nil,\n        'activerecord' =>  '~> 3.0.0',\n        'ssmtp' => nil\n      }\n    }\n  )\n```\n\nChef Gems\n---------\n\nManaging chef gems works in just same way, but by using the :chef_gems key\ninstead of :gems\n\n```ruby\n  override_attributes(\n    :gem_installer => {\n      :chef_gems => {\n        'pg' => nil\n      }\n    }\n  )\n```\n\nBackwards Compatibility\n-----------------------\n\nUse the [chef_gem]{http://community.opscode.com/cookbooks/chef_gem} cookbook to \nmaintain compatibility on node running Chef pre 0.10.9\n\nIssues/Bugs/Feature Requests\n----------------------------\n\nCreate a github issue or fork, fix and send me a pull request\n\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+    "chef_gem": ">= 0.0.0"
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

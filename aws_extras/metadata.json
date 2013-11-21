@@ -1,0 +1,29 @@
+{
+  "name": "aws_extras",
+  "description": "Helpful stuff for managing AWS Resources",
+  "long_description": "",
+  "maintainer": "Alex Soto",
+  "maintainer_email": "apsoto@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.1.0"
+}

@@ -1,0 +1,132 @@
+From 7263314ffd9fb7408ed3a5cd3ce07246ebd33b40 Mon Sep 17 00:00:00 2001
+From: "Eric G. Wolfe" <wolfe21@marshall.edu>
+Date: Thu, 6 Jun 2013 12:43:35 -0400
+Subject: [PATCH] Add RHEL support to snmptrapd
+
+---
+ cookbooks/snmp/.kitchen.yml            |    1 +
+ cookbooks/snmp/CHANGELOG.md            |    4 ++--
+ cookbooks/snmp/Gemfile                 |    3 ++-
+ cookbooks/snmp/attributes/default.rb   |    4 ----
+ cookbooks/snmp/attributes/snmptrapd.rb |   29 +++++++++++++++++++++++++++++
+ cookbooks/snmp/recipes/snmptrapd.rb    |   10 ++++++++--
+ 6 files changed, 42 insertions(+), 9 deletions(-)
+ create mode 100644 cookbooks/snmp/attributes/snmptrapd.rb
+
+diff --git a/cookbooks/snmp/.kitchen.yml b/cookbooks/snmp/.kitchen.yml
+index ee2fbb1..06e7e09 100644
+--- a/cookbooks/snmp/.kitchen.yml
++++ b/cookbooks/snmp/.kitchen.yml
+@@ -29,4 +29,5 @@ suites:
+   run_list:
+   - recipe[snmp]
+   - recipe[snmp::extendbind]
++  - recipe[snmp::snmptrapd]
+   attributes: {}
+diff --git a/cookbooks/snmp/CHANGELOG.md b/cookbooks/snmp/CHANGELOG.md
+index de4f6bf..532feb6 100644
+--- a/cookbooks/snmp/CHANGELOG.md
++++ b/cookbooks/snmp/CHANGELOG.md
+@@ -1,6 +1,6 @@
+ ## snmp v1.0.0
+-
+-  Add snmptrapd recipe.
++  
++  Add snmptrapd recipe, and add RHEL support.
+   Template debian files.
+   Add test-kitchen skeleton.
+   Typos in platform_family case switches.
+diff --git a/cookbooks/snmp/Gemfile b/cookbooks/snmp/Gemfile
+index d8acfb1..bd02dd6 100644
+--- a/cookbooks/snmp/Gemfile
++++ b/cookbooks/snmp/Gemfile
+@@ -1,5 +1,6 @@
+ source 'https://rubygems.org'
+ 
+ gem 'berkshelf'
+-gem 'test-kitchen', git: 'git://github.com/opscode/test-kitchen.git', branch: 'master'
++gem 'test-kitchen', '~> 1.0.0.alpha'
++gem 'safe_yaml', '= 0.9.1'  
+ gem 'kitchen-vagrant', :group => :integration
+diff --git a/cookbooks/snmp/attributes/default.rb b/cookbooks/snmp/attributes/default.rb
+index d5c08c7..e183ab1 100644
+--- a/cookbooks/snmp/attributes/default.rb
++++ b/cookbooks/snmp/attributes/default.rb
+@@ -48,7 +48,3 @@ default['snmp']['snmpd']['snmpd_opts'] = "-Lsd -Lf /dev/null -u snmp -g snmp -I
+ default['snmp']['snmpd']['trapd_run'] = "no"
+ default['snmp']['snmpd']['trapd_opts'] = "-Lsd -p /var/run/snmptrapd.pid"
+ default['snmp']['snmpd']['snmpd_compat'] = "yes"
+-
+-default['snmp']['snmptrapd']['traphandle'] = "default /usr/sbin/snmptthandler"
+-default['snmp']['snmptrapd']['disableAuthorization'] = "yes"
+-default['snmp']['snmptrapd']['donotlogtraps'] = "yes"
+diff --git a/cookbooks/snmp/attributes/snmptrapd.rb b/cookbooks/snmp/attributes/snmptrapd.rb
+new file mode 100644
+index 0000000..a424c85
+--- /dev/null
++++ b/cookbooks/snmp/attributes/snmptrapd.rb
+@@ -0,0 +1,29 @@
++#
++# Cookbook Name:: snmp
++# Attributes:: snmptrapd 
++#
++# Copyright 2013, Eric G. Wolfe
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++#
++
++# snmptrapd options
++case node['platform_family']
++when 'rhel'
++  default['snmp']['snmptrapd']['service'] = "snmptrapd"
++else
++  default['snmp']['snmptrapd']['service'] = node['snmp']['service']
++end
++default['snmp']['snmptrapd']['traphandle'] = "default /usr/sbin/snmptthandler"
++default['snmp']['snmptrapd']['disableAuthorization'] = "yes"
++default['snmp']['snmptrapd']['donotlogtraps'] = "yes"
+diff --git a/cookbooks/snmp/recipes/snmptrapd.rb b/cookbooks/snmp/recipes/snmptrapd.rb
+index 4308129..8ce0fbd 100644
+--- a/cookbooks/snmp/recipes/snmptrapd.rb
++++ b/cookbooks/snmp/recipes/snmptrapd.rb
+@@ -2,7 +2,7 @@
+ # Cookbook Name:: snmp
+ # Recipe:: snmptrapd 
+ #
+-# Copyright 2010, Eric G. Wolfe
++# Copyright 2013, Eric G. Wolfe
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+@@ -17,11 +17,17 @@
+ # limitations under the License.
+ #
+ 
++node.set['snmp']['snmpd']['trapd_run'] = 'yes'
++
+ include_recipe "snmp"
+ 
++service node['snmp']['snmptrapd']['service'] do
++  action [ :enable, :start ]
++end
++
+ template "/etc/snmp/snmptrapd.conf" do
+   mode 0644
+   owner "root"
+   group "root"
+-  notifies :restart, "service[#{node['snmp']['service']}]"
++  notifies :restart, "service[#{node['snmp']['snmptrapd']['service']}]"
+ end
+-- 
+1.7.9.5
+

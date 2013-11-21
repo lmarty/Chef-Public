@@ -1,0 +1,1 @@
+workflowManager.xml will be provided in this directory via chef templates since the hostname needs to be generated dynamically based on environment.

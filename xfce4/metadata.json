@@ -1,0 +1,31 @@
+{
+  "name": "xfce4",
+  "description": "Sets up xfce4 desktop environment",
+  "long_description": "",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "Sets up xfce4 desktop environment"
+  },
+  "version": "0.1.0"
+}

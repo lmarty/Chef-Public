@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+	ServerName <%= @params[:server_name] %>
+	ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %> 
+    DocumentRoot <%= @params[:document_root] %>
+    DirectoryIndex index.php
+
+	<Directory <%= @params[:document_root] %>>
+	    Options Indexes MultiViews FollowSymlinks
+	    AllowOverride All
+	    Order allow,deny
+	    Allow from all
+	</Directory>
+
+	LogLevel info
+	ErrorLog <%= node['apache']['log_dir'] %>/elefant-error.log
+	CustomLog <%= node['apache']['log_dir'] %>/elefant-access.log combined
+
+	RewriteEngine On
+</VirtualHost>

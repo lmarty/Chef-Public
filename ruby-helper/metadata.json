@@ -1,0 +1,29 @@
+{
+  "name": "ruby-helper",
+  "description": "Helper Library for that extends ruby itself",
+  "long_description": "# ruby-helper cookbook\nThis recipe extends ruby to include  .blank? method from rails. \n\n# Usage\nInclude this recipe in your run_list, and the .blank? method will be available to your chef stuffs.\n\n# Methods\n\n\n# Recipes\n## default\n  Does nothing, just makes sure the libs are loaded\n\n\n# Author\nAuthor:: Jesse Nelson (<spheromak@gmail.com>)\n",
+  "maintainer": "Jesse Nelson",
+  "maintainer_email": "spheromak@gmail.com",
+  "license": "APL2",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

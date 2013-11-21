@@ -1,0 +1,24 @@
+#!upstart
+# doozerd.conf
+author "John Bellone <john.bellone.jr@gmail.com>"
+description "doozerd"
+
+start on startup
+stop on shutdown
+respawn
+
+pre-start script
+      echo "[`date -u +%Y-%m-%dT%T.%3NZ`] (doozerd) Starting"
+end script
+
+script
+      export GOPATH=<%= File.join(@doozerd_path, 'bin') %>
+      exec sudo -u <%= @doozerd_user %> doozerd <%= @doozerd_options %> &> /var/log/doozerd.log
+      echo $$ > /var/run/doozerd.pid
+end script
+
+pre-stop script
+      rm /var/run/doozerd.pid
+      echo "[`date -u +%Y-%m-%dT%T.%3NZ`] (doozerd) Stopping"    
+end script
+

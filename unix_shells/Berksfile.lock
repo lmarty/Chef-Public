@@ -1,0 +1,7 @@
+{
+  "sources": {
+    "unix_shells": {
+      "locked_version": "0.2.2"
+    }
+  }
+}

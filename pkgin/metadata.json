@@ -1,0 +1,30 @@
+{
+  "name": "pkgin",
+  "description": "Installs/Configures pkgin",
+  "long_description": "# Description\n\nThis cookbook is used to install packages on Unix systems with the pkgin utility.\n\n# Requirements\n\nAny system that uses pkgin *should* work, but I've only tested it on Joyent SmartOS\n\n# Attributes\n\nNo attributes are set in the cookbook at the moment\n\n# Resources/Providers\n\nThis cookbook implements a pkgin_package provider\n\n## Actions\n  :add: installs a package on the system\n  :remove: removes a package from the system\n\n# Usage\n\npkgin_package \"emacs-nox11\" do\n  action :install\nend\n\npkgin_package \"joe\" do\n  action :remove\nend\n\n# License and Author\nAuthor:: Sean OMeara (<someara@opscode.com>)\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Opscode, Inc",
+  "maintainer_email": "someara@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.4.0"
+}

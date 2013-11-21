@@ -1,0 +1,29 @@
+{
+  "description": "Installs/Configures dspam",
+  "groupings": {
+  },
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "suggestions": {
+  },
+  "maintainer": "computerlyrik",
+  "conflicting": {
+  },
+  "recipes": {
+  },
+  "replacing": {
+  },
+  "dependencies": {
+  },
+  "license": "Apache 2.0",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "name": "dspam",
+  "providing": {
+  },
+  "recommendations": {
+  },
+  "platforms": {
+  },
+  "version": "0.1.2",
+  "attributes": {
+  }
+}

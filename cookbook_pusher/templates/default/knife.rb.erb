@@ -1,0 +1,7 @@
+log_level                :info
+log_location             STDOUT
+node_name                '<%=@opscode_name%>'
+client_key               '<%=@path%>/auth.pem'
+cache_type               'BasicFile'
+cookbook_path      [ "<%=@path%>/cookbooks" ]
+

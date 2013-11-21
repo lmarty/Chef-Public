@@ -1,0 +1,75 @@
+require 'berkshelf/vagrant'
+
+# Vagrant::Config.run do |config|
+#   Kitchen::Vagrant.define_vms(config)
+# end
+
+Vagrant::Config.run do |config|
+  # The path to the Berksfile to use with Vagrant Berkshelf
+  config.berkshelf.berksfile_path = "./Berksfile"
+
+  # An array of symbols representing groups of cookbook described in the Vagrantfile
+  # to skip installing and copying to Vagrant's shelf.
+  # config.berkshelf.only = []
+
+  # An array of symbols representing groups of cookbook described in the Vagrantfile
+  # to skip installing and copying to Vagrant's shelf.
+  # config.berkshelf.except = []
+  
+  # master
+  config.vm.define :server_centos63 do |server_config|
+    server_config.vm.host_name = "pki-server-centos63"
+    server_config.vm.box = "opscode-centos-6.3"
+    server_config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
+
+    server_config.vm.network :hostonly, "33.33.33.14"
+    server_config.ssh.max_tries = 40
+    server_config.ssh.timeout   = 120
+    server_config.ssh.forward_agent = true
+
+    server_config.vm.provision :chef_client do |chef|
+      chef.chef_server_url = "https://chef-server.dev.lap"
+      chef.validation_key_path = "/opt/chef/dev.lap/.chef/chef-validator.pem"
+      
+      chef.json = {
+      }
+
+      chef.run_list = [
+        "recipe[vagrant-ohai]",
+        "recipe[fqdn]",
+        "recipe[hosts]",
+        "recipe[yum::internal]",
+        "recipe[pki::server]"
+      ]
+    end
+  end
+
+  
+  # slave
+  config.vm.define :slave_centos63_1 do |slave_config|
+    slave_config.vm.host_name = "pki-slave-centos63_1"
+    slave_config.vm.box = "opscode-centos-6.3"
+    slave_config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
+    
+    slave_config.vm.network :hostonly, "33.33.33.15"
+    slave_config.ssh.max_tries = 40
+    slave_config.ssh.timeout   = 120
+    slave_config.ssh.forward_agent = true
+    
+    slave_config.vm.provision :chef_client do |chef|
+      chef.chef_server_url = "https://chef-server.dev.lap"
+      chef.validation_key_path = "/opt/chef/dev.lap/.chef/chef-validator.pem"
+      chef.json = {
+      }
+      
+      chef.run_list = [
+        "recipe[vagrant-ohai]",
+        "recipe[fqdn]",
+        "recipe[hosts]",
+        "recipe[yum::internal]",
+        "recipe[pki::client]"
+      ]
+    end
+  end
+  
+end

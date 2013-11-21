@@ -1,0 +1,36 @@
+{
+  "maintainer": "Smashrun, Inc.",
+  "name": "bitly",
+  "attributes": {
+  },
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "windows": ">= 0.0.0",
+    "arch": ">= 0.0.0"
+  },
+  "long_description": "Description\n===========\nInstalls bitly gem and Chef library to provide easy bitly link shortening in recipes via Bit:short()\n\nRequirements\n============\n\nRubygems; works on linux and windows!\n\nAttributes\n==========\n\nTune to set temp and location of your encrypted data bag secret, the name of your encrypted data bag for bitly application key setting and the name of your bitly account.\n\nUsage\n=====\n\nCheck out full functioned example.rb for details by adding \"bitly\" and \"bitly::example\" to the run list.",
+  "replacing": {
+  },
+  "dependencies": {
+  },
+  "description": "Installs/Configures bitly link shortner gem",
+  "maintainer_email": "support@smashrun.com",
+  "version": "0.1.0",
+  "providing": {
+  },
+  "recommendations": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "license": "Apache 2.0"
+}

@@ -1,0 +1,26 @@
+# We need to test on platforms with baseboxes that have RVM and Ruby
+# (1.9.2) already installed.
+
+platform :centos do
+  version "5.7" do
+    box "centos-5.7-rvm"
+    box_url "http://acrmp-vm.s3.amazonaws.com/vagrant/boxes/centos-5.7-rvm.box"
+  end
+end
+
+platform :ubuntu do
+  version "11.04" do
+    box "ubuntu-11.04-rvm"
+    box_url "http://acrmp-vm.s3.amazonaws.com/vagrant/boxes/ubuntu-11.04-rvm.box"
+  end
+end
+
+cookbook "akibanserver" do
+  configuration "default"
+
+  exclude :platform => 'amazon'
+  exclude :platform => 'debian'
+  exclude :platform => 'fedora'
+  exclude :platform => 'redhat'
+  exclude :platform => 'scientific'
+end

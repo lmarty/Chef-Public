@@ -1,0 +1,32 @@
+{
+  "name": "gitosis",
+  "description": "Installs/Configures gitosis",
+  "long_description": "= DESCRIPTION:\n\nInstalls and configures\nGitosis[http://eagain.net/gitweb/?p=gitosis.git;a=blob;f=README.rst].\n\nGitosis is autoconfigured from \"users\" data bag. Users should have\n\"ssh_keys\" attribute containing their public SSH keys, \"gitosis_repos\"\nattribute with name or list of names of repositories with read_write\naccess, and \"gitosis_repos_ro\" with a name or a list of names of\nrepositories with read-only access.\n\n= REQUIREMENTS:\n\n* git\n* ssh_known_hosts\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "maintainer": "Maciej Pasternacki",
+  "maintainer_email": "maciej@pasternacki.net",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "git": ">= 0.0.0",
+    "ssh_known_hosts": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

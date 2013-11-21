@@ -1,0 +1,7 @@
+{
+  "sources": {
+    "bind-chroot": {
+      "locked_version": "0.0.16"
+    }
+  }
+}

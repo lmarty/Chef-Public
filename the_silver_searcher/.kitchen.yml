@@ -1,0 +1,39 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode_ubuntu-12.04_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+- name: ubuntu-10.04
+  driver_config:
+    box: opscode_ubuntu-10.04_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
+- name: centos-6.4
+  driver_config:
+    box: opscode_centos-6.4_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+- name: centos-5.9
+  driver_config:
+    box: opscode_centos-5.9_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
+- name: fedora-19
+  driver_config:
+    box: opscode_fedora-19_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode-fedora-19_provisionerless.box
+- name: debian-7.1.0
+  driver_config:
+    box: opscode_debian-7.1.0_provisionerless
+    box_url: https://053db83ba1374e6e1230-f1dfd5e757f02de37888b01fa0b9ac01.ssl.cf1.rackcdn.com/debian-7.1.0.box
+- name: ubuntu-13.04
+  driver_config:
+    box: opscode_ubuntu-13.04_provisionerless
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box
+
+suites:
+- name: default
+  run_list: ["recipe[the_silver_searcher]"]
+  attributes: {}

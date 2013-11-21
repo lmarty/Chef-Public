@@ -1,0 +1,9 @@
+*~
+.*.sw[a-z]
+bin/*
+.bundle/*
+vendor
+.#*
+\#*#
+.cache
+.kitchen

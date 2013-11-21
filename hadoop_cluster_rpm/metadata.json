@@ -1,0 +1,40 @@
+{
+  "name": "hadoop_cluster_rpm",
+  "description": "Unmerged RPM-distro additions for hadoop_cluster",
+  "maintainer": "linuxchick.org",
+  "maintainer_email": "mandi.walls@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": [
+
+    ],
+    "rhel": [
+
+    ]
+  },
+  "dependencies": {
+    "java": [
+
+    ],
+    "yum": [
+
+    ]
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.9.0"
+}

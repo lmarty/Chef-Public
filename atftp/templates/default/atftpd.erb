@@ -1,0 +1,6 @@
+<% if node[:tftpd][:use_inetd] %>
+USE_INETD=false
+<% else %>
+USE_INETD=false
+<% end %>
+OPTIONS="--tftpd-timeout <%= node[:tftpd][:timeout] %> --retry-timeout <%= node[:tftpd][:retry_timeout] %> --mcast-port <%= node[:tftpd][:mcast_port] %> --mcast-addr <%= node[:tftpd][:mcast_addr] %> --mcast-ttl <%= node[:tftpd][:mcast_ttl] %> --maxthread <%= node[:tftpd][:maxthread] %> <%= "--no-blksize" unless node[:tftpd][:use_blksize] %> --verbose=<%= node[:tftpd][:verbose] %> <%= node[:tftpd][:dir] %>"

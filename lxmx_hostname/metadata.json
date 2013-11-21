@@ -1,0 +1,35 @@
+{
+  "name": "lxmx_hostname",
+  "description": "A Chef cookbook to set and persist node hostname",
+  "long_description": "# lxmx_hostname\n[![Build Status](https://travis-ci.org/lxmx/chef-hostname.png?branch=master)](https://travis-ci.org/lxmx/chef-hostname)\n\n## Usage\n\n* To set and persist a hostname, set `node['net']['hostname']`.\n* To set and persist an FQDN, set `node['net']['FQDN']` and `node['net']['IP']`.\n* Then include `recipe[lxmx_hostname]` in your run_list.\n\n## Requirements\n\n### Platform\n\nThe following platforms are supported by the cookbook:\n\n* ubuntu\n* debian\n* centos\n* redhat\n* gentoo\n\n### Cookbooks\n\nThis cookbook depends on the following external cookbooks:\n\n* hostsfile - [github](https://github.com/customink-webops/hostsfile), [community](http://community.opscode.com/cookbooks/hostsfile).\n\n## Recipes\n\n### default\n\nSets and persists node hostname using different approaches on different platforms.\n\n## Attributes\n\n* `node['net']['hostname']` - node hostname to set and persist.\n* `node['net']['FQDN']` - (optional) node FQDN to set and persist.\n* `node['net']['IP']`- node IP address, set if you're setting an FQDN.\n\n## License\n\nCopyright:: Vasily Mikhaylichenko and LxMx.\n\nLicensed under BSD license.\n\n    http://opensource.org/licenses/BSD-2-Clause\n\n\n",
+  "maintainer": "Vasily Mikhaylichenko",
+  "maintainer_email": "vaskas@lxmx.com.au",
+  "license": "BSD",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "gentoo": ">= 0.0.0"
+  },
+  "dependencies": {
+    "hostsfile": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.6"
+}

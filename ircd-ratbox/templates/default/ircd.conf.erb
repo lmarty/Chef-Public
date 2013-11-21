@@ -1,0 +1,76 @@
+/* doc/ircd.conf - ircd-ratbox configuration
+ * please consult /etc/ircd/example.conf for detailed informations
+  */
+
+serverinfo {
+	name = "<%= @server_name %>";
+	use_ts6 = yes;
+	sid = "66L";
+	description = "<%= @server_description %>";
+	network_name = "<%= @network_name %>";
+	network_desc = "<%= @network_description %>";
+	hub = no;
+	default_max_clients = 10000;
+};
+
+admin {
+	name = "<%= @server_admin_name %>";
+	description = "Main Server Administrator";
+	email = "<<%= @server_admin_email %>>";
+};
+
+log {
+	fname_userlog = "/var/log/ircd/user.log";
+	fname_operlog = "/var/log/ircd/oper.log";
+	fname_serverlog = "/var/log/ircd/server.log";
+	fname_glinelog = "/var/log/ircd/gline.log";
+	fname_killlog = "/var/log/ircd/kill.log";
+	fname_operspylog = "/var/log/ircd/operspy.log";
+};
+
+listen {
+	host = "<%=  @server_ip %>";
+	port = <%= @server_port %>;
+};
+
+<% @user_classes.each do |c| %>
+class "<%= c[:name] %>" {
+        ping_time = <%= c[:ping_time] %>;
+        number_per_ident = <%= c[:number_per_ident] %>;
+        number_per_ip = <%= c[:number_per_ip] %>;
+        number_per_ip_global = <%= c[:number_per_ip_global] %>;
+        cidr_bitlen = <%= c[:cidr_bitlen] %>;
+        number_per_cidr = <%= c[:number_per_cidr] %>;
+        max_number = <%= c[:max_number] %>;
+        sendq = <%= c[:sendq] %>;
+};
+
+<% end %>
+<% @user_class_mapping.each do |c| %>
+auth {
+        user = "<%= c[:user] %>";
+        class = "<%= c[:class] %>";
+};
+
+<% end %>
+/* uncomment and adjust your setting if you're using ratbox-services package. 
+
+connect "ratbox.services" {
+        host = "127.0.0.1";
+        send_password = "Modify Me!";
+        accept_password = "Modify Me!";
+        port = 6006;
+        class = "server";
+        flags = topicburst;
+};
+
+*/
+
+channel {
+	 no_create_on_split = no;
+};
+
+modules {
+	path = "/usr/share/ircd/modules";
+	path = "/usr/share/ircd/modules/autoload";
+};

@@ -1,0 +1,21 @@
+nats_uri: <%= cf_mbus_url %>
+logging:
+  level: <%= node['cloudfoundry_stager']['log_level'] %>
+  file: <%= node['cloudfoundry_stager']['log_file'] %>
+
+pid_filename: <%= node['cloudfoundry_stager']['pid_file'] %>
+
+max_staging_duration: <%= node['cloudfoundry_stager']['max_staging_duration'] %>
+max_active_tasks: <%= node['cloudfoundry_stager']['max_active_tasks'] %>
+
+queues:
+<% node['cloudfoundry_stager']['queues'].each do |queue| %>
+- <%= queue %>
+<% end %>
+
+dirs:
+  tmp: <%= node['cloudfoundry_stager']['tmp_dir'] %>
+
+ruby_path: <%= File.join(ruby_bin_path(node['cloudfoundry_stager']['ruby_version']), "ruby") %>
+
+secure: <%= node['cloudfoundry_stager']['secure'] %>

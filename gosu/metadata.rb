@@ -1,0 +1,8 @@
+name              "gosu"
+maintainer        "Phil Cohen"
+maintainer_email  "github@phlippers.net"
+license           "MIT"
+description       "Cross-platform 2D game development library"
+version           "0.1.0"
+supports          "ubuntu"
+recipe            "default", "Sets up libraries requied to build apps with Gosu"

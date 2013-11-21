@@ -1,0 +1,171 @@
+{
+  "name": "greenscreen",
+  "description": "Installs/Configures greenscreen",
+  "long_description": "Description\n===========\n\nGreenScreen is a build monitoring tool that is designed to be used as a dynamic Big Visible Chart (BVC) in your work area. It lets you add links to your build servers and displays the largest possible information on a monitor so that the team can see the build status from anywhere in the room.\n\nThis cookbook configures a node to run one or more GreenScreen applications.  The cookbook uses [CustomInk's clone of the original GreenScreen project](git://github.com/customink/greenscreen.git).\n\nChanges/Roadmap\n===============\n### v0.0.5\n  * add an 'end' that was missing from the default recipe.\n  \n### v0.0.4\n* Changes based on [Foodcritic](http://acrmp.github.com/foodcritic/) recommendations:\n  * Use strings in preference to symbols to access node attributes.\n  * Avoid repetition of resource declarations (combine git clone and rake init step)\n\n### v0.0.3\n\n* Fix a bug with the config template that was not properly handling explicit jobs or jobs to ignore\n\n### v0.0.2\n\n* Fix a bug with the default attributes\n* No longer do a git pull with each chef run, this was causing failures when the config.yml was updated.\n\nRequirements\n============\n\n### Cookbooks:\n\nOpscode Cookbooks (http://community.opscode.com/cookbooks)\n\n* git \n\n\nAttributes\n==========\n\n* `greenscreen/install_dir` - Location where the GreenScreen app will run\n* `greenscreens` - An array of GreenScreen configuration parameters.  One entry per GreenScreen\n* `greenscreens/name` - The name of this GreenScreen\n* `greenscreens/port` - The port used by this GreenScreen\n* `greenscreens/servers` - An array of servers that this GreenScreen should watch. One entry per server\n* `greenscreens/servers/url` - The URL for this build server\n* `greenscreens/servers/username` - The login for this server\n* `greenscreens/servers/password` - The password for this server\n* `greenscreens/servers/jobs` - Array of jobs to look after.  Leave empty to watch all jobs on this server\n* `greenscreens/servers/ignore_jobs` - Array of jobs to ignore.  Leave empty to watch all jobs on this server\n\n\nUsage\n=====\n\nInclude the greenscreen recipe to install, configure, and run one or more GreenScreen applications\n\n    include_recipe \"greenscreen\"\n\nOr add it to your role, or directly to a node's recipes.\n\n",
+  "maintainer": "CustomInk, LLC",
+  "maintainer_email": "nharvey@customink.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "git": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "greenscreen/install_dir": {
+      "display_name": "GreenScreen Installation Directory",
+      "description": "Location where the GreenScreen app will run",
+      "default": "/opt",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens": {
+      "display_name": "GreenScreens",
+      "description": "An array of GreenScreen configuration parameters.  One entry per GreenScreen",
+      "default": "A single GreenScreen",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/name": {
+      "display_name": "GreenScreen Name",
+      "description": "The name of this GreenScreen",
+      "default": "greenscreen",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/port": {
+      "display_name": "GreenScreen Port",
+      "description": "The port used by this GreenScreen",
+      "default": "/4567",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers": {
+      "display_name": "Servers",
+      "description": "An array of servers that this GreenScreen should watch. One entry per server",
+      "default": "A single server",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers/url": {
+      "display_name": "Server URL",
+      "description": "The URL for this build server",
+      "default": "http://ci.jenkins-ci.org/view/All/cc.xml",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers/username": {
+      "display_name": "Server Username",
+      "description": "The login for this server",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers/password": {
+      "display_name": "Server Password",
+      "description": "The password for this server",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers/jobs": {
+      "display_name": "Server Jobs to Watch",
+      "description": "Array of jobs to look after.  Leave empty to watch all jobs on this server",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "greenscreens/servers/ignore_jobs": {
+      "display_name": "Server Jobs to Ignore",
+      "description": "Array of jobs to ignore.  Leave empty to watch all jobs on this server",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "Installs, configures, and runs a GreenScreen application."
+  },
+  "version": "0.0.5"
+}

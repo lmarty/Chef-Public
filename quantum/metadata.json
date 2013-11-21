@@ -1,0 +1,34 @@
+{
+  "name": "quantum",
+  "description": "The OpenStack Networking service Quantum.",
+  "long_description": "Description\n===========\nThis cookbook installs Openstack Quantum to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova) as a part of an OpenStack **Folsom** deployment.  Quantum is installed from packages.\n\nhttp://quantum.openstack.org\n\nRequirements\n============\n \nChef 0.10.0 or higher required (for Chef environment use).\n \nPlatforms\n--------\n \n* Ubuntu-12.04\n \nCookbooks\n---------\n \nThe following cookbooks are dependencies:\n \n* database\n* mysql\n* osops-utils\n \nRecipes\n=======\n \ndefault\n----\n-includes recipe `server`\n \nserver\n----\n-registers the quantum service tenant\n-installs the quantum server package\n-determines and configures networking plugin provider (set in attributes)\n-registers the network service\n-registers the network endpoint\n\nplugin\n----\n-installs the specified networking plugin from package\n-configures /etc/quantum/plugins.ini\n-configures the specified plugin (only supports nicira NVP at\npresent)\n \n \nAttributes\n==========\n* `developer_mode` - sets well known openstack passwords\n\n* `openstack['quantum']['services']['api']['scheme']` - sets API versioning scheme\n* `openstack['quantum']['services']['api']['network']` - sets API network\n* `openstack['quantum']['services']['api']['port']` - sets API server port\n* `openstack['quantum']['services']['api']['path']` - sets API version path\n\n* `quantum['service_tenant_name']` - sets Keystone registry service tenant name for quantum\n* `quantum['service_user']` - sets Keystone registry user name for quantum\n* `quantum['service_role']` - sets Keystone registry service role name for quantum\n\n* `openstack['quantum']['syslog']['use']` - controls use of syslog for quantum\n* `openstack['quantum']['syslog']['facility']` - controls syslog facility setting\n* `openstack['quantum']['plugin']` - sets desired plugin for use with quantum (only supports \"nicira\" at present)\n\n* `openstack['quantum']['plugin']['nvp']['tz_uuid']` - sets uuid of transport zone for use with nicira nvp plugin\n\n\nTemplates\n=====\n \n* `quantum.conf.erb` - the quantum server config file\n* `api-paste.ini.erb` - the paste deploy config file\n* `plugins.ini.erb` - the quantum plugins config file\n* `plugins/nvp.ini.erb` - the nvp plugin config file\n \n \nLicense and Author\n==================\n \nAuthor:: George Miranda (<gmiranda@opscode.com>)\nAuthor:: Jeremy Hanmer (<jeremy@dreamhost.com>)\n\nCopyright 2013, Opscode, Inc.\nCopyright 2012, DreamHost\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n \n    http://www.apache.org/licenses/LICENSE-2.0\n \nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "gmiranda@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "database": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "glance": ">= 0.0.0",
+    "osops-utils": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

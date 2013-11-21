@@ -1,0 +1,12 @@
+.vagrant
+Berksfile.lock
+Gemfile.lock
+/tests/.kitchen
+/.kitchen
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks

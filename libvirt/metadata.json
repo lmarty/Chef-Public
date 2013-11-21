@@ -1,0 +1,40 @@
+{
+  "suggestions": {
+
+  },
+  "version": "0.1.0",
+  "recipes": {
+    "libvirt": ""
+  },
+  "conflicting": {
+
+  },
+  "platforms": {
+
+  },
+  "description": "Installs\/Configures libvirt",
+  "providing": {
+    "libvirt": [
+
+    ]
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES: \n\n= USAGE:\n\n",
+  "replacing": {
+
+  },
+  "dependencies": {
+    "apparmor": [
+
+    ]
+  },
+  "maintainer": "Bryan McLellan",
+  "name": "libvirt",
+  "attributes": {
+
+  },
+  "recommendations": {
+
+  },
+  "license": "Apache 2.0",
+  "maintainer_email": "btm@loftninjas.org"
+}

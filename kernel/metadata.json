@@ -1,0 +1,29 @@
+{
+  "name": "kernel",
+  "description": "Installs/Configures kernel",
+  "long_description": "Description\n===========\n\nThis will be used to manage sysctl and module for any kernel.\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "maintainer": "Guilhem Lettron",
+  "maintainer_email": "guilhem.lettron@youscribe.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.2"
+}

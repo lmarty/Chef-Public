@@ -1,0 +1,39 @@
+{
+  "name": "doozer",
+  "description": "Manages doozer and its installed libraries.",
+  "long_description": "# <a name=\"title\"></a>Doozer Chef Recipe\n\n## <a name=\"description\"></a>Description\n\nManages [doozerd][1], a highly available, consistent, distrbuted data store, and\nassociated client libraries.\n\n## <a name=\"installation\"></a> Installation\n\n[Librarian][2] is a cookbook dependency manager which will _take over_ your\n_entire_ cookbooks directory. It is used here to demonstrate, along with [Vagrant][3]\nand [VirtualBox][4], how you can use [Chef][5] to provision a virtual machine that\nconsists of [Doozer][1] and its dependencies.\n\nTo install all of your *RubyGem* dependencies:\n        cd chef-doozer\n        bundle install\n\nTo install all of your *Chef cookbook* dependencies:\n        cd chef-doozer\n        bundle exec librarian-chef install\n\n## <a name=\"repository\"></a> Git repository\n\nThe [git repository][5] is available. Please submit any pull requests with new\nfunctionality!\n\n[1]: https://github.com/ha/doozer \"GitHub Doozer\"\n[2]: https://github.com/applicationsonline/librarian-chef \"GitHub Librarian\"\n[3]: http://vagrantup.com \"Vagrant\"\n[4]: http://virtualbox.org \"VirtualBox\"\n[5]: https://github.com/johnbellone/chef-doozer \"GitHub Chef Doozer\"\n",
+  "maintainer": "John Bellone",
+  "maintainer_email": "john.bellone.jr@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "redhat": ">= 5.0",
+    "centos": ">= 5.0",
+    "ubuntu": ">= 6.10"
+  },
+  "dependencies": {
+    "golang": ">= 0.0.0",
+    "git": ">= 0.0.0",
+    "mercurial": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+    "iptables": ">= 0.0.0"
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "doozer": "Main Doozer configuration",
+    "doozer::doozer": "Doozer CLI",
+    "doozer::doozerd": "Doozer server"
+  },
+  "version": "0.1.0"
+}

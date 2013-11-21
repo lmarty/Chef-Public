@@ -1,0 +1,30 @@
+{
+  "name": "git-fs",
+  "description": "Installs/Configures git-fs",
+  "long_description": "# git-fs cookbook\n\nInstalls g2p/git-fs(https://github.com/g2p/git-fs).\nTested with Ubuntu 12.04.\n\n# Requirements\n\nRequires git to be installed.\nI recommend adding the `git::default` recipe from opscode's [git cookbook](https://github.com/opscode-cookbooks/git).\n\n# Attributes\n\nSee `attributes/default.rb`.\nThe defaults should be fine for most people.\n\n# Recipes\n\nThe `git-fs::default` recipe compiles and installs `git-fs` to `/usr/local/bin`.\n\n# Author\n\nAuthor:: Andrew Fecheyr (<andrew@bedesign.be>)\n",
+  "maintainer": "Andrew Fecheyr",
+  "maintainer_email": "andrew@bedesign.be",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

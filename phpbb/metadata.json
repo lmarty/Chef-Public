@@ -1,0 +1,35 @@
+{
+  "name": "phpbb",
+  "description": "Installs/Configures phpbb",
+  "long_description": "# chef-phpbb cookbook\n\nThis cookbook provides an LWRP to setup PhpBB app\n\n# Requirements\n\n# Usage\n\nAdd `phpbb` as dependency in your cookbook's metadata file.\n\n    depends 'phpbb'\n\nNow you can use the following LWRP in your cookbook's recipe.\n\n    phpbb_instance \"phpbb1\" do\n      doc_root \"/var/www/phpbb-app\"\n      db_name \"phpbb_db\"\n      db_user \"phpbb_user\"\n      db_password \"phpbb_passwd\"\n      domain \"phpbb.local\"\n    end\n\nThen navigate to `your-domain.com/install`\n\n# Attributes\n\n# Recipes\n\n# Author\n\nAuthor:: Millisami (<millisami@gmail.com>)\n",
+  "maintainer": "Millisami",
+  "maintainer_email": "millisami@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "mysql": ">= 0.0.0",
+    "database": ">= 0.0.0",
+    "php": ">= 0.0.0",
+    "apache2": ">= 0.0.0",
+    "apt": ">= 0.0.0",
+    "imagemagick": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

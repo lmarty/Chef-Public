@@ -1,0 +1,31 @@
+* =aminator=
+
+Install the [[https://github.com/Netflix/aminator][aminator]] AMI bakery developed by Netflix.
+
+** Recipes
+
+*** =aminator::default=
+
+Install aminator into a Python virtualenv.
+
+** Attributes
+
+| attribute | type        | description             |
+|-----------+-------------+-------------------------|
+| root      | path        | installation directory  |
+| package   | name or URL | pip package name or URL |
+
+** Dependencies
+
+- [[http://community.opscode.com/cookbooks/python][python]]
+
+** Vagrant
+
+#+BEGIN_SRC
+vagrant plugin install berkshelf-ext
+vagrant up
+#+END_SRC
+
+** License
+
+Apache License, Version 2.0

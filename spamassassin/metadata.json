@@ -1,0 +1,32 @@
+{
+  "suggestions": {
+  },
+  "maintainer_email": "demonccc@gmail.com",
+  "groupings": {
+  },
+  "providing": {
+  },
+  "license": "Apache 2.0",
+  "description": "Installs and configures spamassassin",
+  "recommendations": {
+  },
+  "version": "0.1.1",
+  "dependencies": {
+  },
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "long_description": "# Description\n\nInstalls and configures spamassassin\n\n# Requirements\n\n## Chef\n\nTested on 0.10.8 but newer and older version should work just fine.\n\n## Platform\n\nThe following platforms have been tested with this cookbook, meaning that the\nrecipes run on these platforms without error:\n\n* ubuntu\n* debian\n\n## Cookbooks\n\nThere are **no** external cookbook dependencies. \n\n# Installation\n\nJust place the spamassassin directory in your chef cookbook directory and\nupload it to your Chef server.\n\n# Usage\n\nSimply include `recipe[spamassassin]` in the node run_list and customize \nthe attributes as your needs.\n\n# Recipes\n\n## default\n\nThis recipe installs, configures and starts the spamassassin daemon.\n\n# Attributes\n\n## `node['spamassassin']['enabled']`\n\nEnable and start the spamassassin daemon.\n\n## `node['spamassassin']['daemon_options']`\n\nSet the daemon options.\n\n## `node['spamassassin']['pidfile']`\n\nSet the pidfile.\n\n## `node['spamassassin']['nice_level']\n\nSet the nice level of the daemon. If it is false, the daemon will be started with the default nice level.\n\n## `node['spamassassin']['cron']`\n\nEnable the cron job of the spamassassin service.\n\n# Resources and Providers\n\nThere are **none** defined.\n\n# Libraries\n\nThere are **none** defined.\n\n# Development\n\n* Source hosted at [GitHub][repo]\n* Report issues/Questions/Feature requests on [GitHub Issues][issues]\n\nPull requests are very welcome! Make sure your patches are well tested.\nIdeally create a topic branch for every separate change you make.\n\n# License and Author\n\nAuthor:: Claudio Cesar Sanchez Tejeda <demonccc@gmail.com>\n\nCopyright:: 2012, Claudio Cesar Sanchez Tejeda\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n[repo]:         https://github.com/demonccc/chef-repo\n[issues]:       https://github.com/demonccc/chef-repo/issues\n",
+  "recipes": {
+    "spamassassin": "Installs and configures spamassassin"
+  },
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "maintainer": "Claudio Cesar Sanchez Tejeda",
+  "name": "spamassassin",
+  "conflicting": {
+  }
+}

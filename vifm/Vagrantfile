@@ -1,0 +1,69 @@
+require 'berkshelf/vagrant'
+
+Vagrant::Config.run do |config|
+  config.vm.host_name = "vifm-berkshelf"
+  config.vm.box = "Debian-6.0.6"
+  config.vm.network :hostonly, "33.33.33.10"
+  config.ssh.max_tries = 40
+  config.ssh.timeout   = 120
+
+  config.vm.provision :chef_solo do |chef|
+    chef.json = {
+      :vifm => {
+        :install_method => "source"
+      }
+    }
+    chef.run_list = [
+      "recipe[vifm]"
+    ]
+  end
+
+end
+
+# Vagrant::Config.run do |config|
+#   config.vm.host_name = "vifm-berkshelf"
+#   config.vm.box = "ubuntu-12.10"
+#   config.vm.network :hostonly, "33.33.33.10"
+#   config.ssh.max_tries = 40
+#   config.ssh.timeout   = 120
+#
+#   config.vm.provision :chef_solo do |chef|
+#     chef.json = {
+#       :vifm => {
+#         :install_method => "source"
+#       }
+#     }
+#     chef.run_list = [
+#       "recipe[vifm]"
+#     ]
+#   end
+#
+# end
+
+# Vagrant::Config.run do |config|
+#   config.vm.host_name = "vifm-berkshelf"
+#   config.vm.box = "CentOS-6.3"
+#   config.vm.network :hostonly, "33.33.33.10"
+#   config.ssh.max_tries = 40
+#   config.ssh.timeout   = 120
+#
+#   config.vm.provision :chef_solo do |chef|
+#     chef.run_list = [
+#       "recipe[vifm]"
+#     ]
+#   end
+# end
+
+# Vagrant::Config.run do |config|
+#   config.vm.host_name = "vifm-berkshelf"
+#   config.vm.box = "Fedora-17"
+#   config.vm.network :hostonly, "33.33.33.10"
+#   config.ssh.max_tries = 40
+#   config.ssh.timeout   = 120
+#
+#   config.vm.provision :chef_solo do |chef|
+#     chef.run_list = [
+#       "recipe[vifm]"
+#     ]
+#   end
+# end

@@ -1,0 +1,29 @@
+{
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "maintainer_email": "melezhik@gmail.com",
+  "groupings": {
+  },
+  "version": "0.0.7",
+  "description": "Light weight resource to deliver archived application to your host",
+  "license": "All rights reserved",
+  "dependencies": {
+  },
+  "maintainer": "Alexey Melezhik",
+  "long_description": "Description\n===========\nLight weight resource to deliver archived application to your host.\n\nRequirements\n============\n- tar\n\nAttributes\n==========\n\nUsage\n=====\n\n    # fetch archive from remote host \n    # unpack archive in destination directory (see `base` parameter in `Resource's parameters` section)\n    # create symlink 'my-application' pointing to unpacked archive  \n\n    web_application 'my-application' do\n        url   'http://some.ftp.host/my-app-v0.0.1.tar.gz'\n        user  'alex'\n        group 'users'\n        action :deliver\n    end\n\n    # delete all unpacked archives matching glob pattern\n    web_application 'my-application' do\n        pattern   'my-app*/'\n        user  'alex'\n        group 'users'\n        action :clean\n    end\n\n    # delete symlinked unpacked archive\n    web_application 'my-application' do\n        user  'alex'\n        group 'users'\n        action :delete\n    end\n    \nResource's parameters\n=====================\n\n - `name` - name of symlink to point to unpacked archive\n - `url` - http url for application archive\n - `user` - owner of application files\n - `group` - group of applications files\n - `base` - directory where archive will be unpacked, default value is `user's home directory`. Archive will be unpacked in `base/apps/` directory. \n `base/apps/name` will point to unpacked archive\n \n\nActions\n=======\n - `fetch` - fetch archive from remote host and store it in `base/apps/`\n - `unpack` - unpack archive (see `override mode` section)\n - `symlink` - make symlink in `base/apps/` pointing to the archive unpacked \n - `deliver` - fetch, unpack, symlink actions successively\n - `delete` - delete symlinked unpacked archive\n - `clean` - delete all unpacked archives matching glob pattern (symlinked unpacked archive is excluded)\n\nOverride mode\n=============\nWhen doing `unpack` action if archive is already unpacked -  delete current unpacked archive first. By default `override` is set to `true`.\n\n    web_application 'my-application' do\n        url   'http://some.ftp.host/my-app.tar.gz'\n        user  'alex'\n        group 'users'\n        override true\n        action :deliver\n    end\n\n\n \n \n\n",
+  "recipes": {
+  },
+  "name": "web",
+  "providing": {
+  },
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "replacing": {
+  }
+}

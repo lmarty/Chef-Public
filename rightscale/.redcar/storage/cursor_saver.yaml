@@ -1,0 +1,9 @@
+--- 
+cursor_positions: 
+  - :path: README.md
+    :cursor_offset: 2733
+    :timestamp: 2013-10-14 15:48:58 +11:00
+  - :path: metadata.rb
+    :cursor_offset: 2501
+    :timestamp: 2013-10-14 14:52:21 +11:00
+files_to_retain: 0

@@ -1,0 +1,39 @@
+{
+  "name": "rbenv-gemset",
+  "description": "Installs and Configures rbenv-gemset",
+  "long_description": "# rbenv-gemset cookbook\n\nInstalls and manages rbenv-gemsets in order to provide gemset support to rbenv\n\n* [rbenv](https://github.com/sstephenson/rbenv)\n* [rbenv-gemset](https://github.com/jamis/rbenv-gemset)\n\n# Requirements\n\n* Chef 10\n* Centos / Redhat / Fedora / Ubuntu / Debian\n* Git\n\n# Attributes\n\n`node[:rbenv_gemset][:git_repository]` - Repository from where we should clone our code for rbenv-gemset\n`node[:rbenv_gemset][:git_revision]` - Branch that we should take the code from\n\n# Usage\n\nInclude recipe[rbenv-gemset] in your run_list.\n\n# Authors and Contributors\n\n* José P. Airosa (<me@joseairosa.com>)",
+  "maintainer": "José P. Airosa",
+  "maintainer_email": "me@joseairosa.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "oracle": ">= 0.0.0"
+  },
+  "dependencies": {
+    "rbenv": ">= 0.0.0",
+    "git": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "rbenv-gemset": "Installs and Configures rbenv-gemset"
+  },
+  "version": "0.1.1"
+}

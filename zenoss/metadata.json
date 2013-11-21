@@ -1,0 +1,47 @@
+{
+  "name": "zenoss",
+  "description": "Installs and configures Zenoss and registers nodes as devices",
+  "long_description": "",
+  "maintainer": "David Petzel",
+  "maintainer_email": "davidpetzel@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "openssh": ">= 0.0.0",
+    "openssl": ">= 0.0.0",
+    "yum": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "java": ">= 0.0.0",
+    "rabbitmq": ">= 0.0.0",
+    "selinux": ">= 0.0.0",
+    "zenoss_client": ">= 0.0.0",
+    "redisio": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "zenoss": "Defaults to the client recipe.",
+    "zenoss::client": "Includes the `openssh` recipe and adds the device to the Zenoss server for monitoring.",
+    "zenoss::server": "Installs Zenoss, handling and configuring all the dependencies while adding Device Classes, Groups, Systems and Locations.  All nodes using the `zenoss::client` recipe are added for monitoring."
+  },
+  "version": "2.0.0"
+}

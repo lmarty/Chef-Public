@@ -1,0 +1,29 @@
+{
+  "name": "group",
+  "description": "Installs/Configures group",
+  "long_description": "Description\n===========\n\nA group cookbook, modeled after fnichol's chef-user cookbook.\nSetup groups via databags.\n\nRequirements\n============\n\nnone\n\nAttributes\n==========\n\n- a groups databag filled with your groups\n- a node attribute node['groups'] which will be an array of the groups you want on the system.\n\nUsage\n=====\n\nTo use `recipe[group::data_bag]`, include it in your run\\_list and have a\ndata bag called `\"groups\"` with an item like the following:\n\n    {\n      \"id\"        : \"deploy\",\n      \"gid\"       : \"6001\"\n      \"members\"  : [\"deploy\"]\n    }\n",
+  "maintainer": "Blue Box Group, LLC",
+  "maintainer_email": "support@bluebox.net",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "ajenti",
+  "description": "Installs ajenti panel",
+  "long_description": "Cookbook-ajenti\n========================\nInstalls Ajenti panel everyone wants.\n\nRequirements\n------------\n\napt<br />\nyum<br />\n<br />\nDebian 6-7<br />\nCentOS 6\n\nUsage\n-----\n#### cookbook-ajenti::default\n\nJust include `cookbook-ajenti` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[cookbook-ajenti]\"\n  ]\n}\n```\n\nRepository\n----------\n\nhttp://github.com/methodx/cookbook-ajenti\n\nLicense\n-------\n\nAuthor: Egor Medvedev (<methodx@aylium.net>)",
+  "maintainer": "Egor Medvedev",
+  "maintainer_email": "methodx@aylium.net",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

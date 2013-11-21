@@ -1,0 +1,32 @@
+{
+  "name": "owfs",
+  "description": "Installs OWFS, a 1-wire filesystem.",
+  "long_description": "# chef-owfs\n\n## Description\n\nInstalls [OWFS](http://owfs.org/), a 1-wire filesystem.\n\n## Requirements\n\n### Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n\n## Recipes\n\n* `owfs` - Set up common owfs data\n* `owfs::owserver` - Set up [owserver](http://owfs.org/index.php?page=owserver_protocol)\n\n## Usage\n\n\n## Attributes\n\n\n## TODO\n\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n## Contributors\n\n\n## License\n\n**chef-owfs**\n\n* Freely distributable and licensed under the [MIT license](http://alno.mit-license.org/).\n* Copyright (c) 2013 Alexey Noskov (alexey.noskov@gmail.com) [![endorse](http://api.coderwall.com/alno/endorsecount.png)](http://coderwall.com/alno)\n",
+  "maintainer": "Alexey Noskov",
+  "maintainer_email": "alexey.noskov@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "owfs": "Set up owfs common data",
+    "owfs::owserver": "Set up owserver"
+  },
+  "version": "0.1.0"
+}

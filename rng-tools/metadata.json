@@ -1,0 +1,38 @@
+{
+  "name": "rng-tools",
+  "description": "Installs/Configures rng-tools",
+  "long_description": "Description\n===========\n\nInstalls rng-tools and starts the service.\n\nRequirements\n============\n\nTested on Ubuntu 10.04 and Red Hat 6.3.\n\nAttributes\n==========\n\n* `node['rng_tools']['device']` - the device to use for random data. default /dev/urandom\n\nUsage\n=====\n\nThe rng-tools.default template will use the device in the attribute. This is a non-default value because in a default installation of the rng-tools, the rng-tools service fails to start because the actual default device, /dev/hwrng (Ubuntu) or /dev/hwrandom (RHEL) doesn't always exist.\n\nLicense and Author\n==================\n\nAuthor:: Joshua Timberman (<cookbooks@housepub.org>), Brian Flad (<bflad417@gmail.com>)\n\nCopyright 2012, Joshua Timberman, Brian Flad\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "maintainer": "Joshua Timberman",
+  "maintainer_email": "cookbooks@housepub.org",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "oracle": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "linuxmint": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.1.0"
+}

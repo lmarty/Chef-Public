@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "openindiana",
+  "maintainer_email": "info@digitar.com",
+  "attributes": {
+  },
+  "license": "(c)DigiTar All Rights Reserved. Licensed under the BSD license.",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "DigiTar",
+  "long_description": "Installs/configures OpenIndiana packaging and base system.",
+  "version": "0.5.0",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/configures OpenIndiana packaging and base system.",
+  "providing": {
+  }
+}

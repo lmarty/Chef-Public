@@ -1,0 +1,30 @@
+{
+  "name": "mail_alias",
+  "description": "mail_alias provider",
+  "long_description": "# Mail_alias [![Build Status](https://secure.travis-ci.org/kisoku/chef-mail_alias.png?branch=master)](http://travis-ci.org/kisoku/chef-mail_alias)\n\nDescription\n===========\nManage email aliases programatically with chef\n\nRequirements\n============\n\nShould work on any system that uses sendmail-style alias files and provides\nthe newaliases command\n\nAttributes\n==========\n\nUsage\n=====\n\n\n\n",
+  "maintainer": "Mathieu Sauve-Frankel",
+  "maintainer_email": "msf@kisoku.net",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "minitest-handler": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

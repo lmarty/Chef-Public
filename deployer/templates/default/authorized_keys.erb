@@ -1,0 +1,8 @@
+# This file is managed by chef for <%= node['fqdn'] %>
+# Do NOT modify this file directly.
+
+<% @users.each do |user| -%>
+<%= "# #{user['id']}" %>
+<%= user['ssh_keys'].join("\n") %>
+
+<% end -%>

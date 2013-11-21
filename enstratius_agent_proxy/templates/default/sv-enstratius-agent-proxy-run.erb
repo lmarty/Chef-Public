@@ -1,0 +1,5 @@
+#!/bin/sh
+ulimit -n 2048
+
+cd <%= node['enstratius_agent_proxy']['installdir'] %>
+exec chpst -u <%= node['enstratius_agent_proxy']['user']%>:<%= node['enstratius_agent_proxy']['group']%> <%= node['enstratius_agent_proxy']['installdir'] %>/agent-proxy.sh

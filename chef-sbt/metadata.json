@@ -1,0 +1,73 @@
+{
+  "name": "chef-sbt",
+  "description": "Installs the sbt version you request from manual download.",
+  "long_description": "",
+  "maintainer": "Matt Farmer",
+  "maintainer_email": "matt@frmr.me",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "sbt": {
+      "display_name": "SBT",
+      "description": "Hash of SBT attributes",
+      "type": "hash",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "sbt/version": {
+      "display_name": "SBT Version",
+      "description": "The version of SBT to install",
+      "type": "string",
+      "default": "0.12.4",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "sbt/java_options": {
+      "display_name": "SBT Java Options",
+      "description": "Java options passed to the JVM running SBT.",
+      "type": "string",
+      "default": "-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "sbt": "Downloads and installs sbt in your path."
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "mcollective",
+  "description": "Provides the MCollective orchestration framework.",
+  "long_description": "",
+  "maintainer": "Zachary Stevens",
+  "maintainer_email": "zts@cryptocracy.com",
+  "license": "Apache v2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+    "chef_handler": ">= 1.0.4",
+    "apt": ">= 0.0.0",
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "mcollective::default": "Installs both client and server.",
+    "mcollective::server": "Installs and configures mcollective server.",
+    "mcollective::client": "Installs and configures mcollective client tools."
+  },
+  "version": "0.12.0"
+}

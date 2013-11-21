@@ -1,0 +1,21 @@
+/.vagrant
+/Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+.DS_Store
+
+/cookbooks
+
+# Bundler
+/Gemfile.lock
+/spec/support/Gemfile.lock
+/bin/*
+/.bundle/*
+
+/.kitchen/
+/.kitchen.local.yml
+/.kitchen.yml

@@ -1,0 +1,8 @@
+# -*- conf -*-
+# Generated and committed automatically by Chef. Do not edit.
+
+[gitosis]
+
+[group gitosis-admin]
+writable = gitosis-admin
+members = gitosis@ronja.3ofcoins.net

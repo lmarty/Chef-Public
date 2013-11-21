@@ -1,0 +1,21 @@
+2013-07-22 v0.0.5 clinton at omniti dot com
+  * add :force_update option to enable in-place upgrades
+
+2013-07-15 v0.0.4 clinton at omniti dot com
+  * fix spurious variable in definition of :disable action of nad_script LWRP
+
+2013-07-15 v0.0.3 clinton at omniti dot com
+  * fix bad OS version format in metadata
+
+2013-07-12 v0.0.2 clinton at omniti dot com
+  * centos support
+  * new file naming scheme for installation tarballs
+  * dynamically determine latest release available if not specified
+
+2013-07-11 v0.0.1 clinton at omniti dot com
+  * initial work
+  * nad_script LWRP
+  * configure (ports, conf dir) under ubuntu
+  * install under ubuntu from omnibus tarball
+  * centos planned in next release
+

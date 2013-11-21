@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+  },
+  "name": "chrony",
+  "maintainer_email": "matt@opscode.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "maintainer": "Opscode, Inc.",
+  "long_description": "Description\n===========\nConfigures the time synchronization application `chrony` as a client or master timeserver, maintaining the accuracy of the system clock (similar to NTP). Isolated networks are supported as well.\n\nRecipes\n=======\n\nclient\n------\nConfigures the node to use the `chrony` application to keep the node's clock synced. If there is a node using the `chrony::master` recipe, the client will attempt to sync with it. If there is not an available master, the attribute list `[:chrony][:servers]` is used (defaults are `[0-3].debian.pool.ntp.org`). If there is a master node, the `[:chrony][:allowed]` and `[:chrony][:initslewstep]` will be set to allow for syncing with the master.\n\ndefault\n-------\nThe default recipe passes through to the client recipe.\n\nmaster\n------\nThe node will use the `chrony` application to provide time to nodes using the `chrony::client` recipe. The master sets its own time against the attribute list `[:chrony][:servers]` (defaults are `[0-3].debian.pool.ntp.org`). Access to this master is restricted by the `[:chrony][:allowed]` attribute set in the recipe (default is to the x.y.* subnet). If the `[:chrony][:servers]` are empty, the master will set its `[:chrony][:initslewstep]` to the first 3 client nodes returned by search (it will set it to the first 3 `[:chrony][:servers]` otherwise).\n    \nUsage\n=====\nNodes using the `chrony::client` recipe will attempt to sync time with nodes using the `chrony::master` recipe. If there are no `chrony::master` nodes found, the contents of the attribute list `[:chrony][:servers]` are used (defaults are `[0-3].debian.pool.ntp.org`). \n\nThe current configurations are supported:\n1) Clients with direct NTP server access\n2) A master with direct NTP server access with clients pointing to it\n3) Isolated master and clients, using the `initslewstep` to keep the master and clients synced. Manually setting the server's time may be required.\n\nLicense and Author\n==================\n\nAuthor:: Matt Ray (<matt@opscode.com>)\n\nCopyright 2011 Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures chrony, an application used to maintain the accuracy of the system clock (similar to NTP).",
+  "providing": {
+  }
+}

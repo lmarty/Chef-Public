@@ -1,0 +1,3 @@
+#! /bin/sh
+exec 2>&1
+exec /usr/bin/pen -f <%= @options[:pen_options] %> <%= @options[:port] %> <%= @options[:pen_nodes].join(" ") %>

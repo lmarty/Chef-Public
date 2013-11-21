@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "the_silver_searcher": {
+      "path": "."
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    }
+  }
+}

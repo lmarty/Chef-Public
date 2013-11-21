@@ -1,0 +1,33 @@
+{
+  "name": "ssmtp",
+  "description": "Installs/Configures ssmtp",
+  "long_description": "# ssmtp-cookbook\n\n## Synopsis\n\nThis is a [Chef](http://www.opscode.com/chef) cookbook for deploying [ssmtp](http://linux.die.net/man/8/ssmtp). So far it is tested on Debian (6+) only.\n\n## Requirements\n\n### Miscellaneous\n\n* [Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo) or [Chef Server](http://wiki.opscode.com/display/chef/Chef+Server) environment\n\n### Chef dependencies\n\n* No dependencies yet\n\n## Usage\n\n### Adding the cookbook\n\nAdd it to your Librarian-chef `Cheffile`:\n\n    cookbook 'ssmtp',\n      :git => 'https://github.com/svanzoest/ssmtp-cookbook.git'\n\nOr clone the cookbook into your local chef repository:\n\n    git clone https://github.com/svanzoest/ssmtp-cookbook.git\n\n### Configuration\n\nThe cookbook provides a couple attributes that help you to configure ssmtp via a role's `default_attributes`.\n\nHere's an example role:\n\n\tname 'mail_server'\n\tdescription \"Installs mail related applications.\"\n\t# List of recipes and roles to apply. Requires Chef 0.8, earlier versions use 'recipes()'.\n\trun_list(\n\t  'recipe[ssmtp]'\n\t)\n\t# Attributes applied if the node doesn't have it set already.\n\tdefault_attributes(\n\t  'ssmtp' => {\n\t    'root' => 'user@example.com',\n\t    'rewrite_domain' => 'example.com',\n\t    'mailhub_name' => 'smtp.example.com'\n\t  }\n\t)\n\t# Attributes applied no matter what the node has set already.\n\t#override_attributes(\n\t#)\n\nFor a full list of attributes please consult `./attributes/default.rb`.\n\n#### Authentication\n\t\nThe cookbook provides an attribute called `credential_method` which defines whether authentication credentials are provided in a crypted data bag or via plain text. It defaults to the more secure crypto data bag method.\n\nAvailable options are:\n\n* data_bag\n* plain\n\n##### Creating the data bag\n\n\t|ruby-1.9.3-p194@hosted-chef| nb-madolphs in ~/Development/Personal/Repositories/hosted-chef\n\t± |master ✓| → knife data bag create --secret-file .chef/encrypted_data_bag_secret mail ssmtp\n\tCreated data_bag[mail]\n\tCreated data_bag_item[ssmtp]\t\t\n\t\n\t|ruby-1.9.3-p194@hosted-chef| nb-madolphs in ~/Development/Personal/Repositories/hosted-chef\n\t± |master ✓| → mkdir -p data_bags/mail\n\t\n\t|ruby-1.9.3-p194@hosted-chef| nb-madolphs in ~/Development/Personal/Repositories/hosted-chef\n\t± |master ✓| → knife data bag show mail ssmtp -F json > data_bags/mail/ssmtp.json\n\n##### Viewing the data bag\n\n\t± |master ✗| → knife data bag show --secret-file .chef/encrypted_data_bag_secret mail ssmtp\n\tid:        ssmtp\n\tpassword:  foobar\n\tusername:  user@example.com\n\t\n\t± |master ✗| → knife data bag show --secret-file .chef/encrypted_data_bag_secret -F json mail ssmtp\n\t{\n\t  \"username\": \"user@example.com\",\n\t  \"id\": \"ssmtp\",\n\t  \"password\": \"foobar\"\n\t}\n\n## Development\n\n* Source hosted at [GitHub](https://github.com/svanzoest/ssmtp-cookbook)\n* Report issues/Questions/Feature requests on [GitHub](https://github.com/svanzoest/ssmtp-cookbook/issues) as well\n\nPull requests are very welcome! Make sure your patches are well tested.\n\n## License\n\nCopyright © 2009-2013, Sander van Zoest  \nCopyright © 2012, Mike Adolphs\n\nLicensed under the Apache License, Version 2.0 (the \"License\");  \nyou may not use this file except in compliance with the License.  \nYou may obtain a copy of the License at\n\n     http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software  \ndistributed under the License is distributed on an \"AS IS\" BASIS,  \nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  \nSee the License for the specific language governing permissions and  \nlimitations under the License.\n",
+  "maintainer": "Sander van Zoest",
+  "maintainer_email": "sander@vanzoest.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.1"
+}

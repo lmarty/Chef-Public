@@ -1,0 +1,30 @@
+{
+  "name": "wal-e",
+  "description": "Installs and configures the WAL-E PostgreSQL archiving system",
+  "long_description": "WAL-E Cookbook\n==============\n\nInstalls and configures [WAL-E](https://github.com/wal-e/wal-e) using\nenvdir to store configuration. Sets up a crontab entry to perform base\nbackups. You still need to configure Postgres manually/separately to\narchive WAL files.\n\n(Tested on Debian/Ubuntu only - will probably break on other\ndistributions.)\n\n\nLicense and Authors\n-------------------\nAuthors:\n\n* Russ Garrett (russ@garrett.co.uk)\n",
+  "maintainer": "Russ Garrett",
+  "maintainer_email": "russ@garrett.co.uk",
+  "license": "MIT License",
+  "platforms": {
+  },
+  "dependencies": {
+    "python": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

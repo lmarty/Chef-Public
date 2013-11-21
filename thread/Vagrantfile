@@ -1,0 +1,12 @@
+# vi: set ft=ruby :
+Vagrant::Config.run do |config|
+  
+  config.vm.box = "chef-server"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.network :bridged , :bridge => "en0: Wi-Fi (AirPort)" #:hostonly, "192.168.33.10"
+  config.vm.customize ["modifyvm", :id, "--memory", 512]
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "../"
+    chef.add_recipe("thread::example")
+  end
+end

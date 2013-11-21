@@ -1,0 +1,35 @@
+{
+  "name": "oclint",
+  "description": "Installs/Configures oclint",
+  "long_description": "OCLint Cookbook\n===============\n\nInstall OCLint (http://oclint.org/) on your box.\n\nRequirements\n------------\n\nMac OS or Linux\n\nDepends on `build-essential`, `git` and `python`.\n\n\nAttributes\n----------\n\nTODO\n\n\nUsage\n-----\n\n#### oclint::default\n\nJust include `oclint` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[oclint]\"\n  ]\n}\n```\n\nVagrant\n-------\n\nMake sure [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus) is installed.\n\nRun `vagrant up`.\n\n\nLicense\n-------\n\nUses the [MIT](http://opensource.org/licenses/MIT) license.\n",
+  "maintainer": "Chris Streeter",
+  "maintainer_email": "chris@chrisstreeter.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "build-essential": ">= 0.0.0",
+    "git": ">= 0.0.0",
+    "python": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "Installs OCLint using the node install method",
+    "package": "Installs a pre-built OCLint using the node install method",
+    "source": "Installs OCLint from source"
+  },
+  "version": "0.1.1"
+}

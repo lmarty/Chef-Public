@@ -1,0 +1,46 @@
+{
+  "name": "pdf2image",
+  "description": "pdf2image tools",
+  "long_description": "# DESCRIPTION\n\nInstalls [pdf2image](https://code.google.com/p/pdf2image/). PDF2Image is a conversion library specialized in converting PDF documents to images (png,jpeg,..) and exports text data in XML and JSON format.\n\n\n# REQUIREMENTS\n\n## Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n\n# RECIPES\n\n* `pdf2image` - The default recipe.\n\n# USAGE\n\nThis cookbook installs the pdf2image components if not present.\n\n# ATTRIBUTES\n\n* `node[:pdf2image][:version]`    default: \"0.53\"\n\n## Basic Settings\n\nNone\n\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n\n## License\n\n**chef-pdf2image**\n\n* Freely distributable and licensed under the [MIT license](http://phlipper.mit-license.org/2012/license.html).\n* Copyright (c) 2012 Phil Cohen (github@phlippers.net) [![endorse](http://api.coderwall.com/phlipper/endorsecount.png)](http://coderwall.com/phlipper)\n* http://phlippers.net/\n",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "xpdf": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "pdf2image/version": {
+      "display_name": "Version number",
+      "description": "The version of pdf2image to install",
+      "default": "0.53",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "pdf2image": "Default recipe for installing pdf2image from source"
+  },
+  "version": "1.0.0"
+}

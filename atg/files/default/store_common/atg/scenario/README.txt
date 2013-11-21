@@ -1,0 +1,1 @@
+This is place holder for scenarioManager and internalScenarioManager.xml definition files that will be generated dynamically from template files to accommodate the hostname of different environents.

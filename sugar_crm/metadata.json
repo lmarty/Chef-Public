@@ -1,0 +1,34 @@
+{
+  "name": "sugar_crm",
+  "description": "Installs/Configures SugarCRM Community Edition",
+  "long_description": "# DESCRIPTION:\nThe cookbook downloads SugarCRM Community Edition and configures SugarCRM's silent installer for easy installation. The user must go to http://server/sugarcrm/ to complete installation. \n\n\n# REQUIREMENTS:\n\n# Opscode cookbooks\n\n* mysql\n* php\n* apache2\n* opensssl\n* git\n\n# Platforms\n\nSo far was tested on Ubuntu 10.04, but should work against any platform supported by Opscode apache2, php, and mysql cookbooks.\n\n\n# ATTRIBUTES:\n* sugar_crm[:admin_pass] - sets the admin password for SugarCRM instance (default is admin)\n* sugar_crm[:dir] - Subdirectory to place sugarcrm files. Default is 'sugarcrm' under Apache's webroot (configured in Opscode apach2 cookbook)\n* sugar_crm[:db][:database] - sugarcrm will use this MySQL database to store its data.\n* sugar_crm[:db][:user] - sugarcrm will connect to MySQL using this user.\n* sugar_crm[:db][:password] - Password for the sugarcrm MySQL user. The default is a randomly generated string.\n\nThe random generation is handled with the secure_password method in the openssl cookbook which is a cryptographically secure random generator and not predictable like the random method in the ruby standard library.\n\n# USAGE:\n\nUses Opscode mysql, php, apache2 cookbooks to configure LAMP stack and git to checkout the latest stable build of SugarCRM CE. Cookbook just stages installation, setting values in config_si.php, so the first time the user hits  the instance installation will finish. \n\nAdd the recipe to your node or role and let Chef do the rest.\n\nLogin to application using 'admin' username and password to create additional users. Default admin user's password can be overridden at the role or node level.\n\n#Note\nThis cookbook requires php cookbook with version 1.2.6 or greater\n\n# Author\nAuthor:: NagaLakshmi (nagalakshmi.n@cloudenablers.com)\n\nCopyright:: 2013 CloudEnablers\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.",
+  "maintainer": "nagalakshmi_n",
+  "maintainer_email": "nagalakshmi.n@cloudenablers.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "php": ">= 0.0.0",
+    "apache2": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "openssl": ">= 0.0.0",
+    "git": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

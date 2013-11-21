@@ -1,0 +1,32 @@
+{
+  "attributes": {
+  },
+  "providing": {
+  },
+  "recipes": {
+  },
+  "long_description": "# Synopsis\nInstalls, configures [Pinto](http://search.cpan.org/perldoc?Pinto) application \n\n# Recipes\n* pinto::application - installs Pinto application in standalone mode\n* pinto::server - installs Pinto server ( should be run after pinto::application recipe )\n\n# Attributes \nMay be overridden to alter recipes behaviour \n\n* `node[:pinto][:user]`, `node[:pinto][:group]` - The owner and group of pinto application. The application will be installed into `~/opt/local/pinto` directory\n* `node[:pinto][:user_shell]`, shell for pinto application owner, default is '/bin/bash'\n* `node[:pinto][:host]` - pinto server bind host, default value is **0.0.0.0**\n* `node[:pinto][:port]` - pinto server bind port, default value is **3111**\n* `node[:pinto][:workers]` - number of pinto server workers, default value is **3**\n\n\n# Tested on\n* CentOS-6.4-x86_64, , Chef 10.14.0\n* CentOS-6.3-x86_64-minimal, Chef 10.14.2\n* Debian-6.0.4-64-bit, Chef 11.4.4\n* Ubuntu 10.04.1 LTS, Chef 11.4.4 \n\n# Current release\nhttp://community.opscode.com/cookbooks/pinto\n\n# Contributing \nI use berkshelf for developing / testing pinto cookbook. [Berkshelf](http://berkshelf.com/) is a framework for testing / managing chef cookbooks. \nSo if you are interested in contributing, hacking - berkshelf is the best way to go ahead. Next commands will explain how to start. \n\n## Install berkshelf\n\n    $ gem install berkshelf\n\n## Install vagrant\n[Vagrant](http://www.vagrantup.com/) is the tools for running / provisioning VirtualBox machines. \nBerkshelf and Vagrant are tightly integrated. Berskhelf requires latest version of vagrant. \nVisit the Vagrant downloads page - http://downloads.vagrantup.com/ and download the latest installer for your operating system.\n\n## Install vagrant-berkshelf plugin\nSecond thing we need is berkshelf vagrant plugin. Following command will install the plugin\n\n    $ vagrant plugin install vagrant-berkshelf \n    \n## Fork cookbooks \n\n    $ git clone https://github.com/melezhik/cookbooks.git\n\n## Run vagrant box \nFollowing command will boot vagrant virtual machine, deploy pinto on it and run tests.\n\n    $ cd cookbooks/pinto\n    $ vagrant up\n  \n## Make changes\nChange code and revision your changes running tests again. For standard vagrant work-flow checkout - http://docs.vagrantup.com/v2/\n\n    $ mcedit recipes/application.rb\n    $ vagrant provision\n    \n",
+  "groupings": {
+  },
+  "maintainer": "Alexey Melezhik",
+  "name": "pinto",
+  "recommendations": {
+  },
+  "maintainer_email": "melezhik@gmail.com",
+  "replacing": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "license": "All rights reserved",
+  "description": "Installs/Configures pinto",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "version": "0.1.10",
+  "suggestions": {
+  }
+}

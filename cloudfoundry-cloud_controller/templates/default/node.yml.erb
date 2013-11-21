@@ -1,0 +1,17 @@
+---
+<%
+  default_runtime = case
+  when @runtimes.include?('node08')
+    'node08'
+  else
+    @runtimes.first
+  end
+%>
+name: "node"
+runtimes:
+<% @runtimes.each do |runtime| -%>
+  - "<%= runtime %>":
+      default: <%= runtime == default_runtime %>
+<%- end %>
+detection:
+  - "*.js": '.'

@@ -1,0 +1,40 @@
+{
+  "name": "aegir",
+  "description": "Hosting System for Drupal Sites",
+  "long_description": "# Aegir Cookbook\n\nThe [Aegir][] is a hosting system for deploying and managing large networks of\n[Drupal][] sites. This collection of recipes automate [Aegir][] setup.\n\n\n[Aegir]:http://www.aegirproject.org/\n[Drupal]:http://www.drupal.org/\n",
+  "maintainer": "Yevgeniy Viktorov",
+  "maintainer_email": "craftsman@yevgenko.me",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "sudo": ">= 0.0.0",
+    "nginx": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "openssl": ">= 0.0.0",
+    "php": ">= 0.0.0",
+    "php-fpm": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "aegir": "Install aegir with nginx and php-fpm",
+    "aegir::secure_mysql": "Secure mysql installation"
+  },
+  "version": "0.1.3"
+}

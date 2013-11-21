@@ -1,0 +1,35 @@
+{
+  "name": "aws-cloud-watch-cli-tools",
+  "description": "Installs and configures AWS CloudWatch cli tools",
+  "long_description": "Description\n===========\n\nInstalls [AWS CloudWatch cli tools.](http://aws.amazon.com/developertools/2534).\n\nRequirements\n============\n## Platform\n\nTested on Ubuntu 12.04.1 Should work on any Ubuntu/Debian platforms.\n\n## Cookbooks\n\nOpscode cookbooks:\n\n* aws\n* java\n\n## Data bag\n\n* [aws](http://community.opscode.com/cookbooks/aws)\n\n**IMPORTANT NOTE**\n\n### set correct `java_home` attribute\n    default_attributes(\n      :java => {\n          :java_home => \"/usr/lib/jvm/java-6-openjdk-amd64\"\n       }\n    )\n\nAttributes\n==========\n\nSee `attributes/default.rb` for default values.\n\n* `node[\"aws\"][\"data_bag_item\"]` - Specifies aws data_bag_item containing\n  aws credentials, default `main`.\n\nRecipes\n=======\n\ndefault\n-------\n\nInstalls AWS CloudWatch Command Line Tools\n\nec2-write-memory-metrics\n-------\n\nAdds Memory metrics reporting to CloudWatch:\nReports MemoryFree in MB, % MemoryUsed and SwapUsed in MB\n\nSee `templates/default/ec2-write-memory-metrics.sh` for more details.\n\n\nUsage\n=====\n\nSimply include the `aws-cloud-watch-cli-tools` to install the tools.\nInclude `aws-cloud-watch-cli-tools::ec2-write-memory-metrics` for memory metrics.\n\nLicense and Author\n==================\n\nAuthor:: Vitaly Gorodetsky (<technical@applicaster.com>)\n\nCopyright:: 2013, Applicaster LTD\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Applicaster LTD",
+  "maintainer_email": "technical@applicaster.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "aws": ">= 0.100.6",
+    "java": ">= 1.8.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "aws-cloud-watch-cli-tools": "Installs AWS CloudWatch Command Line Tools",
+    "aws-cloud-watch-cli-tools::ec2-write-memory-metrics": "Adds memory metrics reporting to CloudWatch"
+  },
+  "version": "0.2.0"
+}

@@ -1,0 +1,47 @@
+{
+    "recipes": {
+    },
+    "replacing": {
+    },
+    "attributes": {
+    },
+    "maintainer_email": "marius@promethost.com",
+    "groupings": {
+    },
+    "dependencies": {
+      "xml": [
+
+      ],
+      "git": [
+
+      ],
+      "imagemagick": [
+
+      ],
+      "build-essential": [
+
+      ]
+    },
+    "recommendations": {
+    },
+    "long_description": "= DESCRIPTION:\n\nInstalls diaspora based on the instructions from http://github.com/diaspora/diaspora\nIt will install also mongodb from debian/ubuntu packages like:\nhttp://www.mongodb.org/display/DOCS/Ubuntu+and+Debian+packages\n\n= REQUIREMENTS:\n\n== Platform:\n\nTested on Ubuntu 10.04, Debian Lenny.\n\n== Cookbooks:\n\nOpscode cookbooks (http://github.com/opscode/cookbooks/tree/master)\n\n* build-essential\n* git\n* imagemagick\n* xml\n\n= USAGE:\n\nInclude the diaspora recipe to install diaspora on your system:\n\n  include_recipe \"diaspora\"\n\n= LICENSE and AUTHOR:\n\nAuthor:: Marius Ducea (marius@promethost.com)\n\nCopyright:: 2010, Promet Solutions\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+    "suggestions": {
+    },
+    "platforms": {
+      "debian": [
+
+      ],
+      "ubuntu": [
+
+      ]
+    },
+    "license": "Apache 2.0",
+    "version": "0.1.0",
+    "conflicting": {
+    },
+    "name": "diaspora",
+    "providing": {
+    },
+    "description": "Installs/Configures diaspora",
+    "maintainer": "Promet Solutions"
+  }

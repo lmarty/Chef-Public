@@ -1,0 +1,32 @@
+{
+  "name": "personality",
+  "description": "Installs personality",
+  "long_description": "# chef-personality\n\n## Description\n\nThis cookbook customizes the motd/login feedback (for Ubuntu servers only at the moment) by adding fortunes, read by adorable [`cowsay`](http://www.nog.net/~tony/warez/cowsay.shtml) characters, wrapped up in rainbow [`lolcat`](https://github.com/busyloop/lolcat) sprinkles.\n\n![The cow says...](https://img.skitch.com/20120428-r3365hcrqrjbdhh1nyccan4giw.png)\n\nThis was a quick extraction from a larger existing project, so it's a little rough around the edges at the moment. I have had a fair amount of external interest so I'm putting this out in the hopes that more people help make it more awesome. \n\n\n## Requirements\n\nThis cookbook currently relies on the excellent [`chef-rvm`](https://github.com/fnichol/chef-rvm) cookbook from @fnichol and assumes a system-level `rvm` install. It would be great if this cookbook were totally standalone someday...\n\n\n### Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n\n\n## Recipes\n\n* `personality` - The default recipe.\n\n# Usage\n\nThis cookbook sets up a file using the `update-motd.d` system. There's nothing to do beyond that.\n\n\n## Attributes\n\n* `default[\"personality\"][\"characters\"]` = \"default daemon eyes bong ghostbusters beavis.zen bud-frogs calvin cheese cock milk dragon dragon-and-cow elephant gnu head-in stegosaurus turtle tux\"\n\n\n## Basic Settings\n\nNone\n\n\n## Contributing\n\nThis cookbook could have way more personality... Help make it so!\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n\n## License\n\n**chef-personality**\n\n* Freely distributable and licensed under the [MIT license](http://phlipper.mit-license.org/2012/license.html).\n* Copyright (c) 2012 Phil Cohen (github@phlippers.net) [![endorse](http://api.coderwall.com/phlipper/endorsecount.png)](http://coderwall.com/phlipper)\n* http://phlippers.net/\n",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "personality": "Setup server personality"
+  },
+  "version": "1.0.0"
+}

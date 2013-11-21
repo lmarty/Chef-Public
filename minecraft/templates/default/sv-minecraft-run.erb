@@ -1,0 +1,4 @@
+#!/bin/sh
+cd <%= node['minecraft']['install_dir'] %>
+exec 2>&1
+exec chpst -u <%= node['minecraft']['user'] %>:<%= node['minecraft']['group'] %> /usr/bin/java <%= node['minecraft']['java-options'] %> -Xms<%= node['minecraft']['xms']%> -Xmx<%= node['minecraft']['xmx'] %> -jar <%= node['minecraft']['jar_name'] %> nogui

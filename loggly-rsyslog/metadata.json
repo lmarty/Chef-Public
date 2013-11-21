@@ -1,0 +1,100 @@
+{
+  "name": "loggly-rsyslog",
+  "description": "Installs/Configures rsyslog streaming into Loggly",
+  "long_description": "Description [![Build Status](https://travis-ci.org/hipsnip-cookbooks/loggly-rsyslog.png)](https://travis-ci.org/hipsnip-cookbooks/loggly-rsyslog)\n===========\nA simple cookbook for setting up a server to stream logs into Loggly via a secure\nTCP connection.\n\n> NOTE: The current Loggly cetfificate is broken, so while the connection from rsyslog\nuses TLS, it does not verify the peer, which makes it vulnerable to man in the middle attacks.\n\n\nRequirements\n============\nBuilt to run on systems with Rsyslog installed. Tested on Ubuntu 12.04\n\n\nAttributes\n==========\n\n    ['loggly']['port'] = The Loggly log destination port number (required)\n    ['loggly']['syslog_selector'] = The syslog tags and types to stream into Loggly (defaults to \"*.*\")\n    ['loggly']['resume_retry_count'] = The number of times to retry the sending of failed messages (defaults to unlimited)\n    ['loggly']['queue_disk_space'] = The maximum disk space allowed for queues (defaults to 100M)\n    ['loggly']['enable_tls'] = Whether to encrypt all log traffic going into Loggly (defaults to True)\n\n\nUsage\n=====\nFirst, make sure you set the ['loggly']['port'] attribute in your Role/Environment,\nto the destination port created in Loggly. Then include the `loggly::default` recipe\nin you run list to start streaming all syslog entries to Loggly.\n\n\n### Tailing log files\nThis functionality is currently not available, but will be provided via the Opscode Rsyslog cookbook\n(included as a dependency), where there is an open pull request for it at the time of this writing.\n\n\nDevelopment\n============\nPlease refer to the Readme [here](https://github.com/hipsnip-cookbooks/cookbook-development/blob/master/README.md)\n\n\nLicense and Author\n==================\n\nAuthor:: Adam Borocz ([on GitHub](https://github.com/motns))\n\nCopyright:: 2013, HipSnip Ltd.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "HipSnip Ltd.",
+  "maintainer_email": "adam@hipsnip.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 12.04"
+  },
+  "dependencies": {
+    "rsyslog": "~> 1.5.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "loggly/port": {
+      "display_name": "Port number",
+      "description": "The port number on the Loggly service that we should be sending log entries to",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "recipes": [
+
+      ]
+    },
+    "loggly/syslog_selector": {
+      "display_name": "Syslog Selector",
+      "description": "The syslog tags that should be piped into Loggly - defaults to all",
+      "type": "string",
+      "default": "*.*",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "loggly/resume_retry_count": {
+      "display_name": "Retry Count",
+      "description": "The number of times to retry the sending of failed messages (defaults to unlimited)",
+      "default": "-1",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "loggly/queue_disk_space": {
+      "display_name": "Queue Disk Space",
+      "description": "The maximum disk space allowed for queues",
+      "type": "string",
+      "default": "100M",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "loggly/enable_tls": {
+      "display_name": "Enable TLS",
+      "description": "Whether to encrypt all log traffic going into Loggly",
+      "default": "true",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

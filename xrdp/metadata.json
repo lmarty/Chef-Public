@@ -1,0 +1,33 @@
+{
+  "name": "xrdp",
+  "description": "Installs/Configures xrdp",
+  "long_description": "xrdp Cookbook\n=============\nInstalls and starts up xrdp, a remote server service for Linux that relys on the RDP protocol. Future updates will involve managing the config file as well (assuming that I have time. :) )\n\nRequirements\n------------\nMininum requirements are Ubuntu 12.04 and Fedora 17. For those who wish to contribute, please use ChefSpec for unit testing.\n\nNote that in some cases, the desktop may not comeup when you login. For those on Ubuntu, here is a possible fix:\n\nhttp://askubuntu.com/questions/91657/blank-desktop-when-logging-in-via-xrdp\n\nAttributes\n----------\n* `default['xrdp']['server']['pkg']`\n    - The xrdp package. Defaults to `'xrdp'`\n* `default['xrdp']['server']['svc']` = '\n    - the service script. Defaults to `'xrdp'`\nUsage\n-----\n\nJust include `xrdp` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[xrdp]\"\n  ]\n}\n```\n\nContributing\n------------\nTo Contribute\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Rilindo Foster <rilindo.foster@monzell.com>",
+  "maintainer": "Rilindo Foster",
+  "maintainer_email": "rilindo.foster@monzell.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 12.04",
+    "fedora": ">= 17.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

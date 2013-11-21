@@ -1,0 +1,10 @@
+default['freightyard']['user'] = 'freightyard'
+default['freightyard']['group'] = 'freightyard'
+default['freightyard']['user_home_dir'] = '/srv/freightyard'
+default['freightyard']['root_dir'] = '/srv/freightyard'
+default['freightyard']['gpg_real_name'] = "Freightyard"
+default['freightyard']['gpg_email'] = "freightyard@#{fqdn}"
+default['freightyard']['archs'] = 'i386 amd64'
+default['freightyard']['origin'] = 'Freight'
+default['freightyard']['label'] = 'Freight'
+default['freightyard']['script_revision'] = 'master'

@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "pdftk",
+  "maintainer_email": "aaron@slyness.org",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Heavy Water Software Inc.",
+  "long_description": "= DESCRIPTION:\n\nTo download, build and install pdftk 1.44\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n* default[:pdftk][:source] = \"pdftk-1.44-src.zip\"\n* default[:pdftk][:dir] = \"pdftk-1.44-dist\"\n* default[:pdftk][:uri] = \"http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-1.44-src.zip\"\n\n= USAGE:\n\nrecipe[pdftk]\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures pdftk",
+  "providing": {
+  }
+}

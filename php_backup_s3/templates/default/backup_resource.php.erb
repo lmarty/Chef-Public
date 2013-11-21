@@ -1,0 +1,20 @@
+<?php
+
+// This file is managed by Chef.
+
+// Local edits WILL be overwritten.
+
+<% if @backup_files.length > 0 -%>
+  // Backup Files
+  backupFiles(array(<%= @backup_files.map{|x| "'#{x}'"}.join(',') %>),'<%= @backup_files_prefix %>');
+<% end -%>
+
+<% if @backup_dbs.length > 0 -%>
+  // Backup DBs
+  <% @backup_dbs.each do |backup| -%>
+  <% backup["prefix"] = backup["hostname"] unless backup["prefix"] && backup["prefix"] != '' -%>
+  backupDBs('<%= backup["hostname"] %>','<%= backup["username"] %>','<%= backup["password"] %>','<%= "#{backup["prefix"]}-data" %>','<%= backup["query"] %>');
+  <% end -%>
+<% end -%>
+
+?>

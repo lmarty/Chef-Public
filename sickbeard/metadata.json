@@ -1,0 +1,30 @@
+{
+  "name": "sickbeard",
+  "description": "Installs and configures Sickbeard onto a node",
+  "long_description": "",
+  "maintainer": "Alex Howells",
+  "maintainer_email": "alex@howells.me",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

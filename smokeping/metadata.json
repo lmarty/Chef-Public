@@ -1,0 +1,33 @@
+{
+  "name": "smokeping",
+  "description": "Installs and configures SmokePing server with fping",
+  "long_description": "",
+  "maintainer": "Limelight Networks, Inc.",
+  "maintainer_email": "tsmith@llnw.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apache2": ">= 0.0.0",
+    "perl": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.4.0"
+}

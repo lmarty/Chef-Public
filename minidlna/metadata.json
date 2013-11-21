@@ -1,0 +1,36 @@
+{
+  "name": "minidlna",
+  "description": "Installs/Configures minidlna",
+  "long_description": "# minidlna cookbook\nThis cookbook installs and configures minidlna server.\n\n# Requirements\nNo requirements\n\n# Usage\nSetup the required attributes and keep the \"minidlna::node\" recipe in the\nrun list.\n\n# Attributes\nThe following are the attributes used by this cookbook.\n\n* `node['minidlna']['audio_directories']` - Audio directories\n* `node['minidlna']['video_directories']` - Video directories\n* `node['minidlna']['picture_directories']` - Picture directories\n* `node['minidlna']['db_dir']` - The database directory for minidlna\n* `node['minidlna']['log_dir']` - The log directory for minidlna\n* `node['minidlna']['log_level']` - The log level\n* `node['minidlna']['port']` - The port to listen on\n* `node['minidlna']['friendly_name']` - The friendly name to show to the clients\n* `node['minidlna']['ionotify']` - Whether to use enable/disable ionotify. Valid values: 'yes' and 'no'\n* `node['minidlna']['strict_dlna']` - Whether to enable strict dlna. Valid values: 'yes' and'no'\n* `node['minidlna']['enable_tivo']` - Whether to enable tivo mode. Valid values: 'yes' and'no'\n* `node['minidlna']['notify_interval']` - The ionotify interval to be used if ionotify is enabled\n\n\n# Recipes\n\n## minidlna::node\nThis recipe installs the minidlna package and configures based on the\nattribtues given.\n\n# Author\n\nAuthor:: Kannan Manickam (<me@arangamani.net>)\n",
+  "maintainer": "Kannan Manickam",
+  "maintainer_email": "me@arangamani.net",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "minidlna": "Installs and configures minidlna"
+  },
+  "version": "0.1.0"
+}

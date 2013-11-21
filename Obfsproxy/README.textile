@@ -1,0 +1,12 @@
+h1. Description
+
+p. Install Obfsproxy Server for Debian, Ubuntu, CentOS, and Redhat.
+
+h3. Obfsproxy
+
+obfsproxy is a tool that attempts to circumvent censorship, by transforming the Tor traffic between the client and the bridge. This way, censors, who usually monitor traffic between the client and the bridge, will see innocent-looking transformed traffic instead of the actual Tor traffic. 
+
+h2. Thanks:
+
+# Dlshad Othman [dothman[AT]dlshad.net]
+

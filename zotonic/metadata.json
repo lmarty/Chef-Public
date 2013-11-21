@@ -1,0 +1,35 @@
+{
+  "name": "zotonic",
+  "description": "Installs/Configures Zotonic",
+  "long_description": "",
+  "maintainer": "Arjan Scherpenisse",
+  "maintainer_email": "arjan@miraclethings.nl",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 12.04",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "erlang": ">= 1.2.0",
+    "apt": ">= 1.7.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "zotonic": "Installs Zotonic via PPA or source",
+    "zotonic::ppa": "Installs Zotonic via PPA"
+  },
+  "version": "0.2.0"
+}

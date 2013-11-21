@@ -1,0 +1,10 @@
+= DESCRIPTION:
+Installs atftp as a tftp server. Will install both server and client by default.
+
+= REQUIREMENTS:
+Platform: Ubuntu (10.10 tested)
+
+= ATTRIBUTES:
+
+= USAGE:
+

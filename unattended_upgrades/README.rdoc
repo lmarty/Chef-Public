@@ -1,0 +1,21 @@
+= DESCRIPTION:
+
+Configure APT to do unattended upgrades as security fixes are released.
+
+= REQUIREMENTS:
+
+Ubuntu or maybe Debian
+
+= ATTRIBUTES:
+
+The following node attributes are passed to the APT configuration template:
+
+* unattended_upgrades[:upgrade_email] - email to receive notifications
+
+= USAGE:
+
+  include_recipe "unattended_upgrades"
+
+= CONTRIBUTING:
+
+https://github.com/mcary/unattended_upgrades

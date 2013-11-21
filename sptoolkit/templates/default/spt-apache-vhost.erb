@@ -1,0 +1,42 @@
+<VirtualHost *:80>
+  ServerName <%= @server_name %>
+  ServerAlias <% @server_aliases.each do |a| %><%= a %> <% end %>
+  DocumentRoot <%= @docroot %>
+  RewriteEngine On
+  
+  <Directory <%= @docroot %>>
+    Options FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+  </Directory>
+  
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  <Location /server-status>
+    SetHandler server-status
+
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+  </Location>
+
+  LogLevel info
+  ErrorLog <%= @log_dir %>/<%= @name %>-error.log
+  CustomLog <%= @log_dir %>/<%= @name %>-access.log combined
+
+  RewriteEngine On
+  RewriteLog <%= @log_dir %>/<%= @application_name %>-rewrite.log
+  RewriteLogLevel 0
+
+  # Canonical host, <%= @server_name %>
+  RewriteCond %{HTTP_HOST}   !^<%= @server_name %> [NC]
+  RewriteCond %{HTTP_HOST}   !^$
+  RewriteRule ^/(.*)$        http://<%= @server_name %>/$1 [L,R=301]
+  RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+  RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+  RewriteRule ^.*$ /system/maintenance.html [L]
+</VirtualHost>

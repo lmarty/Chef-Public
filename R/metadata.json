@@ -1,0 +1,29 @@
+{
+  "recommendations": {
+  },
+  "platforms": {
+  },
+  "suggestions": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "recipes": {
+  },
+  "conflicting": {
+  },
+  "license": "Apache 2.0",
+  "providing": {
+  },
+  "maintainer": "ModCloth, Inc.",
+  "replacing": {
+  },
+  "name": "R",
+  "version": "0.0.1",
+  "attributes": {
+  },
+  "maintainer_email": "ops@modcloth.com",
+  "description": "Installs/Configures R",
+  "groupings": {
+  },
+  "dependencies": {
+  }
+}

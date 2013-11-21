@@ -1,0 +1,26 @@
+<?php
+
+/*
+
+This file is managed by Chef.
+
+Any changes made to this file WILL be overwritten.
+
+*/
+
+define('awsAccessKey', '<%= @aws_access_key %>'); // required
+define('awsSecretKey', '<%= @aws_secret_key %>'); // required
+define('awsBucket', '<%= @s3_bucket %>'); // required
+
+// Will this script run "weekly", "daily", or "hourly"?
+define('schedule','<%= @frequency %>'); // required
+
+require_once('include/backup.inc.php');
+
+// You may place any number of .php files in the backups folder. They will be executed here.
+foreach (glob(dirname(__FILE__) . "/backups/*.php") as $filename)
+{
+    include $filename;
+}
+
+?>

@@ -1,0 +1,36 @@
+{
+  "name": "fanfare",
+  "description": "Data bag driven application deployment.",
+  "long_description": "Please refer to README.md (it's long).",
+  "maintainer": "Fletcher Nichol",
+  "maintainer_email": "fnichol@nichol.ca",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "postgresql": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "database": ">= 0.0.0",
+    "nginx": ">= 0.0.0",
+    "user": ">= 0.0.0",
+    "runit": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

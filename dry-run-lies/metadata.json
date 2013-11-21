@@ -1,0 +1,30 @@
+{
+  "name": "dry-run-lies",
+  "description": "Installs/Configures dry-run-lies",
+  "long_description": "# dry-run-lies cookbook\n\n# Requirements\n\n# Usage\n\n# Attributes\n\n# Recipes\n\n# Author\n\nAuthor:: YOUR_NAME (<YOUR_EMAIL>)\n",
+  "maintainer": "Sean OMeara",
+  "maintainer_email": "someara@gmail.com",
+  "license": "Apache2",
+  "platforms": {
+  },
+  "dependencies": {
+    "nfs": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

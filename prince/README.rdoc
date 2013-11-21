@@ -1,0 +1,21 @@
+= DESCRIPTION:
+
+Installs PrinceXML.
+
+Prince is software for converting XML and HTML documents into PDF files by
+applying Cascading Style Sheets.  ( http://www.princexml.com/ )
+
+= REQUIREMENTS:
+
+= ATTRIBUTES:
+
+= USAGE:
+
+Pay license fee, avoiding watermark.
+
+Retrieves the package from the PrinceXML web site and installs.
+
+  # Install files/default/license.dat from cookbook foo as the license.
+  node[:prince][:license_cookbook] = "foo"
+
+  include_recipe "prince"

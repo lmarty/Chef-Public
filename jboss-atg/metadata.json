@@ -1,0 +1,34 @@
+{
+  "conflicting": {
+  },
+  "version": "0.0.3",
+  "maintainer": "John Larsen",
+  "attributes": {
+  },
+  "recommendations": {
+  },
+  "license": "Apache v2.0",
+  "name": "jboss-atg",
+  "replacing": {
+  },
+  "dependencies": {
+    "java": ">= 0.0.0"
+  },
+  "groupings": {
+  },
+  "platforms": {
+    "fedora": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  },
+  "maintainer_email": "john.larsen@addolux.com",
+  "long_description": "= DESCRIPTION:\nJBoss-ATG - JBoss cookbook to accompany the ATG-Cookbook. This cookbook\nwas originally written by Bryan W. Berry under the apache v2.0 License.\nand should only be used with the atg-cookbook. You can find Bryan's\nversion under the opscode community for general JBoss installations.\n\nFor more information about atg cookbook please see http://addolux.com/index.php/services/atg-cookbook\n\n= REQUIREMENTS:\n\njava 1.6\n\n= ATTRIBUTES:\n\n* default['jboss']['jboss_home']  default location for jboss\n* default['jboss']['version'] default version to download\n* default['jboss']['dl_url'] download url\n* default['jboss']['jboss_user'] default jboss user\n* default['jboss']['cglib_jar']  name of the cglib jar which needs to replace the one out of the box.\n\n\n= USAGE:\n\nAccept \n\nAuthor: Bryan W. Berry <bryan.berry@gmail.com>\nLicense: Apache v2.0\n\nModified by John K. Larsen <john.larsen@addolux.com> to accommodate the ATG Cookbook.\nIncluded download method to file storage for jboss eap and cglib.jar\nCustomized version of init_rhel.erb to accommodate ATG for multiple instance.\n",
+  "recipes": {
+    "jboss-atg": "installs jboss eap from file server"
+  },
+  "providing": {
+  },
+  "suggestions": {
+  },
+  "description": "Installs/Configures jboss"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "clonezillalive",
+  "description": "Installs/Configures clonezillalive",
+  "long_description": "clonezillalive Cookbook\n=======================\n\nDeploy Clonezilla-Live for network-booting.\n\nClonezilla then allows to save and restore images of hard-disks.\n\nIf the image is for windows and prepared for example with sysprep, it can be\nused to install several machines over and over again.\n\nRequirements\n------------\n\nThe development of this cookbook happens on debian wheezy (7.1), which makes\nthis the supported platform.\n\n#### cookbooks\n - `tftp`: For the booting\n - `nfs`: For the image store\n\nAttributes\n----------\n\n[None yet]\n\n\nUsage\n-----\n#### clonezillalive::default\n\nThis recipe does nothing. Its there to play it safe if I want to add providers\nand resources to this cookbook.\n\n#### clonezillalive::server\n\nThis recipe grabs the clonezilla live image and unpacks the files needed for\nnetwork-boot. Then it installs tftp and syslinux and configures pxe-booting for\nthe clonezilla image.\n\nContributing\n------------\n\nStandard opensource cookbook rules apply:\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. <del>Write tests for your change (if applicable)</del>\n5. <del>Run the tests, ensuring they all pass</del>\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Arnold Krille (for bcs kommunikationslösungen)\n",
+  "maintainer": "bcs kommunikationsloesungen",
+  "maintainer_email": "Arnold Krille <a.krille@b-c-s.de>",
+  "license": "Apache License, Version 2.0",
+  "platforms": {
+    "debian": ">= 7.0"
+  },
+  "dependencies": {
+    "tftp": ">= 0.0.0",
+    "nfs": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

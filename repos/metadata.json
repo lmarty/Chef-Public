@@ -1,0 +1,43 @@
+{
+  "name": "repos",
+  "description": "Installs/Configures package repositories",
+  "long_description": "Description\n===========\n\nManages repositories for your platform. Currently only Debian-based\ndistributions are supported.\n\nSimple repository source can be described via node attributes. If you\nneed more complicated setup you can use separate recipes, some are\nsupplied with this cookbook.\n\nPlatform\n============\n\n* Debian/Ubuntu\n\nAttributes\n==========\n\n* node['repos'] - List of repositories to be activated by default\n  recipe. Can be either recipe name to be included or attributes hash.\n  The keys in each hash correspond to the attributes passed to the\n  repository resource. Attribute 'type' defines which repository\n  resource will be used, but only 'apt' is supported now.\n\nUsage\n=====\n\nIf repository is defined in a separate recipe you may either add it\ndirectly to run_list, include from your wrapper-cookbook or use\ndata-driven approach and enumerate desired repos in 'repos' attribute\nanywhere you want.\n\nWhen you just need to add simple package source without additional\nactions like pinning, just add attribute hash describing repo in\nnode[\"repos\"] list.\n\nExample use of run_list:\n\n    run_list(\"recipe[repos::percona]\")\n\nExample use of 'repos' attribute\n\n    run_list(\"recipe[repos]\")\n    override_attributes( \"repos\" => ['jenkins-debian-glue', 'backports'] )\n\nExample use of repo hash:\n\n    \"repos\" => ['jenkins-debian-glue',\n      { 'type' => \"apt\",\n        'name' => \"nginx-1.2.6\",\n        'uri'  => \"http://ci.clodo.ru/release/nginx-1.2.6\",\n        'distribution' => \"nginx-1.2.6\",\n        'components' => [\"main\"]\n      },\n    ]\n\nTODO\n====\n\n* Databags support\n",
+  "maintainer": "Stanislav Bogatyrev",
+  "maintainer_email": "realloc@realloc.spb.ru",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "repos": "Adds repos from 'repos' attribute",
+    "percona": "Adds Percona Server repo",
+    "opscode-chef-10": "Adds OpsCode Chef-10 repo",
+    "backports": "Adds Debian backports repo",
+    "jenkins-debian-glue": "Adds jenkins-debian-glue repo",
+    "deb-multimedia": "Adds Debian-Multimedia.org repo",
+    "virtualbox": "Adds Oracle's Debian repo for VirtualBox",
+    "iceweasel": "Iceweasel from mozilla.debian.net",
+    "emacs-snapshot": "Adds repos with emacs snapshots for Debian",
+    "debian": "Debian mirrors",
+    "kitchen-pkg": "Local Chef Kitchen repo"
+  },
+  "version": "0.0.3"
+}

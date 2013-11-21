@@ -1,0 +1,31 @@
+{
+  "name": "easy-iptables",
+  "description": "Installs/Configures easy-iptables",
+  "long_description": "easy-iptables Cookbook\n======================\nInstalls and configures iptables.\n\nRequirements\n------------\nPlatform:\n\n* CentOS\n* RHEL\n\nAttributes\n----------\n\n#### easy-iptables::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['easy-iptables']['tables']</tt></td>\n    <td>Array</td>\n    <td>iptables configurations</td>\n    <td><tt><pre>\n[\n  {\n    \"name\" => \"filter\",\n    \"policies\" => [\n      \":INPUT ACCEPT [0:0]\",\n      \":FORWARD ACCEPT [0:0]\",\n      \":OUTPUT ACCEPT [0:0]\"\n    ],\n    \"rules\" => [\n      \"-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT\",\n      \"-A INPUT -p icmp -j ACCEPT\",\n      \"-A INPUT -i lo -j ACCEPT\",\n      \"-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT\",\n      \"-A INPUT -j REJECT --reject-with icmp-host-prohibited\",\n      \"-A FORWARD -j REJECT --reject-with icmp-host-prohibited\"\n    ]\n  }\n]\n    </pre></tt></td>\n  </tr>\n</table>\n\nUsage\n-----\n#### easy-iptables::default\nSet node['easy-iptables']['tables'] attributes and\ninclude `easy-iptables` in your node's `run_list`:\n\n```json\n{\n  \"easy-iptables\": {\n    \"tables\": [\n      {\n        \"name\": \"filter\",\n        \"policies\": [\n          \":INPUT ACCEPT [0:0]\",\n          \":FORWARD ACCEPT [0:0]\",\n          \":OUTPUT ACCEPT [0:0]\"\n        ],\n        \"rules\": [\n          \"-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT\",\n          \"-A INPUT -p icmp -j ACCEPT\",\n          \"-A INPUT -i lo -j ACCEPT\",\n          \"-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT\",\n          \"-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT\",\n          \"-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT\",\n          \"-A INPUT -j REJECT --reject-with icmp-host-prohibited\",\n          \"-A FORWARD -j REJECT --reject-with icmp-host-prohibited\"\n        ]\n      }\n    ]\n  },\n  \"run_list\": [\n    \"recipe[easy-iptables]\"\n  ]\n}\n```\n\nContributing\n------------\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthor: Hiroaki Nakamura\n",
+  "maintainer": "Hiroaki Nakamura",
+  "maintainer_email": "hnakamur@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "rhel": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,5 @@
+site :opscode
+
+metadata
+
+cookbook "fqdn", :path => '/Users/someara/src/fqdn'

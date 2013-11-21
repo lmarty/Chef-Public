@@ -1,0 +1,45 @@
+#!<%= node[:languages][:ruby][:ruby_bin] %>
+require 'fileutils'
+
+dist = '<%= node[:lsb][:codename] %>'
+source_dir = '<%= node[:builder][:build_dir] %>'
+pack_dir = '<%= node[:builder][:packaging_dir] %>'
+fpm_pkgs = '<%= node[:fpm_tng][:package_dir] %>'
+apt_root = '<%= node[:reprepro][:repo_dir] %>'
+gpg_home = '/root/.gnupg'
+
+if(ARGV.empty? || ARGV.include?('--help') || ARGV.include?('-h'))
+  puts 'pkg-build package remover!'
+  puts '  note: assumes builder and fpm naming are consistent'
+  puts "Usage: #{File.basename(__FILE__)} [--rubygem] pkg1[ pkg2 pkg3...]" 
+  exit 1
+end
+
+gem = ARGV.delete('--rubygem')
+
+ARGV.each do |pkg|
+  build_pkg = gem ? pkg.sub('rubygem-', '') : pkg
+  puts "Removing package: #{pkg}"
+  puts "  --> Deleting builder source(s): "
+  Dir.glob(File.join(source_dir, "#{build_pkg}*")).each do |s_dir|
+    puts "    * Removing directory: #{s_dir}"
+    FileUtils.rm_rf(s_dir)
+  end
+  puts "  --> Deleting builder packaging: "
+  Dir.glob(File.join(pack_dir, "#{build_pkg}*")).each do |p_dir|
+    puts "    * Removing directory: #{p_dir}"
+    FileUtils.rm_rf(p_dir)
+  end
+  puts "  --> Removing fpm package(s): "
+  Dir.glob(File.join(fpm_pkgs, "#{pkg}*")).each do |fpm_pkg|
+    next unless File.basename(fpm_pkg) =~ /^#{pkg}[\.-]/
+    puts "    Deleting: #{fpm_pkg}"
+    FileUtils.rm(fpm_pkg)
+  end
+  print "  --> Removing package from reprepro: "
+  if(%x{sudo -i reprepro -b #{apt_root} remove #{dist} #{pkg}})
+    puts "done"
+  else
+    puts "Failed!"
+  end
+end

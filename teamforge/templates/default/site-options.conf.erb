@@ -1,0 +1,236 @@
+# IMPORTANT: Please read the instructions at help.collab.net before doing any configuration.
+# * Red Hat Enterprise Linux:
+#   http://help.collab.net/topic/sysadmin-620/action/redhat_teamforge-install.html
+# * CentOS:
+#   http://help.collab.net/topic/sysadmin-620/action/centos_teamforge-install.html
+# * SuSE Linux:
+#   http://help.collab.net/topic/sysadmin-620/action/suse_teamforge-install.html
+
+#------------------------
+# Required configuration
+#------------------------
+
+SITE_DIR=/opt/collabnet/teamforge/
+HOST_localhost=<%= node['teamforge']['server']['local_features'].join(' ') %>
+# IMPORTANT : to have reporting also enabled, please use the following
+# HOST_localhost=app database cvs subversion
+# To have codesearch also enabled, please use the following
+# HOST_localhost=app database cvs subversion
+
+DATABASE_TYPE=postgresql
+DATABASE_USERNAME=ctfuser
+DATABASE_PASSWORD=ctfpwd
+DATABASE_NAME=ctfdb
+DATABASE_MAX_POOL_SIZE=220
+DEDICATED_INSTALL=true
+
+#------------------------
+# Optional configuration
+#------------------------
+
+JAVA_HOME=/usr/java/jdk1.6.0_26
+
+# Empty Values to these Reports Tokens will cause create-runtime to Fail. So, these tokens
+# should never be initialized with an empty value.
+REPORTS_DATABASE_USERNAME=
+REPORTS_DATABASE_PASSWORD=
+REPORTS_DATABASE_NAME=
+REPORTS_DATABASE_READ_ONLY_USER=
+REPORTS_DATABASE_READ_ONLY_PASSWORD=
+REPORTS_DATABASE_MAX_POOL_SIZE=30
+
+# Default port for PostgreSQL
+# DATABASE_PORT=5432
+# Defaults to DATABASE_PORT if not specified, using a different port number will setup datamart in a separate instance
+# REPORTS_DATABASE_PORT=5632
+# Default port for Oracle
+# DATABASE_PORT=1521
+# REPORTS_DATABASE_PORT=1521
+# CTF_PGSQL_TMPDIR={__SITE_DIR__}/pgsqltmp/ctf_pgsql_tmp
+# REPORTS_PGSQL_TMPDIR={__SITE_DIR__}/pgsqltmp/reports_pgsql_tmp
+
+
+# Replace localhost with your machine's hostname
+#   and domain with your site's publicly accessible domain.
+DOMAIN_localhost=<%= node['teamforge']['server']['public_site_name'] %>
+
+# Concurrent Users
+MAX_WWW_CLIENTS=220
+
+#### ETL Server
+ETL_JAVA_OPTS=-Xms160m -Xmx512m -server -XX:+HeapDumpOnOutOfMemoryError  -XX:HeapDumpPath=/tmp -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dsun.rmi.dgc.client.gcInterval=600000 -Dsun.rmi.dgc.server.gcInterval=600000
+
+# JBOSS_JAVA_OPTS=-Xms1024m -Xmx1024m -XX:MaxPermSize=512m -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dsun.rmi.dgc.client.gcInterval=600000 -Dsun.rmi.dgc.server.gcInterval=600000
+# INTEGRATION_JAVA_OPTS=-Xms160m -Xmx160m -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dsun.rmi.dgc.client.gcInterval=600000 -Dsun.rmi.dgc.server.gcInterval=600000
+# PHOENIX_JAVA_OPTS=-Xms256m -Xmx256m -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dsun.rmi.dgc.client.gcInterval=600000 -Dsun.rmi.dgc.server.gcInterval=600000 -Dsf.luceneOptimizeEvery=100000
+
+# You cannot use SSL mode if your host token is set to localhost (e.g.
+# HOST_localhost).  Instead, please change the host token to the Fully
+# qualified domain name of your TeamForge Server.  For additional help,
+# please check the documentation on help.collab.net.
+
+# SSL=on
+# SSL_CERT_FILE=
+# SSL_KEY_FILE=
+# SSL_CA_CERT_FILE=
+
+# DATA_DIR={__SITE_DIR__}/var
+# OVERRIDES_DIR={__DATA_DIR__}/overrides
+# FILESTORAGE_LOCATION={__DATA_DIR__}/filestorage
+# DELETED_FILES_LOCATION={__DATA_DIR__}/deleted_files
+# SEARCH_INDEX_LOCATION={__DATA_DIR__}/searchIndex
+# SCM_REPOSITORY_ARCHIVE={__DATA_DIR__}/scm-archive
+# DATA_ETC_LOCATION={__DATA_DIR__}/etc
+# LOG_DIR={__SITE_DIR__}/log
+# LOG_ARCHIVE_DIR={__SITE_DIR__}/log-archive
+
+#ADHOC_QUERY_RESULTS_LIMT=1000
+##Time in milliseconds.
+#ADHOC_QUERY_CONNECTION_TIMEOUT=15000
+# JAMES_MTA_HOST={__SITE_HOST__}
+# JAMES_SMTP_PORT=25
+# JAMES_POSTMASTER_EMAIL=root@localhost
+# JAMES_ADMIN_USER=admin
+# JAMES_ADMIN_PASSWORD=admin
+JAMES_ACCEPTED_RELAYS=127.0.0.1,{__CEE_DOMAIN__}
+# JAMES_GATEWAY_HOST=
+# JAMES_GATEWAY_PORT=25
+
+# DEFAULT_LOCALE=en
+# SUPPORTED_LOCALES=en,en_GB,ja,ko,zh_CN
+# MAIL_CHARACTER_ENCODING_ASCII=us-ascii
+# MAIL_TRANSFER_ENCODING_ASCII=7bit
+# MAIL_CHARACTER_ENCODING_MB=utf-8
+# MAIL_TRANSFER_ENCODING_MB=base64
+# DEFAULT_EXPORT_ENCODING=utf-8
+
+# Default web settings for RedHat
+# HTTPD_USER=apache
+# HTTPD_SERVER_ROOT=/etc/httpd
+# HTTPD_SERVICE_CMD=/etc/init.d/httpd
+# HTTPD_DOCUMENT_ROOT=/var/www/html
+# Default web settings for SuSE
+# HTTPD_USER=wwwrun
+# HTTPD_SERVER_ROOT=/etc/apache2
+
+# MINIMUM_PASSWORD_LENGTH=8
+# PASSWORD_REQUIRES_MIXED_CASE=true
+# PASSWORD_REQUIRES_NON_ALPHANUM=true
+# PASSWORD_REQUIRES_NUMBER=true
+# When REQUIRE_USER_PASSWORD_CHANGE is set to true then it forces a user to change password during first login
+# REQUIRE_USER_PASSWORD_CHANGE=true
+# REQUIRE_PASSWORD_SECURITY=true
+#Only if REQUIRE_PASSWORD_SECURITY is set to true the LOGIN_ATTEMPT_LOCK and PASSWORD_HISTORY_AGE below will function
+
+# Special accounts - these accounts will not be expired (comma separated list).
+# They still may be locked for failed login attempts and must still follow
+# password rules.
+
+USERS_WITH_NO_EXPIRY_PASSWORD=admin,nobody,system,scmviewer
+
+# LOGIN_ATTEMPT_LOCK=3
+# PASSWORD_HISTORY_AGE=5
+# When dictionary check is enabled by setting ALLOW_PASSWORD_DICTIONARY_WORD to false ensure that
+# the MINIMUM_PASSWORD_LENGTH is set > 6 chars
+# ALLOW_PASSWORD_DICTIONARY_WORD=true
+
+# DISABLE_USER_SELF_CREATION=false
+# APPROVE_NEW_USER_ACCOUNTS=false
+# USER_ACCOUNT_RESTRICTED=true
+
+# USE_EXTERNAL_USER_AUTHENTICATION=false
+
+# HELP_AVAILABILITY=remote
+# REMOTE_HELP_URL=http://help.collab.net
+
+# MONITORING_EMAIL_FROM_ADMINISTRATOR=false
+# MONITORING_EMAIL_CC_SELF_DEFAULT=false
+
+# WANDISCO_SVN_REPLICATOR_DIR=/usr/local/svn-replicator
+# WANDISCO_SVN_REPLICATOR_PORT=9999
+# WANDISCO_SVN_DCONENET_HOST=localhost
+# WANDISCO_SVN_DCONENET_PORT=6444
+
+# SESSION_TIMEOUT=30
+# Query with running time longer than this value (msec) will be logged 
+# LOG_QUERY_TIME_THRESHOLD=1000
+
+# Set a value for this option to enable anonymous soap access
+# IMPORTANT: Please provide a value if etl is enabled
+SOAP_ANONYMOUS_SHARED_SECRET=
+
+# IMPORTANT: Please provide a value if etl is enabled.
+ETL_SOAP_SHARED_SECRET=
+
+# This option is for use by CollabNet personnel only. Do not edit.
+# DISABLE_VELOCITY_CACHE=false
+
+# By default, we want custom event handlers to be added through UI in BTF
+ENABLE_UI_FOR_CUSTOM_EVENT_HANDLERS=true
+# This option disables the creation of site integrations. By default,
+# this feature is enabled.
+# DISABLE_CREATE_INTEGRATION_SERVERS=false
+
+#This option could enable/disable the organization field inclusion
+# in the user create page.
+#INCLUDE_ORGANIZATION_USER_FIELD=true
+#This option would allow other users to edit organization field other
+# than super/site-admin users.
+#ORGANIZATION_EDITABLE=true
+
+#This option is to allow anonymous(guest) users to view domain home page.
+#ALLOW_ANONYMOUS_ACCESS_TO_DOMAIN_HOME=false
+
+# The default Project Access permission. Default: private; Possible values: private, gated, public
+#DEFAULT_PROJECT_ACCESS=private
+
+# Specifies if the Project Access permission can be changed after the project is created.
+# Site administrators can edit project access regardless of this setting.
+#PROJECT_ACCESS_EDITABLE=true
+
+# The timezone to use for displaying times and dates.
+# The ID for a Timezone, either a full name such as "America/Los_Angeles", or 
+# a custom ID in the form GMT[+|-]hh[[:]mm] such as "GMT-08:00", or
+# a three-letter abbreviation such as "PST".
+# Assumes the default timezone of the JVM, if undefined.
+# Note: A full name such as "America/Los_Angeles" will be displayed as its
+# equivalent three-letter abbreviation (PST) in the application.
+#DISPLAY_TIMEZONE=
+
+
+# changing user to janitor
+#SCLOGROT_DEST_USER=janitor
+#SCLOGROT_SOURCE_GROUP=janitor
+#SCLOGROT_SOURCE_USER=janitor
+#SCLOGROT_TRANSFER_LOGTYPES=apps httpd integration james pgsql projecttraker runtime codesearch gerrit
+#SCLOGROT_HOST=cu193.cubit.sp.collab.net
+#SCLOGROT_DEST_DIR=/tmp
+#SCLOGROT_SOURCE_DIR=/var/log/collabnet
+#SCLOGROT_MAX_KBYTES_PER_DIRECTORY=200000
+#SCLOGROT_MAX_KBYTES_TOTAL=800000
+#SCLOGROT_PUSH_TO_LOGHOST=true
+
+# Limit for CodeSearch results
+BDCS_SDK_SEARCH_LIMIT_MAX=200
+
+# Whether User-View permission of user has to be checked before
+# displaying full user details in View User Page -
+# If set to true, the following fields will be displayed
+# only if user has User-View permission :
+# organization,email,alternate email, isSiteAdmin
+#USER_NEED_PERMISSION_TO_VIEW_FULL_USER_DETAILS=false
+
+#Minimum length for username
+#MINIMUM_USERNAME_LENGTH=0
+
+#User ResourceCache MaxSize Limit
+#USER_RESOURCE_CACHE_MAX_SIZE_LIMIT=8000
+
+# Postgres tunning Parameters
+#
+# max_connections = <num> — This option sets the maximum number of database backend to have at any one time. Use this feature to ensure that you do not launch so many backends that you begin swapping to disk and kill the performance of all the children. Depending on your application it may be better to deny the connection entirely rather than degrade the performance of all ofthe other children.
+PGSQL_MAX_CONNECTIONS=220
+
+# http://help.collab.net/topic/sysadmin-620/action/redhat_teamforge-install_6201.html
+# Must be set to a random value between 16-24 characters
+SCM_DEFAULT_SHARED_SECRET=<%= node['teamforge']['server']['scm_default_shared_secret'] %>

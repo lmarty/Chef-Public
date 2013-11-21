@@ -1,0 +1,32 @@
+{
+  "name": "application_nodejs",
+  "description": "Deploys and configures Node.js applications",
+  "long_description": "## Description\n\nThis cookbook is designed to be able to describe and deploy Node.js web applications using Upstart.\n\nNote that this cookbook provides the Node-specific bindings for the `application` cookbook; you will find general documentation in that cookbook.\n\n## Requirements\n\nChef 0.10.0 or higher required (for Chef environment use).\n\nUpstart 1.4 or higher for the use of `setuid` in the default Upstart configuration template.\nThis requirement can be worked around by specifying a custom template.\n\nThe following Opscode cookbooks are dependencies:\n\n* application\n* nodejs\n\n## Resources/Providers\n\nThe `nodejs` sub-resource LWRP deals with deploying Node.js applications using Upstart. It is not meant to be used by itself; make sure you are familiar with the `application` cookbook before proceeding.\n\n### Attribute Parameters\n\n- **npm**: If `true`, `npm` will be used to install the dependencies specified in `packages.json`. Defaults to `true`.\n- **template**: The name of the template that will be used to create the Upstart configuration file. If specified, it will be looked up in the application cookbook. Defaults to `nodejs.upstart.conf.erb` from this cookbook.\n- **entry_point**: The argument to pass to node. Defaults to `app.js`.\n\n## Usage\n\nHere is an example hello world application using [Express](http://expressjs.com):\n\n```\napplication \"hello-world\" do\n  path \"/srv/node-hello-world\"\n  owner \"www-data\"\n  group \"www-data\"\n  packages [\"git\"]\n\n  repository \"git://github.com/visionmedia/express.git\"\n  \n  nodejs do\n    entry_point \"examples/hello-world\"\n  end\nend\n```\n\n## License and Author\n\nAuthor:: Conrad Kramer (<conrad@kramerapps.com>)\n\nCopyright 2013, Kramer Software Productions, LLC.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Conrad Kramer",
+  "maintainer_email": "conrad@kramerapps.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 12.04"
+  },
+  "dependencies": {
+    "nodejs": ">= 0.0.0",
+    "application": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.1"
+}

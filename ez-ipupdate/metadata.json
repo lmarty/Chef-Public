@@ -1,0 +1,29 @@
+{
+  "name": "ez-ipupdate",
+  "description": "Installs/Configures ez-ipupdate",
+  "long_description": "ez-ipupdate Cookbook\n====================\nInstalls the ez-ipdate service under Opscode Chef\n\nRequirements\n------------\nPlatforms: \nTested on Fedora. May work on other Linux platforms.\n\nAttributes\n----------\n\n* `['ez-ipupdate']['package_name']` - Package name. Defaults to `ez-ipupdate`.\n* `['ez-ipupdate']['package_config']` - Location of config file. Defaults to `/etc/ez-ipdate/default`\n* `['ez-ipupdate']['username']` - Provider user name. Defaults to `username`.\n* `['ez-ipupdate']['password']` - Your DNS update provider password. Defaults to `password`.\n* `['ez-ipupdate']['host']` - The hostname of your domain hosted at your DNS provider. Defaults to `host`.\n* `['ez-ipupdate']['service-type']` - The name of your DNS provider. Defaults to `provider`.\n* `['ez-ipupdate']['interface']` - The internet facing interface on your server or desktop. Defaults to `eth0`.\n\nUsage\n-----\n\nJust include `ez-ipupdate` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[ez-ipupdate]\"\n  ]\n}\n```\n\nAnd then override the attributes.\n\nContributing\n------------\nIf you wish to contribute:\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Rilindo.Foster <rilindo.foster@monzell.com>\n=======\ncookbook-ez-ipupdate\n====================\n",
+  "maintainer": "Riindo Foster",
+  "maintainer_email": "rilindo.foster@monzell.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.8"
+}

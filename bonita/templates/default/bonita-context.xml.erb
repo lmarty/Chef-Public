@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context docBase="<%= @war %>" path="/bonita" debug="5" reloadable="false" crossContext="true" allowLinking="true">
+  <Environment name="appEnvironment" value="<%= node.chef_environment %>" type="java.lang.String" override="false"/>
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+    <Resource name="bonita/default/journal"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="100"
+              minIdle="10"
+              maxWait="10000"
+              initialSize="1"
+              maxPoolSize="15"
+              minPoolSize="3"
+              maxConnectionAge="0"
+              maxIdleTime="1800"
+              maxIdleTimeExcessConnections="120"
+              idleConnectionTestPeriod="30"
+              acquireIncrement="3"
+              testConnectionOnCheckout="true"
+              removeAbandoned="true"
+              logAbandoned="true"
+              username="<%= node["bonita"]["database"]["jdbc"]["username"] %>"
+              password="<%= node["bonita"]["database"]["jdbc"]["password"] %>"
+              driverClassName="<%= node["bonita"]["database"]["jdbc"]["driver"] %>"
+              url="<%= node['bonita']['database']['jdbc']['journal']['url'] %>"/>
+
+      <Resource name="bonita/default/history"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="100"
+              minIdle="10"
+              maxWait="10000"
+              initialSize="1"
+              maxPoolSize="15"
+              minPoolSize="3"
+              maxConnectionAge="0"
+              maxIdleTime="1800"
+              maxIdleTimeExcessConnections="120"
+              idleConnectionTestPeriod="30"
+              acquireIncrement="3"
+              testConnectionOnCheckout="true"
+              removeAbandoned="true"
+              logAbandoned="true"
+              username="<%= node["bonita"]["database"]["jdbc"]["username"] %>"
+              password="<%= node["bonita"]["database"]["jdbc"]["password"] %>"
+              driverClassName="<%= node["bonita"]["database"]["jdbc"]["driver"] %>"
+              url="<%= node['bonita']['database']['jdbc']['history']['url'] %>"/>
+</Context>

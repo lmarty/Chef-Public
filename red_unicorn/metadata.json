@@ -1,0 +1,30 @@
+{
+  "name": "red_unicorn",
+  "description": "Installs and configures red_unicorn",
+  "long_description": "RedUnicorn\n==========\n\nThis cookbook installs the red_unicorn gem and provides an easy to use\nLWRP for configuring a unicorn application with bluepill monitoring.\n\nUsage\n=====\n\n```ruby\nred_unicorn_config 'my_application' do\n  preload_app node[:app][:preload]\n  worker_processes node[:app][:workers]\n  start_grace_time node[:bluepill][:start_grace_time]\n  stop_grace_time node[:bluepill][:stop_grace_time]\n  restart_grace_time node[:bluepill][:restart_grace_time]\n  max_memory_usage_mb node[:bluepill][:mem_usage_mb]\n  max_cpu_usage_percent node[:bluepill][:cpu_usage_percent] \nend\n```\n\nCookbook Dependencies\n=====================\n\n* Bluepill\n\nNotes\n-----\n\nThis version only provides bluepill based support. Other setup options on the way.\n\nInfo\n====\n\nRepository: https://github.com/hw-cookbooks/red_unicorn\nIRC: #heavywater @ Freenode\n\nred_unicorn: https://github.com/chrisroberts/red_unicorn\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "bluepill": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

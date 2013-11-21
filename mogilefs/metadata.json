@@ -1,0 +1,32 @@
+{
+  "name": "mogilefs",
+  "description": "Installs/Configures MogileFS",
+  "long_description": "Refer to README.md, it's too long to IO.read.",
+  "maintainer": "En Masse Entertainment",
+  "maintainer_email": "jamie@enmasse.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "perl": "~> 0.10.0",
+    "runit": "~> 0.14.2"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.5"
+}

@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "deis": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.1.2"
+    },
+    "rsyslog": {
+      "locked_version": "1.8.0"
+    },
+    "sudo": {
+      "locked_version": "2.2.0"
+    }
+  }
+}

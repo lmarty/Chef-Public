@@ -1,0 +1,31 @@
+{
+  "name": "monit_bin",
+  "description": "Installs/Configures monit_bin",
+  "long_description": "# monit_bin cookbook\n[![Build Status](https://secure.travis-ci.org/higanworks-cookbooks/monit_bin.png?branch=master)](https://travis-ci.org/higanworks-cookbooks/monit_bin)\n\n* Install monit from source.\n* Include setting tools monitensite, monitdisite.\n* Add LWRP for created configs.\n\n# Requirements\n\n* make (build-essential)\n\n# Platform\n\n- ubuntu\n- SmartOS\n\n# Usage\n\n`recipe[monit]` to default install.\n\n### call from other recipe\n\n<pre><code>include_recipe \"monit_binaries\"\n\n----\n  put config from template to /etc/monit/conf.avail/\n----\n\n# enable\nmonit_binaries \"myapp.conf\"\n\n# disable\nmonit_binaries \"myapp.conf\" do\n  enable false\nend\n</code></pre>\n\n\n### monitensite monitdisite\n\nThese tools contorol monit setting like a2ensite,a2disite.\n\nPut your confing to `/etc/monit/conf.avail/` and...\n\n** To enable setting**\n\n    monitensite postfix.conf  \n    monit reload\n\n** To disable setting**\n\n    monitdisite postfix.conf\n    monit reload\n\n\n# Attributes\n\nTODO: Write attributes...\n\n# Resources and Providers\n\n### monit_bin\n\nCall monitensite and monit disite.\n\n**Example**\n<pre><code>monit_bin \"postfix\" do\n  action :enable\nend</code></pre>\n\n### monti_bin_check_system\n\nbuild config for system resource with poricy strings.\n\n**Example**\n<pre><code>monit_bin_check_system \"localperf\" do\n  action :create\n  policies [\"if memory usage > 70 % then alert\"]\nend</code></pre>\n\n\n### monti_bin_check_filesystem\n\nbuild config for filesystem resource with poricy strings.\n\n**Example**\n<pre><code>monit_bin_check_filesystem \"rootfs\" do\n  action :create\n  path \"/\"\n  policies [\"if space usage > 70 % then alert\"]\nend</code></pre>\n\n### monti_bin_check_process\n\nbuild config for process resource with poricy strings.\n\n**Example**\n<pre><code>monit_bin_check_process \"sshd\" do\n  action :create\n  type \"pid\"\n  pidfile \"/var/run/sshd.pid \"\n  start_program \"/usr/sbin/service ssh start\"\n  stop_program \"/usr/sbin/service ssh stop\"\nend</code></pre>\n\n\n# Recipes\n\n* default: install monit from souce.\n* include: just define monit as service resource.\n* services: monitoring services. setting from attributes.\n* smartos_inittab: install and regist inittab for smartos. Smartos use this insted of default.\n\n# Test\n\n`kitchen test`\n\n# Author\n\nAuthor:: HiganWorks LLC (<sawanoboriyu@higanworks.com>)\n",
+  "maintainer": "HiganWorks LLC",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

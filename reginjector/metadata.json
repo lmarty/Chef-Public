@@ -1,0 +1,30 @@
+{
+  "replacing": {
+  },
+  "maintainer": "Smashrun, Inc.",
+  "license": "Apache 2.0",
+  "description": "Installs/Configures reginjector to push registry changes to Windows machines",
+  "version": "0.2.0",
+  "groupings": {
+  },
+  "providing": {
+  },
+  "name": "reginjector",
+  "long_description": "Description\n===========\n\nIt is a straightforward exercise to manage windows registry changes by either exporting or just writing out the registry changes to templates and then using a batch file wrapper around regedit to inject them into the registry.  Updates to the registry files will cause them to be reinjected.  Batch file was necessary for early versions of chef and windows; later versions of chef and windows work with the new \"batch\" resource.\n\nRequirements\n============\n\nThis cookbook does not have any other dependencies than regedit.  It should work on all versions of windows, without exception.  Versions of this cookbook prior to 0.2.0 did not work properly with 64bit windows OS'; however, that has been fixed with Chef version 11.6.0+ and reginjector >= 0.2.0.\n\nAttributes\n==========\n\nMinimal.  I deploy a small number of registry changes across the board, and they are stored in an attribute array on the nodes.\n\nUsage\n=====\n\nAdd the default recipe to your run_list.  Add appropriately formatted .reg files to the templates directory, and then update the payload array to deploy them.\n",
+  "recommendations": {
+  },
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "maintainer_email": "support@smashrun.com",
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "recipes": {
+  },
+  "attributes": {
+  },
+  "dependencies": {
+  }
+}

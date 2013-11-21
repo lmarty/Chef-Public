@@ -1,0 +1,20 @@
+---
+language: ruby
+rvm:
+- 1.9.3
+- 2.0.0
+env:
+  global:
+  - COVERAGE=1
+  - MIN_COVERAGE=85
+install:
+- bundle install
+- bundle exec berks install --path vendor/cookbooks
+before_script: rm -rf ./coverage
+script:
+- bundle exec foodcritic --epic-fail any .
+- bundle exec rspec --format doc
+notifications:
+  email:
+    recipients:
+    - d.buch+attrbagger-cookbook@modcloth.com

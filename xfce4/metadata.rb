@@ -1,0 +1,8 @@
+name              "xfce4"
+maintainer        "Phil Cohen"
+maintainer_email  "github@phlippers.net"
+license           "MIT"
+description       "Sets up xfce4 desktop environment"
+version           "0.1.0"
+supports          "ubuntu"
+recipe            "default", "Sets up xfce4 desktop environment"

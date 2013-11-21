@@ -1,0 +1,37 @@
+{
+  "providing": {
+  },
+  "replacing": {
+  },
+  "maintainer": "Mark Hibberd",
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "long_description": "# Description\n\nA quick and easy way to manage system packages.\n\nThis package uses attributes or data bag metadata to\ncontrol package installation using the default system\npackage manager.\n\nThe motivation for this cookbook is to provide a quick\nbootstrap for platforms that are not supported by most\npublished cookbooks (for my use this is FreeBSD and\nArch Linux). You can quickly build up a role from\nsystem packages without the need to create lots of\nsingle purpose cookbooks to install standard packages\non these systems.\n\n\n# Requirements\n\n## Chef\n\nNo specific version requirements. There are no external\ndependencies. Tested on 11.4.0.\n\n## Platform\n\nThe following platforms have been tested with this cookbook, meaning that the\nrecipes run on these platforms without error:\n\n * FreeBSD\n * Arch Linux\n * Ubuntu\n\n# Installation\n\nThere are several ways you can install this cookbook.\n\n### <a name=\"installation-platform\"></a> From the Opscode Community Platform\n\nTo install this cookbook from the Opscode platform, use the *knife* command:\n\n    knife cookbook site install package-driver\n\n### <a name=\"installation-librarian\"></a> Using Librarian-Chef\n\n[Librarian-Chef][https://github.com/applicationsonline/librarian-chef]\nis a bundler for your Chef cookbooks.  Include a reference to the\ncookbook in a `Cheffile` and run `librarian-chef install`.\n\nTo reference the latest published version:\n\n    cookbook 'package-driver', '>= 0.1.0'\n\nTo reference the github version:\n\n    cookbook 'package-driver'\n      :github => 'markhibberd/package-driver'\n\nThen run:\n\n    librarian-chef install\n\n# Usage\n\nCreate items in the `packages` databag containing your package\nlistings, specify `recipe[package-driver]` in your run list and\npopulate the 'packages' attribue to indicate which `packages`\nlistings to install.\n\nA basic `packages` data-bag item, `data_bags/packages/haskell.json`:\n\n    {\n      \"id\": \"server\",\n       \"packages\": [\n           \"ghc\",\n           \"cabal-install\"\n       ]\n    }\n\nA role demonstration:\n\n    name 'demo'\n    description 'Role for a demo node.'\n\n    default_attributes 'packages' => [ 'server' ]\n\n    run_list  'recipe[package-driver]'\n\n\n# Recipes\n\n## default\n\nInstall a list of packages, specified by data bag. The default data\nbag is `packages`. And the list of items to install is set on\n`node['packages']`.\n\n# Attributes\n\n## `data_bag`\n\nSpecify the name of the data bag to pull package information from, default `packages`.\n\n## `items`\n\nSpecify the _name_ of the attribute to use to populate the package lists, default `packages`.\n\n# Resources and Providers\n\nNone yet.\n\n# Development And Issues\n\n* [https://github.com/markhibberd/package-driver](https://github.com/markhibberd/package-driver)\n\n* [Issues](https://github.com/markhibberd/package-driver/issues)\n\n* [http://community.opscode.com/cookbooks/package-driver](http://community.opscode.com/cookbooks/package-driver)\n\nThe implementation is currently pretty sparse. There is a plan to add more in the near future. Any suggestions, issues or patches are very welcome.\n\n# License and Author\n\nAuthor:: Mark Hibberd <mark@hibberd.id.au>\n\nCopyright:: 2013, Mark Hibberd\n\nAll code is copyright 2013 Mark Hibberd <mark@hibberd.id.au>\n\nAll code is licensed under a 3-point BSD style license.\n\nSee LICENSE or https://github.com/markhibberd/package-driver/blob/master/LICENSE.\n\n\n## Related\n\n * [user](http://community.opscode.com/cookbooks/user) - Creates users from data bags using a similar process.\n * [dpkg_packages](http://community.opscode.com/cookbooks/dpkg_packages) - Installs debian packages using, among other things, data bags for specifying details.\n",
+  "description": "package-driver: data-bag driven package installs.",
+  "recommendations": {
+  },
+  "license": "BSD3",
+  "maintainer_email": "mark@hibberd.id.au",
+  "version": "0.1.1",
+  "dependencies": {
+  },
+  "platforms": {
+    "arch": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "freebsd": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  },
+  "recipes": {
+    "package-driver": "data-bag driven package installs."
+  },
+  "groupings": {
+  },
+  "suggestions": {
+  },
+  "name": "package-driver"
+}

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+  RUBYVER=<%= @version %>
+  BINDIR=<%= node[:pkg_build][:ruby][:install_prefix] %>/bin
+  update-alternatives --install /usr/bin/gem gem ${BINDIR}/gem${RUBYVER} <%= @priority %>
+  update-alternatives --install /usr/bin/ruby ruby ${BINDIR}/ruby${RUBYVER} <%= @priority %> \
+    --slave /usr/bin/erb erb ${BINDIR}/erb${RUBYVER} \
+    --slave /usr/bin/testrb testrb ${BINDIR}/testrb${RUBYVER} \
+    --slave /usr/bin/irb irb ${BINDIR}/irb${RUBYVER} \
+    --slave /usr/bin/rdoc rdoc ${BINDIR}/rdoc${RUBYVER} \
+    --slave /usr/bin/ri ri ${BINDIR}/ri${RUBYVER} \
+    --slave /usr/bin/rake rake ${BINDIR}/rake${RUBYVER}
+fi

@@ -1,0 +1,29 @@
+{
+  "name": "ldap",
+  "description": "Installs/Configures ldap",
+  "long_description": "# ldap cookbook\n\nNAMESPACE SQUAT!\n\n# Requirements\n\n# Usage\n\n# Attributes\n\n# Recipes\n\n# Author\n\nAuthor:: Apache v2 (<Sean OMeara <someara@opscode.com>>)\n",
+  "maintainer": "Apache v2",
+  "maintainer_email": "Sean OMeara <someara@opscode.com>",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

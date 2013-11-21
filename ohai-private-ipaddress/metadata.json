@@ -1,0 +1,30 @@
+{
+  "name": "ohai-private-ipaddress",
+  "description": "Ohai plugin for getting a node's private IP address (RFC 1918)",
+  "long_description": "",
+  "maintainer": "Wanelo.com",
+  "maintainer_email": "ops@wanelo.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "ohai": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "ec2-bundle-vol",
+  "maintainer_email": "craig@trampolinesystems.com",
+  "attributes": {
+  },
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "trampoline systems ltd",
+  "long_description": "= DESCRIPTION:\n\nbundles and uploads a new ec2 ami from the running instance. use chef to install\nthe instance from scratch, and create an ami from the result, ready to use\nwith auto-scaling\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "bundles and uploads a new ec2 ami from the running instance",
+  "providing": {
+  }
+}

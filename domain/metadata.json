@@ -1,0 +1,29 @@
+{
+  "name": "domain",
+  "description": "Installs/Configures domain membership",
+  "long_description": "Domain Cookbook\n======================\nEnables management of membership to an Active Directory domain through an LWRP.\n\nRequirements\n------------\nThis cookbook currently applies only to the Windows platform.\n\nUsage\n-----\n#### domain::member\n\nInclude `domain_member` resource in your recipe and provide a value for the\n`'domain'` attribute, along with credentials valid in the domain for joining a\nsystem via the domain_user and domain_password attributes.\n\n```\ndomain_member do\n  domain 'mydomain.myorg.org'\n  domain_user 'myuser'\n  domain_password 'mypass'\n  organizational_unit 'OU=mycomputers,DC=mydomain,DC=myorg,DC=org' # optional\nend\n```\n\nContributing\n------------\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write your change\n4. Write tests for your change\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\n\n|                      |                                          |\n|:---------------------|:-----------------------------------------|\n| **Author:**          | Adam Edwards\n| **Copyright:**       | Copyright (c) 2013 Adam Edwards\n| **License:**         | Apache License, Version 2.0\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "maintainer": "Adam Edwards",
+  "maintainer_email": "adamedx",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

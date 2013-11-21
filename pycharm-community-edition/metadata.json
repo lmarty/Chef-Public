@@ -1,0 +1,31 @@
+{
+  "name": "pycharm-community-edition",
+  "description": "Installs/Configures pycharm-community-edition",
+  "long_description": "pycharm-community-edition Cookbook\n==================================\nInstalls PyCharm Community Edition\n\nRequirements\n------------\nCurrently it only supports installations on Windows. \nAttributes\n----------\n* `default['pycharm-community-edition']['windows']['package_name']`\n    - Package name. Defaults to: 'PyCharm Community Edition'\n* `default['pycharm-community-edition']['windows']['url']`\n    - installation URL. Defaults to `'http://download.jetbrains.com/python/pycharm-community-3.0.exe'`\n\nUsage\n-----\n\nJust include `pycharm-community-edition` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[pycharm-community-edition]\"\n  ]\n}\n```\n\nContributing\n------------\nTo contribute:\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass.\n6. Submit a Pull Request using Github\n\nNote: You will need the latest version of ChefSpec from https://github.com/acrmp/chefspec.\n\nLicense and Authors\n-------------------\nAuthors: Rilindo Foster <rilindo.foster@monzell.com>\n",
+  "maintainer": "Rilindo Foster",
+  "maintainer_email": "rilindo.foster@monzell.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 1.2.6"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

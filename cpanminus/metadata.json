@@ -1,0 +1,32 @@
+{
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "version": "0.1.1",
+  "groupings": {
+  },
+  "description": "Installs cpanminus client",
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Alexey Melezhik",
+  "name": "cpanminus",
+  "conflicting": {
+  },
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "maintainer_email": "melezhik@gmail.com",
+  "recipes": {
+  },
+  "providing": {
+  },
+  "recommendations": {
+  },
+  "long_description": "# cpanminus Cookbook\ninstalls cpanminus client\n\n# recipes\ndefault - installs cpanminus client\n\n\n\n\n\n"
+}

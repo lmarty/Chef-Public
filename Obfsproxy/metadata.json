@@ -1,0 +1,37 @@
+{
+    "version": "0.0.1",
+    "maintainer": "Dlshad Othman",
+    "replacing": {
+    },
+    "description": "Install Obfsproxy Server on Debian, Centos RedHat and Ubuntu",
+    "recipes": {
+    },
+    "maintainer_email": "dothman@internews.eu",
+    "groupings": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "attributes": {
+    },
+    "recommendations": {
+    },
+    "dependencies": {
+    },
+    "suggestions": {
+    },
+    "conflicting": {
+    },
+    "license": "Apache 2.0",
+    "name": "Obfsproxy",
+    "providing": {
+    },
+    "platforms": {
+      "debian": [
+      ],
+      "ubuntu": [
+      ],
+      "redhat": [
+      ],
+      "centos": [
+      ]
+    }
+  }

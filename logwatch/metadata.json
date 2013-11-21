@@ -1,0 +1,35 @@
+{
+  "name": "logwatch",
+  "version": "1.1.0",
+  "description": "Installs logwatch, a nice log analyzer",
+  "long_description": "logwatch Cookbook\n=================\n[![Build Status](https://travis-ci.org/opscode-cookbooks/logwatch.png?branch=master)](https://travis-ci.org/opscode-cookbooks/logwatch)\n\nInstalls logwatch\n\n\nRequirements\n------------\n### Platformd\n- Debian/Ubuntu\n- RHEL/CentOS\n\n### Cookbooks\n- perl\n\n\nUsage\n-----\nEnsures that perl is installed to be used with logwatch and then installs logwatch.\n\n\nAttributes\n----------\n- `node['logwatch']['email']` - Email Address which Logwatch reports to\n- `node['logwatch']['detail']` - The level of detail in the Logwatch report\n- `node['logwatch']['range']` - The default time range for the Logwatch report\n- `node['logwatch']['output']` - The output method of the Logwatch report\n- `node['logwatch']['format']` - The format of the Logwatch report\n\n\nLicense & Authors\n-----------------\n- Author:: Joshua Timberman <joshua@opscode.com>\n\n```text\nCopyright:: 2009-2013, Opscode, Inc\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "cookbooks@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "perl": "~> 1.2"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "logwatch": "Installs logwatch"
+  }
+}

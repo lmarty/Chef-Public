@@ -1,0 +1,31 @@
+{
+  "name": "rayo",
+  "description": "Installs/Configures rayo",
+  "long_description": "# DESCRIPTION\n[Rayo](http://rayo.org/ \"Rayo\") is a message-oriented XML protocol for controlling phone calls, audio mixers and a variety of advanced media resources.  This cookbook is to install a [Rayo](http://rayo.org/ \"Rayo\") Node or Gateway\n\n\n\n# REQUIREMENTS\n\n<table>\n<colgroup>\n<col style=\"text-align:left;\"/>\n<col style=\"text-align:left;\"/>\n</colgroup>\n\n<thead>\n<tr>\n  <th style=\"text-align:left;\">Cookbook</th>\n  <th style=\"text-align:left;\">Version</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n  <td style=\"text-align:left;\">Prism</td>\n  <td style=\"text-align:left;\">&gt;= 2.0.0</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">Cassandra</td>\n  <td style=\"text-align:left;\"></td>\n</tr>\n</tbody>\n</table>\n\n\n# ATTRIBUTES\n Please see attributes file, documentation coming soon ( I promise ), however full documentation can be found on the [Wiki](https://github.com/rayo/rayo-server/wiki \"Rayo Wiki\"), as well as [source](https://github.com/rayo/rayo-server/ \"Rayo Source\")\n\n# USAGE\n\nInclude the appropriate recipe for your use case, eg a node or a gateway.\n\n# CHANGE LOG\n\n<table>\n<colgroup>\n<col style=\"text-align:left;\"/>\n<col style=\"text-align:left;\"/>\n</colgroup>\n\n<thead>\n<tr>\n  <th style=\"text-align:left;\">Version</th>\n  <th style=\"text-align:left;\">Changes</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n  <td style=\"text-align:left;\">1.0.7</td>\n  <td style=\"text-align:left;\">* Inital public release (code cleanup)</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\"></td>\n  <td style=\"text-align:left;\">* Removed artifacts cookbook dependecy</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\"></td>\n  <td style=\"text-align:left;\">* Support chef-solo deployment</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">1.0.8</td>\n  <td style=\"text-align:left;\">* Fixed undeffined variable</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">1.0.9</td>\n  <td style=\"text-align:left;\">* Fixed foodcritic errors</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\"></td>\n  <td style=\"text-align:left;\">* Mistakenly used gateway attribute in node remote_file resource, whoops</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">1.0.10</td>\n  <td style=\"text-align:left;\">* node[&#8220;name&#8221;] is nil, not sure why yet, but node.name works</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">1.0.11</td>\n  <td style=\"text-align:left;\">* Updated readme for public release</td>\n</tr>\n<tr>\n  <td style=\"text-align:left;\">1.0.12</td>\n  <td style=\"text-align:left;\">* Fix readme, markdown tables not supported on community site</td>\n</tr>\n</tbody>\n</table>\n",
+  "maintainer": "Voxeo Labs",
+  "maintainer_email": "jdyer@voxeo.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "prism": ">= 0.0.0",
+    "cassandra": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.12"
+}

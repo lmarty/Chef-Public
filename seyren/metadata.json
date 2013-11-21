@@ -1,0 +1,36 @@
+{
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "providing": {
+  },
+  "suggestions": {
+    "apache2": ">= 0.0.0"
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "description": "Installs/Configures seyren",
+  "name": "seyren",
+  "version": "0.0.4",
+  "recipes": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "groupings": {
+  },
+  "replacing": {
+  },
+  "dependencies": {
+    "graphite": ">= 0.0.0",
+    "application": ">= 2.0.4",
+    "maven": ">= 0.0.0",
+    "tomcat": ">= 0.0.0",
+    "mongodb": ">= 0.0.0"
+  },
+  "maintainer_email": "ajay_pm@hotmail.com",
+  "license": "none"
+}

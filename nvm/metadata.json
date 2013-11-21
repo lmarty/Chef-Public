@@ -1,0 +1,31 @@
+{
+  "name": "nvm",
+  "description": "Installs nvm, the node version manager",
+  "long_description": "# nvm\n\nChef cookbook for setting up NVM from [creationix's github repository](https://github.com/creationix/nvm).\n\n[![Build Status](https://travis-ci.org/hipsnip-cookbooks/nvm.png?branch=master)](https://travis-ci.org/hipsnip-cookbooks/nvm) [![Dependency Status](https://gemnasium.com/hipsnip-cookbooks/nvm.png)](https://gemnasium.com/hipsnip-cookbooks/nvm)\n\n## Requirements\n\nBuilt to run on Linux distributions. Tested on Ubuntu 12.04.\nDepends on the `git` cookbook.\n\n## Usage\n\nInstall nvm and node.js version 0.10.5.\n\n\t# install nvm\n\tinclude_recipe 'nvm'\n\n\t# install node.js v0.10.5\n\tnvm_install 'v0.10.5'  do\n\t\tfrom_source false\n\t\talias_as_default true\n\t\taction :create\n\tend\n\nFor more usage examples, have a look to the recipes in `test/cookbooks/nvm_test/recipes/`.\n\n## Attributes\n\n* `node['nvm']['directory']` - directory where nvm is cloned, default '/usr/local/src/nvm'\n* `node['nvm']['repository']` - url of the git repository, default 'git://github.com/creationix/nvm.git'\n* `node['nvm']['reference']` - reference in the repository, default 'master'\n* `node['nvm']['source']` - command to source nvm script file, default 'source /etc/profile.d/nvm.sh'\n* `node['nvm']['install_deps_to_build_from_source']` - if true install the dependencies to compile node, otherwise not, default true\n\n## LWRPs\n\n### nvm_install\n\nInstall a node.js version from source or binaries\n\n#### Actions\n\n- `create` (default)\n\n#### Attributes\n\n- `version` - node.js version, default to the name attribute\n- `from_source` - install from source if true, default to false\n- `alias_as_default` - alias the current version as the default version, default true\n\n#### Examples\n\nInstall from binary\n\n\tnvm_install '0.10.5'  do\n\t\tfrom_source false\n\t\talias_as_default true\n\t\taction :create\n\tend\n\nInstall from source\n\n\tnvm_install '0.10.5'  do\n\t\tfrom_source true\n\t\talias_as_default true\n\t\taction :create\n\tend\n\n\n### nvm_alias_default\n\nUse by default the given node.js version\n\n#### Actions\n\n- `create` (default)\n\n#### Attributes\n\n- `version` - node.js version, default to the name attribute\n\n#### Example\n\nUse by default node.js version 0.10.0\n\n\tnvm_alias_default '0.10.0'  do\n\t\taction :create\n\tend\n\n## Cookbook development\n\nYou will need to do a couple of things to be up to speed to hack on this cookbook.\nEverything is explained [here](https://github.com/hipsnip-cookbooks/cookbook-development) have a look.\n\n## Test\n\n    bundle exec rake cookbook:full_test\n\n## Licence\n\nAuthor: Rémy Loubradou\n\nCopyright 2013 HipSnip Limited\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "HipSnip",
+  "maintainer_email": "remy@hipsnip.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 12.04"
+  },
+  "dependencies": {
+    "git": ">= 2.1.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

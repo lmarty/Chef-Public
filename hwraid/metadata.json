@@ -1,0 +1,37 @@
+{
+  "name": "hwraid",
+  "description": "Installs/Configures hwraid from hwraid..le-vert.net",
+  "long_description": "# hwraid cookbook\n[![Build Status](https://secure.travis-ci.org/higanworks-cookbooks/hwraid.png?branch=master)](https://travis-ci.org/higanworks-cookbooks/hwraid)\n\nAdd repository hwraid [http://hwraid.le-vert.net/](http://hwraid.le-vert.net/)\n\nInstall packeage and setup monitoring daemon. \n\n- megaraid_sas\n\n## tested by\n\n- foodcritic with travis ci.\n\n# Requirements\n\n- cookbook[apt]\n\n## For hwraid::nagios\n\n- cookbook[nagios]\n\n# Attributes\n\n## megaraid_sas\n\n<pre><code>default['hwraid']['megacli_sas']['config_path'] = \"/etc/default/megaclisas-statusd\"\ndefault['hwraid']['megacli_sas']['configs'] = {\n  \"mailto\" => \"root\",\n  \"period\" => 600,\n  \"remind\" => 7200,\n  \"daemonize\" => \"yes\"</code></pre>}\n\n\n# Recipes\n\n- default: add repository hwraid\n- megaraid_sas\n  - install megacli and setup megaclisas-status as daemon.\n  - regist scheduled consistency check per month to crontab.\n- nagios\n  - Use nagios_nrpecheck LWRP to add Nagios checking\n\n\n# Author\n\nAuthor:: HiganWorks LLC (<sawanoboriyu@higanworks.com>)\nAuthor:: Leo Unbekandt (<leo@unbekandt.eu>)\n",
+  "maintainer": "HiganWorks LLC",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "nagios": ">= 0.0.0",
+    "hwraid": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "hwraid": "Add hwraid repo from le-vert.ne",
+    "hwraid::megaraid_sas": "Install and configure megaclisas-statusd, add cron task",
+    "hwraid::nagios": "add nagios plugin using nrpecheck LWR"
+  },
+  "version": "0.3.1"
+}

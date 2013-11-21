@@ -1,0 +1,34 @@
+{
+  "name": "xpdf",
+  "description": "xpdf - Portable Document Format (PDF) suite",
+  "long_description": "# DESCRIPTION\n\nInstalls [Xpdf](http://www.foolabs.com/xpdf/). Xpdf is an open source viewer for Portable Document Format (PDF) files. (These are also sometimes also called 'Acrobat' files, from the name of Adobe's PDF software.) The Xpdf project also includes a PDF text extractor, PDF-to-PostScript converter, and various other utilities.\n\n\n# REQUIREMENTS\n\n## Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n\n# RECIPES\n\n* `xpdf`,         Default recipe for installing xpdf utilities\n* `xpdf::common`, common files\n* `xpdf::reader`, viewer for X11\n* `xpdf::utils`,  utilities\n\n\n# USAGE\n\nThis cookbook installs the xpdf components if not present, and pulls updates if they are installed on the system.\n\n# ATTRIBUTES\n\nNone\n\n\n## Basic Settings\n\nNone\n\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n\n## License\n\n**chef-xpdf**\n\n* Freely distributable and licensed under the [MIT license](http://phlipper.mit-license.org/2012/license.html).\n* Copyright (c) 2012 Phil Cohen (github@phlippers.net) [![endorse](http://api.coderwall.com/phlipper/endorsecount.png)](http://coderwall.com/phlipper)\n* http://phlippers.net/\n",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "xpdf": "Default recipe for installing xpdf utilities",
+    "xpdf::common": "common files",
+    "xpdf::reader": "viewer for X11",
+    "xpdf::utils": "utilities"
+  },
+  "version": "1.0.0"
+}

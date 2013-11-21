@@ -1,0 +1,31 @@
+{
+  "name": "cloudfoundry-filesystem-service",
+  "description": "Installs/Configures cloudfoundry-filesystem-service",
+  "long_description": "Description\n===========\n\nInstall a Cloud Foundry filesystem service gateway, an optional component of a\n[Cloud Foundry](http://www.cloudfoundry.org) installation.\n\nRequirements\n============\n\nCookbooks\n---------\n\n* cloudfoundry\n* cloudfoundry\\_service\n* rbenv\n\nPlatform\n--------\n\n* Ubuntu\n\nTested on:\n\n* Ubuntu 10.04\n* Ubuntu 12.04\n\nAttributes\n==========\n\n`node['cloudfoundry_filesystem_service']['gateway']['log_level']` - Log level for\nthe service gateway daemon. Defaults to `info`.\n`node['cloudfoundry_filesystem_service']['gateway']['node_timeout']` - Time out\nfor talking to a service node. Defaults to `30`.\n`node['cloudfoundry_filesystem_service']['gateway']['timeout']` - Time out for\ncompleting (de)provisioning requests. Defaults to `15`.\n`node['cloudfoundry_filesystem_service']['gateway']['version_aliases']` -\nHuman-readable aliases for MongoDB versions.\n`node['cloudfoundry_filesystem_service']['fs_type']` - The backing store for\nthe filesystem service; can be either `local` or `nfs`. Defaults to `local`.\n`node['cloudfoundry_filesystem_service']['backends']` - An Array with\nconfiguration info for the actual backing stores.\n\nUsage\n=====\n\nYou need exactly one filesystem service gateway, ideally deployed to the same\nnode as the `cloud_controller`:\n\n    run_list: \"recipe[cloudfoundry_filesystem_service::gateway]\"\n\nThe service gateway only handles the creation of a service instance and its\nbinding to the application; the configured backing store must already exist\nand be available in all the DEAs.\n\nLicense and Author\n==================\n\nAuthor:: Andrea Campi (<andrea.campi@zephirworks.om.com>)\n\nCopyright:: 2012 ZephirWorks\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "ZephirWorks",
+  "maintainer_email": "andrea.campi@zephirworks.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "cloudfoundry_service": "~> 1.2.2"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.3"
+}

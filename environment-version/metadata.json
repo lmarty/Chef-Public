@@ -1,0 +1,29 @@
+{
+  "name": "environment-version",
+  "description": "Provides a library function to check chef environment versions",
+  "long_description": "# environment-version cookbook\n\nAs of Chef 11.6, environments are not able to be versioned. This cookbook\nprovides a library function that lets you maintain versioning information\nin your environments file.\n\nThis is probably more of a hack than a good solution. But, it solves my\nproblem for now.\n\n# Requirements\n\nBe aware of the following constraints when using chef environments:\n\n* Chef solo only supports environments in 11.6+\n* Vagrant only supports environments in 1.3+\n\n# Usage\n\nYou set the version attribute in your environment file like so:\n\n    name \"test\"\n    description \"Test environment\"\n\n    default_attributes(\n  \n      :environment_version => 3,\n    \n      # other attributes go here\n    )\n    \nIn your cookbook's metadata.rb, add\n\n    depends \"environment-version\"\n    \nAnd in your recipe, add\n\n    environment_version_ensure(\n      :production => 3,\n      :test => 4\n    )\n\nSee the test directory for a working example.\n\n# Author\n\nAuthor:: Dustin Spicuzza (dustin@virtualroadside.com)\n",
+  "maintainer": "Dustin Spicuzza",
+  "maintainer_email": "dustin@virtualroadside.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

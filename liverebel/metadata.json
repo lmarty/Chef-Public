@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "liverebel",
+  "maintainer_email": "toomas@zeroturnaround.com",
+  "attributes": {
+  },
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Toomas Römer",
+  "long_description": "= DESCRIPTION:\n\nDownloads and installs LiveRebel from liverebel.com website. It will install the software to /opt/liverebel-version. This version does not support auto starting LiveRebel.\n\n= REQUIREMENTS:\n\nDepends on the availability of the unzip command.\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "version": "0.1.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Downloads and installs LiveRebel from liverebel.com website.",
+  "providing": {
+  }
+}

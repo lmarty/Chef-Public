@@ -1,0 +1,121 @@
+---
+<%
+  ccdb = cloud_controller_database
+%>
+# Cloud Controller URI
+external_uri: <%= node['cloudfoundry_cloud_controller']['server']['external_uri'] %>
+description: <%= node['cloudfoundry_cloud_controller']['server']['welcome'] %>
+support_address: <%= node['cloudfoundry_cloud_controller']['server']['support_address'] %>
+local_route: <%= node['cloudfoundry']['local_route'] %>
+allow_registration: <%= node['cloudfoundry_cloud_controller']['server']['allow_registration'] %>
+external_port: <%= node['cloudfoundry_cloud_controller']['server']['external_port'] %> #public CC port
+
+nginx:
+  use_nginx: <%= node['cloudfoundry_cloud_controller']['nginx']['enable'] %>
+  <% if node['cloudfoundry_cloud_controller']['nginx']['enable'] -%>
+  instance_socket: <%= node['cloudfoundry_cloud_controller']['nginx']['instance_socket'] %>
+  <%- end %>
+
+# Legacy (FIXME REMOVE)
+# Can't be removed yet since CC checks to make sure it's present
+allow_external_app_uris: <%= node['cloudfoundry_cloud_controller']['server']['allow_external_app_uris'] %>
+
+app_uris:
+  # Allow applications to register URIs that are outside your domain.
+  allow_external: <%= node['cloudfoundry_cloud_controller']['server']['allow_external_app_uris'] %>
+#  reserved_file:
+#  reserved_list: [www, test, dash, register, foo, bar]
+#  reserved_length: 3
+
+directories:
+  droplets: <%= node['cloudfoundry_cloud_controller']['server']['droplets_dir'] %>
+  resources: <%= node['cloudfoundry_cloud_controller']['server']['resources_dir'] %>
+  staging_manifests: <%= node['cloudfoundry_cloud_controller']['server']['staging_manifests_dir'] %>
+  tmpdir: <%= node['cloudfoundry_cloud_controller']['server']['tmp_dir'] %>
+
+logging:
+  level: <%= node['cloudfoundry_cloud_controller']['server']['log_level'] %>
+  file: <%= node['cloudfoundry_cloud_controller']['server']['log_file'] %>
+
+rails_logging:
+  level: <%= node['cloudfoundry_cloud_controller']['server']['log_level'] %>
+  file: <%= node['cloudfoundry_cloud_controller']['server']['rails_log_file'] %>
+
+keys:
+  password: 'password key goes here'
+  token: 'token key goes here'
+
+pid: <%= node['cloudfoundry_cloud_controller']['server']['pid_file'] %>
+
+mbus: <%= cf_mbus_url %>
+
+rails_environment: production
+
+new_initial_placement: <%= node['cloudfoundry_cloud_controller']['server']['new_initial_placement'] %>
+
+database_environment:
+  production:
+    database: <%= ccdb[:name] %>
+    host: <%= ccdb[:host] %>
+    port: <%= ccdb[:port] %>
+    encoding: utf8
+    username: <%= ccdb[:user] %>
+    password: <%= ccdb[:password] %>
+    adapter: postgresql
+    timeout: 2000
+    template: template0 # Required for utf8 encoding
+
+uaa:
+  enabled: false
+  url: http://uaa.vcap.me
+  resource_id: cloud_controller
+  token_secret:
+  client_secret:
+  token_creation_email_filter:
+
+redis:
+  <% redis_node = cf_vcap_redis_node || node %>
+  host: <%= redis_node.attribute?('cloud') ? redis_node['cloud']['local_ipv4'] : redis_node['ipaddress'] %>
+  port: <%= node['cloudfoundry_cloud_controller']['redis']['port'] %>
+  <% if node['cloudfoundry_cloud_controller']['redis']['password'] -%>
+  password: <%= node['cloudfoundry_cloud_controller']['redis']['password'] %>
+  <%- end %>
+
+staging:
+  max_staging_runtime:    <%= node['cloudfoundry_cloud_controller']['server']['max_staging_runtime'] %>
+  auth:
+    user: <%= node['cloudfoundry_cloud_controller']['stager']['user'] %>
+    password: <%= node['cloudfoundry_cloud_controller']['stager']['password'] %>
+
+allow_debug: <%= node['cloudfoundry_cloud_controller']['server']['allow_debug'] %>
+
+admins: [ <%= node['cloudfoundry_cloud_controller']['server']['admins'].join(", ") %> ]
+
+https_required: false
+https_required_for_admins: false
+
+default_account_capacity:
+  memory:   <%= node['cloudfoundry']['capacity']['memory'] %>
+  app_uris: <%= node['cloudfoundry']['capacity']['max_uris'] %>
+  services: <%= node['cloudfoundry']['capacity']['max_services'] %>
+  apps:     <%= node['cloudfoundry']['capacity']['max_apps'] %>
+
+builtin_services:
+<% node['cloudfoundry_cloud_controller']['server']['services'].each do |service| %>
+  <%= service %>:
+    token: <%= node['cloudfoundry']['service_token'] %>
+<% end %>
+
+<% if node['cloudfoundry_cloud_controller']['server']['service_proxy'] -%>
+service_proxy:
+  token: [ <%= node['cloudfoundry']['service_token'] %> ]
+<%- end %>
+
+<% if node['cloudfoundry_cloud_controller']['lifecycle']['enable'] %>
+service_lifecycle:
+  max_upload_size: <%= node['cloudfoundry_cloud_controller']['lifecycle']['max_upload_size'] %>
+  upload_token: <%= node['cloudfoundry_cloud_controller']['lifecycle']['upload_token'] %>
+  upload_timeout: <%= node['cloudfoundry_cloud_controller']['lifecycle']['upload_timeout'] %>
+<% end %>
+
+runtimes_file: <%= File.join(node['cloudfoundry']['config_dir'], "runtimes.yml") %>

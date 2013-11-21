@@ -1,0 +1,31 @@
+{
+  "name": "jmxtrans",
+  "description": "Installs/Configures jmxtrans",
+  "long_description": "# <a name=\"title\"></a> chef-jmxtrans[![Build Status](https://secure.travis-ci.org/bryanwb/chef-jmxtrans.png?branch=master)](http://travis-ci.org/bryanwb/chef-jmxtrans)\n\n\nDescription\n===========\n\nI am the jmxtrans cookbook!\n\n[jmxtrans](https://github.com/lookfirst/jmxtrans) is an excellent tool\nfor transporting jmx data from your VMs and into a graphing tool like\ngraphite or ganglia. This cookbook only supports writing to graphite\nbut could be easily modified to work with ganglia\n\n\nRequirements\n============\n\nDepends on the ark cookbook\n\n\nAttributes\n==========\n\n* `node['jmxtrans']['graphite']['host']` - defaults to 'graphite'\n* `node['jmxtrans']['graphite']['port']` - default to 2003\n* `node['jmxtrans']['servers']` - array of servers to query for jmx data\n  along with the properties needed to access each one\n* `node['jmxtrans']['root_prefix']` - root prefix for the graphite\n  buckets, defaults to \"jmx\"\n  \n\nUsage\n=====\n\nYou must override the attribute `node['jmxtrans']['servers']` with the\nlist of servers you want monitored and their respective properties\n\nthe following example comes from a role\n\n```\n:jmxtrans => {\n   :servers =>[\n      {\n        'name' => 'foo1.example.org',\n        'port' => \"8999\",\n        'type' => 'tomcat',\n        'username' => 'foobar',\n        'password' => 'rw'\n      },\n      {\n        'name' => 'foo2.example.org',\n        'port' => \"8999\",\n        'type' => 'tomcat',\n        'username' => 'foobar',\n        'password' => 'baz'\n       }\n     ]                                   \n}\n```\n\nAuthor\n======\n\nBryan W. Berry, Copyright 2012, Apache 2.0 license\n",
+  "maintainer": "Bryan W. Berry",
+  "maintainer_email": "bryan.berry@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "ark": ">= 0.0.0",
+    "logrotate": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.3"
+}

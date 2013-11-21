@@ -1,0 +1,30 @@
+{
+  "name": "fusioninventory-agent",
+  "description": "Installs/Configures fusioninventory-agent",
+  "long_description": "Description\n===========\nInstalls and configures fusioninventory-agent on debian/ubuntu systems.\n\nRequirements\n============\napt\n\nAttributes\n==========\n\nSee the attributes/default.rb for default values\n\nYou will need to set the attribute server_url your compatible inventory server \n\nI recommend GLPI see http://www.glpi-project.org/spip.php?lang=en \nwith the plugin for fusioninventory http://forge.fusioninventory.org/projects/fusioninventory-for-glpi\nsee the main http://www.fusioninventory.org/ there are other compatible servers as well.\n\nUsage\n=====\n\nOn node use the recipe, \n{ \"run_list\": [\"recipe[fusioninventory-agent::default]\"] }\n\nSupported Platforms\n===================\nDebian / Ubuntu\n\n\n\nAuthor:: Mat Davies\nCookbook Name:: fusioninventory-agent\n\nCopyright 2012\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n\n",
+  "maintainer": "Mat Davies",
+  "maintainer_email": "ashmere@gmail.com",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

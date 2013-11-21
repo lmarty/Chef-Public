@@ -1,0 +1,29 @@
+{
+  "name": "zerigo",
+  "description": "Provides zerigo LWRPs",
+  "long_description": "Description\n===========\n\nProvides LWRPs that allow interaction with the Zerigo DNS service from your chef recipes.\n\nRequirements\n============\n\nA Zerigo account.\n\nInstallation\n============\n\n1. Install the github cookbooks knife plugin (https://github.com/websterclay/knife-github-cookbooks).\n2. Install the zerigo cookbook:\n\n    $ knife cookbook github install threetee/chef-cookbook-zerigo\n\nUsage\n=====\n\n```ruby\ninclude_recipe \"zerigo\"\n\nzerigo_zone \"create a zone\" do\n  domain  \"test.com\"\n  email   \"hostmaster@test.com\"\n\n  zerigo_email          \"zerigo-account@somewhere.com\"\n  zerigo_token          \"zerigo_api_token\"\n\n  action :create\nend\n\nzerigo_record \"create a record\" do\n  name  \"test\"\n  value \"16.8.4.2\"\n  type  \"A\"\n\n  zone_id               \"test.com\"   # Zerigo-hosted domain name\n  zerigo_email          \"zerigo-account@somewhere.com\"\n  zerigo_token          \"zerigo_api_token\"\n\n  action :create\nend\n```\n\nCredits\n=======\n\nInspired by https://github.com/heavywater/community-cookbooks/tree/master/route53.",
+  "maintainer": "Eric Dennis",
+  "maintainer_email": "threetee@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

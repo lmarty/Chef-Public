@@ -1,0 +1,37 @@
+{
+  "name": "stage",
+  "description": "Multi stage chef runs. Run sub chef runs",
+  "long_description": "\nDescription\n====\n\n _stage_ facilitates multi stage chef runs\n\nRequirements\n====\n\nDebian, Ubuntu, CentOS, Red Hat, Scientific, Fedora, SUSE, Amazon, GCEL.\n\n\nUsage\n====\ninclude the \"stage\" recipe to use the lwrp. this recipe provides a default resource name \"stage\". \n__stage__ resource can take four options, __run_list__ which is simlar to node run list and can be\na comma separated string of recipes and roles. the other option __save__ is a boolean, which dictates\nwhether the attributes from the run list will be saved or merged against the current node or not, __save__\nis true by default. __stage__ resource right now supports only _:run_ action. Stage reasource is idempotent\nand can be used to notify other resources (assuming the resources invoked by the run list attribute are \nidempotent).\n\nthe options __json_attributes__ and __args__ can be used to pass additional json attributes and arguments\nto the sub chef runs.\n\n__stage__ resources can also \n\n\n    include_recipe \"stage\"\n\n    stage \"first\" do\n      run_list \"recipe[foo]\"\n    end\n\n    stage \"second\" do\n      run_list \"recipe[bar]\"\n    end\n\n    stage \"third\" do\n      run_list \"recipe[baz]\"\n      save false # attributes from baz wont be merged against the node\n    end\n\n\nLicense and Author\n====\n\nAuthor:: Ranjib Dey (<dey.ranjib@gmail.com>)\nCopyright:: 2013, Ranjib Dey\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations License.\n\n",
+  "maintainer": "Ranjib Dey",
+  "maintainer_email": "dey.ranjib@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "oracle": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.4"
+}

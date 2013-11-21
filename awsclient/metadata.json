@@ -1,0 +1,36 @@
+{
+  "recipes": {
+    "awsclient::default": "Installs all the dependencies to use the awsclient"
+  },
+  "conflicting": {
+  },
+  "description": "Installs/Configures client to download files from aws",
+  "long_description": "= DESCRIPTION:\n\nInstalls and configures our applications.\n\n= REQUIREMENTS:\n\n== Platform:\n\nTested on Ubuntu 10.0.4.\n\n==Cookbooks:\n\nRequres Opscode's apt.\n\n= ATTRIBUTES:\n\n\n= USAGE:\n\nCreated from this gist https://gist.github.com/654808.\n\nUsage is as follows\n\n\naws = data_bag_item(\"deployment\", \"aws\")\n\nremote_s3_file \"/tmp/remote_s3_file.tar.bz2\" do\n  bucket \"stdeployment\"\n  object_name \"/path/to/remote_s3_file.tar.bz2\"\n  aws_access_key_id aws[\"accesskey\"]\n  aws_secret_access_key aws[\"secretkey\"]\n  mode \"644\"\nend\n",
+  "providing": {
+  },
+  "attributes": {
+  },
+  "maintainer": "Spidertracks",
+  "replacing": {
+  },
+  "dependencies": {
+    "apt": [
+
+    ],
+    "aws": [
+
+    ]
+  },
+  "maintainer_email": "todd@spidertracks.com",
+  "groupings": {
+  },
+  "platforms": {
+  },
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "license": "Apache 2.0",
+  "name": "awsclient",
+  "suggestions": {
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "helpers-search",
+  "description": "Helper Library for Chef Search",
+  "long_description": "# helpers-search cookbook\nThis recipe brings in a `Helpers::Search` module that adds/wrapps chefs search function.\n\n# Usage\nInclude this recipe in your run_list, and mix into any class you wnat the methods in.\n* `helpers-search::mix_recipe` recipe is provde to mix into Chef::Recipe automatically. \n\n\nyou can Open up and mix these methods in other namespaces if needed\n     \n      class Chef\n        class Template\n          include Helpers::Search  \n        end\n      end\n\n# Methods\n### scoped_search\n\nThis wraps chef's search to add domain or environment awareness.\n\n#### Usage \n     \n     scoped_search(\"domain\", :node, \"attrib:match\" )\n\n#### Available \"scopes\"\n\n* domain\n* environemnt \n\n# Recipes\n## default\n  Does nothing, just makes sure the libs are loaded\n\n## mix_recipe\n  Add the methods to `Chef::Recipe` \n\n# Author\nAuthor:: Jesse Nelson (<spheromak@gmail.com>)\n",
+  "maintainer": "Jesse Nelson",
+  "maintainer_email": "spheromak@gmail.com",
+  "license": "APL2",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.3"
+}

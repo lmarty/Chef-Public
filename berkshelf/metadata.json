@@ -1,0 +1,33 @@
+{
+  "name": "berkshelf",
+  "description": "Installs/Configures berkshelf",
+  "long_description": "# berkshelf-cookbook\n\n# Requirements\n\n# Usage\n\n# Attributes\n\n# Recipes\n\n# Author\n\nAuthor:: Jamie Winsor (<jamie@vialstudios.com>)\n",
+  "maintainer": "Jamie Winsor",
+  "maintainer_email": "jamie@vialstudios.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "runit": ">= 0.0.0",
+    "rbenv": ">= 1.5.0",
+    "nginx": ">= 1.7.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.2"
+}

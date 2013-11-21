@@ -1,0 +1,31 @@
+{
+  "name": "ipf_configure",
+  "description": "Installs/Configures ipf_configure",
+  "long_description": "ipf_configure Cookbook\n======================\n\nThis cookbook makes ipf rules \n\nRequirements\n------------\n\n### cookbooks\n\n- ipf (modcloth-cookbooks@github)\n\n### supports\n\n- smartos\n\n\nUsage\n-----\n\n1. add `ipf_configure::default` to your run_list before other cookbooks.\n2. update array `node.set[:ipf][rules]` in each other recipies.\n3. add `ipf_configure::merge` to your run_list after other cookbooks.\n\nYou can create rules in optional recipes using search or attributes your like.\n\n### ipf_configure::default\n\nThis recipe sets empty arrays to `node[:ipf]` for initialize.\n\n### ipf_configure::merge\n\nThis recipe creates `ipf.conf` file. The rules are set by some recipes in run_list.\n\nExamples\n----\n\nsee `recipes/example.rb`\n\n\nContributing\n------------\nTODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.\n\ne.g.\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: \n - Yukihiko Sawanobori (HiganWorks LLC)\n\nLicense: Apache2 License",
+  "maintainer": "HiganWorks LLC.",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "apache2",
+  "platforms": {
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "ipf": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.0"
+}

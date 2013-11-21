@@ -1,0 +1,29 @@
+{
+  "name": "riemann",
+  "description": "Installs/Configures riemann client and server",
+  "long_description": "Description\n===========\n\nThis is a cookbook to build riemann, from http://riemann.io\n\nRequirements\n============\n\nThe cookbook should do the majority of it, but for the server you'll need java. For the clients you'll need ruby and ruby gems.\n\nAttributes\n==========\n\n```ruby\ndefault[:riemann][:ruby_tarball_location] = \"http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p374.tar.gz\"\ndefault[:riemann][:ruby_tarball] = \"ruby-1.9.3-p374.tar.gz\"\ndefault[:riemann][:ruby_tarball_dir] = \"ruby-1.9.3-p374\"\n\ndefault[:riemann][:riemann_tarball_location] = \"http://aphyr.com/riemann/riemann-0.2.0.tar.bz2\"\ndefault[:riemann][:riemann_install_location] = \"/opt/riemann\"\ndefault[:riemann][:riemann_tarball] = \"riemann-0.2.0.tar.bz2\"\ndefault[:riemann][:riemann_version] = \"riemann-0.2.0\"\n```\n\nUsage\n=====\n\nAdd `riemann::server` to the run_list to install the server, this will also install the client.\n\nAdd `riemann::client` to the run_list to just install the client gem.\n\nAdd `riemann::dash` to the run_list to install the riemann-dashboard, which will install both the server and client.\n\n",
+  "maintainer": "JJ Asghar",
+  "maintainer_email": "jj.asghar@peopleadmin.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

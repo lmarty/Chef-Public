@@ -1,0 +1,26 @@
+# TestSwarm default Apache configuration
+
+<Directory <%= @install_dir %>>
+  Options Indexes FollowSymLinks MultiViews
+  AllowOverride All
+  Order allow,deny
+  allow from all
+</Directory>
+
+# Disallow web access to directories that don't need it
+<Directory <%= @install_dir + "/config" %>>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+<Directory <%= @install_dir + "/cache" %>>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+<Directory <%= @install_dir + "/inc" %>>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+<Directory <%= @install_dir + "/scripts" %>>
+  Order Deny,Allow
+  Deny from All
+</Directory>

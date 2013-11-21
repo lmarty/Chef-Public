@@ -1,0 +1,38 @@
+{
+  "name": "ircd-ratbox",
+  "description": "Installs/Configures ircd-ratbox",
+  "long_description": "= DESCRIPTION:\nThis is a preliminary version of the recipe to install and configure the ratbox\nIRC server version 2.x. It pretty much resembles the sample config provided by\nthe source package. You can either configure it directly on the node or\npreferably add the required attributes to the server role.\n\n= REQUIREMENTS:\n\n= USAGE:\nPlease note that if you ovverride the [:ircd][:auth] namespace all attributes\nthat are defined by the default config have to be defined, as no checking for\ntheir existence is done yet.\n\n= LICENSE and AUTHOR:\n\nAuthor:: Łukasz Jernaś (<deejay1@srem.org>)\n\nCopyright:: 2011, Łukasz Jernaś\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Łukasz Jernaś",
+  "maintainer_email": "deejay1@srem.org",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": [
+
+    ],
+    "fedora": [
+
+    ],
+    "rhel": [
+
+    ]
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.2"
+}

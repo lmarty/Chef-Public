@@ -1,0 +1,29 @@
+{
+  "name": "console",
+  "description": "lwrp for interacting with console",
+  "long_description": "",
+  "maintainer": "University of Derby",
+  "maintainer_email": "ai@derby.ac.uk",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

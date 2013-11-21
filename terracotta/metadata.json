@@ -1,0 +1,45 @@
+{
+  "name": "terracotta",
+  "description": "Installs terracotta",
+  "long_description": "",
+  "maintainer": "Elliot Kendall",
+  "maintainer_email": "elliot.kendall@ucsf.edu",
+  "license": "BSD",
+  "platforms": {
+    "redhat": [
+
+    ],
+    "centos": [
+
+    ],
+    "fedora": [
+
+    ],
+    "ubuntu": [
+
+    ],
+    "debian": [
+
+    ]
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "terracotta": "Installs terracotta"
+  },
+  "version": "0.1.1"
+}

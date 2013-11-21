@@ -1,0 +1,35 @@
+{
+  "name": "sargrapho",
+  "description": "Installs SarGraphO",
+  "long_description": "sargrapho Cookbook\n==================\nThe SarGraphO cookbook installs SarGraphO.  SarGraphO collects sar data, graphs it, and generates web pages to display the graphs.\n\nRequirements\n------------\nSarGraphO works with the RedHat family of Linux distributions.\n\nAttributes\n----------\n\n#### sargrapho::default\n\n* `node['sargrapho']['rpm']` - The name of the RPM package to install.  Default: sargrapho-1.0.0-1.noarch.rpm\n* `node['sargrapho']['rpm_url']` - The URL of the RPM package to install.  Default: https://github.com/jasonc/sargrapho/releases/download/v1.0.0/#{node['sargrapho']['rpm']}\n\n\nUsage\n-----\n#### sargrapho::default\n\nJust include `sargrapho` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[sargrapho]\"\n  ]\n}\n```\n\nContributing\n------------\n\n1. Fork the repository on [Github](https://github.com/jasonc/chef-sargrapho).\n\n\t`$ git clone git@github.com:jasonc/chef-sargrapho.git`\n\n2. Create a named feature branch (like `add_component_x`)\n\n3. Write your change\n\n4. Write tests for your change (if applicable)\n\n5. Run the tests, ensuring they all pass\n\n6. Submit a Pull Request using Github\n\n\nLicense and Authors\n-------------------\nAuthor:: Jason Cannon\n",
+  "maintainer": "Jason Cannon",
+  "maintainer_email": "jason@thisidig.com",
+  "license": "none",
+  "platforms": {
+    "amazon": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "oracle": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

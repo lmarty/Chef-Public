@@ -1,0 +1,28 @@
+---
+mbus: <%= cf_mbus_url %>
+local_route: <%= node['cloudfoundry']['local_route'] %>
+pid: <%= node['cloudfoundry_dea']['pid_file'] %>
+base_dir: <%= node['cloudfoundry_dea']['base_dir'] %>
+filer_port: <%= node['cloudfoundry_dea']['filter_port'] %>
+logging:
+  file: <%= node['cloudfoundry_dea']['log_file'] %>
+  level: <%= node['cloudfoundry_dea']['log_level'] %>
+multi_tenant: <%= node['cloudfoundry_dea']['multi_tenant'] %>
+max_memory: <%= node['cloudfoundry_dea']['max_memory'] %>
+secure: <%= node['cloudfoundry_dea']['secure_env'] %>
+<% if node['cloudfoundry_dea']['index'] -%>
+index: <%= node['cloudfoundry_dea']['index'] %>
+<%- end %>
+intervals:
+  heartbeat: <%= node['cloudfoundry_dea']['heartbeat'] %>
+  advertise: <%= node['cloudfoundry_dea']['advertise'] %>
+
+detect_port_timeout: <%= node['cloudfoundry_dea']['detect_port_timeout'] %>
+
+# This is where the execution agent determines its available runtimes.
+# version flags are assumed to be '-v' unless noted below.
+
+runtimes:
+<%- node['cloudfoundry']['runtimes'].each do |_, runtime| %>
+  - <%= runtime[:name] %>
+<% end %>

@@ -1,0 +1,33 @@
+{
+  "name": "motion",
+  "description": "Installs Motion, a software motion detector.",
+  "long_description": "# chef-motion\n\n## Description\n\nInstalls [Motion](http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome), a software motion detector.\n\n## Requirements\n\n### Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n\n## Recipes\n\n* `motion` - Set up the motion server\n* `motion::monit` - Monit config for motion server\n\n## Usage\n\n\n## Attributes\n\n\n## TODO\n\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n## Contributors\n\n\n## License\n\n**chef-motion**\n\n* Freely distributable and licensed under the [MIT license](http://alno.mit-license.org/).\n* Copyright (c) 2012 Alexey Noskov (alexey.noskov@gmail.com) [![endorse](http://api.coderwall.com/alno/endorsecount.png)](http://coderwall.com/alno)\n",
+  "maintainer": "Alexey Noskov",
+  "maintainer_email": "alexey.noskov@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+    "monit": ">= 0.0.0"
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "motion": "Set up the motion server",
+    "motion::monit": "Monit config for motion server"
+  },
+  "version": "0.1.0"
+}

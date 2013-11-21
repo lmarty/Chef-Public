@@ -1,0 +1,41 @@
+{
+  "name": "libguestfs",
+  "description": "Installs/Configures libguestfs",
+  "long_description": "# libguestfs cookbook\n\nInstalls libguestfs and optionally development libraries and various language\nbindings.\n\n# Recipes\n\n## default\n\nInstalls guestfs libraries and tools\n\n## dev\n\nInstalls guestfs development libraries\n\n## erlang\n\nInstalls guestfs erlang bindings\n\n## python\n\nInstalls guestfs python bindings\n\n## ruby\n\nInstalls guestfs ruby bindings\n\n# Author\n\nAuthor:: Engine Yard, Inc. (<cookbooks@engineyard.com>)\n",
+  "maintainer": "Engine Yard, Inc.",
+  "maintainer_email": "cookbooks@engineyard.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "amazon": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "libguestfs": "Installs guestfs libraries and tools",
+    "libguestfs::dev": "Installs guestfs development libraries",
+    "libguestfs::erlang": "Installs guestfs erlang bindings",
+    "libguestfs::python": "Installs guestfs python bindings",
+    "libguestfs::ruby": "Installs guestfs ruby bindings"
+  },
+  "version": "0.1.2"
+}

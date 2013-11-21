@@ -1,0 +1,29 @@
+{
+  "name": "easyapache",
+  "description": "Runs easyapache on cPanel node based off yaml file.",
+  "long_description": "Description\n===========\nChef cookbook for orchestration of easyapache upgrades for cPanel\n\nRequirements\n============\ncPanel\n\nAttributes\n==========\n```\ndefault['easyapache']['yaml'] = ''\n```\n\nUsage\n=====\nCopy your master yaml file to easyapache/files/default/\n\nDefine the attribute to match name of your yaml file\n\n",
+  "maintainer": "Derek Schultz",
+  "maintainer_email": "dschultz@brinkster.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.3"
+}

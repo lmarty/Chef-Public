@@ -1,0 +1,5 @@
+CACHE=/var/cache/tsdb
+CACHE_SIZE=1024
+PORT=4242
+QUORUM=<%= node[:tsdb][:quorum] %>
+JVMARGS="-Xmx4g -Xms4g"

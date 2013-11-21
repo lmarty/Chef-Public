@@ -1,0 +1,32 @@
+{
+  "name": "rabbitmq_settings",
+  "description": "Converge rabbitmq settings using lwrp. Depends on opscode-cookbook[rabbitmq].",
+  "long_description": "# rabbitmq_settings cookbook\n[![Build Status](https://travis-ci.org/higanworks-cookbooks/rabbitmq_settings.png?branch=master)](https://travis-ci.org/higanworks-cookbooks/rabbitmq_settings)\n\n\nConverge rabbitmq settings using lwrp. Depends on opscode-cookbook[rabbitmq].\n\n## Platform\n\nWill supposed to...\n\n* ubuntu\n* smartos\n\n# Requirements\n\n* opscode-cookbook[rabbitmq]\n\n# Usage\n\nThis cookbook depends on cookbook[rabbitmq] from opscode-site.\n\nSet vhosts or users to databag. And add recipe[rabbtmq_seggings::from_databag] to runilst.\n\n# Attributes\n\n* default['rabbitmq_settings']['databag_name'] = \"rabbitmq\"\n  * Name of data bag for use.\n\n# Recipes\n\n## from_databag\n\nCreate rabbitmq vhost and users from data_bag.\n\n\n### vhosts\n\nSet name of vhost and action.\n\nFor example.  \nCreate vhosts `/one` and `/four`, and delete `/two` if exists.\n\n`vhosts.json`\n<pre><code>{\n  \"id\": \"vhosts\",\n  \"vhosts\": {\n    \"/one\": \"add\",\n    \"/two\": \"delete\",\n    \"/four\": \"add\"\n  }\n}</code></pre>\n\n### users\n\nSet name of user and permissions for vhost.  \nTo clear permission for vhost, set nil to permission value.\n\nFor example.  \nCreate user `user_one` and set permission \".* .* .*\" to vhost `/one`. \nDelete `user_two` if exists.  \nClear permission `usr_three` from vhost `/one`.\n\n<code><pre>{\n  \"id\" : \"users\",\n  \"users\" : {\n    \"user_one\" : {\n      \"password\" : \"pass\",\n      \"action\" : \"add\",\n      \"permissions\" : {\n         \"/one\" : \"\\\\\\\".*\\\\\\\" \\\\\\\".*\\\\\\\" \\\\\\\".*\\\\\\\"\"\n      }        \n    },\n    \"user_two\" : {\n      \"action\" : \"delete\"\n      },\n    \"user_three\" : {\n      \"password\" : \"pass_three\",\n      \"action\" : \"add\",\n      \"permissions\" : {\n         \"/one\" : null\n      }\n    }\n  }\n}</code></pre>\n\n\n# Test\n\n## test-kitchen \n\n* kitchen test --platform ubuntu-12.04\n\n## Foodcritic\n\n* foodcritic ./\n\n# Author\n\nAuthor:: HiganWorks LLC (<sawanoboriyu@higanworks.com>)\n",
+  "maintainer": "HiganWorks LLC",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "rabbitmq": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

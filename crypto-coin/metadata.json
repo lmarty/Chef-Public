@@ -1,0 +1,31 @@
+{
+  "name": "crypto-coin",
+  "description": "Installs/Configures crypto-coin",
+  "long_description": "# crypto-coin cookbook\n\nThis cookbook provides a LWRP to compile bitcoin based crypto coins.\n\n# Requirements\n\nRequires build-essential. Eg from [this cookbook](https://github.com/opscode-cookbooks/build-essential).\n\n# Usage\n\nExample recipe for litecoin:\n\n```ruby\n# Get access to the LWRP and install prerequisites\ninclude_recipe \"crypto-coin::default\"\n\n# Download, compile and configure the cryptocoin\ncrypto_coin \"litecoin\" do\n  repository    \"https://github.com/litecoin-project/litecoin.git\"\n  revision      \"0.6.3\"\n  port          9333\n  rpcpassword   \"nojxxq2rryghg1p0ti7x\"\nend\n\n# Start the cryptocoin node\nservice \"litecoind\" do\n  provider Chef::Provider::Service::Upstart\n  action :start\nend\n```\n\n# Recipes\n\n## crypto-coin::default\n\nInstall prerequisites\n\n## crypto-coin::bitcoin\n\nExample recipe that compiles bitcoind and starts the node\n\n## crypto-coin::litecoin\n\nExample recipe that compiles litecoind and starts the node\n\n# Author\n\nAuthor:: Andrew Fecheyr (<andrew@bedesign.be>)\n",
+  "maintainer": "Andrew Fecheyr",
+  "maintainer_email": "andrew@bedesign.be",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.2"
+}

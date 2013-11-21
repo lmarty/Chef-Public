@@ -1,0 +1,45 @@
+{
+  "long_description": "pam-ssh-agent-auth Cookbook\n===========================\nInstall [pam_ssh_agent_auth](http://pamsshagentauth.sf.net/) from a [launchpad.net ppa](https://launchpad.net/~cpick/+archive/pam-ssh-agent-auth) and enable it for sudo on Ubuntu 12.04 (precise) machines.\n\nPatches (especially to support other architectures/OS vesrions) very welcome.\n\nRequirements\n------------\n\n#### packages\n- `apt` - used to add the ppa.\n\nAttributes\n----------\n\n#### pam-ssh-agent-auth::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n  </tr>\n  <tr>\n    <td><tt>['pam_ssh_agent_auth']['keys']</tt></td>\n    <td>Array</td>\n    <td>Authorized keys to accept when sudo is authenticating via the ssh-agent.</td>\n  </tr>\n</table>\n\nUsage\n-----\n#### pam-ssh-agent-auth::default\nJust set your authorized keys and include `pam-ssh-agent-auth` in your node's `run_list`:\n\n```json\n{\n  \"pam_ssh_agent_auth\": {\n    \"keys\": [\n      \"ssh-rsa ...\",\n      \"ssh-rsa ...\"\n    ]\n  },\n  \"run_list\": [\n    \"recipe[pam-ssh-agent-auth]\"\n  ]\n}\n```\n\nContributing\n------------\nPlease use standard Github issues/pull requests.\n\nLicense and Authors\n-------------------\nAuthors: Chris Pick\n",
+  "conflicting": {
+  },
+  "version": "0.1.0",
+  "groupings": {
+  },
+  "suggestions": {
+  },
+  "maintainer": "Chris Pick",
+  "name": "pam-ssh-agent-auth",
+  "recommendations": {
+  },
+  "attributes": {
+    "pam-ssh-agent-auth/keys": {
+      "choice": [
+
+      ],
+      "required": "optional",
+      "display_name": "Authorized Keys",
+      "recipes": [
+
+      ],
+      "description": "Authorized keys to accept when sudo is authenticating via the ssh-agent",
+      "calculated": false,
+      "type": "array"
+    }
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recipes": {
+    "pam-ssh-agent-auth": "Installs and enables pam_ssh_agent_auth"
+  },
+  "license": "Apache 2.0",
+  "description": "Installs/Configures pam-ssh-agent-auth",
+  "replacing": {
+  },
+  "providing": {
+  },
+  "platforms": {
+    "ubuntu": "= 12.04"
+  },
+  "maintainer_email": "cookbooks@chrispick.com"
+}

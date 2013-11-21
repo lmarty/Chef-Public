@@ -1,0 +1,29 @@
+{
+  "name": "helpers-databags",
+  "description": "Helper Methods for Databags",
+  "long_description": "# helpers-databags cookbook\nThis recipe brings in a `Helpers::DataBags` singleton\n\n\n# Methods\n### escape(__name__)\nThis method takes a string and escapes invalid data-bag characters int the following ways:\n* dot to dash: `.` -> `-`\n* space to underscore:` ` -> `_`\n\n# Recipes\n## default\n  Does nothing, just makes sure the libs are loaded\n\n# Author\nAuthor:: Jesse Nelson (<spheromak@gmail.com>)\n",
+  "maintainer": "Jesse Nelson",
+  "maintainer_email": "spheromak@gmail.com",
+  "license": "APL2",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,21 @@
+.vagrant
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+#exclude stoopid zone files here
+named.som
+named.rcbi
+named.rti.local
+.kitchen/
+.kitchen.local.yml

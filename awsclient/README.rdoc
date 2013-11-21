@@ -1,0 +1,33 @@
+= DESCRIPTION:
+
+Installs and configures our applications.
+
+= REQUIREMENTS:
+
+== Platform:
+
+Tested on Ubuntu 10.0.4.
+
+==Cookbooks:
+
+Requres Opscode's apt.
+
+= ATTRIBUTES:
+
+
+= USAGE:
+
+Created from this gist https://gist.github.com/654808.
+
+Usage is as follows
+
+
+aws = data_bag_item("deployment", "aws")
+
+remote_s3_file "/tmp/remote_s3_file.tar.bz2" do
+  bucket "stdeployment"
+  object_name "/path/to/remote_s3_file.tar.bz2"
+  aws_access_key_id aws["accesskey"]
+  aws_secret_access_key aws["secretkey"]
+  mode "644"
+end

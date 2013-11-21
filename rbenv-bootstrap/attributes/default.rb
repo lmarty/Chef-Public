@@ -1,0 +1,1 @@
+default[:rbenv_bootstrap][:install_versions] = []

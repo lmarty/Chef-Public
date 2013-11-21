@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+  },
+  "name": "scoutapp",
+  "maintainer_email": "nacer.laradji@gmail.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+    "debian": ">= 4.0",
+    "ubuntu": ">= 8.04"
+  },
+  "maintainer": "Efactures",
+  "long_description": "= DESCRIPTION:\n\nDeploy the scoutapp agent on your server with auto-registration  to scoutapp.com\n\n= REQUIREMENTS:\n   - A scoutapp account from www.scoutapp.com\n   - A version of the scout plugin above 5.3.2\n= ATTRIBUTES:\n\n[:scoutapp][:key] = [ \"UUIDHERE\" ]\n\n# only if you want auto-registration\n[:scoutapp][:email] = [ \"your@beauty.com\" ]\n[:scoutapp][:password] = [ \"YourNotSoSecretPassword\" ]\n[:scoutapp][:account] = [ \"DUMMYCOMPANY\" ]\n[:scoutapp][:name] = \"myserver.toto.tld\" if nil take the node[:fqdn] as default\n\n\n= USAGE:\n\n",
+  "version": "0.0.9",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Deploy the scoutapp agent on your server with auto-registration  to scoutapp.com",
+  "providing": {
+  }
+}

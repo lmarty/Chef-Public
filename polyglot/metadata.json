@@ -1,0 +1,17 @@
+{
+  "name": "polyglot",
+  "maintainer": "Simple Finance",
+  "maintainer_email": "ops@simple.com",
+  "license": "Apache 2.0",
+  "description": "Easy defaults for ruby, python, clojure, java, and android",
+  "version": "1.0.0",
+  "dependencies": {
+    "java": ">= 0.0.0",
+    "maven": ">= 0.0.0",
+    "python": ">= 0.0.0",
+    "rbenv": ">= 0.0.0",
+    "ruby": ">= 0.0.0",
+    "ruby_build": ">= 0.0.0"
+  }
+}
+

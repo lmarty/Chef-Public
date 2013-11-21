@@ -1,0 +1,7 @@
+.vagrant
+.kitchen
+metadata.json
+vendor.kitchen/
+*.tar.gz
+.project
+

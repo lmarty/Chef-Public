@@ -1,0 +1,20 @@
+= DESCRIPTION:
+
+Installs and configures
+Gitosis[http://eagain.net/gitweb/?p=gitosis.git;a=blob;f=README.rst].
+
+Gitosis is autoconfigured from "users" data bag. Users should have
+"ssh_keys" attribute containing their public SSH keys, "gitosis_repos"
+attribute with name or list of names of repositories with read_write
+access, and "gitosis_repos_ro" with a name or a list of names of
+repositories with read-only access.
+
+= REQUIREMENTS:
+
+* git
+* ssh_known_hosts
+
+= ATTRIBUTES:
+
+= USAGE:
+

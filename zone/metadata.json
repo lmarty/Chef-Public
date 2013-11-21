@@ -1,0 +1,30 @@
+{
+  "name": "zone",
+  "description": "Installs/Configures Solaris zones",
+  "long_description": "[![Build Status](https://secure.travis-ci.org/wix/zone.png)](http://travis-ci.org/wix/zone)\n\nDescription\n===========\n\nLightweight resource and provider to manage Solaris zones.\n\n\nSolaris, OpenCSW pkgutil already installed.\n\n\nConfigures, installs and boots Solaris zones.\n\nOnly a limited sub-set of configuration options are supported.\n\nIf the configuration of a running zone is changed, the zone must be rebooted for the changes to take effect.\n\nNew in version 0.0.2:\n\n* /etc/sysidcfg is now created by default from a template.  Turn this off by setting use_sysidcfg to false.\n* If copy_sshd_config is true (default), /etc/ssh/sshd_config is copied from the global zone to the new zone.\n\nNew in version 0.0.4:\n\n* You can now re-configure options after a zone is setup.\n* More options are supported.\n\nRequirements\n============\n\nSolaris, zonecfg, zoneadm.\n\nAttributes\n==========\n\nFor /etc/sysidcfg:\n\n    node[:zone][:timeserver]  - The NTP server to use.\n    node[:zone][:timezone]    - The timezone for the zone.\n    node[:zone][:dns_servers] - Array of DNS servers.\n\nFor the zones:\n\n    path              - Required.  The path of the zone's filesystem.\n    clone             - If set, the name of the zone you want to clone the new zone from.  That zone must be installed and not running.\n    autoboot          - \"true\" (default) or \"false\".  Must be a string, not a boolean.\n    limitpriv         -  String containing set of privileges for the zone.\n    iptype            - \"shared\" (default) or \"exclusive\".\n    nets              - Array of network interfaces to add.  Interfaces must be in the format of \"address:physical(:defrouter)\n    datasets          - Array of datasets to include on this zone.\n    inherits          - Array of inherit-pkg-dir directories. These cannot be changed after the zone is installed. Defaults to [ \"/lib\", \"/platform\", \"/sbin\", \"/usr\" ].\n    password          - Root password for the zone, to put in /etc/sysidcfg.  Must be encyrpted with crypt.\n    use_sysidcfg      - Whether or not to create a sysidcfg file. Defaults to true.\n    sysidcfg_template - Template name to use for /etc/sysidcfg.  Defaults to \"sysidcfg.erb\"\n    copy_ssd_config   - Whether or not to copy /etc/ssh/sshd_config from the global zone to the new zone when the zone is created.  Defaults to true.\n\n\nUsage\n=====\n\n    zone \"test\" do\n      action :install\n      path \"/opt/zones/test\"\n      limitpriv \"default,dtrace_proc,dtrace_user\"\n      password \"whbFxl4vH5guE\"\n      sysidcfg_template \"my_sysidcfg.erb\"\n      copy_sshd_config false\n      nets [ \"192.168.0.2/24:e1000g0:192.168.0.1\" ]\n      inherits [\"/lib\", \"/bin\", \"/opt\"]\n    end\n  \n    zone \"test2\" do\n      action :start\n      clone \"test\"\n      autoboot \"false\"\n      path \"/zones/test2\"\n      datasets [ \"zones/test/mysql_data\" ]\n    end\n  \n\n### Actions\n\n:install implies :configure\n:start implies :install and :configure\n\n:delete implies :stop\n",
+  "maintainer": "Martha Greenberg",
+  "maintainer_email": "marthag@wix.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "solaris2": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.6"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "multitail",
+  "description": "Installs/Configures multitail",
+  "long_description": "chef-multitail\n==============\n\nmultitail Cookbook\n==================\n\nInstall multitail on unix-based systems.\n\n\nRequirements\n------------\n\nMac OS X or Linux system\n\n\nAttributes\n----------\n\n#### multitail::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['multitail']['check_mail']</tt></td>\n    <td>Boolean</td>\n    <td>whether to check mail on start up</td>\n    <td><tt>false</tt></td>\n  </tr>\n</table>\n\n\nUsage\n-----\n#### multitail::default\n\nJust include `multitail` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[multitail]\"\n  ]\n}\n```\n\n\nContributing\n------------\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\n\nLicense and Authors\n-------------------\nAuthors: Brett Richardson (dablweb.com) [github: brett-richardson]\n",
+  "maintainer": "DablWeb.com",
+  "maintainer_email": "brett.richardson.nz@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "minitest-handler": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

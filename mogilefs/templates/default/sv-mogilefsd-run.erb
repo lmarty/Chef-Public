@@ -1,0 +1,3 @@
+#!/bin/sh
+exec 2>&1
+exec sudo -u <%= node[:mogilefs][:user] %> <%= node[:mogilefs][:bin_path] %>/mogilefsd -c <%= @options[:conf_path] %>

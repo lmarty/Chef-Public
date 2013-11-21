@@ -1,0 +1,42 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+  network:
+  - ["forwarded_port", {guest: 80, host: 8080}]
+  - ["forwarded_port", {guest: 443, host: 8443}]
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+- name: ubuntu-10.04
+  driver_config:
+    box: opscode-ubuntu-10.04
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
+- name: centos-6.4
+  driver_config:
+    box: opscode-centos-6.4
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+- name: centos-5.9
+  driver_config:
+    box: opscode-centos-5.9
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
+- name: debian-7.0-chef11
+  driver_config:
+    box: debian-7.0.0-chef_11.4.4-2-amd64
+    box_url: https://onddo-vm.s3.amazonaws.com/vagrant/debian-7.0.0-chef_11.4.4-2-amd64.box
+
+suites:
+- name: mysql
+  run_list: ["recipe[owncloud_test::mysql]"]
+  attributes: {}
+- name: postgresql
+  run_list: ["recipe[owncloud_test::postgresql]"]
+  attributes: {}
+- name: sqlite
+  run_list: ["recipe[owncloud_test::sqlite]"]
+  attributes: {}
+- name: nginx
+  run_list: ["recipe[owncloud_test::nginx]"]

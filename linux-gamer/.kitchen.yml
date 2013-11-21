@@ -1,0 +1,71 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+#- name: debian-7.1.0.x86_64
+#  driver_config:
+#    box: opscode-debian-7.1.0
+#    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-7.1.0_provisionerless.box
+#- name: debian-7.1.0.i386
+#  driver_config:
+#    box: opscode-debian-7.1.0
+#    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-7.1.0-i386_provisionerless.box
+#- name: ubuntu-12.04
+#  driver_config:
+#    box: opscode-ubuntu-12.04
+#    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+#- name: ubuntu-10.04
+#  driver_config:
+#    box: opscode-ubuntu-10.04
+#    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
+#- name: centos-6.4
+#  driver_config:
+#    box: opscode-centos-6.4
+#    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+#- name: centos-5.9
+#  driver_config:
+#    box: opscode-centos-5.9
+#    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
+
+suites:
+- name: default
+  run_list: ["recipe[linux-gamer]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::arcade_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::arcade_games_server]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::board_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::board_games_server]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::card_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::card_games_servers]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::emulators]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::puzzle_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::rpg_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::rpg_games_server]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::simulation_games_client]"]
+  attributes: {}
+- name: default
+  run_list: ["recipe[linux-gamer::wine]"]
+  attributes: {}

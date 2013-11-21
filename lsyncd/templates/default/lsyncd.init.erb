@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# lsyncd: Starts the lsync Daemon
+#
+# chkconfig: 345 99 90
+# description: Lsyncd uses rsync to synchronize local directories with a remote
+# machine running rsyncd. Lsyncd watches multiple directories
+# trees through inotify. The first step after adding the watches
+# is to, rsync all directories with the remote host, and then sync
+# single file buy collecting the inotify events.
+# processname: lsyncd
+
+# . /etc/rc.d/init.d/functions 
+
+PROG="lsyncd"
+CMD="/usr/bin/$PROG"
+LOCKFILE="/var/lock/$PROG"
+CONFIG="/etc/lsyncd.lua"
+RETVAL=0
+
+start() {
+  if [ -f $LOCKFILE ]; then
+    echo -n $"$PROG is already running: "
+    echo
+  else
+    echo -n $"Starting $PROG: "
+    $CMD $CONFIG
+    RETVAL=$?
+    echo
+    [ $RETVAL = 0 ] && touch $LOCKFILE
+    return $RETVAL
+  fi
+}
+
+stop() {
+  echo -n $"Stopping $PROG: "
+  killall $CMD
+  RETVAL=$?
+  echo
+  [ $RETVAL = 0 ] && rm -f $LOCKFILE
+  return $RETVAL
+}
+
+case "$1" in
+  start) start;;
+  stop) stop;;
+  restart)
+    stop
+    start
+    ;;
+  status) status $CMD;;
+  *)
+    echo "Usage: $PROG {start|stop|restart|status}"
+    exit 1
+esac
+
+exit $?

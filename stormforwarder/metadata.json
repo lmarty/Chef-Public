@@ -1,0 +1,36 @@
+{
+  "name": "stormforwarder",
+  "description": "Configures a splunkforwarder to forward to Splunk Storm.",
+  "long_description": "Description\n===========\nCookbook for setting up a splunkforwarder as a Splunk Storm forwarder.\n\n[![Build Status](https://secure.travis-ci.org/ampledata/cookbook-stormforwarder.png?branch=master)](http://travis-ci.org/ampledata/cookbook-stormforwarder)\n\n\nRequirements\n============\n1. Linux host on which to run splunkforwarder.\n2. The [splunkforwarder Cookbook](http://community.opscode.com/cookbooks/splunkforwarder)\n3. The Splunk Storm Access Token: Login to Splunk Storm and Navigate to [Account Overview](https://www.splunkstorm.com/storm/account/overview) and click **Show Authentication Token.**\n4. The Splunk Storm Project ID: Login to Splunk Storm and Navigate to your project's *<Settings>*, where you'll find your Project ID.\n\n\n\nAttributes\n==========\nThis Cookbook uses the following Attributes to configure the\nstormforwarder app within the splunkforwarder installation.\n\nRequired Attributes\n-------------------\nThe following Attributes MUST be set before this Cookbook can configure\nthe splunkforwarder to forward to Splunk Storm:\n\n\n* `node['stormforwarder']['project_id']` - Storm Project ID.\n* `node['stormforwarder']['api_token']` - Splunk Storm API Token.\n\nThese Attributes have no default value and must be set, preferably using\nan Environment or Role. See [Attributes](\nhttp://wiki.opscode.com/display/chef/Attributes) for more information\nusing Environments & Roles to set Node Attributes.\n\n\nUsage\n=====\n\n1. Set the Required Attributes using a Environment, Role, etc..\n2. Add the 'splunkforwarder' Cookbook to a Node's Run List.\n3. Add this Cookbook to a Node's Run List.\n\n\nSource\n======\nhttps://github.com/ampledata/cookbook-stormforwarder\n\nAuthor\n======\nAuthor:: Greg Albrecht (mailto:gba@splunk.com)\n\nCredits\n=======\nThe stormforwarder Cookbook is inspired by the splunkstorm Cookbook\nwritten by Aaron Wallis of Lexer.\n\nCopyright\n=========\n* Copyright 2012 Splunk, Inc.\n\nLicense\n=======\nApache License 2.0. See LICENSE.txt\n",
+  "maintainer": "Greg Albrecht",
+  "maintainer_email": "gba@splunk.com",
+  "license": "Apache License 2.0",
+  "platforms": {
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "suse": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "splunkforwarder": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

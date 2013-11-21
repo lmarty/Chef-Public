@@ -1,0 +1,32 @@
+{
+  "name": "youtrack",
+  "description": "Installs YouTrack Issue Tracker from JetBrains",
+  "long_description": "",
+  "maintainer": "Vyacheslav Slinko",
+  "maintainer_email": "vyacheslav.slinko@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "bluepill": ">= 0.0.0",
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "youtrack": "Install and start YouTrack instance"
+  },
+  "version": "0.0.0"
+}

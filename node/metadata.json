@@ -1,0 +1,46 @@
+{
+  "name": "node",
+  "description": "Installs/Configures node, npm and node server providers",
+  "long_description": "= DESCRIPTION:\n\nThis cookbook will deploy node and npm (node package manager) to your system. It also defines providers to install/uninstall node module and start/stop/restart node servers.\n\n* homepage : https://github.com/digitalbutter/cookbook-node\n\n= REQUIREMENTS:\n\n* a working git framework (for example provided by Opscode git cookbook)\n\nTested on ubuntu. Should work on other system with upstart.\n\n= ATTRIBUTES:\n\n* node/revision : indicates which revision to install. Default is the latest ('HEAD'). Since node evolves very quickly and is not always that stable, you might want to set it to a stable version (for example 'v0.4.3')\n\n= USAGE:\n\nInclude the node recipe to download, compile and install node along with npm.\n\n== defines:\n\n+node_server+ provider to start/stop server. The following example will start a provided script with node. Logs can be found in /var/log/node-my_node_server.log.\n\n    node_server \"my_node_server\" do\n        script \"/path/to/your/node/script.js\" # mandatory\n        user \"my_user\" # default : nodejs\n        dependency [\"required\",\"node\",\"modules\"] # default []. Will be installed with npm before starting the server\n        args \"arguments for your script\" # default \"\"\n        init_style :runit # default - by platform. Spported values: :upstart, :init, :runit\n        action :start # Will start a node server. In [stop,start,restart], default :start\n    end\n\n+node_npm+ provider to manage nodejs modules. The following example will install the connect module for node.\n\n    node_npm \"connect\" do\n        action :install\n    end\n\n= LICENSE & AUTHOR:\n\nAuthor::\n* Emmanuel Prochasson (<emmanuel@tikibooth.com>)\n* Ed Bosher (<edbo@tikibooth.com>)\n\nContributor:\n* Jon Wood (<jon@blankpad.net>)\n\nCopyright:: 2011, Tikibooth Limited\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Tikibooth Limited",
+  "maintainer_email": "devops@butter.com.hk",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "git": ">= 0.0.0",
+    "runit": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "node-js/version": {
+      "display_name": "The version of node to install",
+      "default": "HEAD",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "node-js": "Install node and npm"
+  },
+  "version": "1.0.1"
+}

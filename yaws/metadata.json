@@ -1,0 +1,29 @@
+{
+  "name": "yaws",
+  "description": "Installs/Configures yaws",
+  "long_description": "# Yaws Chef Cookbook\n\n## Description\n\nInstall [yaws](http://yaws.hyber.org/) in your server.\n\n## Requirements\n\n## Attributes\n\n## Usage\n\n```ruby\ninclude_recipe \"yaws\"\n```\n\n## TODO\n\n* install from source\n\n## License\n\nCopyright 2011, François de Metz\n\nLicensed under the Apache License, Version 2.0.\n",
+  "maintainer": "François de Metz",
+  "maintainer_email": "francois@2metz.fr",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

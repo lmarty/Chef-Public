@@ -1,0 +1,4 @@
+cookbook 'mcollective', :path => '/Users/zts/code/cookbooks/mcollective'
+cookbook 'chef_handler', :locked_version => '1.1.4'
+cookbook 'apt', :locked_version => '1.8.4'
+cookbook 'yum', :locked_version => '2.1.0'

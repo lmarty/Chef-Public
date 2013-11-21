@@ -1,0 +1,51 @@
+{
+  "name": "cacert",
+  "description": "Installs/Configures cacert",
+  "long_description": "# cacert Cookbook\n\nThis cookbook provides LWRP to install certificate authorities and set the needed hash-symlinks.\n\n## Attributes\n\nYou can specify the default path were the ssl certificates and symlinks are stored using an attribute\n\n```ruby\nnode['cacert']['cert_dir'] # defaults to '/etc/ssl/certs'\n```\n\n## Recipes\n\n### default\n\nThe default recipe does nothing.\n\n### cacert.org\n\nThis recipe installs the cacert.org root certificate\n\nIt automatically sets the correct symlinks on broken systems (like Debian Squeeze), see this gist: https://gist.github.com/chr4/5805334\n\n\n## Providers\n\nTo use the providers, add the following to your metadata.rb\n\n    depends 'cacert'\n\n### cacert\n\nInstalls a certificate from a given URL, and calls cacert_hash to create the necessary symlinks.\nThe following example installs the cacert.org root certificate to /etc/ssl/certs/cacert.org.pem\n\n*NOTE* On Debian Squeeze (and potentially on other systems), openssl generates the wrong hash. As a workaround, you can specify the hash manually, see the \"hash\" attribute below.\n\n    cacert 'cacert.org.pem' do\n      cert     'cacert.org.pem'                        # name attribute\n      source   'https://www.cacert.org/certs/root.crt' # required\n      cert_dir '/etc/ssl/certs'                        # defaults to node['cacert']['cert_dir']\n      action :create                                   # default :create_if_missing\n\n      # You can specify the hash for the symlink manually.\n      # Ff not given, this will be generated using openssl x509 -hash\n      hash     '99d0fa06' # correct hash for cacerts root certificate\n    end\n\n### cacert_hash\n\nYou can use the cacert_hash provider by its own, too\n\n    cacert_hash 'cacert.org.pem' do\n      cert     'cacert.org.pem'                        # name attribute\n      cert_dir '/etc/ssl/certs'                        # defaults to node['cacert']['cert_dir']\n\n      # You can specify the hash for the symlink manually.\n      # Ff not given, this will be generated using openssl x509 -hash\n      hash     '99d0fa06' # correct hash for cacerts root certificate\n    end\n\n\n# Contributing\n\ne.g.\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\n# License and Authors\n\nAuthors: Chris Aumann <me@chr4.org>\n\nLicense: GPLv3\n",
+  "maintainer": "Chris Aumann",
+  "maintainer_email": "me@chr4.org",
+  "license": "GNU Public License 3.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "suse": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "cacert/cert_dir": {
+      "description": "Installation directory for SSL certificates",
+      "default": "/etc/ssl/certs",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "cacert::cacert.org": "Installs cacert.org root certificate"
+  },
+  "version": "0.1.0"
+}

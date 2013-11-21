@@ -1,0 +1,31 @@
+{
+  "name": "wix",
+  "description": "Installs/Configures Windows Installer XML toolset (WiX)",
+  "long_description": "Description\n===========\n\nThe [Windows Installer XML](http://wix.sourceforge.net/) (WiX) is a toolset\nthat builds Windows installation packages from XML source code. The toolset\nsupports a command line environment that developers may integrate into their\nbuild processes to build MSI and MSM setup packages. This cookbook installs the\nfull WiX suite of tools.\n\nRequirements\n============\n\nPlatform\n--------\n\n* Windows Server 2003 R2\n* Windows 7\n* Windows Server 2008 (R1, R2)\n\nCookbooks\n---------\n\n* windows\n\nAttributes\n==========\n\n* `node['wix']['home']` - location to install WiX files to.  default is\n  `%SYSTEMDRIVE%\\wix`\n* `node['wix']['download_id']` - CodePlex download id of the WiX binaries to\n   install. default is `482066` (WiX v3.6)\n* `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is\n  `3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4`\n\nUsage\n=====\n\ndefault\n-------\n\nDownloads and installs WiX to the location specified by `node['wix']['home']`.\nAlso ensures `node['wix']['home']` is in the system path.\n\nLicense and Author\n==================\n\nAuthor:: Seth Chisamore (<schisamo@opscode.com>)\n\nCopyright:: 2011-2013, Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "cookbooks@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 1.2.2"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.1.0"
+}

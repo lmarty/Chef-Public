@@ -1,0 +1,30 @@
+{
+  "name": "dnsmasq",
+  "description": "Installs and configures dnsmasq",
+  "long_description": "# DNSMasq\n\nInstall and configure dnsmasq\n\n### Repo:\n\n* https://github.com/hw-cookbooks/dnsmasq\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "hosts_file": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

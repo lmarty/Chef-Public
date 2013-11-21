@@ -1,0 +1,32 @@
+{
+  "name": "gdal",
+  "description": "Installs GDAL",
+  "long_description": "",
+  "maintainer": "Paul A. Jungwirth",
+  "maintainer_email": "pj@illuminatedcomputing.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "ark": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "gdal": "Installs GDAL"
+  },
+  "version": "0.1.0"
+}

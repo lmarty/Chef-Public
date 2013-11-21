@@ -1,0 +1,29 @@
+{
+  "name": "goodbye_world",
+  "version": "0.1.11",
+  "description": "Installs/Configures goodbye_world",
+  "long_description": "# goodbye_world cookbook\n\nThis is a simple cookbook that logs 'Goodbye, World!' in the log message. It will be a good companion with the\n[hello_world](https://github.com/caryp-cookbooks/hello_world) cookbook.\n\n# Requirements\n\nJust Chef\n\n# Usage\n\nInclude the `goodbye_world::default` in the run list and it will log 'Goodbye, World!'.\n\n# Attributes\n No attributes\n\n# Recipes\n\n* `goodbye_world::default` - logs 'Goodbye, World!'.\n\n# Author\n\nAuthor:: Kannan Manickam (<me@arangamani.net>)\n",
+  "maintainer": "Kannan Manickam",
+  "maintainer_email": "me@arangamani.net",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  }
+}

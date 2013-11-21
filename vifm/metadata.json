@@ -1,0 +1,36 @@
+{
+  "name": "vifm",
+  "description": "Installs vifm",
+  "long_description": "#vifm [![Build Status](https://secure.travis-ci.org/gregf/cookbook-vifm.png)](http://travis-ci.org/gregf/cookbook-vifm)\n\nInstalls vifm file manager.\n\n###Platform\n\n* Debian, Ubuntu\n* CentOS, Fedora\n\n##Attributes\n\nSee `attributes/default.rb` for default values.\n\n* `default['vifm']['install_vifm']`\n* `default['vifm']['version']`\n* `default['vifm']['checksum']`\n",
+  "maintainer": "Greg Fitzgerald",
+  "maintainer_email": "greg@gregf.org",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "vifm::default": "Installs the package or falls back to compiling from source",
+    "vifm::source": "Compiles vifm from source",
+    "vifm::package": "Installs the vifm package"
+  },
+  "version": "1.0.0"
+}

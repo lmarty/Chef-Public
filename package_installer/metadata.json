@@ -1,0 +1,29 @@
+{
+  "name": "package_installer",
+  "description": "Installs/Updates system packages",
+  "long_description": "Package Installer\n=============\n\nSimple cookbook for managing package versions on a node.\n\nUsage\n=====\n\nAttributes\n----------\n\nDefine packages (and optionally version restrictions and action type) within the role:\n\n\n```ruby\n  override_attributes(\n    :package_installer => {\n      :packages => {\n        'vim' => nil,\n        'mailutils' => {\n          :version => '2.2'\n        },\n        'emacs' => {\n          :action => :upgrade\n        }\n      }\n    }\n  )\n```\n\nBy default the :upgrade action is used. If you want to keep the package\npegged, simply specify a version or use the :install action.\n\nIssues/Bugs/Feature Requests\n----------------------------\n\nCreate a github issue or fork, fix and send me a pull request\n\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

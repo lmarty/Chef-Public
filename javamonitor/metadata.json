@@ -1,0 +1,35 @@
+{
+  "name": "javamonitor",
+  "description": "Maintains JavaMonitor applications and instances life",
+  "long_description": "Description\n===========\n\nManages JavaMonitor applications through REST API.\n\n---\nRequirements\n============\n\nPlatform\n--------\n\nOnly tested on Ubuntu.\n\nCookbooks\n---------\n\n* webobjects\n* build-essential\n\n---\nAttributes\n==========\n\n* `node[:javamonitor][:base_url]` - URL to JavaMonitor application\n* `node[:javamonitor][:password]` - Access password for JavaMonitor.\n\n---\nRecipes\n=======\n\ndefault\n-------\n\nDoes nothing.\n\n---\nActions\n=====\n\njavamonitor_instance\n-----\n\n### Actions\nAction  | Description \t\t\t| Default\n------- | ------------                  | --------\ncreate  | Creates a new instance        | Yes\nstop    | Stops instance                | \ndelete  | Deletes instanc               | \n\n\n\njavamonitor_application\n-----\n\n### Actions\nAction  | Description \t\t\t| Default\n------- | ------------                  | --------\ncreate  | Creates application           | Yes\n\n\n\nLicense and Authors\n===================\n\nAuthor:: Jedrzej Sobanski <jsobanski@lgi.com>\n\nCopyright:: 2013, Liberty Global.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Liberty Global",
+  "maintainer_email": "jsobanski@libertyglobal.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "webobjects": ">= 0.0.0",
+    "build-essential": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+    "javamonitor_application": ">= 0.0.0",
+    "javamonitor_instance": ">= 0.0.0"
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "javamonitor": "Does nothing"
+  },
+  "version": "0.7.0"
+}

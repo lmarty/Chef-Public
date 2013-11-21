@@ -1,0 +1,25 @@
+# File managed by Chef
+
+#<%= @name %>
+group  {
+<% @parameters.sort.each do |parameter| -%>
+    <%= parameter %>;
+<% end -%>
+
+<% @hosts.sort.each do |host,data| -%>
+  host <%= host %> {
+    option host-name "<%= host %>"; 
+<% if data.has_key?("parameters") -%>
+  <% data['parameters'].sort.each do |param| -%>
+    <%= param %>;
+  <% end -%>
+<% end -%> 
+    hardware ethernet <%= data["mac"] %>; 
+    <% if data.has_key?("ip") -%>  
+    fixed-address <%= data["ip"] %>;
+    <% end -%>
+
+
+  }
+<% end -%>
+}

@@ -1,0 +1,51 @@
+{
+  "version": "0.0.1",
+  "maintainer_email": "developers@findsyou.com",
+  "groupings": {
+  },
+  "description": "Installs libxslt with development packages",
+  "recommendations": {
+  },
+  "recipes": {
+    "xslt": "Installs libxslt with development packages"
+  },
+  "attributes": {
+  },
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "platforms": {
+    "debian": [
+
+    ],
+    "fedora": [
+
+    ],
+    "centos": [
+
+    ],
+    "gentoo": [
+
+    ],
+    "ubuntu": [
+
+    ],
+    "suse": [
+
+    ],
+    "redhat": [
+
+    ]
+  },
+  "conflicting": {
+  },
+  "long_description": "",
+  "providing": {
+  },
+  "license": "Apache 2.0",
+  "name": "xslt",
+  "maintainer": "FindsYou Limited",
+  "replacing": {
+  }
+}

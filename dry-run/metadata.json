@@ -1,0 +1,31 @@
+{
+  "replacing": {
+  },
+  "recommendations": {
+  },
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "gentoo": ">= 0.0.0"
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Alexey Melezhik",
+  "name": "dry-run",
+  "groupings": {
+  },
+  "attributes": {
+  },
+  "suggestions": {
+  },
+  "providing": {
+  },
+  "license": "Apache 2.0",
+  "recipes": {
+  },
+  "maintainer_email": "melezhik@gmail.com",
+  "version": "0.0.3",
+  "long_description": "DESCRIPTION\n===========\nrun [chef templates](http://wiki.opscode.com/display/chef/Resources#Resources-Template) in dryrun mode\n    \nUSAGE\n=====\n\n    include_recipe 'dry-run'\n\n    dry_run_template \"/home/user/file.conf\" do\n        source    \"file.erb\"\n        mode '0644'\n        owner 'root'\n        group 'root'\n        variables({ :email => 'melezhik@gmail.com' })\n    end\n\nPARAMETERS\n==========\nwell, this is [chef definition](http://wiki.opscode.com/display/chef/Definitions) so you can pass\narbitrary parametes here:\n\n* `source`\n* `mode`\n* `owner`\n* `group`\n* `variables`\n\nsee explanations for them in http://wiki.opscode.com/display/chef/Resources#Resources-Template\n\n    \n",
+  "description": "run chef templates in dryrun mode"
+}

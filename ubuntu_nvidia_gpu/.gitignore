@@ -1,0 +1,6 @@
+Gemfile.lock
+.bundle
+.cache
+.kitchen
+bin
+tmp/

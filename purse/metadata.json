@@ -1,0 +1,29 @@
+{
+  "name": "purse",
+  "description": "Installs/Configures purse",
+  "long_description": "= DESCRIPTION:\nThe purse cookbook is comical in nature. The intent is to make a select few laugh and not really much else. :)\n\n= REQUIREMENTS:\nSense of humor.\n\n= ATTRIBUTES: \n\n= USAGE:\nDon't. It doesn't *do* anything. \n",
+  "maintainer": "Ian Meyer",
+  "maintainer_email": "ianmmeyer@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

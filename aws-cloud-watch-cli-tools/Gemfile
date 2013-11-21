@@ -1,0 +1,6 @@
+source :rubygems
+
+gem "berkshelf", "~> 1.1.2"
+gem "thor-foodcritic", "~> 0.2.0"
+gem "knife-ec2", "~> 0.6.2"
+gem "chef", "~> 10.18.0"

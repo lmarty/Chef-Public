@@ -1,0 +1,30 @@
+{
+  "name": "log_rotations",
+  "description": "Rotates logs",
+  "long_description": "LogRotations\n============\n\nThis cookbook provides an extremely simple way to create log rotations via\nattributes. It depends on the logrotate cookbook. Simple example:\n\n```ruby\noverride_attributes(\n  :log_rotations => [\n    {:name => 'chef-client', :path => '/var/log/chef/client.log'},\n    {:name => 'nginx', :path => '/var/log/nginx/access.log', :frequency => 'daily'}\n  ]\n)\n```\n\nUseful keys within the hash:\n\n* name - required\n* path - required\n* frequency - defaults to 'weekly'\n* rotate - defaults to 30\n* create - defaults to '644 root root'\n\nCookbook Info\n=============\n\nRepo: https://github.com/chrisroberts/cookbook-log_rotations\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "logrotate": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

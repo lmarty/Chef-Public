@@ -1,0 +1,131 @@
+{
+  "name": "tmpreaper",
+  "description": "Installs/Configures tmpreaper",
+  "long_description": "[![Build Status](https://secure.travis-ci.org/customink-webops/chef-tmpreaper.png?branch=0.1.1)](http://travis-ci.org/customink-webops/chef-tmpreaper)\n\nDescription\n===========\nThis cookbook install tmpreaper and the associated configuration file for Ubuntu.\n\nRequirements\n============\n## Cookbooks:\n\nThis cookbook doesn't have direct dependencies on other cookbooks.\n\n## Platforms\n* Ubuntu OS\n\nAttributes\n==========\n\n## tmpreaper\n* `default['tmpreaper']['show_warning']` - show a warning before running\n* `default['tmpreaper']['protect_extra']` - extra directories to protect/ignore\n* `default['tmpreaper']['dirs']` - directory or directories to clean\n* `default['tmpreaper']['delay']` - maximum delay before starting processing\n* `default['tmpreaper']['additional_options']` - additional options for tmpreaper\n\n## cron\n* `default['tmpreaper']['cron']['hour']` = hour to run the cron task\n* `default['tmpreaper']['cron']['minute']` - minute to run the cron task\n\nRecipes\n=======\n\nTo install just tmpreaper (and run the cleaning command yourself):\n\n    tmpreaper\n\nTo install tmpreaper and a cronjob:\n\n    tmpreaper\n    tmpreaper::schedule\n\nLicense and Authors\n===================\n\nAuthor:: Seth Vargo <svargo@customink.com>\n\nCopyright:: 2012, CustomInk, LLC.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "CustomInk, LLC",
+  "maintainer_email": "svargo@customink.com",
+  "license": "All rights reserved",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "show_warning": {
+      "display_name": "Show Warning",
+      "description": "Boolean to show warning",
+      "type": "string",
+      "default": "false",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "project_extra": {
+      "display_name": "Project Extra",
+      "description": "Extra Project Variables",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "dirs": {
+      "display_name": "Dirs",
+      "description": "Directory or directories to clean",
+      "type": "array",
+      "default": [
+        "/tmp"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "delay": {
+      "display_name": "Delay",
+      "description": "Maximum delay before starting processing",
+      "default": "256",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "additional_options": {
+      "display_name": "Additional Options",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "cron[hour]": {
+      "display_name": "Cron Time (hour)",
+      "description": "Hour to run the cron job",
+      "default": "2",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "cron[minute]": {
+      "display_name": "Cron Time (minute)",
+      "description": "Minute to run the cron job",
+      "default": "15",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "tmpreaper": "Main tmpreaper configuration",
+    "tmpreaper::schedule": "Adds cron job for tmpreaper"
+  },
+  "version": "0.1.2"
+}

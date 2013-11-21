@@ -1,0 +1,31 @@
+{
+  "name": "symantec",
+  "description": "Installs/Configures symantec",
+  "long_description": "# Symantec\n\nInstalls Symantec Endpoint Protection from internal package repository.\n\n## Description\n\nHas been tested on Windows Server 2008.  Should work on other Windows family platforms.\n\n## Requirements\n\nYou must set up an internal package repository to distribute Symantec by HTTP.\n\nThe recipe looks for the Setup file at http://yum.($domain)/symantec/symantec-($kernel.machine)-setup.exe, by default.\n\n## Attributes\n\n* `symantec['appid']` - Used to build the uninstall command\n* `symantec['install_source']` - Internal http repository with Symantec binary\n* `symantec['install_options']` - Defaults to silent mode, with LiveUpdate, and no reboot\n\n## Usage\n\n### Install Symantec\n\nAdd symantec::default to your `run_list`.  The recipe will remove itself\nfrom the `run_list` after the first successful run.  Symantec has done\na nice job creating a non-standard MSI package which is not particularly\neasy to automate by resource.  This was the only way which I could guard the\nrecipe with idempotent installation behavior.\n\n### Uninstall Symantec\n\nAdd symantec::undo to your `run_list`.  The recipe will remove itself\nfrom the `run_list` after Symantec has been uninstalled.  The recipe\nalso requests a reboot, upon successful execution.  See the `windows_reboot`\ndocumentation accompanying the Opscode [windows](http://github.com/opscode-cookbooks/windows)\ncookbook, to disable the `windows_reboot` handler.\n\n## License and Author\n\nAuthor: Eric G. Wolfe (<wolfe21@marshall.edu>)\n\nCopyright 2011-2012, Eric G. Wolfe\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Eric G. Wolfe",
+  "maintainer_email": "wolfe21@marshall.edu",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

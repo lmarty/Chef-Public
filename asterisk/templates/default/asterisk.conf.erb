@@ -1,0 +1,15 @@
+; This file is managed by Chef for <%= node['fqdn'] %>
+; Do NOT modify this file directly.
+
+[directories]
+astetcdir => <%= node['asterisk']['prefix']['conf'] %>/asterisk
+astmoddir => <%= node['asterisk']['prefix']['bin'] %>/lib/asterisk/modules
+astagidir => <%= node['asterisk']['prefix']['bin'] %>/share/asterisk/agi-bin
+astvarlibdir => <%= node['asterisk']['prefix']['state'] %>/lib/asterisk
+astdatadir => <%= node['asterisk']['prefix']['state'] %>/lib/asterisk
+astspooldir => <%= node['asterisk']['prefix']['state'] %>/spool/asterisk
+astrundir => <%= node['asterisk']['prefix']['state'] %>/run/asterisk
+astlogdir => <%= node['asterisk']['prefix']['state'] %>/log/asterisk
+
+[options]
+languageprefix = yes ; Use the new sound prefix path syntax

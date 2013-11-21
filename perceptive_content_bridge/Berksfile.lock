@@ -1,0 +1,37 @@
+{
+  "sources": {
+    "perceptive_content_bridge": {
+      "path": "."
+    },
+    "minitest-handler": {
+      "locked_version": "0.2.1"
+    },
+    "perceptive_user_management": {
+      "locked_version": "0.1.0",
+      "git": "git://github.rds.lexmark.com/jgustine/Chef.git",
+      "ref": "248c1af58ed49f36a937944f4807528690adae2e",
+      "rel": "cookbooks/perceptive_user_management"
+    },
+    "perceptive_bash": {
+      "locked_version": "0.1.0",
+      "git": "git://github.rds.lexmark.com/jgustine/Chef.git",
+      "ref": "248c1af58ed49f36a937944f4807528690adae2e",
+      "rel": "cookbooks/perceptive_bash"
+    },
+    "perceptive_ssh": {
+      "locked_version": "0.1.0",
+      "git": "git://github.rds.lexmark.com/jgustine/Chef.git",
+      "ref": "248c1af58ed49f36a937944f4807528690adae2e",
+      "rel": "cookbooks/perceptive_ssh"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "openssh": {
+      "locked_version": "1.2.0"
+    },
+    "iptables": {
+      "locked_version": "0.12.0"
+    }
+  }
+}

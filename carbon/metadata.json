@@ -1,0 +1,34 @@
+{
+  "name": "carbon",
+  "description": "Installs/Configures carbon",
+  "long_description": "Installs/Configures carbon",
+  "maintainer": "Scott M. Likens",
+  "maintainer_email": "scott@likens.us",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": "= 12.04"
+  },
+  "dependencies": {
+    "runit": ">= 0.0.0",
+    "build-essential": ">= 0.0.0",
+    "python": ">= 0.0.0",
+    "git": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

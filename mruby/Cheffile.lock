@@ -1,0 +1,43 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (2.1.1)
+    build-essential (1.4.2)
+    chef_handler (1.1.4)
+    dmg (2.0.0)
+    git (2.6.0)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 1.0.0)
+      windows (>= 0.0.0)
+      yum (>= 0.0.0)
+    nginx (1.8.0)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      ohai (>= 1.1.4)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    ohai (1.1.12)
+    rbenv (1.6.5)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      git (>= 0.0.0)
+      ohai (>= 1.1)
+    runit (1.2.0)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+    windows (1.10.0)
+      chef_handler (>= 0.0.0)
+    yum (2.3.2)
+
+PATH
+  remote: ../mruby
+  specs:
+    mruby (0.1.0)
+
+DEPENDENCIES
+  build-essential (>= 0)
+  mruby (>= 0)
+  nginx (>= 0)
+  rbenv (>= 0)
+

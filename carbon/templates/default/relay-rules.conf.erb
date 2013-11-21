@@ -1,0 +1,8 @@
+<% @relay_rules.each_pair do |k,v| %>
+[<%= k.to_s %>]
+<% unless v["default"] == "false" %>
+default = <%= v["default"] %>
+<% end %>
+destinations = <%= v["destinations"].to_a %>
+continue = <%= v["continue"] %>
+<% end %>

@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+  },
+  "name": "osxzip",
+  "maintainer_email": "d@unwiredcouch.com",
+  "attributes": {
+  },
+  "license": "MIT",
+  "suggestions": {
+  },
+  "platforms": {
+    "mac_os_x": ">= 0.0.0"
+  },
+  "maintainer": "Daniel Schauenberg",
+  "long_description": "= DESCRIPTION:\nChef resource to provide easy installation of Mac OS X applications,\ndistributed via zip archives.\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n  - :app\n  - :source\n  - :destination\n  - :checksum\n  - :installed\n\n= USAGE:\n\n  osxzip_package \"The Unarchiver\" do\n    app \"TheUnarchiver\"\n    source \"http://theunarchiver.googlecode.com/files/TheUnarchiver2.7.1.zip\"\n    checksum \"AFFEAFFE\"\n  end\n\n\n\n",
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures osx zip install",
+  "providing": {
+  }
+}

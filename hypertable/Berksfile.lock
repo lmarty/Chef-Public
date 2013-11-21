@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "hypertable": {
+      "path": "."
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    },
+    "iptables": {
+      "locked_version": "0.12.0"
+    },
+    "ulimit": {
+      "locked_version": "0.3.0"
+    }
+  }
+}

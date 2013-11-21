@@ -1,0 +1,6 @@
+<% if node['graphite']['web']['port'] -%>
+export GRAPHITE_URL="http://<%=node['graphite']['web']['host']%>:<%=node['graphite']['web']['port']%>"
+<% else -%>
+export GRAPHITE_URL="http://<%=node['graphite']['web']['host']%>"
+<% end %>
+export SEYREN_URL="http://<%=node['graphite']['web']['host']%>:<%=node['tomcat']['port']%>/seyren"

@@ -1,0 +1,43 @@
+{
+  "name": "xymon",
+  "description": "Installs/Configures Xymon monitoring infrastructure",
+  "long_description": "= DESCRIPTION:\n\nA cookbook that installs the xymon monitoring software.\n\n== REQUIREMENTS:\n\nPlatform:\n* Ubuntu\n\n= ATTRIBUTES:\n\n* `node[\"xymon\"][\"servers\"]` - An array of ip addressed of the server side component, default [].\n\n= USAGE:\n\nTo use this cookbook, set the attributes above on the node via a role or the node object itself. In a role.rb:\n\n    \"xymon\" => {\n      \"servers\" => [ \"127.0.0.1\" ]\n    }\n\n",
+  "maintainer": "Fire Information Systems Group",
+  "maintainer_email": "peter@realityforge.org",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "xymon/servers": {
+      "display_name": "Xymon Server ip addresses",
+      "description": "List of Xymon servers to send monitoring information to",
+      "type": "array",
+      "default": "",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

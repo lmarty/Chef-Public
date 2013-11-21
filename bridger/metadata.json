@@ -1,0 +1,30 @@
+{
+  "name": "bridger",
+  "description": "Create bridges",
+  "long_description": "Bridger - Building bridges with Chef\n====================================\n\nDoes what's described: builds a bridge, using chef\n\nImportant attributes\n--------------------\n\n* node[:bridger][:interface] = 'eth0' (interface to bridge to)\n* node[:bridger][:name] = 'br0' (name of the bridge)\n* node[:bridger][:dhcp] = false (dhcp in use on interface)\n* node[:bridger][:address] = nil (static address to use) \n* node[:bridger][:netmask] = '255.255.255.0' (netmask in use)\n* node[:bridger][:gateway] = nil (gateway to use)\n\nYou can add more bridges using:\n\n* node[:bridger][:additionals]\n\nIt accepts an array of hashes with the hashes using the same\nstructure as above to provide bridge information.\n\nRepository\n----------\n\n* https://github.com/heavywater/chef-bridger\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": "12.04"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

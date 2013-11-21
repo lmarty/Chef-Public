@@ -1,0 +1,31 @@
+{
+  "name": "google-drive",
+  "description": "Installs/Configures google-drive",
+  "long_description": "google-drive Cookbook\n\nThis installs google-drive on workstation or server.\n\nRequirements\n------------\nAside from the requirements for google-drive itself, this cookbook works with Windows. A Mac OS X will be out in the near future.\n\nAttributes\n----------\n* `default['google-drive']['windows']['package_name']` = Package name for Google Drive. Defaults to  `'Google Drive'`\n* `default['google-drive']['windows']['url']` = URL of installer. Defaults to `'https://dl.google.com/drive/gsync_enterprise.msi'`\n\nUsage\n-----\n#### google-drive::default\nTODO: Write usage instructions for each cookbook.\n\ne.g.\nJust include `google-drive` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[google-drive]\"\n  ]\n}\n```\n\nContributing\n------------\nIf you want to contribute:\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Rilindo Foster <rilindo.foster@monzell.com>\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0\n\n",
+  "maintainer": "Rilindo Foster",
+  "maintainer_email": "rilindo.foster@monzell.com",
+  "license": "All rights reserved",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 1.2.6"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

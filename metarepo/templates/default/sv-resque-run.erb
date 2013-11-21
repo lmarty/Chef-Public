@@ -1,0 +1,15 @@
+#!/bin/sh
+exec 2>&1
+
+su - <%= node['metarepo']['user'] %>
+
+HOME=<%= node['metarepo']['home'] %>
+BASEDIR=<%= node['metarepo']['directory'] %>
+QUEUE=default
+VERBOSE=1
+
+export HOME BASEDIR COUNT QUEUE VERBOSE
+
+cd "${BASEDIR}"
+
+exec chpst -L "${BASEDIR}/metarepo-resque-runit.lock" -- bundle exec rake resque:work --trace

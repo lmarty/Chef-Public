@@ -1,0 +1,29 @@
+{
+  "name": "colorize_output",
+  "description": "Colorizes Chef log output",
+  "long_description": "# colorize_output\n\nThis cookbook simply colorizes log output, based on [this gist](https://gist.github.com/schubert/3308296).\n",
+  "maintainer": "Vasily Mikhaylichenko",
+  "maintainer_email": "vasily@locomote.com.au",
+  "license": "BSD",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "editor",
+  "description": "Set the system-wide default editor",
+  "long_description": "Editor\n======\n[![Build Status](https://secure.travis-ci.org/sethvargo-cookbooks/editor.png?branch=master)](https://travis-ci.org/sethvargo-cookbooks/editor)\n\nSet the default system wide editor with Chef\n\nInstallation\n------------\nI highly recommend using Berkshelf:\n\n```ruby\n# Berksfile\ncookbook 'editor'\n```\n\nAlternatively, you can install from the community site:\n\n    knife cookbook site install editor\n\nUsage\n-----\nIn your recipe or role, set the node's default editor attribute to whatever you want:\n\n```javascript\n{\n  \"override_attributes\": {\n    \"editor\": {\n      \"default\": \"nano\"\n    }\n  }\n}\n```\n\nThen, just include the recipe:\n\n```javascript\n{\n  \"run_list\": {\n    \"recipe[editor]\"\n  }\n}\n```\n\nContributing\n------------\n1. Fork the project\n2. Create a feature branch corresponding to you change\n3. Commit and test thoroughly\n4. Create a Pull Request on github\n    - ensure you add a detailed description of your changes\n\nLicense and Authors\n-------------------\n- Author:: Seth Vargo (sethvargo@gmail.com)\n\nCopyright 2012, Seth Vargo\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Seth Vargo",
+  "maintainer_email": "sethvargo@gmail.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "magic_shell": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.0"
+}

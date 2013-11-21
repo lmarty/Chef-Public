@@ -1,0 +1,7 @@
+.vagrant
+.bundle
+.cache
+.kitchen
+bin
+.kitchen/
+.kitchen.local.yml

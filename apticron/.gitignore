@@ -1,0 +1,12 @@
+*.rbc
+*.lock
+.bundle
+.config
+coverage
+doc/
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+metadata.json
+.kitchen

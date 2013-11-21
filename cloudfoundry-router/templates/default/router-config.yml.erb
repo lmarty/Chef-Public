@@ -1,0 +1,8 @@
+# Unix domain socket for connection between nginx and router
+sock: <%= node['cloudfoundry_router']['socket_file'] %>
+
+mbus: <%= cf_mbus_url %>
+logging:
+  level: <%= node['cloudfoundry_router']['log_level'] %>
+  file: <%= node['cloudfoundry_router']['log_file'] %>
+pid: <%= node['cloudfoundry_router']['pid_file'] %>

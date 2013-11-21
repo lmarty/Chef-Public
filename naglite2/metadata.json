@@ -1,0 +1,31 @@
+{
+  "name": "naglite2",
+  "description": "Installs/Configures naglite2",
+  "long_description": "Description\n===========\n\nThis Chef cookbook deploys naglite2, which is a full screen nagios viewer intended for NOC/monitoring screens. \nNaglite2 is hosted here: https://github.com/lozzd/Naglite2\n\nThis has only been tested on Ubuntu 10.04.\n \nRequirements\n============\n* Apache 2\n* PHP\n* tar\n\nAttributes\n==========\n* `node[:naglite2][:dir]` - Where you want naglite2 to be installed\n* `node[:naglite2][:repo_url]` - Where is the tarball hosted\n* `node[:naglite2][:cgi_cfg]` - Where is the Nagios CGI config file located\n* `node[:naglite2][:htpasswd]` - Where is the htpasswd located\n* `node[:naglite2][:server_admin]` - What is the email to be populated inside the vhost\n* `node[:naglite2][:server_name]` - Your server name, like naglite2.mydomain.com\n\nUsage\n=====\n\nJust load `recipe[naglite2]` inside your role, and override attributes accordingly, like:\n\n`\"naglite2\" => {\n  \"server_admin\" => \"noc@company.com\",\n  \"server_name\"  => \"naglite2.company.com\"\n}`",
+  "maintainer": "Green Alto",
+  "maintainer_email": "contact@greenalto.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apache2": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.3"
+}

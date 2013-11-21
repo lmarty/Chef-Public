@@ -1,0 +1,54 @@
+{
+  "name": "jabber",
+  "description": "Provides an XMPP server via ejabberd",
+  "long_description": "Description\n===========\n\nThis cookbook provides XMPP (including MUC) services via ejabberd.\n\nRequirements\n============\nErlang\n\nAttributes\n==========\nTons Coming, for now a few glboals set in the default attributes file.\n\nUsage\n=====\n\nThe default recipe will install the server and compile a very simple config.  Feel free to edit the template\nas need be.\n",
+  "maintainer": "Ernie Brodeur",
+  "maintainer_email": "ebrodeur@ujami.net",
+  "license": "Apache v2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "erlang": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "jabber/global/loglevel": {
+      "display_name": "The jabber daemon's Loglevel",
+      "description": "0 = none, - 5 = debug",
+      "default": "4",
+      "choice": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+    "jabber/global": {
+      "title": "Global options",
+      "description": "Set options that affect the server itself."
+    }
+  },
+  "recipes": {
+    "openvpn": "Installs and configures ejabberd"
+  },
+  "version": "0.0.2"
+}

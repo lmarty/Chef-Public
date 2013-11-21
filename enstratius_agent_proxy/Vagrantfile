@@ -1,0 +1,34 @@
+Vagrant.configure("2") do |config|
+  config.berkshelf.enabled = true
+  config.omnibus.chef_version = :latest
+
+  config.vm.hostname = "es-ap-berkshelf"
+
+  config.vm.box = "precise64"
+
+  config.vm.network :forwarded_port, guest: 2002, host: 2002  # 
+
+  config.vm.provision :chef_solo do |chef|
+#    chef.json = {
+#      :mysql => {
+#        :server_root_password => 'rootpass',
+#        :server_debian_password => 'debpass',
+#        :server_repl_password => 'replpass',
+#        :bind_address => 'localhost'
+#      },
+#      :gitlab => {
+#        :mysql_password => 'k09vw7wa5s'
+#      },
+#      # rvm config needed for CentOS
+#      :rvm => {
+#        :default_ruby => "1.9.3",
+#        :global_gems => [
+#          {:name => "bundler"},
+#          {:name => "chef"}
+#        ]
+#      }
+#    }
+
+    chef.add_recipe "enstratius_agent_proxy::default"
+  end
+end

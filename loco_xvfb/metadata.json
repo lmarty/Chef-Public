@@ -1,0 +1,32 @@
+{
+  "name": "loco_xvfb",
+  "description": "Installs and configures xvfb as a service",
+  "long_description": "# Description\n\nThis cookbook installs Xvfb and configures it as a service. Xvfb then runs at display 99.\n\n# Requirements\n\nThis cookbook is compatible with CentOS and Ubuntu.\n\nFor CentOS, you need to have [EPEL](http://fedoraproject.org/wiki/EPEL) repository installed.\nThere are a few cookbooks which provide it:\n\n* https://github.com/atomic-penguin/cookbook-yumrepo\n* https://github.com/opscode-cookbooks/yum\n\n# Usage\n\nJust include `recipe[loco_xvfb]` in your run_list.\n\n# License\n\nCopyright:: Locomote Pty Ltd.\n\nLicensed under BSD license.\n\n    http://opensource.org/licenses/BSD-2-Clause\n",
+  "maintainer": "Locomote",
+  "maintainer_email": "vasily@locomote.com.au",
+  "license": "BSD",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+    "yum": ">= 0.0.0"
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.0"
+}

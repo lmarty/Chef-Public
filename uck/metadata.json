@@ -1,0 +1,31 @@
+{
+  "name": "uck",
+  "description": "Install UCK - Ubuntu Customization Kit",
+  "long_description": "",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "Install UCK - Ubuntu Customization Kit"
+  },
+  "version": "0.1.0"
+}

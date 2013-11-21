@@ -1,0 +1,4 @@
+.chef
+*.log
+*.swp
+.DS_Store

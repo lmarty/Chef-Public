@@ -1,0 +1,32 @@
+{
+  "name": "nginx_vhost",
+  "description": "Installs/Configures nginx_vhost",
+  "long_description": "Description\n===========\nRenders and enables vhost files for nginx.\n\nThis was written because at the time there was no other simple way to render\nout a vhost file for nginx that proxies to unicorn locally over a unix socket\n\n## data_bag.rb\nLets you configure multiple vhost files from data bags.\n\n## default.rb\nDoes nothing\n\nRequirements\n============\n## Suggests\nnginx\n\nIsn't required, but I'm not sure why else you would need nginx config files.\n\n## Tested on:\n\nUbuntu 10.04, 12.04\nCentos 5.8, 6.3\n\nShould work everywhere\n\nAttributes\n==========\n\n## data_bag.rb\nnode.nginx.vhosts = []\nnode.nginx.vhost.data_bag_name = \"nginx\"\n\nUsage\n=====\n\n## simple unicorn upstream\n```\nnginx_vhost \"unicorn.example.com\" do\n  sockets [ \"unix:/path/to/unicorn.sock\" ]\nend\n```\n\n## static ssl\n```\nnginx_vhost \"ssl.example.com\" do\n  port 443\n  ssl_key  \"/path/to/cert.key\"\n  ssl_cert \"/path/to/cert.pem\"\n  upstream false\nend\n```\n\n## simple remote upstreams\n\n```\nnginx_vhost \"example.com\" do\n  servers [ \"10.0.0.1:80\", \"10.0.0.2:80\", \"10.0.0.3:80\" ]\nend\n```\n\n",
+  "maintainer": "Blue Box Group, LLC",
+  "maintainer_email": "support@bluebox.net",
+  "license": "Apache 2.0",
+  "platforms": {
+    "rhel": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+    "nginx": ">= 0.0.0"
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

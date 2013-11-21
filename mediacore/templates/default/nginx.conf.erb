@@ -1,0 +1,38 @@
+#
+# This file is built by Chef!!
+# Any manual changes made will be overwritten during next Chef run.
+#
+
+server {
+  listen <%= node[:mediacore][:web_server][:port] %>;
+  server_name <%= node[:mediacore][:web_server][:server_name] %>;
+  client_max_body_size <%= node[:mediacore][:web_server][:client_max_body_size] %>;
+
+  root <%= "#{node[:mediacore][:dir]}/mediacore/public" %>;
+  location ~* ^/(appearance)/ {
+    root <%= node[:mediacore][:data_storage_dir] %>;
+    break;
+  }
+  
+  location ~* ^(/images\/media|images\/podcasts) {
+    root <%= node[:mediacore][:data_storage_dir] %>;
+    break;
+  }
+
+  location ~* ^(styles|scripts|images)/ {
+    expires max;
+    add_header Cache-Control "public";
+    break;
+  }
+
+  location /__mediacore_serve__ {
+    alias <%= node[:mediacore][:data_storage_dir] %>;
+    internal;
+  }
+
+  location / {
+    uwsgi_pass unix://<%= node[:mediacore][:uwsgi][:socket] %>;
+    include    uwsgi_params;
+    uwsgi_param SCRIPT_NAME ''; 
+  }
+}

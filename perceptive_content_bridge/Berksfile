@@ -1,0 +1,8 @@
+site :opscode
+
+metadata
+
+cookbook 'minitest-handler'
+cookbook 'perceptive_user_management', git: 'git://github.rds.lexmark.com/jgustine/Chef.git', rel: 'cookbooks/perceptive_user_management'
+cookbook 'perceptive_bash', git: 'git://github.rds.lexmark.com/jgustine/Chef.git', rel: 'cookbooks/perceptive_bash'
+cookbook 'perceptive_ssh', git: 'git://github.rds.lexmark.com/jgustine/Chef.git', rel: 'cookbooks/perceptive_ssh'

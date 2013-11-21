@@ -1,0 +1,33 @@
+{
+  "name": "ernie",
+  "description": "Installs/Configures ernie",
+  "long_description": "Description\n===========\nInstall Ernie (https://github.com/mojombo/ernie) A.K.A. smoke\n\nsupports rhel, scientific, centos\n\nRequirements\n============\n* Erlang\n* ruby-dev{el}\n* ruby\n* rubygems\n\nAttributes\n==========\n```\nernie.gem_binary = nil # The gem_binary for ernie to use to install the ernie gem\n```\n\n```\nernie.ruby = \"package\" # The method to install ruby requirements\n```\n\nUsage\n=====\n\n```\n{\n  \"run_list\": { \"recipe[ernie]\" }\n}\n```\n",
+  "maintainer": "Blue Box Group, LLC",
+  "maintainer_email": "support@bluebox.net",
+  "license": "Apache 2.0",
+  "platforms": {
+    "rhel": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "erlang": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,48 @@
+# Dropped off by Chef, thanks!
+#
+# ssmtp.conf -- a config file for sSMTP sendmail.
+#
+
+<% if node['ssmtp']['root'] %>
+# The user that gets all mail for userids less than 1000. If blank, address rewriting is disabled.
+root=<%= node['ssmtp']['root'] %>
+<% end %>
+
+# The mail server (where the mail is sent to), both port 465 or 587 should be acceptable
+# See also http://mail.google.com/support/bin/answer.py?answer=78799
+mailhub=<%= node['ssmtp']['mailhub_name'] %>:<%= node['ssmtp']['mailhub_port'] %>
+
+hostname=<%= node['ssmtp']['hostname'] %>
+
+<% if node['ssmtp']['rewrite_domain'] %>
+# Where will the mail seem to come from? replace me with the hostname you want email to come from
+rewriteDomain=<%= node['ssmtp']['rewrite_domain'] %>
+<% end %>
+
+<% if node['ssmtp']['from_line_override'] %>
+# Set this to never rewrite the "From:" line (unless not given) and to
+# use that address in the "from line" of the envelope.
+FromLineOverride=YES
+<% end %>
+
+<% if node['ssmtp']['use_starttls'] || node['ssmtp']['use_tls'] %>
+# Use SSL/TLS to send secure messages to server.
+<% end -%>
+<% if node['ssmtp']['use_starttls'] %>
+UseSTARTTLS=YES
+<% else %>
+UseSTARTTLS=NO
+<% end %>
+<% if node['ssmtp']['use_tls'] %>
+UseTLS=YES
+<% else %>
+UseTLS=NO
+<% end %>
+
+# user/pass used to connect to the MTA
+AuthUser=<%= @auth_username %>
+AuthPass=<%= @auth_password %>
+
+<% if node['ssmtp']['auth_method'] %>
+AuthMethod=<%= node['ssmtp']['auth_method'] %>
+<% end %>

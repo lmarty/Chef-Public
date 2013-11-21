@@ -1,0 +1,31 @@
+{
+  "name": "jellyfish",
+  "description": "Installs/Configures jellyfish",
+  "long_description": "Description\n===========\n\n[Jellyfish](https://github.com/dje/jellyfish) is a quick-and-dirty\nhack to push a [GitHub post-receive\nwebhook](http://help.github.com/post-receive-hooks/) through to a set\nof [Opscode Chef](http://opscode.com/chef/) nodes causing them to\nconverge.\n\nRequirements\n============\n\nPlatform\n--------\n\n* Ubuntu\n\nTested on Ubuntu 10.04. It _may_ work on other platforms.\n\nCookbooks\n---------\n\n* python\n\nAttributes\n==========\n\n* `node[:jellyfish][:id]` = The websocket identifier to monitor for\n  deploy signals. Generating a new identifier is a requirement.\n* `node[:jellyfish][:endpoint]` = The service\n  endpoint. Defaults to http://jlyfish.com/deploy.\n* `node[:jellyfish][:command]` = The command to run after receiving an\n  event. Defaults to chef-client.\n\nUsage                                                                                                                                                                       \n=====\n\ndefault                                                                                                                                                                     \n-------\n\nInclude default recipe in a run list to install a jellyfish client.\n\nserver\n------\n\nInstalls the requirements for running a server. Please note that I\ndon't know how to properly package or initialize an Erlang app yet. So\nas far as starting the server goes you're on your own for the time\nbeing. Pull requests welcome!\n",
+  "maintainer": "Heavy Water Software Inc.",
+  "maintainer_email": "darrin@heavywater.ca",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "python": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

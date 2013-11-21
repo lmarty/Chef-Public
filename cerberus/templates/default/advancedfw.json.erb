@@ -1,0 +1,3 @@
+<% unless @rule.nil? -%>
+{"name":"<%= @rule['name'] %>","protocol":"<%= @protocol %>","id":"<%= @rule['id'] %>","permit":"<%= @rule['permit'] %>","description":"<%= @rule['description'] %>","ipaddress":"<%= @ip['ipaddress'] %>","netmask":"<%= @ip['netmask'] %>"}
+<% end -%>

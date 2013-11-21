@@ -1,0 +1,16 @@
+#!upstart
+description "Exhibitor Server"
+
+env USER=<%= @user %>
+
+start on startup
+stop on shutdown
+
+respawn
+
+exec sudo -u $USER java -jar <%= @jar %> \
+    <%= @opts.keys.sort.map { |k| "--#{k.to_s} #{@opts[k]}" }.join(" ") %>
+
+post-start script
+  <%= @check_script %> || { stop ; exit 1; }
+end script

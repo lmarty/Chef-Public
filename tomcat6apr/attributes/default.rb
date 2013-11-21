@@ -1,0 +1,32 @@
+# JVM settings and options
+default[:tomcat6apr][:jvm_xms] = "2048M"
+default[:tomcat6apr][:jvm_xmx] = "2048M"
+#Debian default tomcat settings
+default[:tomcat6apr][:tomcat_security] = "yes"
+default[:tomcat6apr][:tomcat_log_days] = "14"
+default[:tomcat6apr][:java_opts] = "-debug -Djava.awt.headless=true -Xmx#{default[:tomcat6apr][:jvm_xmx]} -Xms#{default[:tomcat6apr][:jvm_xms]} -Dfile.encoding=UTF-8 -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+default[:tomcat6apr][:java_home] = "/usr/lib/jvm/java-6-sun"
+default[:tomcat6apr][:max_open_files] = "51200"
+#Tomcat settings
+default[:tomcat6apr][:unpack_wars] = "true"
+default[:tomcat6apr][:auto_deploy] = "false"
+default[:tomcat6apr][:manager_app_enabled] = "true"
+#Tomcat SSL settings
+default[:tomcat6apr][:with_ssl] = "false"
+default[:tomcat6apr][:ssl_port] = "8443"
+default[:tomcat6apr][:keystore_path] = "/etc/tomcat6/ssl/tomcat6.keystore"
+default[:tomcat6apr][:keystore_password] = "secure_pass"
+#Tomcat APR connector settings
+default[:tomcat6apr][:http_port] = "8080"
+default[:tomcat6apr][:max_threads] = "500"
+default[:tomcat6apr][:min_spare_threads] = "50"
+default[:tomcat6apr][:max_spare_threads] = "250"
+default[:tomcat6apr][:accept_count_queue] = "100"
+default[:tomcat6apr][:enable_lookups] = "false"
+default[:tomcat6apr][:max_keepalive_reqs] = "100"
+default[:tomcat6apr][:max_http_header_size] = "8192"
+default[:tomcat6apr][:buffer_size] = "10240"
+default[:tomcat6apr][:socket_buffer] = "1000"
+default[:tomcat6apr][:compression] = "off"
+default[:tomcat6apr][:connection_timeout] = "300"
+default[:tomcat6apr][:disable_upload_timeout] = "true"

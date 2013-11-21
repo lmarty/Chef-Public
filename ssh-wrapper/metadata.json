@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "ssh-wrapper",
+  "maintainer_email": "craig@trampolinesystems.com",
+  "attributes": {
+  },
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "trampoline systems ltd",
+  "long_description": "= DESCRIPTION:\n\ncreates an SSH wrapper script for use with Git as $GIT_SSH\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n  SshWrapper.generate(:user=>\"foo\", :group=>\"foogroup\", :prefix=>\"/tmp/foo\", :private_key=>\"ssh private key\")\n\nwill generate the following files, owned by <tt>foo:foogroup</tt> :\n  /tmp/foo_identity\n  /tmp/foo_ssh_wrapper\n\n<tt>/tmp/foo_ssh_wrapper</tt> can be used as a $GIT_SSH wrapper script\n",
+  "version": "0.0.3",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "lib to create an SSH wrapper script for use with git as $GIT_SSH",
+  "providing": {
+  }
+}

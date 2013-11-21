@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export RBENV_ROOT=<%= node[:rbenv][:root] %>
+export RBENV_VERSION=<%= node[:berkshelf][:ruby_version] %>
+export PATH=<%= node[:rbenv][:root] %>/shims:$PATH
+
+exec 2>&1
+exec <%= node[:berkshelf][:api][:bin_path] %> -p <%= node[:berkshelf][:api][:port] %> -c <%= node[:berkshelf][:api][:config_path] %>

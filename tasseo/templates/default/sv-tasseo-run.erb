@@ -1,0 +1,7 @@
+#!/bin/sh
+
+exec 2>&1
+export GRAPHITE_URL="<%= node[:tasseo][:graphite_url] %>"
+export GRAPHITE_AUTH="<%= node[:tasseo][:graphite_auth] %>"
+cd <%= @options[:home_dir] %>
+exec chpst -u <%= @options[:user] %> bundle exec rackup -p <%= @options[:port] %> -s thin

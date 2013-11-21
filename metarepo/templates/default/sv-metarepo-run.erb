@@ -1,0 +1,10 @@
+#!/bin/sh
+exec 2>&1
+
+su - <%= node['metarepo']['user'] %>
+
+BASEDIR=<%= node['metarepo']['directory'] %>
+
+cd "${BASEDIR}"
+
+exec chpst -L "${BASEDIR}/metarepo-runit.lock" --  bundle exec bin/metarepo-rest --app-dir "${BASEDIR}" -Fd

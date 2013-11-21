@@ -1,0 +1,46 @@
+#!/bin/bash
+# doozerd daemon
+# chkconfig: 4 20 80
+# description: A highly available, distributed store.
+# processname: doozerd
+
+NAME=doozerd
+DAEMON_PATH='<%= @doozerd_path %>'
+DAEMON="$DAEMON_PATH/bin/$NAME"
+DAEMON_USER='<%= @doozerd_user %>'
+DAEMON_OPTS='<%= @doozerd_options %>'
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+LOGFILE=/var/log/$NAME.log
+
+case "$1" in
+    start)
+        printf "%-50s" "Starting $NAME..."
+        PID=`$DAEMON $DAEMON_OPTS &>$LOGFILE & echo $!`
+        [ -z $PID ] && echo "Failed!" && exit 2
+        echo $PID > $PIDFILE
+        echo "OK."
+        ;;
+    stop)
+        printf "%-50s" "Stopping $NAME..."
+        [ ! -e $PIDFILE ] && echo "Not running!" && exit 3
+        PID=`cat $PIDFILE`
+        [ ! -z `ps -p $PID` ] && echo "Failed!" && exit 4
+        kill -HUP $PID && rm -f $PIDFILE && echo "OK."
+        ;;
+    status)
+        printf "%-50s" "Checking $NAME..."
+        [ ! -e $PIDFILE ] && echo "Stopped!" && exit 0
+        PID=`cat $PIDFILE`
+        [ ! -z `ps -p $PID` ] && echo "Stopped! (fault)" && exit 5
+        echo "Running! ($PID)"
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {status|start|stop|restart}"
+        exit 1
+        ;;
+esac

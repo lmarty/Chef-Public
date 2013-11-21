@@ -1,0 +1,29 @@
+{
+  "name": "rubygems-compatibility",
+  "description": "Fixes chef rubygems for 2.0 API compatibility",
+  "long_description": "rubygems-compatibility\n===============================\n\nChef's interactions with Rubygems (i.e. chef_gem) depends on the internals of Rubygems,\nwhich changed in version 2 of the API.\n\nThis has been fixed in chef master and is targeted for release in 11.6. Until then, this\ncookbook brings in the new code to fix compatibility in order versions of the client.\n\n## Usage\n\nAdd the `rubygems-compatibility::default` recipe to a node's run list.\n\n## Contributing\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\n## License and Authors\n\nAuthors:\n* Eric Saxby\n",
+  "maintainer": "Wanelo, Inc",
+  "maintainer_email": "dev@wanelo.com",
+  "license": "Apache 2",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "ruby_installer",
+  "description": "Installs ruby",
+  "long_description": "RubyInstaller\n=============\n\nThis cookbook provides Ruby installation from a variety of places. It also\nhandles ohai reloading to ensure proper ruby/gem usage.\n\nUsage\n=====\n\n```\nknife node run_list add my.node recipe[ruby_installer]\n```\n\nBy default it will install ruby packages and generally defaults to 1.8. You\ncan override that by providing the package names you want installed via\nattributes.\n\nConfigurable attributes\n=======================\n\n* `default[:ruby_installer][:method] = 'package' # package/ree/source\n* `default[:ruby_installer][:package_name] = true # apt package name`\n* `default[:ruby_installer][:rubygem_package] = true # install rubygems package`\n* `default[:ruby_installer][:rubydev_package] = true # install ruby development libs`\n* `default[:ruby_installer][:source_version] = nil # source version`\n* `default[:ruby_installer][:source_package_dependencies] = [] # package dependencies for building from source`\n* `default[:ruby_installer][:ree_url] = 'http://rubyenterpriseedition.googlecode.com/files/ruby-enterprise_1.8.7-2012.02_amd64_ubuntu10.04.deb' # URI for REE deb package`\n* `default[:ruby_installer][:ree_source_url] = 'http://rubyenterpriseedition.googlecode.com/files/ruby-enterprise-1.8.7-2012.02.tar.gz' # URI for REE source`\n\nRepository\n==========\n\nhttps://github.com/heavywater/chef-ruby_installer\n\nContributors\n============\n\n* Graham McIntire - https://github.com/gmcintire\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "oracle": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "enterpriseenterprise": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "mint": ">= 0.0.0"
+  },
+  "dependencies": {
+    "build-essential": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

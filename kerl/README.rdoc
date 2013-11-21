@@ -1,0 +1,15 @@
+= DESCRIPTION:
+Chef cookbook to install kerl with a default erlang installation (R14B02).
+
+= REQUIREMENTS:
+- curl
+- git
+- Erlang/OTP requirements
+
+= ATTRIBUTES:
+  default['kerl']['erlversion'] = "R14B02"
+  default['kerl']['installpath'] = "~/bin"
+  default['kerl']['defaultinstall'] = "~/.kerl/installs/default"
+
+= USAGE:
+

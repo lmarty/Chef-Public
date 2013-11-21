@@ -1,0 +1,29 @@
+{
+  "name": "naruto",
+  "description": "Parse tempaltes recursively in a directory",
+  "long_description": "# Chef LWRP for parsing templates recursively in a directory and automatically populating your variables hash from a hash attribute\n",
+  "maintainer": "Philip Hutchins",
+  "maintainer_email": "phutchins@phutchins.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.6"
+}

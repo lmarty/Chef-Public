@@ -1,0 +1,29 @@
+{
+  "name": "chef-client_syslog",
+  "description": "chef-client logg to syslog",
+  "long_description": "# chef-client_syslog cookbook\n\nSend chef-client log to syslog.\n\nreference from: https://gist.github.com/3616423\n\n# Requirements\n\ngem[syslog-logger] to chef's gem_home. (Automatic install it when run recipe[chef-client_syslog::default])\n\n# Usage\n\n  add run_list recipe[chef-client_syslog::default]\n\n# Attributes\n\n\ndefault['chef-client']['config_dir']     = \"/etc/chef\"\ndefault['chef-client']['log']['level']     = :info\ndefault['chef-client']['log']['prog_name'] = \"chef-client\"\ndefault['chef-client']['log']['facility']  = 8 # get const like  puts ::Syslog::LOG_USER\n\n\n# Recipes\n\n- default\n\n# Author\n\nAuthor:: HiganWorks LLC (<sawanoboriyu@higanworks.com>)\n",
+  "maintainer": "HiganWorks LLC",
+  "maintainer_email": "sawanoboriyu@higanworks.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

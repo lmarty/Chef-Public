@@ -1,0 +1,41 @@
+
+{
+ "servers": [
+
+<% @servers.each_with_index do |server,index| -%>
+<% unless index == 0 -%>
+   ,
+<% end -%>
+  {
+   "numQueryThreads": 2,
+   "host": "<%= server['name'] %>",
+   "username": "<%= server['username'] %>",
+   "password": "<%= server['password'] %>",
+   "port": <%= server['port'] %>,
+   "queries": [
+    <% server['queries'].each_with_index do |query,index| -%>
+        <% unless index == 0 -%>
+        ,
+        <% end -%>
+    {
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [   "name" ],
+        "host": "<%= @graphite_host %>",
+        "port": <%= @graphite_port %>,
+        "rootPrefix": "<%= @root_prefix %>"
+       }
+      }
+     ],
+     "resultAlias": "<%= query['result_alias'] %>",
+     "obj": "<%= query['obj'] %>",
+     "attr": <%= query['attr'].to_s %> 
+    }
+    <% end -%>
+    ]
+ }
+<% end -%>
+] 
+}

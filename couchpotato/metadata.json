@@ -1,0 +1,30 @@
+{
+  "name": "couchpotato",
+  "description": "Installs and configures CouchPotato onto a node",
+  "long_description": "",
+  "maintainer": "Alex Howells",
+  "maintainer_email": "alex@howells.me",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

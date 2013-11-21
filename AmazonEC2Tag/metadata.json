@@ -1,0 +1,35 @@
+{
+  "name": "AmazonEC2Tag",
+  "description": "Chef LWRP for setting Amazon Web Services EC2 Tags.",
+  "long_description": "Chef LWRP for setting Amazon Web Services EC2 Tags.",
+  "maintainer": "CITYTECH, Inc.",
+  "maintainer_email": "support@ctmsp.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "AmazonEC2Tag": "Example implementation of the Chef LWRP for setting Amazon Web Services EC2 Tags."
+  },
+  "version": "1.0.0"
+}

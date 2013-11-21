@@ -1,0 +1,49 @@
+---
+<%
+  gateway_cfg = node['cloudfoundry_mongodb_service']['gateway']
+  redis_node = cf_vcap_redis_node || node
+%>
+mbus: <%= cf_mbus_url %>
+index: 0
+
+cloud_controller_uri: <%= cloud_controller_url %>
+
+service:
+  name: mongodb
+  version: "1.8"
+  description: 'MongoDB NoSQL store'
+  plans: ['free']
+  default_plan: 'free'
+  tags: ['nosql', 'document']
+  timeout: <%= node['cloudfoundry_mongodb_service']['gateway']['timeout'] %>
+  supported_versions: [<%= cfservicegw_supported_versions_string('mongodb') %>]
+  version_aliases:
+  <% node['cloudfoundry_mongodb_service']['gateway']['version_aliases'].each do |a, v| %>
+    "<%= a %>": "<%= v %>"
+  <% end %>
+
+token: <%= node['cloudfoundry']['service_token'] %>
+logging:
+  file: <%=  @log_file %>
+  level: <%= node['cloudfoundry_mongodb_service']['gateway']['log_level'] %>
+
+pid: <%= @pid_file %>
+node_timeout: <%= node['cloudfoundry_mongodb_service']['gateway']['node_timeout'] %>
+
+<% if gateway_cfg['lifecycle']['enable'] %>
+resque:
+  host: <%= redis_node.attribute?('cloud') ? redis_node['cloud']['local_ipv4'] : redis_node['ipaddress'] %>
+  port: <%= redis_node['cloudfoundry_cloud_controller']['redis']['port'] %>
+  <% if redis_node['cloudfoundry_cloud_controller']['redis']['password'] -%>
+  password: <%= redis_node['cloudfoundry_cloud_controller']['redis']['password'] %>
+  <%- end %>
+
+plan_management:
+  plans:
+    free:
+      lifecycle:
+        serialization: <%= gateway_cfg['serialization']['enable'] ? 'enable' : 'disable' %>
+        snapshot:
+          quota: <%= gateway_cfg['snapshot']['quota'] %>
+        job: enable
+<% end %>

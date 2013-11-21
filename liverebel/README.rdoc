@@ -1,0 +1,12 @@
+= DESCRIPTION:
+
+Downloads and installs LiveRebel from liverebel.com website. It will install the software to /opt/liverebel-version. This version does not support auto starting LiveRebel.
+
+= REQUIREMENTS:
+
+Depends on the availability of the unzip command.
+
+= ATTRIBUTES:
+
+= USAGE:
+

@@ -1,0 +1,17 @@
+[global]
+server.socket_host = "<%= node['mineos']['config']['host']['address'] %>"
+server.socket_port = <%= node['mineos']['config']['host']['port'] %>
+
+log.error_file = "<%= node['mineos']['config']['logfile'] %>"
+
+server.ssl_module = "builtin"
+server.ssl_certificate = "<%= node['mineos']['config']['ssl']['cert'] %>"
+server.ssl_private_key = "<%= node['mineos']['config']['ssl']['key'] %>"
+server.ssl_ca_certificate = "<%= node['mineos']['config']['ssl']['ca'] %>"
+server.ssl_certificate_chain = "<%= node['mineos']['config']['ssl']['chain'] %>"
+
+misc.server_as_daemon = True
+misc.pid_file = "/var/run/mineos.pid"
+misc.require_https = <%= (node['mineos']['config']['ssl']['enable'] ? "True" : "False") %>
+misc.base_directory = "<%= node['mineos']['config']['basedir'] %>"
+misc.localization = "<%= node['mineos']['config']['locale'] %>"

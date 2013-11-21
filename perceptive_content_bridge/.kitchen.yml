@@ -1,0 +1,31 @@
+---
+driver_plugin: ec2
+driver_config:
+  aws_access_key_id: "AKIAJTB3VWJ63JG5T7VQ"
+  aws_secret_access_key: "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"
+  aws_ssh_key_id: "knifedeploykey"
+  ssh_key: "~/.chef/knifedeploykey.pem"
+  groups: ["ContentBridge"]
+  region: us-west-2
+  availability_zone: us-west-2b
+  require_chef_omnibus: true
+  image_id: ami-d1b92ae1
+  username: ubuntu
+
+platforms:
+- name: ubuntu-12.10
+  driver_config:
+    box: opscode-ubuntu-12.10
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.10_provisionerless.box
+suites:
+- name: default
+  run_list: 
+  - "recipe[perceptive_content_bridge]"
+  #- "recipe[perceptive_ssh]"
+  - "recipe[minitest-handler]"
+  attributes:
+    minitest:
+       recipes:
+       - perceptive_content_bridge::default
+       - perceptive_ssh::default
+       verbose: true

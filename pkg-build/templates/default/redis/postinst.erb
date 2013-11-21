@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -eu
+
+USER="<%= node[:pkg_build][:redis][:user] %>"
+GROUP="<%= node[:pkg_build][:redis][:group] %>"
+
+chown $USER:$GROUP /var/lib/redis
+chown $USER:$GROUP /var/log/redis
+

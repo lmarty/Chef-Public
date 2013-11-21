@@ -1,0 +1,80 @@
+log_format main  '$host - [$time_local] '
+                 '"$request" $status $bytes_sent '
+                 '"$http_referer" "$http_user_agent" '
+                 '$remote_addr $http_x_forwarded_for response_time:$upstream_response_time app_id:$app_id';
+
+access_log   <%= node['nginx']['log_dir'] %>/nginx_main_access.log main;
+
+lua_package_path "<%= @lua_package_path %>/?.lua;;";
+lua_package_cpath "<%= @lua_package_path %>/?.so;;";
+
+server {
+  listen       <%= node['cloudfoundry_router']['listen_ip'] %>:<%= node['cloudfoundry_router']['listen_port'] %>;
+  server_name  _;
+  server_name_in_redirect off;
+  client_max_body_size <%= node['cloudfoundry_router']['client_max_body_size'] %>;
+
+  #TODO: how to make this internal location totally transparent to outside
+  location = /vcapuls {
+    internal;
+    # We should use rewrite_by_lua to scrub subrequest headers
+    # as uls doesn't care those headers at all.
+    # Given there are some exceptions to clear some headers,
+    # we just leave them as is.
+
+    proxy_pass http://unix:<%= node['cloudfoundry_router']['socket_file'] %>:/;
+  }
+
+  location / {
+    access_log   <%= node['nginx']['log_dir'] %>/nginx_access.log main;
+    proxy_buffering             off;
+    proxy_set_header            Host $host;
+    proxy_set_header            X-Forwarded-For $proxy_add_x_forwarded_for;
+    <% if node['cloudfoundry_router']['listen_port'] != 80 -%>
+    proxy_set_header            X-Forwarded-Host $host:<%= node['cloudfoundry_router']['listen_port'] %>;
+    <% end %>
+    proxy_redirect              off;
+    proxy_connect_timeout       10;
+    proxy_send_timeout          60;
+    proxy_read_timeout          60;
+
+    set $health_monitor '';
+    set $app_id 0;
+
+    # We intend to have one "if" block to avoid the above monitor location
+    # to twist with below upstream locator server handling.
+    # ("if" block effectively creates a nested location and will inherit
+    # all the rewrite/access phase handlers of outer location)
+    if ($health_monitor != TT) {
+      # The following variables are used by lua module code.
+      # DO NOT remove or rename any of them!
+      set $backend_addr ''; # Backend server address returned from uls for this request
+      set $uls_req_tags ''; # Request tags returned from uls for this request to catalog statistics
+      set $router_ip '';
+      set $timestamp 0;
+      set $trace '';
+      set $sticky '';
+
+      access_by_lua '
+        local uls = require ("uls")
+
+        uls.pre_process_subrequest(ngx, "<%= node['cloudfoundry_router']['trace_key'] %>")
+        -- generate one subrequest to uls for url query
+        local res = ngx.location.capture(
+          "/vcapuls", {body = uls.generate_uls_request(ngx)}
+        )
+
+        uls.post_process_subrequest(ngx, res)
+      ';
+
+      proxy_pass http://$backend_addr;
+
+      # Handling response from backend servers
+      header_filter_by_lua '
+        local uls = require ("uls")
+
+        uls.post_process_response(ngx)
+      ';
+    }
+  }
+}

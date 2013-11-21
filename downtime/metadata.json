@@ -1,0 +1,32 @@
+{
+    "platforms": {
+      "ubuntu": [
+
+      ]
+    },
+    "version": "1.0.0",
+    "suggestions": {
+    },
+    "license": "Apache 2.0",
+    "conflicting": {
+    },
+    "providing": {
+    },
+    "description": "Adds a simple downtime mode stored in a databag",
+    "recipes": {
+    },
+    "maintainer": "Noah Kantrowitz",
+    "replacing": {
+    },
+    "attributes": {
+    },
+    "maintainer_email": "nkantrowitz@crypticstudios.com",
+    "name": "downtime",
+    "groupings": {
+    },
+    "dependencies": {
+    },
+    "long_description": "= DESCRIPTION:\n\nAdds a simple downtime flag to prevent daemonized chef clients from updating at\nan inopportune moment.\n\n= ATTRIBUTES:\n\ndowntime.data_bag_item:: Name of the data bag item to load information from. Defaults to 'downtime'.\ndowntime.allow_one_shot:: If true (the default) still allow non-daemon chef-client runs during downtime.\n\n= USAGE:\n\nCreate a data bag named 'downtime' containing a single item named 'downtime' (unless you have changed\nthe downtime.data_bag_item attribute as noted above). In this you can put keys for each app_environment\nyou have, or use the global 'downtime' key. An example:\n\n  {\n    \"id\": \"downtime\",\n    \"downtime\": false,\n    \"qa\": true,\n    \"production\": false\n  }\n\nIn this configuration only the 'qa' environment would be in downtime.\n\n= LICENSE & AUTHOR:\n\nAuthor:: Noah Kantrowitz (<nkantrowitz@crypticstudios.com>)\nCopyright:: 2011, Atari, Inc\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+    "recommendations": {
+    }
+  }

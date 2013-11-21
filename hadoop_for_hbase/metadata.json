@@ -1,0 +1,44 @@
+{
+  "recipes": {
+
+  },
+  "replacing": {
+
+  },
+  "description": "Installs/Configures hadoop for the matching HBase Recipe using a common Databag for configuration",
+  "groupings": {
+
+  },
+  "long_description": "= DESCRIPTION:\nAlong with the HBase Cookbook, builds a HBase / Hadoop Cluster suitable for using with Map/Reduce and HBase. \nIt is a literal translation of the ec2scripts in the HBase contrib of HBase 0.20.x.\n\nThis Hadoop Cookbook assumes its part of an HBase Cluster and has many databag or attribute elements based on HBase.\nIt assumes that the HBase Master and the Hadoop Primary, Secondary Nameservers are the same machine and that HBase Regionservers and Hadoop slaves are also together.\n(TODO: Make at least the secondary Nameserver on another machine). \nHaving multiple Zookeepers on other machines than the HBase Master has not been tested.\n\nThis should be refactored to be independent and support more flexible layouts of the cluster, but not by me for now. Or into a single HBase recipe.\n\nThis cookbook is in the style of the new Opscode Application / Database meta cookbooks. \nIt is driven by Databags more than Attributes and is designed to be tied to an Application via databag item[s] in the apps databag.\n\n\n= REQUIREMENTS:\n\n* hbase\n* java\n* ssh_known_hosts (I'm not sure if this is really needed but its included in the Recipe)\n\n= ATTRIBUTES: \n\n* none\n\n= USAGE:\n\nSee the USAGE info for the HBase Recipe. If you set things up for the HBase recipe, this Hadoop Cookbook will work.\n",
+  "attributes": {
+
+  },
+  "recommendations": {
+
+  },
+  "dependencies": {
+    "ssh_known_hosts": [
+
+    ],
+    "java": [
+
+    ]
+  },
+  "platforms": {
+
+  },
+  "maintainer": "Robert J. Berger Runa Inc.",
+  "version": "0.1.0",
+  "suggestions": {
+
+  },
+  "maintainer_email": "ops@runa.com",
+  "conflicting": {
+
+  },
+  "name": "hadoop_for_hbase",
+  "license": "Apache 2.0",
+  "providing": {
+
+  }
+}

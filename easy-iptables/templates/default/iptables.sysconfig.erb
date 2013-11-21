@@ -1,0 +1,10 @@
+<%- for table in node['easy-iptables']['tables'] -%>
+*<%= table['name'] %>
+<%- for line in table['policies'] -%>
+<%= line %>
+<%- end -%>
+<%- for line in table['rules'] -%>
+<%= line %>
+<%- end -%>
+COMMIT
+<%- end -%>

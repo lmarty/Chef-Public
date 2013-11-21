@@ -1,0 +1,37 @@
+#
+# Author: Chris Roberts (<chris@hw-ops.com>)
+#
+# chkconfig: 345 99 1
+# Description: repmgrd init
+# Provides: repmgrd
+# Default-Start: 3 4 5
+# Default-Stop: 0 1 2 6
+
+<% if @el -%>
+source /etc/rc.d/init.d/functions
+<% end -%>
+
+[ -x <%= @bin_path %> ] || exit 1
+
+case "$1" in
+  start)
+    echo "Starting repmgrd"
+    <% if @el -%>
+    daemon <%= node[:repmgr][:repmgrd_bin] %>
+    <% else -%>
+    start-stop-daemon --start --quiet --chuid postgres --background --exec <%= node[:repmgr][:repmgrd_bin] %> -- -f /etc/repmgr/repmgr.conf <%= '--monitoring-history' if node[:repmgr][:init][:enable_monitoring] %>
+    <% end -%>
+    ;;
+  stop)
+    echo "Stopping repmgrd"
+    pkill <%= File.basename(node[:repmgr][:repmgrd_bin]) %>
+    exit 0
+    ;;
+  status)
+    pkill -0 <%= File.basename(node[:repmgr][:repmgrd_bin]) %>
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|status}"
+    exit 1
+    ;;
+esac

@@ -1,0 +1,29 @@
+{
+  "name": "raspberry-pi",
+  "description": "Handles initial configuration of a Raspberry Pi",
+  "long_description": "# raspberry-pi Cookbook\n\nCookbook to configure a Raspberry Pi from scratch. Manages the\nboot config file and optionally resizes the root partition.\n\n# Author\n\nAuthor:: Russ Garrett (russ.garrett@smarkets.com)\n",
+  "maintainer": "Russ Garrett",
+  "maintainer_email": "russ.garrett@smarkets.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

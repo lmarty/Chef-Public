@@ -1,0 +1,20 @@
+name             'ruby_pkg'
+maintainer       'Reaktor Innovations Oy'
+maintainer_email 'cookbooks@reaktor.fi'
+license          'Apache v2.0'
+description      'Builds a ruby package using ruby_build and fpm'
+version          '0.4.0'
+
+supports         'debian'
+supports         'linuxmint'
+supports         'ubuntu'
+
+supports         'amazon'
+supports         'centos'
+supports         'fedora'
+supports         'oracle'
+supports         'redhat'
+supports         'scientific'
+
+depends          'fpm-tng', '~> 0.1.6'
+depends          'ruby_build', '~> 0.6'

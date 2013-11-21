@@ -1,0 +1,26 @@
+= DESCRIPTION:
+This cookbook help you to setup backup-manager.
+
+You can setup the folder you want to backup.
+You can setup the FTP account where you want to push your backups
+= REQUIREMENTS:
+
+= ATTRIBUTES:
+Upload method (For the moment only "ftp" and "none"):
+node[:backup_manager][:upload_method] = "ftp"
+
+Folder you want to backup :
+
+node[:backup_manager][:local_folder] = [ "/etc","/home" ]
+
+Ftp setup :
+node[:backup_manager][:ftp_host] = "my_ftphost.com"
+node[:backup_manager][:ftp_user] = "myuser"
+node[:backup_manager][:ftp_password] = "mypassword"
+
+Backup-manager available option :
+node[:backup_manager][:archive_ttl] = "7"
+
+
+= USAGE:
+

@@ -1,0 +1,2 @@
+default[:skype][:install_dir] = "/opt/skype"
+default[:skype][:url] = "http://www.skype.com/go/getskype-linux-beta-static"

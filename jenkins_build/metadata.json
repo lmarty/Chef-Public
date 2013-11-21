@@ -1,0 +1,36 @@
+{
+  "name": "jenkins_build",
+  "description": "Installs/Configures jenkins_build",
+  "long_description": "jenkins_build Cookbook\n======================\nBuild a complete Jenkins CI server\n\nRequirements\n------------\n#### packages\n- `apt`\n- `postgresql`\n- `jenkins`\n- `nodejs`\n- `phantomjs`\n- `git`\n\nAttributes\n----------\n\ne.g.\n#### jenkins_build::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['jenkins_build']['packages']</tt></td>\n    <td>Array</td>\n    <td>Include required packages for gem prereqs</td>\n    <td><tt>`libxml2-dev` `libxslt-dev`</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['jenkins_build']['jenkins_user_postgresql_password']</tt></td>\n    <td>Array</td>\n    <td>Only needed if using Chef Solo, configure password for postgres</td>\n    <td><tt>thisshouldbechanged</tt></td>\n  </tr>\n</table>\n\nUsage\n-----\n#### jenkins_build::default\nJust include `jenkins_build` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[jenkins_build]\"\n  ]\n}\n```\n\nContributing\n------------\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write your change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: John T Skarbek\n",
+  "maintainer": "John T Skarbek",
+  "maintainer_email": "jtslear@gmail.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "postgresql": "> 2.4.1",
+    "jenkins": "> 0.8.0",
+    "nodejs": ">= 0.0.0",
+    "phantomjs": ">= 0.0.0",
+    "git": ">= 0.0.0",
+    "database": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.0"
+}

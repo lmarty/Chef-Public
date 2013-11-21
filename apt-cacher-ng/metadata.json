@@ -1,0 +1,29 @@
+{
+  "name": "apt-cacher-ng",
+  "description": "Installs/Configures apt-cacher-ng",
+  "long_description": "Description\n===========\n\nInstalls and configures [apt-cacher-ng](http://www.unix-ag.uni-kl.de/~bloch/acng/).\n\nRequirements\n============\n\n## Platforms\n\n* Debian, Ubuntu\n\nTested on:\n\n* Debian Wheezy (7.0)\n\nAttributes\n==========\n\n## Suggested\n\n* `node[\"apt-cacher-ng\"][:user]`     - administration panel login\n* `node[\"apt-cacher-ng\"][:password]` - administration panel password\n\nFollowing attribute lets us create [URL mappings](http://www.unix-ag.uni-kl.de/~bloch/acng/html/config-serv.html#repmap).\n\n* `node[\"apt-cacher-ng\"][:mappings]`\n\nFull syntax:\n\n```ruby\n\"apt-cacher-ng\" => {\n  :mappings => [\n    {\n      :name => \"debrep\",\n      :value => \"file:deb_mirror*.gz /debian ; file:backends_debian\",\n      :url_files => [\n        {\n          :name => \"backends_debian\",\n          :content => \"http://ftp.de.debian.org/debian\"\n        }\n      ]\n    }\n  ]\n}\n```\n\nChef will create an entry in `acng.conf`:\n\n```\nRemap-debrep: file:deb_mirror*.gz /debian ; file:backends_debian\n```\n\nand file ```backends_debian``` with content ```http://ftp.de.debian.org/debian```.\n\n## Optional\n\nCheck `templates/default/acng.conf.erb` for more details.\n\nUsage\n=====\n\n## Server side\n\nAdd `recipe[apt-cacher-ng]` to run list or create a role and change desired attributes.\n\n```ruby\nname \"apt-cacher-ng\"\ndescription %q{\n  Configures apt-cacher-ng on node.\n}\n\nrun_list(\n  \"recipe[apt-cacher-ng]\"\n)\n\noverride_attributes(\n  \"apt-cacher-ng\" =>\n    {\n      :user => \"my_user\",\n      :password => \"my_password\"\n    }\n)\n```\n## Client side\n\nhttp://www.unix-ag.uni-kl.de/~bloch/acng/html/config-servquick.html#config-client\n\n",
+  "maintainer": "Shelly Cloud Sp. z o. o.",
+  "maintainer_email": "devs@shellycloud.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

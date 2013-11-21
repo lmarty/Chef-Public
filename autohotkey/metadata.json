@@ -1,0 +1,31 @@
+{
+  "name": "autohotkey",
+  "description": "Installs/Configures autohotkey",
+  "long_description": "# autohotkey cookbook\n\nThis cookbook automates the installation of AutoHotkey.\n\nAutoHotkey is a free, open-source utility for Windows. With it, you can:\n\nAutomate almost anything by sending keystrokes and mouse clicks. You\ncan write a mouse or keyboard macro by hand or use the macro recorder.\n\nCreate hotkeys for keyboard, joystick, and mouse. Virtually any key,\nbutton, or combination can become a hotkey.\n\nExpand abbreviations as you type them. For example, typing \"btw\" can\nautomatically produce \"by the way\".\n\nCreate custom data-entry forms, user interfaces, and menu bars. See\nGUI for details.\n\nRemap keys and buttons on your keyboard, joystick, and mouse.\n\nRespond to signals from hand-held remote controls via the WinLIRC\nclient script.\n\nRun existing AutoIt v2 scripts and enhance them with new\ncapabilities.\n\nConvert any script into an EXE file that can be run on computers\nthat don't have AutoHotkey installed.\n\nhttp://www.autohotkey.com/\n\n# Requirements\n\nwindows host\n\nwindows cookbook\n\n# Attributes\n\n# Author\n\nAuthor:: Adam Ochonicki (adam@fromonesrc.com)\n",
+  "maintainer": "Adam Ochonicki",
+  "maintainer_email": "adam@fromonesrc.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

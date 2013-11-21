@@ -1,0 +1,24 @@
+## creted by chef for node['hostname']
+
+set daemon <%= @daemon %>
+    with start delay 30
+<% if @init == true %>
+set init
+<% end %>
+set logfile <%= @logfile %>
+set eventqueue <%= @eventqueue %>
+<% if @mmonit %>
+set mmonit <%= @mmonit %>
+<% end %>
+set httpd port <%= @http_port %>
+    use address <%= @http_address %>
+    <% @allows.each do |allow| %>
+    allow <%= allow %>
+    <% end %>
+set mailserver <%= @mailserver %>
+
+<% @alerts.each do |alert| %>
+set alert <%= alert %>
+<% end %>
+
+include <%= node['monit']['dir'] %>/conf.enable/*

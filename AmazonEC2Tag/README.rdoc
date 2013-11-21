@@ -1,0 +1,51 @@
+= DESCRIPTION:
+
+Chef Light-Weight Resource Provider for setting Amazon Web Services EC2 Tags.
+
+= REQUIREMENTS:
+
+Test on Chef 10.4 but should work on 10.0.
+
+Only requirements are API access to Amazon EC2 API with an API Access Key and API Secret Key.
+
+= USAGE:
+
+You can simply 'include_recipe "AmazonEC2Tag"' or copy the library, provider and resource into your cookbook.
+
+Included is a default.rb recipe which demonstrates usage of the resource/provider setting an EC2 Tag in a Chef recipe.
+
+Action(s):
+
+- create - Create the Tag key. Create is also used to overwrite the currently set value for the key.
+
+Attribute Parameter(s):
+
+- aws_access_key - API Access Key used for AWS EC2 authentication.
+- aws_secret_access_key - API Secret Key used for AWS EC2 authentication.
+- value - The value of the key you wish to set. Here is where you would put your string for the tag.
+- instance_id - The AWS EC2 instance ID that you wish to set the tag.
+
+== Example
+
+AmazonEC2_ec2tag "Name" do
+  aws_access_key aws_properties["amazon-ec2"]["access_key"]
+  aws_secret_access_key aws_properties["amazon-ec2"]["private_key"]
+  value "Production Adobe ADEP Web Experience Manager"
+  instance_id node["ec2"]["instance_id"] # This will set the tag to the current node instance ID.
+  action :create
+end
+
+= Known Issues
+
+There is an outstanding issue with Ruby gem installations and Chef cookbooks that contain a hyphen in name. I.e. You cannot name this cookbook Amazon-EC2 or it will fail to properly work. Reference ticket: http://tickets.opscode.com/browse/CHEF-2454
+
+= License and Author
+
+Author: Michael Hodgdon <mhodgdon@citytechinc.com>
+Author: Christian Vozar <cvozar@citytechinc.com>
+
+Copyright 2011, CITYTECH, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

@@ -1,0 +1,36 @@
+{
+  "name": "monitor",
+  "description": "A cookbook for monitoring services, using Sensu, a monitoring framework.",
+  "long_description": "Description\n===========\n\nMonitor is a cookbook for monitoring services, using Sensu, a\nmonitoring framework. The default recipe installs & configures the\nSensu client (monitoring agent), as well as common service check\ndependencies. The master recipe installs & configures the Sensu server,\nAPI, dashboard, & their dependencies (eg. RabbitMQ & Redis). The\nremaining recipes are intended to put monitoring checks in place in\norder to monitor specific services (eg. `recipe[monitor::redis]`).\n\nLearn more about Sensu [Here](http://docs.sensuapp.org/).\n\nRequirements\n============\n\nThe [Sensu cookbook](http://community.opscode.com/cookbooks/sensu).\n\nAttributes\n==========\n\n`node[\"monitor\"][\"master_address\"]` - Bypass the chef node search and\nexplicitly set the address to reach the master server.\n\n`node[\"monitor\"][\"environment_aware_search\"]` - Defaults to false.\nIf true, will limit search to the node's chef_environment.\n\n`node[\"monitor\"][\"use_local_ipv4\"]` - Defaults to false. If true,\nuse cloud local\\_ipv4 when available instead of public\\_ipv4.\n\n`node[\"monitor\"][\"sensu_plugin_version\"]` - Sensu Plugin library\nversion.\n\n`node[\"monitor\"][\"additional_client_attributes\"]` - Additional client\nattributes to be passed to the sensu_client LWRP.\n\n`node[\"monitor\"][\"default_handlers\"]` - Default event handlers.\n\n`node[\"monitor\"][\"metric_handlers\"]` - Metric event handlers.\n\nUsage\n=====\n\nExample: To monitor the Redis service running on a Chef node, include\n\"recipe[monitor::redis]\" in its run list.\n",
+  "maintainer": "Sean Porter Consulting",
+  "maintainer_email": "portertech@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+    "sensu": ">= 0.0.0",
+    "sudo": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.4"
+}

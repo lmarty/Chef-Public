@@ -1,0 +1,3 @@
+<% @users.each do |u| -%>
+<%= u['id'] %>:<%= node['seyren']['apache_auth']['realm'] %>:<%= u['pwdigest'] %>
+<% end -%>

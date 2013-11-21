@@ -1,0 +1,66 @@
+[global]
+clean_shutdown = true
+
+[captcha]
+use = false
+public_key = 6Le8OLwSAAAAAK-wkjNPBtHD4Iv50moNFANIalJL
+private_key = 6Le8OLwSAAAAAEKoqfc-DmoF4HNswD7RNdGwxRij
+use_ssl = false
+
+[storage]
+backend = syncstorage.storage.sql.SQLStorage
+sqluri = mysql://<%=node['ff_sync']['mysql_user']%>:<%=node['ff_sync']['mysql_password']%>@localhost/<%=node['ff_sync']['mysql_user']%>
+standard_collections = false
+use_quota = true
+quota_size = 5120
+pool_size = 100
+pool_recycle = 3600
+create_tables = trues
+
+[auth]
+#backend = services.user.sql.SQLUser
+create_tables = true
+backend = services.user.mozilla_ldap.LDAPUser
+ldapuri = ldap://<%=@ldap_server.openldap.server%>
+use_tls = false
+bind = "<%=@ldap_server.openldap.anon_binddn%>"
+passwd = <%=@ldap_server.openldap.anon_pass%>
+search_root = "<%=@ldap_server.openldap.users_root%>"
+#bind_user = ""
+#bind_password = 
+#admin_user = ""
+#admin_password = 
+#users_root = "<%=@ldap_server.openldap.users_root%>"
+sqluri = mysql://<%=node['ff_sync']['mysql_user']%>:<%=node['ff_sync']['mysql_password']%>@localhost/<%=node['ff_sync']['mysql_user']%>
+pool_size = 100
+pool_recycle = 3600
+cache.type = file
+cache.data_dir = /tmp/cache/data
+cache.lock = /tmp/cache/lock
+# Uncomment the next line to disable creation of new user accounts.
+allow_new_users = false
+check_account_state = false
+
+
+[nodes]
+fallback_node = http://<%=node['hostname']%>.<%=node['domain']%>:5000
+
+[smtp]
+host = <%=node['ff_sync']['mailserver']%>
+port = 25
+sender = ffsync@<%=node['domain']%>
+
+[cef]
+use = true
+file = syslog
+vendor = mozilla
+version = 0
+device_version = 1.3
+product = weave
+
+
+[reset_codes]
+backend = services.resetcodes.rc_sql.ResetCodeSQL
+sqluri = mysql://<%=node['ff_sync']['mysql_user']%>:<%=node['ff_sync']['mysql_password']%>@localhost/<%=node['ff_sync']['mysql_user']%>
+create_tables = True
+

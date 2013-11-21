@@ -1,0 +1,21 @@
+# nginx site for opscenter - Managed by Chef - do not edit directly!
+
+# the size of the public hostname can be too large for the default size of 32;
+server_names_hash_bucket_size <%= node[:nginx][:server_names_hash_bucket_size] %>;
+
+server {
+  listen 80 default;
+  server_name <%= node[:ec2][:public_hostname] %>;
+  access_log /var/log/nginx/opscenter.access.log;
+  error_log /var/log/nginx/opscenter.error.log warn;
+
+  # Allow access to the agent in the opscenter directory
+  location /agent.tar.gz { root <%= node[:cassandra][:opscenter][:home] %>-<%= node[:cassandra][:opscenter][:version] %> ; }
+
+  # Redirect all requests to http://<%= node[:ipaddress] %>:<%= node[:cassandra][:opscenter][:server_port] %>;
+  location / {
+    rewrite ^ http://<%= node[:ec2][:public_hostname] %>:<%= node[:cassandra][:opscenter][:server_port] %>$request_uri? permanent;
+  }
+
+}
+

@@ -1,0 +1,2 @@
+package "imagemagick"
+package "postgresql"

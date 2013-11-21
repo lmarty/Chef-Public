@@ -1,0 +1,35 @@
+{
+  "suggestions": {
+  },
+  "description": "Installs/Configures Tomcat 6 with APR native libraries and with SSL support (no IPv6)",
+  "conflicting": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "attributes": {
+  },
+  "providing": {
+  },
+  "recipes": {
+  },
+  "dependencies": {
+    "debian": [
+
+    ],
+    "java_sun": [
+
+    ]
+  },
+  "maintainer": "Kiwi Systems Ltd",
+  "replacing": {
+  },
+  "platforms": {
+  },
+  "maintainer_email": "andrey@kiwi-systems.com",
+  "version": "0.0.1",
+  "groupings": {
+  },
+  "license": "Apache 2.0",
+  "name": "tomcat6apr",
+  "recommendations": {
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "dependencies": {
+    "runit": [
+
+    ]
+  },
+  "suggestions": {
+  },
+  "description": "Installs/Configures tasseo",
+  "license": "All rights reserved",
+  "conflicting": {
+  },
+  "platforms": {
+  },
+  "attributes": {
+  },
+  "providing": {
+  },
+  "recipes": {
+  },
+  "maintainer": "CrowdFlower, Inc.",
+  "replacing": {
+  },
+  "name": "tasseo",
+  "maintainer_email": "sysadmin@crowdflower.com",
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "groupings": {
+  }
+}

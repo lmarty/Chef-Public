@@ -1,0 +1,35 @@
+<VirtualHost *:80>
+  ServerName <%= @params[:server_name] %>
+  ServerAlias <%= @params[:server_name] %>.local <%= @params[:server_aliases].join(' ') if @params[:server_aliases] %>
+
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+
+  ProxyRequests Off
+  ProxyPass / http://<%= @params[:server_name] %>/
+  ProxyPassReverse / http://<%= @params[:server_name] %>/
+</VirtualHost>
+
+<% if @params[:enable_https] %>
+<VirtualHost *:443>
+  ServerName <%= @params[:server_name] %>
+  ServerAlias <%= @params[:server_name] %>.local <%= @params[:server_aliases].join(' ') if @params[:server_aliases] %>
+  SSLProxyEngine on
+
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+
+  ProxyRequests Off
+  ProxyPass / https://<%= @params[:server_name] %>/
+  ProxyPassReverse / https://<%= @params[:server_name] %>/
+
+  # SSL settings
+  SSLEngine on
+  SSLCertificateFile      <%= node[:mod_security][:dir] %>/ssl/server.crt
+  SSLCertificateKeyFile   <%= node[:mod_security][:dir] %>/ssl/server.key
+</VirtualHost>
+<% end %>

@@ -1,0 +1,31 @@
+{
+  "name": "gosu",
+  "description": "Cross-platform 2D game development library",
+  "long_description": "",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "Sets up libraries requied to build apps with Gosu"
+  },
+  "version": "0.1.0"
+}

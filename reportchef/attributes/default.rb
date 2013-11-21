@@ -1,0 +1,1 @@
+default["reportchef"]["api_key"] = "default"

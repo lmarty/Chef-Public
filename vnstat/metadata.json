@@ -1,0 +1,41 @@
+{
+  "license": "Apache 2.0",
+  "recipes": {
+    "screen": ""
+  },
+  "conflicting": {
+
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+    "screen": [
+
+    ]
+  },
+  "long_description": "",
+  "description": "Installs vnStat",
+  "replacing": {
+
+  },
+  "platforms": {
+    "debian": [
+    ],
+     "ubuntu": [
+    ]
+  },
+  "version": "0.0.1",
+  "maintainer": "Mohsin Mirza",
+  "recommendations": {
+
+  },
+  "name": "vnstat",
+  "maintainer_email": "named.conf@gmail.com",
+  "attributes": {
+
+  },
+  "suggestions": {
+
+  }
+}

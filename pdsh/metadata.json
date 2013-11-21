@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "pdsh",
+  "maintainer_email": "kyle.bader@dreamhost.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Kyle Bader",
+  "long_description": "Description\n===========\n\nCookbook to map chef roles to pdsh genders.\n\nRequirements\n============\n\nChef server is required to preform searchs for nodes.\n\nUsage\n=====\n\nSimply add recipe[pdsh::genders] to a nodes run\\_list\n",
+  "version": "0.1.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures pdsh",
+  "providing": {
+  }
+}

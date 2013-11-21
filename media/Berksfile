@@ -1,0 +1,5 @@
+site :opscode
+
+cookbook 'nfs', path: '/Users/kannanmanickam/chef-repo/cookbooks/nfs'
+
+metadata

@@ -1,0 +1,12 @@
+= DESCRIPTION:
+
+Chef cookbook to deploy nventory: http://nventory.sf.net
+
+= REQUIREMENTS:
+
+Only RHEL 5/6 and derived distributions (CentOS/Scientific/RHEL) supported right now.
+
+= ATTRIBUTES:
+
+= USAGE:
+

@@ -1,0 +1,8 @@
+[CollabNet]
+name=collabnet
+enabled=1
+autorefresh=0
+baseurl=http://packages.collab.net/6.2.0.0/suse/11/$arch
+type=rpm-md
+gpgcheck=0
+keeppackages=1

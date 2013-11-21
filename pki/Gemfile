@@ -1,0 +1,6 @@
+source :rubygems
+
+
+gem 'berkshelf', '~> 1.2.1'
+gem 'vagrant', '~> 1.0.6'
+gem 'vagrant-butcher'

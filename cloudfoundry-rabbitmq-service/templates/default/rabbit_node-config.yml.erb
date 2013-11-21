@@ -1,0 +1,48 @@
+---
+<%
+  node_dir = ::File.join(node['cloudfoundry_service']['install_path'], "rabbit_node") # XXX
+  versions = node['cloudfoundry_rabbitmq_service']['node']['versions']
+  raise "You need to install rabbitmq, see the README for cloudfoundry-rabbitmq-service" unless versions.any?
+  supported_versions = versions.keys.sort.map { |e| "\"#{e}\"" }.join(", ")
+%>
+capacity: <%= node['cloudfoundry_rabbitmq_service']['node']['capacity']%>
+plan: free
+local_db: sqlite3:<%= node['cloudfoundry_rabbitmq_service']['node']['base_dir'] %>/rabbit_node.db
+base_dir: <%= node['cloudfoundry_rabbitmq_service']['node']['instances_dir'] %>
+mbus: <%= cf_mbus_url %>
+index: <%= node['cloudfoundry_rabbitmq_service']['node']['index'] %>
+logging:
+  level: <%= node['cloudfoundry_rabbitmq_service']['node']['log_level'] %>
+  file: <%= @log_file %>
+pid: <%= @pid_file %>
+max_memory_factor: <%= node['cloudfoundry_rabbitmq_service']['node']['max_memory_factor'] %>
+node_id: rabbitmq_node_<%= node['cloudfoundry_rabbitmq_service']['node']['index'] %>
+supported_versions: [<%= supported_versions %>]
+default_version: "<%= node['cloudfoundry_rabbitmq_service']['node']['default_version'] %>"
+
+migration_nfs: <%= node['cloudfoundry_rabbitmq_service']['node']['migration_nfs'] %>
+<% if node['cloudfoundry_rabbitmq_service']['node']['ip_route'] %>
+ip_route: <%= node['cloudfoundry_rabbitmq_service']['node']['ip_route'] %>
+<% end %>
+z_interval: <%= node['cloudfoundry_rabbitmq_service']['node']['z_interval'] %>
+max_clients: <%= node['cloudfoundry_rabbitmq_service']['node']['max_clients'] %>
+max_nats_payload: <%= node['cloudfoundry_rabbitmq_service']['node']['max_nats_payload'] %>
+port_range:
+  first: <%= node['cloudfoundry_rabbitmq_service']['node']['port_range']['first'] %>
+  last: <%= node['cloudfoundry_rabbitmq_service']['node']['port_range']['last'] %>
+admin_port_range:
+  first: <%= node['cloudfoundry_rabbitmq_service']['node']['admin_port_range']['first'] %>
+  last: <%= node['cloudfoundry_rabbitmq_service']['node']['admin_port_range']['last'] %>
+rabbit:
+<% versions.each_pair do |version,info| %>
+  '<%= version %>':
+    config_template: <%= File.join(node_dir, "rabbit", "resources", info['config_template']) %>
+    rabbitmq_server: "<%= File.join(versions[version]['rabbitmq_base_path'], "sbin", "rabbitmq-server") %>"
+    <% if info['disk_free_limit'] -%>
+    disk_free_limit: <%= info['disk_free_limit'] %>
+    <%- end %>
+<% end %>
+rabbitmq_log_dir: <%= node['cloudfoundry_rabbitmq_service']['node']['db_logs_dir'] %>
+rabbitmq_start_timeout: 10
+fqdn_hosts: <%= node['cloudfoundry_rabbitmq_service']['node']['fqdn_hosts'] %>
+op_time_limit: <%= node['cloudfoundry_rabbitmq_service']['node']['op_time_limit'] %>

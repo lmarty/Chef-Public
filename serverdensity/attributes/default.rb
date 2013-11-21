@@ -1,0 +1,10 @@
+#
+# Cookbook Name:: serverdensity
+# Attributes:: default
+#
+# Copyright 2012
+#
+
+default['serverdensity']['repository_key'] = "boxedice-public"
+default['serverdensity']['agent_key'] = "CHANGE_ME"
+default['serverdensity']['sd_url'] = "CHANGE_ME"

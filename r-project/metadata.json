@@ -1,0 +1,33 @@
+{
+  "name": "r-project",
+  "description": "Installs/Configures R",
+  "long_description": "Description\n===========\nThis cookbook installs and configures R.  It also contains an\nR_package provider which can be used in recipes to install R packages\nfrom CRAN.\n\nRequirements\n============\n\n* **apt**: Required for APT installation.\n* **build-essential**: Required for source installation.\n\nAttributes\n==========\n\n* `node['R']['cran_mirror]`: Used by the Rprofile.site template\nto set the system-wide default CRAN mirror.\n\n* `node['R']['version']`: The R version to install.  When using Apt, set\nto nil to always get the latest version.\n\n* `node['R']['config_opts]`: Options to pass to R's configure\n  script. Source install only.\n\n\n# Providers\n\n\n## R_package\n\nThe R_package provider can be used to manage packages available in the\nCRAN repository.  Currently to use this provider, your default CRAN\nmirror must be set.  The default recipe sets this for you.\n\n### Actions\n\n* `:install`: Installs the package from CRAN.  Does nothing if the\n  package is already installed. [default]\n\n* `:upgrade`: Upgrades the package to the latest version.  Currently\n  this will re-install the package even if it is at the latest\n  version.\n\n* `:remove`: Removes the package if it is installed.\n\n## Examples\n\nInstall a package:\n\n    R_package \"snow\"\n\nRemove a package:\n\n    R_package \"snow\" do\n        action :remove\n    end\n\n\nUsage\n=====\nAdd the default recipe to the run_list of a node or role.\n",
+  "maintainer": "Steven Danna",
+  "maintainer_email": "steve@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "build-essential": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.0"
+}

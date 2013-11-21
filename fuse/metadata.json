@@ -1,0 +1,33 @@
+{
+  "name": "fuse",
+  "description": "Installs/Configures fuse",
+  "long_description": "fuse Cookbook\n=============\nInstalls FUSE and associated clients, allowing mount file system in user space.\n\nRequirements\n------------\nSupports Fedora and Ubuntu out of the support. It may support Debian. It mostly supports CentOS/RHEL with EPEL/Repoforge.\n\nAttributes\n----------\n\n* `default['fuse']['package_name']`\n    - package name. Defaults to `'fuse'`\n\nThe following clients are included within the following attributes:\n\n*  `default['fuse']['clients']['sshfs']` \n    - allows ability to mount remote file system over ssh.\n*   `default['fuse']['clients']['zip']`\n    - mounts zip file as a file system.\n* `default['fuse']['clients']['iso']`\n    - mounts iso as a file sytem.\n* `default['fuse']['clients']['encfs']`\n    - mounts encrypted file system.\n* `default['fuse']['clients']['smb']`\n    - mounts samba/CIFS volumes.\n    \nClient names are different depending on operating system. See attributes/defaults.rb for more details.\n\nMore clients will be supported in the future.\n\nUsage\n-----\nTo install the core package, include `fuse` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[fuse]\"\n  ]\n}\n```\n\nTo include additional clients, add them as individual recipes:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[fuse]\",\n    \"recipe[fuse::sshfs]\",\n    \"recipe[fuse::zip]\",\n    \"recipe[fuse::iso]\",\n    \"recipe[fuse::encfs]\",\n    \"recipe[fuse::smb]\",\n  ]\n}\n```\n\nContributing\n------------\nTo contribute:\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Rilindo Foster",
+  "maintainer": "Rilindo Foster",
+  "maintainer_email": "rilindo.foster@monzell.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.2"
+}

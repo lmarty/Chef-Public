@@ -1,0 +1,29 @@
+{
+  "name": "swift",
+  "description": "The OpenStack Object Storage service Swift.",
+  "long_description": "Description\n===========\nPlaceholder for the OpenStack Object Storage service `Swift` as part of the OpenStack `Essex` reference architecture using Chef. The http://github.com/opscode/openstack-chef-repo will contain documentation for using this cookbook in the context of a full OpenStack deployment.\n\nSwift recipes will be intended for multi-node deployments but supporting a single machine install will be a special case of multi-node and managed with a role.\n\nRecipes\n=======\n\nLicense and Author\n==================\n\nAuthor:: Matt Ray (<matt@opscode.com>)\n\nCopyright 2012 Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "matt@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "cloudfoundry-ruby-runtime",
+  "description": "Installs/Configures cloudfoundry-ruby-runtime",
+  "long_description": "Description\n===========\n\nInstall support for running Ruby applications on\n[Cloud Foundry](http://www.cloudfoundry.org). This also enables support for\nRuby on Rails and Sinatra.\n\nRequirements\n============\n\n* Ubuntu\n\nTested on:\n\n* Ubuntu 10.04\n* Ubuntu 12.04\n\nAttributes\n==========\n\n* `node['cloudfoundry_ruby_runtime']['ruby18']['version']` - The exact\nversion of Ruby 1.8.7 that should be installed. Defaults to `1.8.7-p334`.\n* `node['cloudfoundry_ruby_runtime']['ruby19']['version']` - The exact\nversion of Ruby 1.9.2 that should be installed. Defaults to `1.9.2-p290`.\n* `node['cloudfoundry_ruby_runtime']['ruby193']['version']` - The exact\nversion of Ruby 1.9.3 that should be installed. Defaults to `1.9.3-p286`.\n* `node['cloudfoundry_ruby_runtime']['bundler_version']` - The exact\nversion of the Bundler gem that should be installed. Defaults to `1.1.3`.\n\nRecipes\n=======\n\nruby18\n------\n\nInstalls Ruby 1.8.7 for use by DEAs.\n\nruby19\n------\n\nInstalls Ruby 1.9.2 for use by DEAs.\n\nruby193\n-------\n\nInstalls Ruby 1.9.3 for use by DEAs.\n\nUsage\n=====\n\nAdd one of the recipes to the run list of a DEA node to\nenable support for Ruby-based applications on that DEA.\n\nNote that other Cloud Foundry components also use Ruby internally; those\ncookbooks handle installation of any version of Ruby they require. This\ncookbook only manages support for running user applications.\n",
+  "maintainer": "Andrea Campi",
+  "maintainer_email": "andrea.campi@zephirworks.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "cloudfoundry": "~> 1.3.0",
+    "rbenv": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.2.1"
+}

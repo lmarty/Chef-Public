@@ -1,0 +1,31 @@
+{
+  "recipes": {
+  },
+  "attributes": {
+  },
+  "maintainer": "computerlyrik",
+  "providing": {
+  },
+  "suggestions": {
+  },
+  "description": "backup your public github repos",
+  "groupings": {
+  },
+  "dependencies": {
+    "git": ">= 0.0.0"
+  },
+  "long_description": "Description\n===========\n\nBackup your github repositories with help of awesome octokit gem\n\nRequirements\n============\n\nAttributes\n==========\nTODO\n\nUsage\n=====\nTODO\n",
+  "name": "github_backup",
+  "license": "Apache 2.0",
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "conflicting": {
+  },
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "replacing": {
+  }
+}

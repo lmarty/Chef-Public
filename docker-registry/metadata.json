@@ -1,0 +1,89 @@
+{
+  "name": "docker-registry",
+  "description": "Installs and configures docker-registry",
+  "long_description": "",
+  "maintainer": "Raul E Rangel",
+  "maintainer_email": "Raul.Rangel@Disney.com.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "smartos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "application_nginx": ">= 0.0.0",
+    "application_python": ">= 0.0.0",
+    "application": ">= 3.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "docker-registry/repository": {
+      "display_name": "Docker Registry Git Repo",
+      "description": "The URL for the Docker Registry Git Repo",
+      "type": "string",
+      "required": "required",
+      "default": "https://github.com/dotcloud/docker-registry.git",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "docker-registry/revision": {
+      "display_name": "Docker Registry Revision",
+      "description": "The revision to check out from the repository",
+      "type": "string",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "docker-registry/install_dir": {
+      "display_name": "Docker Registry Install Directory",
+      "description": "The directory to install Docker Registry",
+      "type": "string",
+      "required": "required",
+      "default": "/opt/docker-registry",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "docker-registry/data_bag": {
+      "display_name": "Data Bag containing secrets",
+      "description": "The data bag that contains environment files with ssl and s3 keys",
+      "type": "string",
+      "required": "recommended",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "docker-registry": "Installs the docker-registry and sets up configuration"
+  },
+  "version": "0.0.3"
+}

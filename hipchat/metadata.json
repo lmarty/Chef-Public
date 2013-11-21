@@ -1,0 +1,29 @@
+{
+  "name": "hipchat",
+  "description": "LWRP for sending messages to HipChat rooms",
+  "long_description": "",
+  "maintainer": "Cameron Johnston",
+  "maintainer_email": "cameron@rootdown.net",
+  "license": "Apache v2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.4"
+}

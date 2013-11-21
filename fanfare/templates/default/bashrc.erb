@@ -1,0 +1,9 @@
+<% if @rbenv_root_path -%>
+if [ -z "$PS1" ] ; then
+  if [ -s "${HOME}/.rbenv/bin" ] ; then
+    export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+  elif [ -s "<%= @rbenv_root_path %>/bin" ] ; then
+    export PATH="<%= @rbenv_root_path %>/shims:<%= @rbenv_root_path %>/bin:$PATH"
+  fi
+fi
+<% end -%>

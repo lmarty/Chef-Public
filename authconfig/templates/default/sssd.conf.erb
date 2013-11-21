@@ -1,0 +1,115 @@
+[sssd]
+config_file_version = 2
+
+# Number of times services should attempt to reconnect in the
+# event of a crash or restart before they give up
+reconnection_retries = 3
+
+# If a back end is particularly slow you can raise this timeout here
+sbus_timeout = 30
+services = nss, pam
+
+# SSSD will not start if you do not configure any domains.
+# Add new domain configurations as [domain/<NAME>] sections, and
+# then add the list of domains (in the order you want them to be
+# queried) to the "domains" attribute below and uncomment it.
+# domains = LOCAL,LDAP
+
+<% if node[:authconfig][:ldap][:dnbase] != '' -%>
+	<% dnbasearr = node[:authconfig][:ldap][:dnbase].split(';') -%>
+	<% numdomains = dnbasearr.count -%>
+	<% domainlist = "domain1" -%>
+	<% 2.upto(numdomains) do |count| -%>
+		<% domainlist += ",domain#{count}" -%>
+	<% end -%>
+domains = <%= domainlist %>
+<% else -%>
+	<% numdomains = 1 -%>
+domains = domain1
+<% end -%>
+
+[nss]
+# The following prevents SSSD from searching for the root user/group in
+# all domains (you can add here a comma-separated list of system accounts that
+# are always going to be /etc/passwd users, or that you want to filter out).
+filter_groups = root
+filter_users = root
+reconnection_retries = 3
+
+# The entry_cache_nowait_percentage indicates the percentage of the
+# entry_cache_timeout to wait before updating the cache out-of-band.
+# (NSS requests will still be returned from cache until the full
+# entry_cache_timeout). Setting this value to 0 turns this feature
+# off (default).
+# entry_cache_nowait_percentage = 300
+
+[pam]
+reconnection_retries = 3
+
+<% 1.upto(numdomains) do |count| -%>
+[domain/domain<%= count %>]
+enumerate = true
+ldap_uri = <%= node[:authconfig][:ldap][:server] %>
+<% if node[:authconfig][:ldap][:dnbase] != '' -%>
+ldap_search_base = <%= dnbasearr[count-1] %>
+<% end -%>
+<% if node[:authconfig][:ldap][:dnbind] != '' -%>
+ldap_default_bind_dn = <%= node[:authconfig][:ldap][:dnbind] %>
+<% end -%>
+<% if node[:authconfig][:ldap][:rfc2307bis] -%>
+ldap_schema = rfc2307bis
+<% else -%>
+ldap_schema = rfc2307
+<% end -%>
+<% if node[:authconfig][:ldap][:enable] -%>
+id_provider = ldap
+<% else -%>
+id_provider = local
+<% end -%>
+<% if node[:authconfig][:ldap][:auth] -%>
+auth_provider = ldap
+<% elsif node[:authconfig][:kerberos][:enable] -%>
+auth_provider = krb5
+<% else -%>
+auth_provider = none
+<% end -%>
+krb5_realm = <%= node[:authconfig][:kerberos][:realm] %>
+krb5_server = <%= node[:authconfig][:kerberos][:kdcserver] %>
+ldap_tls_cacertdir = <%= node[:authconfig][:ldap][:cacertdir] %>
+<% if node[:authconfig][:ldap][:starttls] -%>
+ldap_id_use_start_tls = True
+<% else -%>
+ldap_id_use_start_tls = False
+<% end -%>
+<% if node[:authconfig][:sssd][:cachecreds] -%>
+cache_credentials = True
+<% else -%>
+cache_credentials = False
+<% end -%>
+<% unless node[:authconfig][:ldap][:reqcert] -%>
+ldap_tls_reqcert = never
+<% end -%>
+<% if node[:authconfig][:ldap][:disable_tls] -%>
+ldap_auth_disable_tls_never_use_in_production = true
+<% end -%>
+<% if node[:authconfig][:ldap][:bindpw] != '' -%>
+ldap_default_authtok_type = password
+ldap_default_authtok = <%= node[:authconfig][:ldap][:bindpw] %>
+<% end -%>
+
+<% if node[:authconfig][:ldap][:server_is_ad] -%>
+min_id = 700
+ldap_user_principal = userPrincipalName
+ldap_user_fullname = displayName
+ldap_user_name = sAMAccountName
+ldap_user_object_class = user
+ldap_user_home_directory = unixHomeDirectory
+ldap_user_principal = userPrincipalName
+ldap_group_object_class = group
+ldap_force_upper_case_realm = True
+ldap_group_member = msSFU30PosixMember
+
+<% else -%>
+ldap_group_member = uniqueMember
+<% end -%>
+<% end -%>

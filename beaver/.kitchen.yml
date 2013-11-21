@@ -1,0 +1,46 @@
+---
+driver_plugin: vagrant
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    provider: vmware_fusion
+    box: precise64
+    #box: canonical-ubuntu-12.04
+    box_url: http://files.vagrantup.com/precise64_vmware.box
+    require_chef_omnibus: true
+#- name: ubuntu-10.04
+#  driver_config:
+#    box: opscode-ubuntu-10.04
+#    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_chef-11.2.0.box
+#- name: centos-6.3
+#  driver_config:
+#    box: opscode-centos-6.3
+#    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.3_chef-11.2.0.box
+#- name: centos-5.8
+#  driver_config:
+#    box: opscode-centos-5.8
+#    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-5.8_chef-11.2.0.box
+
+suites:
+- name: default
+  run_list: ["recipe[python]","recipe[beaver]"]
+  attributes: {}
+
+- name: keypair
+  run_list: ["recipe[python]","recipe[beaver]"]
+  attributes:
+    beaver:
+      generate_keypair: true
+
+- name: configuration
+  run_list: ["recipe[python]","recipe[beaver]"]
+  attributes:
+    beaver:
+      configuration:
+        ssh_options: 'StrictHostKeyChecking=no'
+        ssh_tunnel: 'logging@logs.example.net'
+        ssh_remote_host: 'localhost'
+        ssh_remote_port: 6379
+        ssh_tunnel_port: 6379
+        redis_url: redis://localhost:6379/0

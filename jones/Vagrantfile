@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+box = ENV['VAGRANT_BOX'] || 'opscode_ubuntu-12.04_provisionerless'
+Vagrant.configure('2') do |config|
+  config.vm.hostname = "jones"
+  config.vm.box = box
+  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/#{box}.box"
+  config.omnibus.chef_version = :latest
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 8080, host: 8081
+
+  config.vm.provision :shell do |shell|
+    shell.inline = 'test -f $1 || (sudo apt-get update -y && touch $1)'
+    shell.args = '/var/run/apt-get-update'
+  end
+
+  config.vm.provision :chef_solo do |chef|
+    chef.json = {
+      :java => {
+        :install_flavor => "oracle",
+        :oracle => {
+          :accept_oracle_download_terms => true
+        }
+      },
+      :exhibitor => {
+        :opts => {
+          :configtype => "file",
+          :s3backup => "false"
+        },
+        :snapshot_dir => "/tmp/zookeeper_snapshots",
+        :transaction_dir => "/tmp/zookeeper_transactions",
+        :log_index_dir => "/tmp/zookeeper_log_indexes",
+        :hostname => "http://localhost:8080"
+      }
+    }
+
+    chef.run_list = [
+      "recipe[zookeeper]",
+      "recipe[jones]"
+    ]
+  end
+end

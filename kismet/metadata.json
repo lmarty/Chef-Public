@@ -1,0 +1,31 @@
+{
+  "name": "kismet",
+  "description": "Installs/Configures kismet",
+  "long_description": "kismet Cookbook\n===============\nThis cookbook configures the kismet wardriving application on Ubuntu.  Perfect for \nsetting up a wardriving rig using Chef Solo.\n\nRequirements\n------------\n- `apt` - Apt is used to configure the kismet repository\n\nAttributes\n----------\nThis recipe has an enormous number of attributes.  Your best bet for understanding all\nattributes is to check the attributes file and also read the kismet.conf.erb template \nfile.  That file best describes all configuration options\n\n- `enable_gpsd` - Install and use gpsd.  Defaults to true\n- `start_daemon` - Start the daemon.  Defaults to true\n- `gpsd_options` - Options to pass to the daemon.  Defaults to an empty string\n- `devices` - Path to device.  This is only needed for serial devices.  Defaults to an\nempty string\n- `usbauto` - Auto discover USB devices.  Defaults to true\n\n- `servername` - \"my_server\"\n- `logprefix` - \"/var/log/kismet\"\n- `allowplugins` - \"true\"\n- `ncsource` - The source interface to listen on.  This is probably the most important \nattribute in this cookbook.  Defaults to nil.\n- `preferredchannels` - Channels to dwell on\n- `channelvelocity` - The number of seconds to stay on each channel\n- `listen` - URL the server listens on\n- `allowedhosts` - Hosts allowed to connect to the server.  Defaults to 127.0.0.1\n- `logtypes` - Log types to log.  Defaults to \"pcapdump,gpsxml,netxml,nettxt,alert\"\n- `pcapdumpformat` - Pcap dump format. Defaults to \"ppi\"\n- `defaultlogtitle` - Log title prefix.  Defaults to \"Kismet\"\n- `maxclients` - Max clients allowed to connect to the server.  Defaults to \"5\"\n- `maxbacklog` - Max backlog before the server disconnects clients.  Defaults to \"5000\"\n\nUsage\n-----\nRun the default recipe on your node\n\nContributing\n------------\n- 1. Fork the repository on Github\n- 2. Write you change\n- 3. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nTim Smith - tsmith84@gmail.com\n",
+  "maintainer": "Tim Smith",
+  "maintainer_email": "tsmith84@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

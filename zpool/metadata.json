@@ -1,0 +1,30 @@
+{
+  "name": "zpool",
+  "description": "Manages Solaris zpools",
+  "long_description": "\nDescription\n==========\n\nLightweight resource and provider to manage Solaris zpools. \n\nCurrently, just creates or destroys simple zpools.\n\n\nRequirements\n===========\n\nSolaris, zpool.\n\nAttributes\n=========\n\nUsage\n====\n\n    zpool \"test\" do\n      disks [ \"c0t2d0s0\", \"c0t3d0s0\" ]\n    end\n  \n  \n    zpool \"test2\" do\n      action :destroy\n    end\n  ",
+  "maintainer": "Martha Greenberg",
+  "maintainer_email": "marthag@wix.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "solaris2": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "tor",
+  "description": "Installs/Configures tor/privoxy",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "maintainer": "Cramer Development, Inc.",
+  "maintainer_email": "sysadmin@cramerdev.com",
+  "license": "apache2",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.2"
+}

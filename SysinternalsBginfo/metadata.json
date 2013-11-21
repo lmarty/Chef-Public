@@ -1,0 +1,31 @@
+{
+  "name": "SysinternalsBginfo",
+  "description": "Installs and configures Microsoft Technet Sysinternals BgInfo",
+  "long_description": "Description\n===========\n\nDownloads Sysinternals Bginfo (latest version by default), unzips it\nand installs it on the remote machine.  The cookbook will also allow\nconfiguration of the BgInfo data as well as set a default wallpaper\nimage for BgInfo data to be displayed.\n\nRequirements\n============\n\nRequires the OpsCode Windows Cookbook located here: http://community.opscode.com/cookbooks/windows\n\nAttributes\n==========\n\nThe download location of the Microsoft Technet Sysinternals BgInfo.zip file (case matters):\n\"sysinternals_download_url\"\n\nThe directory where BgInfo will be installed.\n\"bginfo_installation_directory\"\n\nFiles\n=====\n\nconfig.bgi is the configuration file you want to use with the BgInfo deployment.\nbackground.jpg is the wallpaper you want to use as the default background.\n\nUsage\n=====\n\nDownload the tarball or use knife to add to add it to your current\nconfiguration.  Change any attributes deemed necessary, upload and \nexecute it.  \n",
+  "maintainer": "Shaun C McDonnell",
+  "maintainer_email": "smcdonnell@ea.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 1.2.8"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.1"
+}

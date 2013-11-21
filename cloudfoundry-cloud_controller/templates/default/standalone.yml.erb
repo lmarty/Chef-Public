@@ -1,0 +1,8 @@
+---
+name: standalone
+
+runtimes:
+<% @runtimes.each do |runtime| -%>
+  - "<%= runtime %>":
+      default: false
+<%- end %>

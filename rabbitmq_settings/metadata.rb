@@ -1,0 +1,10 @@
+name             "rabbitmq_settings"
+maintainer       "HiganWorks LLC"
+maintainer_email "sawanoboriyu@higanworks.com"
+license          "MIT"
+description      "Converge rabbitmq settings using lwrp. Depends on opscode-cookbook[rabbitmq]."
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          "0.1.0"
+depends          "rabbitmq"
+supports         "ubuntu"
+supports         "smartos"

@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "description": "Installs/Configures a Rails app",
+  "long_description": "Description\n===========\n\nA collection of [Heavy Water Software Inc's](http://hw-ops.com)\nevolving opinions on best practises for configuring and integrating a\nRails application.\n\nRequirements\n============\n\nA Rails application code repository that is configured to manage gem\ndependencies via Bundler.\n\nAttributes\n==========\n\n* `node[\"app\"][\"repository\"] ` - Code to deploy (defaults to an\n  example Rails 3.1 app)\n* `node[\"db\"][\"adapter\"]` - Database such as postgresql, mysql, or\n  sqlite3 (default)\n\n\nUsage\n=====\n\nInclude \"recipe[app::deploy]\" in a run list to install an example\nRails 3.1 application backed by a SQLite3 database.\n\nIf you're cloning a private repository add a deploy key at\napp/files/default/deploy_key_id_rsa\n\nA more practical case might be to create an \"app\" role:\n\n```ruby\nname \"app\"\ndescription \"My Rails app\"\n\nrun_list [ \"role[base]\",\n           \"recipe[postgresql::server]\",\n           \"recipe[app::deploy]\" ]\n\ndefault_attributes( \"app\" => {\n                      \"repository\" => \"git@github.com:me/myapp.git\",\n                      \"use_deploy_key\" => true },\n                    \"db\" => {\n                      \"adapter\" => \"postgresql\" } )\n```\n",
+  "maintainer": "Heavy Water Software Inc.",
+  "maintainer_email": "darrin@heavywater.ca",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "xml": ">= 0.0.0",
+    "xslt": ">= 0.0.0",
+    "imagemagick": ">= 0.0.0",
+    "nginx": ">= 0.0.0",
+    "bluepill": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

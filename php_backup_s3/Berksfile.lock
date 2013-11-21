@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "php_backup_s3": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.0.0"
+    },
+    "php": {
+      "locked_version": "1.2.2"
+    },
+    "git": {
+      "locked_version": "2.5.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    },
+    "xml": {
+      "locked_version": "1.1.2"
+    },
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "dmg": {
+      "locked_version": "1.1.0"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "windows": {
+      "locked_version": "1.10.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.1.6"
+    }
+  }
+}

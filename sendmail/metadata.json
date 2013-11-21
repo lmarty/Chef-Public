@@ -1,0 +1,32 @@
+{
+  "name": "sendmail",
+  "description": "Installs/Configures sendmail",
+  "long_description": "sendmail Cookbook\n=================\n\nSimple cookbook for managing sendmail.\nThis is probably most useful for removing sendmail before installing postfix.\n\nContributing\n------------\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Brett Richardson (http://www.dablweb.com)",
+  "maintainer": "Dabl Web",
+  "maintainer_email": "Brett.Richardson.NZ@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

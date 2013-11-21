@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "windows": ">= 1.2.8"
+  },
+  "name": "putty",
+  "maintainer_email": "nathan@globalphobia.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "maintainer": "Nathan Lee",
+  "long_description": "Description\n===========\n\n[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a free implementation of Telnet and SSH for Windows and Unix platforms, along with an xterm terminal emulator.\n\nRequirements\n============\n\nPlatform\n--------\n\n* Windows XP\n* Windows Vista\n* Windows Server 2003 R2\n* Windows 7\n* Windows Server 2008 (R1, R2)\n\nCookbooks\n---------\n\n* windows\n\nAttributes\n==========\n\n* `node['putty']['home']` - location to install putty files to.  default is `%SYSTEMDRIVE%\\putty`\n\nUsage\n=====\n\ndefault\n-------\n\nDownloads and installs putty to the location specified by `node['putty']['home']`.  Also ensures `node['putty']['home']` is in the system path.\n\n\n",
+  "version": "0.0.5",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures Putty a free implementation of Telnet and SSH for Windows and Unix platforms, along with an xterm terminal emulator.",
+  "providing": {
+  }
+}

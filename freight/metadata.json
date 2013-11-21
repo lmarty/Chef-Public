@@ -1,0 +1,32 @@
+{
+  "name": "freight",
+  "description": "Installs/Configures freight",
+  "long_description": "Description\n===========\n\nThis cookbook installs Freight, a modern take on the Debian archive.\nSee https://github.com/rcrowley/freight for more details\n\nThis cookbook is maintained at\nhttps://github.com/3ofcoins/chef-cookbook-freight/\n\nRequirements\n============\n\n* apt\n\n\nRecipes\n=======\n\n * `freight` -- adds Apt repository and installs Freight\n * `freight::server` -- configures a system user with GPG key and\n   freight config + directories in /srv/freight/\n",
+  "maintainer": "Maciej Pasternacki",
+  "maintainer_email": "maciej@pasternacki.net",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.0"
+}

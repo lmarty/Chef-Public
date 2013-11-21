@@ -1,0 +1,38 @@
+{
+  "name": "scout-agent",
+  "description": "Setup Scount Server Monitoring Agent",
+  "long_description": "# chef-scout-agent\n\n## Description\n\nInstalls the [Scout](https://scoutapp.com/) Server Monitoring Agent.\n\n\n## Requirements\n\nThis cookbooks requires the excellent [chef-rvm](https://github.com/fnichol/chef-rvm) cookbook from @fnichol.\n\n\n### Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* Ubuntu\n* Debian\n* Red Hat\n* CentOS\n* Fedora\n* Scientific\n* Amazon\n\n\n## Recipes\n\n* `scout-agent` - The default recipe.\n\n## Usage\n\nThis cookbook installs the scout-agent components if not present, and pulls updates if they are installed on the system.\n\n## Attributes\n\n```ruby\ndefault[\"scout_agent\"][\"key\"]         = \"\"\ndefault[\"scout_agent\"][\"user\"]        = \"scout\"\ndefault[\"scout_agent\"][\"group\"]       = \"scout\"\ndefault[\"scout_agent\"][\"version\"]     = \"5.5.4\"\ndefault[\"scout_agent\"][\"rvm_ruby\"]    = \"ruby-1.9.3-p194\"\ndefault[\"scout_agent\"][\"rvm_gemset\"]  = \"scout\"\ndefault[\"scout_agent\"][\"plugin_gems\"] = []\ndefault[\"scout_agent\"][\"node_name\"]   = \"\"\n```\n\nThe `node[\"scout_agent\"][\"plugin_gems\"]` takes a list of additional gems that are used by your Scout plugins. The array can contain a list of Hash elements with `name` and (optional) `version` keys. Example:\n\n```javascript\n// dna ...\n{\n  \"scout_agent\": {\n    // ...\n    \"plugin_gems\": [\n      { \"name\": \"mysql\", \"version\": \"2.8.1\" },\n      { \"name\": \"redis\" }\n    ]\n  }\n}\n```\n\n## Basic Settings\n\nYou must set the value for `node[\"scout_agent\"][\"key\"]`.\n\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Added some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n\n## License\n\n**chef-scout-agent**\n\n* Freely distributable and licensed under the [MIT license](http://phlipper.mit-license.org/2012/license.html).\n* Copyright (c) 2012 Phil Cohen (github@phlippers.net) [![endorse](http://api.coderwall.com/phlipper/endorsecount.png)](http://coderwall.com/phlipper)\n* http://phlippers.net/\n",
+  "maintainer": "Phil Cohen",
+  "maintainer_email": "github@phlippers.net",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "amazon": ">= 0.0.0"
+  },
+  "dependencies": {
+    "rvm": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "scout-agent": "Install and configure scout-agent"
+  },
+  "version": "1.0.0"
+}

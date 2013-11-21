@@ -1,0 +1,2 @@
+-A FWR -p tcp -m tcp --dport <%= node[:doozerd][:run_options][:listen_port] %> -j ACCEPT
+-A FWR -p tcp -m tcp --dport <%= node[:doozerd][:run_options][:web_port] %> -j ACCEPT

@@ -1,0 +1,7 @@
+1381883172
+Chef	/home/flaccid/src/github/xhost-cookbooks/rightscale/recipes/standardize_chef_version.rb	class Chef
+SANDBOX_PATHS	/home/flaccid/src/github/xhost-cookbooks/rightscale/recipes/add_sandbox_to_path.rb	        SANDBOX_PATHS =
+SANE_PATHS	/home/flaccid/src/github/xhost-cookbooks/rightscale/recipes/enforce_path_sanity.rb	        SANE_PATHS =
+Version	/home/flaccid/src/github/xhost-cookbooks/rightscale/recipes/standardize_chef_version.rb	  class Version
+initialize	/home/flaccid/src/github/xhost-cookbooks/rightscale/resources/tag.rb	def initialize(*args)
+parse	/home/flaccid/src/github/xhost-cookbooks/rightscale/recipes/standardize_chef_version.rb	   def parse(str="")

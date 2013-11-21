@@ -1,0 +1,30 @@
+{
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "providing": {
+  },
+  "maintainer_email": "geoffrey.tran@gmail.com",
+  "recommendations": {
+  },
+  "groupings": {
+  },
+  "long_description": "Description\n===========\n\nThis cookbook installs lesscss [http://lesscss.org/].\n\nLESS extends CSS with dynamic behavior such as variables, \nmixins, operations and functions. LESS runs on both the \nclient-side (Chrome, Safari, Firefox) and server-side, with Node.js and Rhino.\n\nRequirements\n============\n\nNodeJS\nNPM\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "description": "Installs/Configures lesscss",
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "maintainer": "Geoffrey Tran",
+  "name": "lesscss",
+  "dependencies": {
+    "npm": ">= 0.0.0"
+  },
+  "version": "0.0.1",
+  "recipes": {
+  },
+  "platforms": {
+  },
+  "license": "Apache License, Version 2.0"
+}

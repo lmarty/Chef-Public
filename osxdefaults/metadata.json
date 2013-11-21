@@ -1,0 +1,29 @@
+{
+  "name": "osxdefaults",
+  "description": "Installs/Configures osx defaults",
+  "long_description": "osxdefaults Cookbook [![Build Status](https://travis-ci.org/kitchenplan/chef-osxdefaults.png?branch=master)](https://travis-ci.org/kitchenplan/chef-osxdefaults)\n=====================\n\nA cookbook, that combines a lot of settings to tweak your osx install. It is based on Mathias Bynens' dotfiles repo but tailored to more general needs.\n\nContributing\n------------\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Run the tests, ensuring they all pass (on Travis)\n5. Submit a Pull Request using Github\n",
+  "maintainer": "Roderik van der Veer",
+  "maintainer_email": "roderik@vanderveer.be",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.1"
+}

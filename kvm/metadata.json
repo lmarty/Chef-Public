@@ -1,0 +1,39 @@
+{
+  "name": "kvm",
+  "description": "Installs/Configures/tuning kvm",
+  "long_description": "# KVM \n\n## DESCRIPTION\n\nInstall KVM Hypervisor on Ubuntu, Debian, CentOS or RHEL\n\n## REQUIREMENTS\n\n### OS\n\n* Ubuntu (tested)\n* Debian\n* CentOS (tested host)\n* RHEL\n\n### Cookbooks\n\n* sysctl: https://github.com/Youscribe/sysctl-cookbook\n* modules: https://github.com/Youscribe/modules-cookbook\n* sysfs: https://github.com/Youscribe/sysfs-cookbook\n* cpu: https://github.com/Youscribe/cpu-cookbook\n\n## USAGE\n\n### Default recipe\n\nDetect the server role from OHAI : host or guest. And install minimum packages.\nFor security, the default recipe doesn't install a kvm server, you need to install it with kvm::host\n\n### host recipe\n\nInstall minimum packages and configuration to do kvm virtualization.\n\n### guest recipe\n\nInstall minimum packages and configuration for a kvm guest.\n\n### host-tuning recipe\n\nInstall packages and configuration to enhance your kvm host.\n\n* Set vm.swappiness = 0 if the kernel < 3.5 and cpu has ept flag.\n* Load vhost_net module on Ubuntu/debian to speed up networking.\n* Avoid cpu frequency change to prevent potential clock drifting.\n* Enable transparent huge pages\n\n### guest-tuning recipe\n\nInstall packages and configuration to enhance your kvm guest.\n\n* Change the block IO scheduler according to the attribute default[\"kvm\"][\"guest\"][\"tuning\"][\"io_scheduler\"]. By the default the noop scheduler is used.\n",
+  "maintainer": "Guilhem Lettron",
+  "maintainer_email": "guilhem.lettron@youscribe.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+    "ntp": ">= 1.2.0",
+    "sysctl": ">= 0.0.0",
+    "modules": ">= 0.0.0",
+    "sysfs": ">= 0.0.0",
+    "cpu": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.1"
+}

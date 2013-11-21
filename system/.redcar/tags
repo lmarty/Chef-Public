@@ -1,0 +1,4 @@
+1382070349
+initialize	/home/flaccid/src/github/xhost-cookbooks/system/resources/timezone.rb	def initialize(*args)
+initialize	/home/flaccid/src/github/xhost-cookbooks/system/resources/hostname.rb	def initialize(*args)
+local_ip	/home/flaccid/src/github/xhost-cookbooks/system/providers/hostname.rb	def local_ip

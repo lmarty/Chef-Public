@@ -1,0 +1,28 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: squeeze
+  driver_config:
+    box: squeeze
+- name: wheezy
+  driver_config:
+    box: wheezy
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+;- name: ubuntu-12.04
+;  driver_config:
+;    box: ubuntu-12.04
+;    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+;- name: ubuntu-10.04
+;  driver_config:
+;    box: opscode-ubuntu-10.04
+;    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
+
+suites:
+- name: gerrit
+  run_list:
+  - recipe[gerrit]
+  attributes: { "mysql" : { "bind_address" : "127.0.0.1" } }
+

@@ -1,0 +1,6 @@
+.jamie/
+.jamie.local.yml
+.kitchen/
+.kitchen.local.yml
+Gemfile.lock
+Berksfile.lock

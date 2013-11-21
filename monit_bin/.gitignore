@@ -1,0 +1,7 @@
+*.swp
+Gemfile.lock
+test/kitchen/.kitchen
+opscode.category
+.kitchen.local.yml
+.kitchen/
+tmp/

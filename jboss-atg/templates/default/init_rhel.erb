@@ -1,0 +1,73 @@
+
+#!/bin/sh
+
+echo "values $1 and $2"
+TRIGGER=$1
+## Split letter from server
+IN="$2"
+set -- "$IN"
+IFS="-"; declare -a Array=($*)
+
+## Assign server type to instance and letter to slot
+INSTANCE=${Array[0]}
+SLOT=${Array[1]}
+
+export JBOSS_HOME=<%=node['jboss']['jboss_home']%>
+export JAVA_HOME=<%=node['jboss']['java_home']%>
+
+start(){
+       echo "Starting jboss instance ${INSTANCE}.."
+
+               su <%=node['jboss']['jboss_user']%> -c"${JBOSS_HOME}/bin/run.sh -c ${INSTANCE}-${SLOT} -b 0.0.0.0 > ${JBOSS_HOME}/${INSTANCE}.log 2>&1 &"
+}
+
+stop(){
+       echo "Stopping jboss instance ${INSTANCE}-${SLOT}.."
+
+               if   [ "${SLOT}" = "a" ]; then
+                       su <%=node['jboss']['jboss_user']%> -c "${JBOSS_HOME}/bin/shutdown.sh -S -u admin -p adminP4SS33"
+
+                   elif [ "${SLOT}" = "b" ]; then
+                       su <%=node['jboss']['jboss_user']%> -c"${JBOSS_HOME}/bin/shutdown.sh -s jnp://localhost:1199 -u admin -p adminP4SS33"
+
+                   elif [ "${SLOT}" = "c" ]; then
+                       su <%=node['jboss']['jboss_user']%> -c"${JBOSS_HOME}/bin/shutdown.sh -s jnp://localhost:1299 -u admin -p adminP4SS33"
+                       
+                   elif [ "${SLOT}" = "d" ]; then
+                       su <%=node['jboss']['jboss_user']%> -c"${JBOSS_HOME}/bin/shutdown.sh -s jnp://localhost:1399 -u admin -p adminP4SS33"
+                   else
+                       printf "Unable to determine the appropriate shutdown command.\n; please update this script"
+                       exit 1
+                fi
+
+
+}
+
+restart(){
+           echo "Restarting jboss instance ${INSTANCE}-${SLOT}.."
+       stop
+# give stuff some time to stop before we restart
+       sleep 60
+
+       start
+}
+
+
+
+
+case "$TRIGGER" in
+ start)
+       start
+       ;;
+ stop)
+       stop $ARRAY
+       ;;
+ restart)
+       restart
+       ;;
+ *)
+       echo "Usage: jboss {start|stop|restart}"
+       exit 1
+esac
+
+exit 0

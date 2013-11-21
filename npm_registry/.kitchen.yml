@@ -1,0 +1,57 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+  run_list: ["recipe[apt]"]
+- name: ubuntu-12.10
+  driver_config:
+    box: opscode-ubuntu-12.10
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.10_provisionerless.box
+  run_list: ["recipe[apt]"]
+
+suites:
+- name: default
+  run_list: ["recipe[couchdb::source]", "recipe[git]", "recipe[nodejs::install_from_binary]", "recipe[npm_registry]", "recipe[minitest-handler]"]
+  attributes:
+    couch_db:
+      config:
+        couchdb:
+          database_dir: /usr/local/var/lib/couchdb
+        httpd:
+          bind_address: 0.0.0.0
+          secure_rewrites: false
+    npm_registry:
+      replication:
+        flavor: 'none'
+- name: scheduled_replication
+  run_list: ["recipe[couchdb::source]", "recipe[git]", "recipe[nodejs::install_from_binary]", "recipe[cron]", "recipe[npm_registry]", "recipe[minitest-handler]"]
+  attributes:
+    couch_db:
+      config:
+        couchdb:
+          database_dir: /usr/local/var/lib/couchdb
+        httpd:
+          bind_address: 0.0.0.0
+          secure_rewrites: false
+    npm_registry:
+      replication:
+        flavor: 'scheduled'
+- name: continuous_replication
+  run_list: ["recipe[couchdb::source]", "recipe[git]", "recipe[nodejs::install_from_binary]", "recipe[cron]", "recipe[npm_registry]", "recipe[minitest-handler]"]
+  attributes:
+    couch_db:
+      config:
+        couchdb:
+          database_dir: /usr/local/var/lib/couchdb
+        httpd:
+          bind_address: 0.0.0.0
+          secure_rewrites: false
+    npm_registry:
+      replication:
+        flavor: 'continuous'

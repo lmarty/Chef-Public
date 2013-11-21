@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+  },
+  "name": "nventory",
+  "maintainer_email": "rubiojr@frameos.org",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+    "scientific": ">= 5.0",
+    "centos": ">= 5.0",
+    "abiquo": ">= 5.0",
+    "redhat": ">= 5.0"
+  },
+  "maintainer": "Sergio Rubio",
+  "long_description": "= DESCRIPTION:\n\nChef cookbook to deploy nventory: http://nventory.sf.net\n\n= REQUIREMENTS:\n\nOnly RHEL 5/6 and derived distributions (CentOS/Scientific/RHEL) supported right now.\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures nventory",
+  "providing": {
+  }
+}

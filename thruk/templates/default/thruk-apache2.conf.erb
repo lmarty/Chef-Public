@@ -1,0 +1,76 @@
+<VirtualHost *:80>
+  ServerAdmin     root@localhost
+  ServerName      <%= node['fqdn'] %>
+<% if node['thruk']['use_ssl'] %>
+  Redirect permanent / https://<%= node['fqdn'] %>/
+</VirtualHost>
+
+<VirtualHost *:443>
+  ServerAdmin     root@localhost
+  ServerName      <%= node['fqdn'] %>
+<% end %>
+  DocumentRoot    <%= node['thruk']['docroot'] %>
+  CustomLog       <%= node['thruk']['log_dir'] %>/apache_access.log combined
+  ErrorLog        <%= node['thruk']['log_dir'] %>/apache_error.log
+
+<% if node['thruk']['use_ssl'] %>
+  SSLEngine On
+  SSLCertificateFile <%= node['apache']['dir'] %>/ssl/<%= node['thruk']['cert_name'] %>.crt
+  SSLCertificateKeyFile <%= node['apache']['dir'] %>/ssl/<%= node['thruk']['cert_name'] %>.key
+<% unless node['thruk']['cert_ca_name'].nil? %>
+  SSLCertificateChainFile <%= node['apache']['dir'] %>/ssl/<%= node['thruk']['cert_ca_name'] %>.crt
+<% end %>
+<% end %>
+
+<IfModule mod_fcgid.c>
+  AddHandler fcgid-script .sh
+  IPCCommTimeout 120
+
+  <Directory <%= node['thruk']['dir'] %>>
+    Options FollowSymLinks
+    AllowOverride All
+    order allow,deny
+    allow from all
+  </Directory>
+  <Directory <%= node['thruk']['conf_dir'] %>/themes>
+    Options FollowSymLinks
+    allow from all
+  </Directory>
+  <Directory <%= node['thruk']['conf_dir'] %>/plugins>
+    Options FollowSymLinks
+    allow from all
+  </Directory>
+
+  # redirect to a startup page when there is no pidfile yet
+  RewriteEngine On
+  RewriteRule ^/$ /thruk [R=301,L]
+  RewriteCond %{REQUEST_METHOD} GET
+  RewriteCond %{REQUEST_URI} !^/thruk/startup.html
+  RewriteCond %{REQUEST_URI} !^/thruk/side.html
+  RewriteCond %{REQUEST_URI} !^/thruk/.*\.(css|png|js)
+  RewriteCond %{REQUEST_URI} ^/thruk
+  RewriteCond /var/cache/thruk/thruk.pid !-f
+  RewriteRule ^(.*)$ /thruk/startup.html?$1 [R=302,L,NE,QSA]
+
+  Alias /thruk/documentation.html <%= node['thruk']['docroot'] %>/documentation.html
+  Alias /thruk/startup.html <%= node['thruk']['docroot'] %>/startup.html
+  AliasMatch ^/thruk/(.*\.cgi|.*\.html)  <%= node['thruk']['dir'] %>/fcgid_env.sh/thruk/$1
+  AliasMatch ^/thruk/plugins/(.*?)/(.*)$  <%= node['thruk']['conf_dir'] %>/plugins/plugins-enabled/$1/root/$2
+  Alias /thruk/themes/  <%= node['thruk']['conf_dir'] %>/themes/themes-enabled/
+  Alias /thruk <%= node['thruk']['docroot'] %>
+
+  <Location /thruk>
+    Options ExecCGI
+    AuthName "Monitoring Access"
+    AuthType Basic
+    AuthUserFile "<%= node['thruk']['htpasswd'] %>"
+    require valid-user
+  </Location>
+  <Location /thruk/cgi-bin/remote.cgi>
+    Order Deny,Allow
+    Allow from all
+    Satisfy any
+  </Location>
+</IfModule>
+
+</VirtualHost>

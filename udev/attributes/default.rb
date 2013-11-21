@@ -1,0 +1,1 @@
+default['udev']['net'] = {}

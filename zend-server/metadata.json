@@ -1,0 +1,54 @@
+{
+  "name": "zend-server",
+  "description": "Installs and configures zend server",
+  "long_description": "Description\n===========\n\nInstall Zend Server\n\nPlatform\n========\nDebian, Ubuntu\n\nTested on:\nUbuntu 12.04\n\nAttributes\n==========\n\nSee the `attributes/server.rb` for default values.\n\n* `node['zend_server']['php_version']` - The php version to install (5.3 or 5.4)\n\nUsage\n=====\n\nFor the server only, use the server (or default) recipe:\n\n    { \"run_list\": [\"recipe[zend-server::server]\"] }\n\nTo install xdebug, use the xdebug recipe:\n    { \"run_list\": [\"recipe[zend-server::xdebug]\"] }\n\nTo install phing, use the phing recipe:\n    { \"run_list\": [\"recipe[zend-server::phing]\"] }\n\nTo install phpunit, use the phing recipe:\n    { \"run_list\": [\"recipe[zend-server::phpunit]\"] }\n\nTo install phpdoc, use the phpdocumentor recipe:\n    { \"run_list\": [\"recipe[zend-server::phpdocumentor]\"] }\n\nTo install composer, use the composer recipe:\n    { \"run_list\": [\"recipe[zend-server::composer]\"] }\n\n",
+  "maintainer": "ContinuousPHP",
+  "maintainer_email": "team@continuousphp.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "build-essential": ">= 0.0.0",
+    "conf": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "zend_server/php_version": {
+      "display_name": "PHP version",
+      "description": "version of php to install (5.3 or 5.4)",
+      "default": "5.4",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "zend-server": "Includes the server recipe to configure the base server",
+    "zend-server::xdebug": "Installs the xdebug pecl package",
+    "zend-server::phing": "Installs the phing pear package",
+    "zend-server::phpdocumentor": "Installs the phpdoc pear package",
+    "zend-server::phpunit": "Installs the phpunit pear package",
+    "zend-server::composer": "Installs composer executable"
+  },
+  "version": "0.1.1"
+}

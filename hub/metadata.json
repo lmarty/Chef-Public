@@ -1,0 +1,55 @@
+{
+  "name": "hub",
+  "description": "git + hub = github",
+  "long_description": "# chef cookbook for hub\n\nInstalls the hub command line tool for extending git with github loveliness.\n\n## Release\n\nThere is a helpful rake task to share new cookbook versions.\n\n```\n$ rake share[1.2.3]\n$ rake 'share[1.2.3]' # zsh\n```\n\nThis will update the `metadata.rb` version, check the cookbook, upload the cookbook, tag the git repo. Much of this functionality comes from [knife-community](http://miketheman.github.io/knife-community/ \"knife-community by miketheman\") plugin.",
+  "maintainer": "Dr Nic Williams",
+  "maintainer_email": "drnicwilliams@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "hub/install_path": {
+      "display_name": "Install path",
+      "description": "Base path where bin/hub will be installed",
+      "type": "string",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "git/src_path": {
+      "display_name": "Source path",
+      "description": "Path where hub git repo will be cloned",
+      "type": "string",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.4"
+}

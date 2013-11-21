@@ -1,0 +1,29 @@
+{
+  "recipes": {
+  },
+  "suggestions": {
+  },
+  "license": "Apache 2.0",
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "platforms": {
+  },
+  "groupings": {
+  },
+  "replacing": {
+  },
+  "description": "Installs and autoconfigures bind9 nameserver",
+  "providing": {
+  },
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "name": "bind9-easy",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "maintainer": "computerlyrik",
+  "long_description": "Description\n===========\n\nAutoconfigures bind9 Server.\nUses chef search and user input to find all clients.\n\nImplements a Zone LWRP which sets up forward and reverse zones.\n\n\nRequirements\n============\n\nI am running on an ubuntu server - please report other platforms!\n\nAttributes\n==========\n\nnode['bind']['id'] = Hash.new\n\ndefault['bind']['forward'] = Array.new\n\nList of forwarders (where requests should be forwarded to)\n\n\ndefault['bind']['transfer'] = Array.new\n\nList of servers where zone updates should be transferred to.\n\nUsage\n=====\nMost complex setup:\n\nbind9_zone \"example.com\" do\n  email \"hostmaster.example.com\" #convert your emailaddress-@ into a .\n  nameserver nses\n  hosts ({\n    \"@\" =>  \"192.168.178.10\",\n    \"not-a-chef-client\" => \"192.168.178.250\", #results in a A record\n    \"my-hot-box\" => \"not-a-chef-client\" #results in a CNAME record\n  })\n  mailserver \"mail.example.com\"\n  xmpp \"xmpp.example.com\"\nend\n\n\n\nnode.set['bind']['transfer'] = [\"192.168.178.1\",\"192.168.178.2\"]\nnode.set['bind']['forward'] = [\"172.0.0.1\", \"4.2.2.4\"]\n\ninclude_recipe \"bind9\"\n\n\nSee resources/zone.rb for more attributes for bind9_zone\n\nIdeas/TODO\n==========\n\n- Add NS slave recipe\n- Add ipv6\n\n"
+}

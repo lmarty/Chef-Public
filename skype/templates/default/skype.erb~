@@ -1,0 +1,4 @@
+#!/bin/sh
+export SKYPE_HOME="#{node[:skype][:install_dir]}"
+ 
+$SKYPE_HOME/skype --resources=$SKYPE_HOME $*

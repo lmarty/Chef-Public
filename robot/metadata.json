@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "java": ">= 0.0.0",
+    "apt": ">= 0.0.0",
+    "python": ">= 0.0.0"
+  },
+  "name": "robot",
+  "maintainer_email": "pb@pbit.org",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Pavlo Baron",
+  "long_description": "Description\n===========\n\nUse this cookbook to setup the robotframework (http://code.google.com/p/robotframework/) and\nto distribute your tests to the target systems.\n\nThe cookbook has yet only been tested on / implemented for Debian/Ubuntu.\n\nRequirements\n============\n\nTo use this cookbook, you need:\n\napt\njava\npython\n\nThe rest (robotframework etc.) will be installed through its recipes.\n\nAttributes\n==========\n\nrobot.version - the version of the framework which will be downloaded and installed\n\nUsage\n=====\n\nWhat you can do with it? You can install the robot framework with its all dependencies and\nget ready to run distributed acceptance tests. Of course it's also possible to provision\nrobot to one single machine and run tests there.\n",
+  "version": "0.1.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures robot framework",
+  "providing": {
+  }
+}

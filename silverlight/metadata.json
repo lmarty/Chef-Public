@@ -1,0 +1,29 @@
+{
+  "name": "silverlight",
+  "description": "Installs/Configures silverlight",
+  "long_description": "Description\n===========\n\nInstall Microsoft Silverlight 3.0\n\nRequirements\n============\n\nPlatform: Microsoft Windows\n\nAttributes\n==========\n\n* `node['silverlight']['url']` - Download silverlight from this url. Default is to download the Windows installer from: http://www.microsoft.com/getsilverlight/Get-Started/Install/Default.aspx.\n* `node['silverlight']['checksum']` - Checksum of the silverlight installer.\n* `node['silverlight']['options']` - Array of options to pass to the silverlight installer. By default the recipe already uses /q for quiet install. See __Usage__ below for other options that can be specified here.\n\nUsage\n=====\n\nModify the installation options as required. By default, no options are specified. This must be an array. Available options are:\n\n* /q - this is hardcoded in the recipe by default since presumably, you want this.\n* /doNotRequireDRMPrompt - turns off the prompt for DRM playback.\n* /ignorewarnings - ignore non-fatal warnings during installation.\n* /noupdate - disable internal auto-updater.\n* /qu - quiet uninstall. You probably don't want to use this, as it doesn't make sense with this cookbook.\n\nFor example, to disable the DRM prompt and auto-updates, put this in the role where you have the silverlight installation:\n\n    name \"windows_media_center\"\n    description \"Systems that are windows media center playback systems\"\n    run_list(\"recipe[silverlight]\")\n    default_attributes(\n      \"silverlight\" => {\n        \"options\" => [\"/doNotRequireDRMPrompt\", \"/noupdate\"]\n      }\n    )\n\nNote that the preceeding slashes are required.\n\nThanks to [this blog post](http://www.ervik.as/index.php/thegidwimguide-mainmenu/1935-unattended-install-of-microsoft-silverlight) for documenting the installer options. I'm sure they're in the Silverlight deployment guide, but TL;DR.\n\nLicense and Author\n==================\n\nsilverlight::default recipe inspired by Doug MacEachern's <dougm@vmware.com> \"windows::dotnetfx\" recipe.\n\nAuthor:: Joshua Timberman\n\nCopyright:: 2011, Joshua Timberman <cookbooks@housepub.org>\nCopyright:: 2010, VMware, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Joshua Timberman",
+  "maintainer_email": "cookbooks@housepub.org",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.5.0"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "dropwizard",
+  "description": "LWRP for dropwizard applications",
+  "long_description": "Check out the [GitHub docs](https://github.com/greglu/dropwizard-cookbook) for more information.",
+  "maintainer": "Gregory Lu",
+  "maintainer_email": "greg.lu@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.2"
+}

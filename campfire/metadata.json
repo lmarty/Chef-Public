@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "campfire",
+  "maintainer_email": "cameron@rootdown.net",
+  "attributes": {
+  },
+  "license": "Apache v2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Cameron Johnston",
+  "long_description": "",
+  "version": "0.0.4",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "LWRP for sending messages to Campfire rooms",
+  "providing": {
+  }
+}

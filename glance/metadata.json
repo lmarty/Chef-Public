@@ -1,0 +1,39 @@
+{
+  "name": "glance",
+  "description": "Installs and configures the Glance Image Registry and Delivery Service",
+  "long_description": "Description\n===========\n\nThis cookbook installs the OpenStack Image service **Glance** as part of the OpenStack **Essex** reference deployment Chef for OpenStack. The http://github.com/opscode/openstack-chef-repo contains documentation for using this cookbook in the context of a full OpenStack deployment. Glance is installed from packages, optionally populating the repository with default images.\n\nhttp://glance.openstack.org/\n\nUsage\n=====\n\nThe Glance cookbook currently supports file, swift, and Rackspace Cloud Files (swift API compliant) backing stores.  NOTE: changing the storage location from cloudfiles to swift (and vice versa) requires that you manually export and import your stored images.\n\nTo enable these features set the following in the default attributes section in your environment:\n\nFiles\n-----\n    \"glance\": {\n      \"api\": {\n        \"default_store\": \"file\"\n      },\n      \"images\": [\n        \"cirros\"\n      ],\n      \"image_upload\": true\n    }\n\n\nSwift\n-----\n    \"glance\": {\n      \"api\": {\n        \"default_store\": \"swift\"\n      },\n      \"images\": [\n        \"cirros\"\n      ],\n      \"image_upload\": true\n    }\n\n\nCloud Files\n-----------\n    \"glance\": {\n      \"api\": {\n        \"default_store\": \"swift\",\n        \"swift_store_user\": \"<Cloud Files Tenant ID>:<Rackspace Cloud Files Username>\",\n        \"swift_store_key\": \"<Rackspace Cloud Password>\",\n        \"swift_store_auth_version\": \"2\",\n        \"swift_store_auth_address\": \"https://identity.api.rackspacecloud.com/v2.0\"\n      },\n      \"images\": [\n        \"cirros\"\n      ],\n      \"image_upload\": true\n    }\n\nTo obtain your Cloud Files Tenant ID use the following:\ncurl -s -X POST https://identity.api.rackspacecloud.com/v2.0/tokens -d '{\"auth\": {\"passwordCredentials\": {\"username\": \"<Rackspace Cloud User Name>\", \"password\": \"<Rackspace Cloud Password\"}}}' -H \"Content-type: application/json\" | python -mjson.tool | grep \"tenantId.*Mosso\" | head -1\n\nRequirements\n============\n\nChef 0.10.0 or higher required (for Chef environment use)\n\nPlatform\n--------\n\n* Ubuntu-12.04\n* Fedora-17\n\nCookbooks\n---------\n\nThe following cookbooks are dependencies:\n\n* database\n* mysql\n* keystone\n* osops-utils\n\nRecipes\n=======\n\ndefault\n-------\n-Includes recipes `api`, `registry`\n\napi\n------\n-Installs the glance-api server\n\nregistry\n--------\n-Includes recipe `mysql:client`\n-Installs the glance-registry server\n\nAttributes\n==========\n\n* `glance[\"keystone_service_chef_role\"]` - The name of the Chef role that installs the Keystone Service API\n* `glance[\"glance_api_chef_role\"]` - The name of the Chef role that installs the Glance API service\n* `glance[\"verbose\"]` - Enables/disables verbose output for glance services.\n* `glance[\"debug\"]` - Enables/disables debug output for glance services.\n* `glance[\"db\"][\"name\"]` - Name of glance database\n* `glance[\"db\"][\"user\"]` - Username for glance database access\n* `glance[\"db\"][\"password\"]` - Password for glance database access\n* `glance[\"api\"][\"ip_address\"]` - IP address to use for communicating with the glance API\n* `glance[\"api\"][\"bind_address\"]` - IP address for the glance API to bind to\n* `glance[\"api\"][\"port\"]` - Port for the glance API to bind to\n* `glance[\"api\"][\"adminURL\"]` - Used when registering image endpoint with keystone\n* `glance[\"api\"][\"internalURL\"]` - Used when registering image endpoint with keystone\n* `glance[\"api\"][\"publicURL\"]` - Used when registering image endpoint with keystone\n* `glance[\"registry\"][\"ip_address\"]` - IP address to use for communicating with the glance registry\n* `glance[\"registry\"][\"bind_address\"]` - IP address for the glance registry to bind to\n* `glance[\"registry\"][\"port\"]` - IP address for the glance port to bind to\n* `glance[\"service_tenant_name\"]` - Tenant name used by glance when interacting with keystone - used in the API and registry paste.ini files\n* `glance[\"service_user\"]` - User name used by glance when interacting with keystone - used in the API and registry paste.ini files\n* `glance[\"service_pass\"]` - User password used by glance when interacting with keystone - used in the API and registry paste.ini files\n* `glance[\"service_role\"]` - User role used by glance when interacting with keystone - used in the API and registry paste.ini files\n* `glance[\"image_upload\"]` - Toggles whether to automatically upload images in the `glance[\"images\"]` array\n* `glance[\"images\"]` - Default list of images to upload to the glance repository as part of the install\n* `glance[\"image][\"<imagename>\"]` - URL location of the `<imagename>` image. There can be multiple instances of this line to define multiple imagess (eg natty, maverick, fedora17 etc)\n--- example `glance[\"image][\"natty\"]` - \"http://c250663.r63.cf1.rackcdn.com/ubuntu-11.04-server-uec-amd64-multinic.tar.gz\"\n* `glance[\"api\"][\"default_store\"]` - Toggles the backend storage type.  Currently supported is \"file\" and \"swift\"\n* `glance[\"api\"][\"swift\"][\"store_container\"] - Set the container used by glance to store images and snapshots.  Defaults to \"glance\"\n* `glance[\"api\"][\"swift\"][\"store_large_object_size\"] - Set the size at which glance starts to chunnk files.  Defaults to \"200\" MB\n* `glance[\"api\"][\"swift\"][\"store_large_object_chunk_size\"] - Set the chunk size for glance.  Defaults to \"200\" MB\n\nTemplates\n=========\n\n* `glance-api-paste.ini.erb` - Paste config for glance-api middleware\n* `glance-api.conf.erb` - Config file for glance-api server\n* `glance-registry-paste.ini.erb` - Paste config for glance-registry middleware\n* `glance-registry.conf.erb` - Config file for glance-registry server\n* `glance-scrubber.conf.erb` - Config file for glance image scrubber service\n* `policy.json.erb` - Configuration of ACLs for glance API server\n\nLicense and Author\n==================\n\nAuthor:: Justin Shepherd (<justin.shepherd@rackspace.com>)\nAuthor:: Jason Cannavale (<jason.cannavale@rackspace.com>)\nAuthor:: Ron Pedde (<ron.pedde@rackspace.com>)\nAuthor:: Joseph Breu (<joseph.breu@rackspace.com>)\nAuthor:: William Kelly (<william.kelly@rackspace.com>)\nAuthor:: Darren Birkett (<darren.birkett@rackspace.co.uk>)\nAuthor:: Evan Callicoat (<evan.callicoat@rackspace.com>)\nAuthor:: Matt Ray (<matt@opscode.com>)\n\nCopyright 2012, Rackspace US, Inc.\nCopyright 2012, Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "YOUR_EMAIL",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "database": ">= 0.0.0",
+    "keystone": ">= 0.0.0",
+    "mysql": ">= 0.0.0",
+    "osops-utils": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "glance::api": "Installs packages required for a glance api server",
+    "glance::registry": "Installs packages required for a glance registry server"
+  },
+  "version": "2012.1.1"
+}

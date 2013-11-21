@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "windows": ">= 1.2.8"
+  },
+  "name": "bginfo",
+  "maintainer_email": "nathan@globalphobia.com",
+  "attributes": {
+  },
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "maintainer": "Nathan Lee",
+  "long_description": "Description\n===========\nInstalls BGInfo and sets up an auto run.\n\nRequirements\n============\nWindows\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "version": "0.0.6",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs/Configures bginfo",
+  "providing": {
+  }
+}

@@ -1,0 +1,18 @@
+---
+<%
+  versions = node['cloudfoundry_mongodb_service']['node']['versions']
+  raise "You need to install mongodb, see the README for cloudfoundry-mongodb-service" unless versions.any?
+%>
+service_name: mongodb
+backup_base_dir: <%= node['cloudfoundry_mongodb_service']['backup']['base_dir'] %>
+service_base_dir: <%= node['cloudfoundry_mongodb_service']['node']['instances_dir'] %>
+mongodump_path:
+<% versions.each_key do |version| %>
+  "<%= version %>": "<%= File.join(versions[version]['mongod_base_path'], "bin", "mongodump") %>"
+<% end %>
+logging:
+  level: <%= node['cloudfoundry_mongodb_service']['backup']['log_level'] %>
+  file: <%= @log_file %>
+local_db: sqlite3:<%= node['cloudfoundry_mongodb_service']['node']['base_dir'] %>/mongodb_node.db
+timeout: <%= node['cloudfoundry_mongodb_service']['backup']['timeout'] %>
+pid: <%= @pid_file %>

@@ -1,0 +1,44 @@
+current_path = '<%= @current_path %>'
+
+worker_processes <%= @worker_processes %>
+working_directory current_path
+listen <%= "'#{@unicorn_listen}'" + "#{', ' + @unicorn_listen_options.inspect if @unicorn_listen_options}" %>
+timeout <%= @unicorn_timeout %>
+pid '<%= @unicorn_pid %>'
+
+stderr_path '<%= File.join(@shared_path, 'log', 'unicorn.stderr.log') %>'
+stdout_path '<%= File.join(@shared_path, 'log', 'unicorn.stdout.log') %>'
+
+preload_app <%= @unicorn_preload_app %>
+
+GC.respond_to?(:copy_on_write_friendly=) and
+  GC.copy_on_write_friendly = <%= @cow_friendly %>
+
+before_fork do |server, worker|
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.connection.disconnect!
+end
+
+after_fork do |server, worker|
+  worker.user('<%= @user %>', '<%= @group %>') if Process.euid == 0
+
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.establish_connection
+end
+
+before_exec do |server|
+  # Set ENV
+<% @environment_variables.each do |k, v| -%>
+  ENV['<%= k.to_s.upcase %>'] = '<%= v %>'
+<% end -%>
+
+  # Configure bundler to use proper paths if app provides a Gemfile
+  if(File.exists?("#{current_path}/Gemfile"))
+    paths = ENV["PATH"].to_s.split(':')
+    paths.unshift '<%= @bundled_bin %>'
+    ENV["PATH"] = paths.uniq.join(':')
+
+    ENV['GEM_HOME'] = ENV['GEM_PATH'] = '<%= @bundled_path %>'
+    ENV['BUNDLE_GEMFILE'] = "#{current_path}/Gemfile"
+  end
+end

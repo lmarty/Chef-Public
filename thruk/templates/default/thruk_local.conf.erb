@@ -1,0 +1,48 @@
+#
+# This file is managed by Chef.  Local modifications will be overwritten.
+#
+############################################
+# put your own settings into this file
+# settings from this file will override
+# those from the thruk.conf
+############################################
+logo_path_prefix = /thruk/icons/
+start_page = /thruk/cgi-bin/tac.cgi
+first_day_of_week = <%= node['thruk']['first_day_of_week'] %>
+
+<cmd_defaults>
+    ahas                   = 1  # For Hosts Too
+    broadcast_notification = 0  # Broadcast
+    force_check            = 1  # Forced Check
+    force_notification     = 0  # Forced Notification
+    send_notification      = 0  # Send Notification
+    sticky_ack             = 1  # Sticky Acknowledgement
+    persistent_comments    = 1  # Persistent Comments
+    persistent_ack         = 1  # Persistent Acknowledgement Comments
+    ptc                    = 0  # For Child Hosts Too
+    use_expire             = 0  # Use expire for acknowledgements (for cores which support this)
+</cmd_defaults>
+
+<% node['thruk']['backends'].each do |id,backend| %>
+# <%= id %>
+<Component Thruk::Backend>
+    <peer>
+        name   = <%= backend['name'] %>
+        type   = <%= backend['type'] %>
+<% unless backend['options'].nil? %>
+        <options>
+<% backend['options'].each do |optname,optvalue| %>
+            <%= optname %> = <%= optvalue %>
+<% end %>
+       </options>
+<% end %>
+<% unless backend['configtool'].nil? %>
+       <configtool>
+<% backend['configtool'].each do |confname,confvalue| %>
+            <%= confname %> = <%= confvalue %>
+<% end %>
+       </configtool>
+<% end %>
+    </peer>
+</Component>
+<% end %>

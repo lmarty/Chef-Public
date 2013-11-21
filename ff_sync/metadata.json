@@ -1,0 +1,32 @@
+{
+  "suggestions": {
+  },
+  "recipes": {
+  },
+  "license": "Apache 2.0",
+  "description": "Installs and configures firefox mozilla sync server",
+  "name": "ff_sync",
+  "attributes": {
+  },
+  "dependencies": {
+    "mercurial": ">= 0.0.0",
+    "database": ">= 0.0.0",
+    "mysql": ">= 0.0.0"
+  },
+  "groupings": {
+  },
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "maintainer": "computerlyrik",
+  "version": "1.0.0",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "long_description": "Description\n===========\n\nInstalls and sets up a firefox sync server built by mozilla foundation.\n\nSyncs optionally\n- Bookmarks\n- Passwords\n- Tabs\n- Addons\n- Preferences\n- History\n\nRequirements\n============\n\nmysql and database cookbooks\nmercurial for checkout\n\nAttributes\n==========\n\nDirectory where ff_sync is checked out\nnode['ff_sync']['server_dir'] = \"/srv/ff_sync\"\n\nMailserver where ff_sync sends mails to\nnode['ff_sync']['mailserver'] = \"mail.#{node['domain']}\"\n\nUsage\n=====\n\nJust include recipe or setup the attributes mentioned before.\n\nIdeas/Todo\n==========\n\n- Configure nginx correctly\n\nContact\n=======\nsee metadata.rb\n\n",
+  "replacing": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  }
+}

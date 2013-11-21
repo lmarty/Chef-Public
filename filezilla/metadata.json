@@ -1,0 +1,31 @@
+{
+  "name": "filezilla",
+  "description": "Installs/Configures FileZilla Client for Windows",
+  "long_description": "",
+  "maintainer": "Tim Smith - Webtrends Inc.",
+  "maintainer_email": "tim.smith@webtrends.com",
+  "license": "All rights reserved",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.1"
+}

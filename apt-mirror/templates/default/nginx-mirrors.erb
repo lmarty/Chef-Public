@@ -1,0 +1,22 @@
+# This file is managed by Chef.
+# Do NOT modify this file directly.
+
+server {
+  listen  <%= @port %>;
+  server_name <%= @server_name %>;
+
+  gzip off;
+  access_log /var/log/nginx/mirror-access.log;
+
+  location /ubuntu {
+    alias <%= @mirror_path %>archive.ubuntu.com;
+    autoindex on;
+  }
+
+<% @repository_information.each do |location, location_alias| -%>
+  location /<%= location %> {
+    alias <%= @mirror_path %><%= location_alias %>;
+    autoindex on;
+  }
+<% end -%>
+}

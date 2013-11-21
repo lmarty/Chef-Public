@@ -1,0 +1,16 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: Ubuntu12.04.2-i386-chef11
+
+suites:
+- name: default
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[phpbb_test]
+  attributes: {}

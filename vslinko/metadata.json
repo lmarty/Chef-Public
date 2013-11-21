@@ -1,0 +1,35 @@
+{
+  "name": "vslinko",
+  "description": "My *nix user environment",
+  "long_description": "",
+  "maintainer": "Vyacheslav Slinko",
+  "maintainer_email": "vyacheslav.slinko@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "git": ">= 0.0.0",
+    "sudo": ">= 0.0.0",
+    "zsh": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "vslinko": "Prepare my *nix user environment"
+  },
+  "version": "0.0.2"
+}

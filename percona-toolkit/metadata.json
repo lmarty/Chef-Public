@@ -1,0 +1,37 @@
+{
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+    "yum": ">= 0.0.0",
+    "apt": ">= 0.0.0"
+  },
+  "suggestions": {
+  },
+  "providing": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "percona-toolkit::package_repo": "Sets up the package yum/apt repository.",
+    "percona-toolkit": "Installs the Percona Toolkit software."
+  },
+  "maintainer_email": "dschultz@brinkster.com",
+  "long_description": "# chef-percona_toolkit\n\n## Description\n\nChef cookbook for installing [Percona toolkit](http://www.percona.com/software/percona-toolkit/)\n\n## Requirements\n\nThe following platforms are supported by this cookbook and have been tested:\n\n* CentOS\n* Debian\n* Red Hat\n* Ubuntu\n\n### Cookbooks\n\n* [apt](http://community.opscode.com/cookbooks/apt) Opscode LWRP Cookbook\n* [yum](http://community.opscode.com/cookbooks/yum) Opscode LWRP Cookbook\n\n## Recipes\n\n* `percona-toolkit` - Default recipe includes `percona-toolkit::package_repo` and does the package install.\n* `percona-toolkit::package_repo` - Sets up the package repo.\n\n## Usage\n\nInclude `recipe[\"percona-toolkit\"]` in your run list, or add it to a role.\n\n## License\n\nAuthor:: Derek Schultz (<dschultz@brinkster.com>)\n\nCopyright:: 2012, Derek Schultz\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.",
+  "name": "percona-toolkit",
+  "version": "0.1.0",
+  "license": "Apache 2.0",
+  "recommendations": {
+  },
+  "replacing": {
+  },
+  "maintainer": "Derek Schultz",
+  "description": "Installs Percona apt/yum repository and percona-toolkit package.",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "nsclient",
+  "description": "Installs/Configures nsclient++ using chocolatey",
+  "long_description": "NSClient++ Cookbook\n=================================\nInstalls and configures nsclient++ using chocolatey as installer.\n\nRequirements\n------------\npowershell\nchocolatey\n\n\nAttributes\n----------\nnsclientpath: path for nsclient on system\n\n\n\nUsage\n-----\n#### nsclient::default\nTODO: Write usage instructions for each cookbook.\n\ne.g.\nJust include `nsclient` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[nslcient]\"\n  ]\n}\n```\n\nTODO:\n----\nattributes for useful setting in NSC.ini.\n\n\nContributing\n------------\nOpen to pull requests.\n\nLicense and Authors\n-------------------\nAuthors: Mat Davies\nCopyright 2013\n\n\n Licensed under the Apache License, Version 2.0 (the \"License\");\n you may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n\n     http://www.apache.org/licenses/LICENSE-2.0\n\n Unless required by applicable law or agreed to in writing, software\n distributed under the License is distributed on an \"AS IS\" BASIS,\n WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n See the License for the specific language governing permissions and\n limitations under the License.\n\n\n",
+  "maintainer": "Mathew Davies",
+  "maintainer_email": "ashmere@gmail.com",
+  "license": "All rights reserved",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "chocolatey": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

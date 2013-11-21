@@ -1,0 +1,48 @@
+---
+<%
+  versions = node['cloudfoundry_mongodb_service']['node']['versions']
+  raise "You need to install mongodb, see the README for cloudfoundry-mongodb-service" unless versions.any?
+  supported_versions = versions.keys.sort.map { |e| "\"#{e}\"" }.join(", ")
+%>
+capacity: <%= node['cloudfoundry_mongodb_service']['node']['capacity'] %>
+plan: free
+local_db: sqlite3:<%= node['cloudfoundry_mongodb_service']['node']['base_dir'] %>/mongodb_node.db
+mbus: <%= cf_mbus_url %>
+index: <%= node['cloudfoundry_mongodb_service']['node']['index'] %>
+base_dir: <%= node['cloudfoundry_mongodb_service']['node']['instances_dir'] %>
+logging:
+  level: <%= node['cloudfoundry_mongodb_service']['node']['log_level'] %>
+  file: <%= @log_file %>
+pid: <%= @pid_file %>
+node_id: mongodb_node_<%= node['cloudfoundry_mongodb_service']['node']['index'] %>
+supported_versions: [<%= supported_versions %>]
+default_version: "<%= node['cloudfoundry_mongodb_service']['node']['default_version'] %>"
+
+mongod_path:
+<%
+  versions.each_key do |version|
+%>
+  "<%= version %>": "<%= File.join(versions[version]['mongod_base_path'], "bin", "mongod") %>"
+<% end %>
+
+mongod_options:
+<% versions.each_key do |version| %>
+  "<%= version %>": "<%= versions[version]['mongod_options'] %>"
+<% end %>
+
+port_range:
+  first: <%= node['cloudfoundry_mongodb_service']['node']['port_range']['first'] %>
+  last: <%= node['cloudfoundry_mongodb_service']['node']['port_range']['last'] %>
+migration_nfs: <%= node['cloudfoundry_mongodb_service']['node']['migration_nfs'] %>
+mongorestore_path:
+<% versions.each_key do |version| %>
+  "<%= version %>": "<%= File.join(versions[version]['mongod_base_path'], "bin", "mongorestore") %>"
+<% end %>
+<% if node['cloudfoundry_mongodb_service']['node']['ip_route'] %>
+ip_route: <%= node['cloudfoundry_mongodb_service']['node']['ip_route'] %>
+<% end %>
+z_interval: <%= node['cloudfoundry_mongodb_service']['node']['z_interval'] %>
+mongod_log_dir: <%= node['cloudfoundry_mongodb_service']['node']['db_logs_dir'] %>
+max_nats_payload: <%= node['cloudfoundry_mongodb_service']['node']['max_nats_payload'] %>
+fqdn_hosts: <%= node['cloudfoundry_mongodb_service']['node']['fqdn_hosts'] %>
+op_time_limit: <%= node['cloudfoundry_mongodb_service']['node']['op_time_limit'] %>

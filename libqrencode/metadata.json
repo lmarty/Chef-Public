@@ -1,0 +1,29 @@
+{
+  "name": "libqrencode",
+  "description": "Installs/Configures libqrencode",
+  "long_description": "libqrencode Cookbook\n====================\nA cookbook for [libqrencode](http://fukuchi.org/works/qrencode/index.html.en).\n\nUsage\n-----\n\n    include_recipe 'libqrencode'\n\nLicense and Authors\n-------------------\nAuthors:\n- @irohiroki\n",
+  "maintainer": "KRAY Inc.",
+  "maintainer_email": "dev@kray.jp",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "3.4.2"
+}

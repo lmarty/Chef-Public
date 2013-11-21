@@ -1,0 +1,32 @@
+{
+  "name": "rackconnect",
+  "description": "Configures rackconnect sudoers",
+  "long_description": "Description\n===========\n\nThis cookbook will setup sudo and the sudoers files to allow rackconnect to do its thing.\n\nMostly useful if you have other chef cookbooks/recipes that edit/manage sudoers.\n\nRequirements\n============\n\nYou will need the [sudo](http://ckbk.it/sudo) cookbook.\n\nUsage\n=====\n\nYou NEED to enable (set to true) the `/etc/sudoers.d/` attribute (default is false):\n\n    node['authorization']['sudo']['include_sudoers_d']\n\nThen just include the recipe `rackconnect`.",
+  "maintainer": "David Radcliffe",
+  "maintainer_email": "radcliffe.david@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "sudo": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "rackconnect": "Setup the rackconnect sudoers fragment."
+  },
+  "version": "0.1.0"
+}

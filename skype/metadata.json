@@ -1,0 +1,32 @@
+{
+  "name": "skype",
+  "description": "Installs/Configures skype",
+  "long_description": "Description\n===========\nThis cookbook will install and configure skype on redhat & centos OS. \n\nRequirements\n============\n\n## Cookbooks:\n\nThis cookbook doesn't have direct dependencies on other cookbooks.\n\n##Platforms:\n\n*Centos/RedHat\n\nAttributes\n==========\n\nGeneral Settings:\n\n[:skype][:install_dir] - Location of the skype installation\n[:skype][:url]\t       - url to download skype from\n[:skype][:temp_dir]    - Location of temporary dir\n[:skype][:filename]    - Filename for skype\n\n\nUsage\n=====\n\nUsing this cookbook is relatively straightforward. Add the desired recipes to the run list of a node, or create a role. Depending on your environment.\n\nLicense and Author\nAuthor:: Arun Tomar <arun@solutionenterprises.co.in>\n\nCopyright:: 2012, Arun Tomar\nCopyright:: Solution Enterprises\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Arun Tomar",
+  "maintainer_email": "arun@solutionenterprises.co.in",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "skype": "Installs and configures skype for centos & redhat"
+  },
+  "version": "0.0.1"
+}

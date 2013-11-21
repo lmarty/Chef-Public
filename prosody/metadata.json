@@ -1,0 +1,31 @@
+{
+  "suggestions": {
+  },
+  "maintainer_email": "chef-cookbooks@computerlyrik.de",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "description": "Installs/Configures prosody",
+  "license": "Apache 2.0",
+  "version": "0.2.0",
+  "providing": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "platforms": {
+    "ubuntu": "12.10"
+  },
+  "name": "prosody",
+  "replacing": {
+  },
+  "recipes": {
+  },
+  "dependencies": {
+    "mercurial": ">= 0.0.0"
+  },
+  "groupings": {
+  },
+  "attributes": {
+  },
+  "maintainer": "computerlyrik"
+}

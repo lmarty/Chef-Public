@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'application'
+cookbook 'application_python'
+cookbook 'nginx_conf', :git => 'https://github.com/mwhooker/chef-nginx_conf.git'
+cookbook 'python'
+cookbook 'zookeeper', :git => 'https://github.com/SimpleFinance/chef-zookeeper.git'
+
+cookbook 'jones', :path => './'

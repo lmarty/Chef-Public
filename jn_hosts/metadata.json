@@ -1,0 +1,29 @@
+{
+  "name": "jn_hosts",
+  "description": "Sets up LWRP for managing /etc/hosts",
+  "long_description": "Description\n-----------\nHosts file LWRP\nManages individual entries in /etc/hosts without effecting other entries\n\n\nRequirements\n------------\nPlatform that can edit files ;)\n\nAttributes\n----------\n`node[:hosts][:config]` - String - (Default: '/etc/hosts')\n  The Path to the hosts file you want to modify\n\nResources/Providers\n-------------------\n\nhosts\n=====\n### Actions\n* `:create`\n  Add / Create entry in the host file\n* `:remove`\n  Remove entry from the hosts file\n\n### Parameters\n\n* `ip`   The IPV4 adress for this entry (defaults to name)\n* `entries`  The list of entries for this ip.\n* `force` Force the action even reguardless if entries match.  I.e. only match ip and force the new requested state \n* `config_file` The Path to the file to write out too. (default to `node[:hosts][:config]`)\n\nExamples\n--------\n\nCreate/modify Localhost entries \n\n      hosts \"127.0.0.2\" do\n        entries %w/testlocal localtest test.localdomain.com/\n      end\n\nForce remove some entry\n     \n      hosts \"127.1.1.3\" do\n        action :remove\n        force  true\n      end\n\nSee the example.rb  recipe for examples\n",
+  "maintainer": "Jesse Nelson",
+  "maintainer_email": "spheromak@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.4"
+}

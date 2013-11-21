@@ -1,0 +1,36 @@
+{
+  "platforms": {
+    "debian": [
+      ">= 4.0"
+    ],
+    "ubuntu": [
+      ">= 8.04"
+    ]
+  },
+  "long_description": "= DESCRIPTION:\nThis cookbook help you to setup backup-manager.\n\nYou can setup the folder you want to backup.\nYou can setup the FTP account where you want to push your backups\n= REQUIREMENTS:\n\n= ATTRIBUTES:\nUpload method (For the moment only \"ftp\" and \"none\"):\nnode[:backup_manager][:upload_method] = \"ftp\"\n\nFolder you want to backup :\n\nnode[:backup_manager][:local_folder] = [ \"/etc\",\"/home\" ]\n\nFtp setup :\nnode[:backup_manager][:ftp_host] = \"my_ftphost.com\"\nnode[:backup_manager][:ftp_user] = \"myuser\"\nnode[:backup_manager][:ftp_password] = \"mypassword\"\n\nBackup-manager available option :\nnode[:backup_manager][:archive_ttl] = \"7\"\n\n\n= USAGE:\n\n",
+  "recipes": {
+    "backup-manager": "Backup-manager configuration"
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "maintainer": "Efactures",
+  "replacing": {
+  },
+  "license": "Apache 2.0",
+  "maintainer_email": "nacer.laradji@gmail.com",
+  "groupings": {
+  },
+  "recommendations": {
+  },
+  "name": "backup-manager",
+  "version": "0.0.2",
+  "attributes": {
+  },
+  "description": "Installs/Configures backup-manager",
+  "suggestions": {
+  },
+  "dependencies": {
+  }
+}

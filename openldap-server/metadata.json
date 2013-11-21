@@ -1,0 +1,31 @@
+{
+  "name": "openldap-server",
+  "description": "Installs/Configures ldap",
+  "long_description": "# openldap-server cookbook\n\n# Requirements\nUbuntu >= 10.04 or Debian >= 7.0.0  \nRequirement is based on slapd package minimum requirement of 2.4.  \nOpenLDAP 2.4 included the dynamic config option, which is what this cookbook uses  \n\n# Usage\n* include_recipe 'openldap-server::default'  \n  * Installs OpenLDAP from the package repo  \n  * Configures a basic ldap database  \n    * Includes People, Groups, and Services OU containers  \n    * Includes the memberOf overlay  \n    * Includes ppolicy overlay\n    * Sets up access controls/no unauthenticated access  \n\n* Setup attributes listed below *\n* You can optionally supply your own ldif instead of using the provided *\n\n# Attributes\n### Main Options ###\n\n**Domain name to use which creates the suffix**  \n`node['openldap-server'][:domain] = 'default.com'`\n\n**Root password for the LDAP database**  \n_This can and should be hashed and salted, use slappasswd to generate_  \n`node['openldap-server'][:rootpw] = 'default'`\n\n**User attribute to use for root user**  \n_This ends up as \"cn=admin,dc=example,dc=com\"_  \n`node['openldap-server'][:root_user_attr] = \"cn=admin\"`\n\n**Where do you want the ldap DB to be stored**  \n`node['openldap-server'][:db_dir] = '/var/lib/ldap'`\n\n**You can use these options in your own template if you like**  \n_To supply your own ldif template/file to use_  \n`node['openldap-server'][:db_ldif] = 'db.ldif.erb'`  \n\n\n\n### Default Config Options (/etc/default/slapd) ###\n\n    default['openldap-server'][:default_config][:slapd_conf] = nil # SLAPD_CONF  \n    default['openldap-server'][:default_config][:slapd_user] = 'openldap' # SLAPD_USER  \n    default['openldap-server'][:default_config][:slapd_group] = 'openldap' # SLAPD_GROUP  \n    default['openldap-server'][:default_config][:slapd_pidfile] = nil # SLAPD_PIDFILE  \n    default['openldap-server'][:default_config][:slapd_services] = \"ldap:/// ldapi:///\" # SLAPD_SERVICES  \n    default['openldap-server'][:default_config][:slapd_nostart] = false # SLAPD_NO_START  \n    default['openldap-server'][:default_config][:slapd_sentinel_file] = '/etc/ldap/noslapd' # SLAPD_SENTINEL_FILE  \n    default['openldap-server'][:default_config][:slapd_kerb_file] = '/etc/krb5.keytab' # KRB_KTNAME  \n    default['openldap-server'][:default_config][:slapd_options] = nil # SLAPD_OPTIONS  \n\n\n# Recipes\nopenldap-server::install - Installs OpenLDAP\n\nopenldap-server::createdb - Creates basic DB\n\nopenldap-server::default - includes both install and createdb reciepes\n\n\n# Author\n\nAuthor:: cpuguy83 (cpuguy83@gmail.com)\n",
+  "maintainer": "cpuguy83",
+  "maintainer_email": "cpuguy83@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 10.04",
+    "debian": ">= 7.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.9.2"
+}

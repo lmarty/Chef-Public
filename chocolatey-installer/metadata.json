@@ -1,0 +1,32 @@
+{
+  "name": "chocolatey-installer",
+  "description": "Installs packages using Chocolatey",
+  "long_description": "# chocolatey-installer Cookbook\n\nThis cookbook allows you to provide an list of package names to be installed by chocolatey, in order.\n\n# Requirements\n\n### Platform\n\n* Windows 2008 R2\n* Windows 2012 (Not Tested)\n\n### Cookbooks\n\n* windows \n* chocolatey\n\n# Usage\n\n* Add `recipe[chocolatey-installer::default]` to your run list.\n\n# Attributes\n\n* `default['chocolatey-installer']['packages']` (Default: `{}`)\n\n# Recipes\n\n* default\n\n# Author\n\nAuthor:: Joe Fitzgerald (joe.fitzgerald@emc.com)\n",
+  "maintainer": "Joe Fitzgerald",
+  "maintainer_email": "joe.fitzgerald@emc.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 0.0.0",
+    "chocolatey": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

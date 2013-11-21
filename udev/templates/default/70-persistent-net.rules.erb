@@ -1,0 +1,9 @@
+# This file maintains persistent names for network interfaces.
+# See udev(7) for syntax.
+#
+# This file is managed by Chef
+
+<% node['udev']['net'].each do |eth,mac| -%>
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="<%= mac %>", ATTR{type}=="1", KERNEL=="eth*", NAME="<%= eth %>"
+
+<% end -%>

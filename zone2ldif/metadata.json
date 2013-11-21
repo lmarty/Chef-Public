@@ -1,0 +1,30 @@
+{
+  "name": "zone2ldif",
+  "description": "Installs/Configures zone2ldif",
+  "long_description": "Travis-ci status: [![Build Status](https://secure.travis-ci.org/jackl0phty/opschef-cookbook-zone2ldif.png?branch=master)](http://travis-ci.org/jackl0phty/opschef-cookbook-zone2ldif)\n\n\nzone2ldif Cookbook\n==================\n\nThis cookbook installs zone2ldif, a Perl script that converts a DNS zone file to an LDIF file, to /usr/local/bin/zone2ldif.pl..\n\nRequirements\n------------\nShould work on any platform that the Perl cookbook supports.\n\nAttributes\n----------\nThere are no attributes in this cookbook.\n\nUsage\n-----\nJust include `zone2ldif` in your node's `run_list`:\n<pre><code>\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[zone2ldif]\"\n  ]\n}\n</pre></code>\n\nContributing\n------------\n\ne.g.\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request on Github [here] (https://github.com/jackl0phty/opschef-cookbook-zone2ldif/issues)\n\nLicense and Authors\n-------------------\nAuthor: Gerald L. Hevener Jr., M.S. aka:jackl0phty \n",
+  "maintainer": "Gerald L. Hevener Jr., M.S.",
+  "maintainer_email": "jackl0phty@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "perl": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

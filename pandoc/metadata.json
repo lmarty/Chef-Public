@@ -1,0 +1,41 @@
+{
+  "name": "pandoc",
+  "description": "Installs pandoc",
+  "long_description": "Description\n===========\n\nInstalls Pandoc.\n\nRequirements\n============\n\n## Platforms\n\n* Debian/Ubuntu\n* RHEL/CentOS/Fedora\n* ArchLinux\n* Mac OS X (dmg or brew)\n* Windows\n\n## Cookbooks\n\n* windows\n* dmg\n* homebrew\n\nFor installing the pandoc package on Windows and Mac OS X, respectively.\n\nAttributes\n==========\n\n* `node['pandoc']['osx_install_method']` - method by which to install\n  pandoc on OSX. Default is `dmg`, but if `brew` is specified, it will\n  be installed with `package` using the homebrew cookbook's provider.\n* `node['pandoc']['dmg_version']` - version number used in the dmg filename.\n* `node['pandoc']['dmg_url']` - URL of the DMG default version to\n  download for OS X.\n* `node['pandoc']['dmg_checksum']` - SHA256 checksum of the DMG default\n  version to download for OS X.\n* `node['pandoc']['exe_url']` - URL of the EXE installer to download\n  for Windows.\n* `node['pandoc']['exe_checksum']` - SHA256 checksum of the EXE\n  installer to download for Windows.\n\nRecipes\n=======\n\ndefault\n-------\n\nInstalls pandoc from a package. On Windows, it will use\n`windows_package`, on Mac OS X, it will use `dmg_package`, each from\nthe respective `windows` or `dmg` cookbook.\n\nUsage\n=====\n\nAdd `recipe[pandoc]` to the node's run list.\n\nRoadmap\n-------\n\nSource installation with Haskell's `cabal` package manager to get a\nnewer release may happen at some point.\n\nLicense and Author\n==================\n\n- Author:: Joshua Timberman <cookbooks@housepub.org>\n- Copyright:: 2011, Joshua Timberman\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Joshua Timberman",
+  "maintainer_email": "cookbooks@housepub.org",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "gentoo": ">= 0.0.0",
+    "arch": ">= 0.0.0",
+    "windows": ">= 0.0.0",
+    "mac_os_x": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": ">= 0.0.0",
+    "dmg": ">= 0.0.0",
+    "homebrew": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.0"
+}

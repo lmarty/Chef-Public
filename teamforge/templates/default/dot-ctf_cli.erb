@@ -1,0 +1,35 @@
+[counters]
+svr=101
+version=105
+filter=102
+
+[cli001]
+messages=1
+autoCommit=1
+dateFormat=%C
+showSummary=1
+pagerLines=15
+filter_tracker=filter101
+returnOnEnter=1
+autoOverlay=1
+cacheDepth=15
+
+[filter101]
+_type=tracker
+_name=none
+
+[filter102]
+_type=tracker
+_name=allOpen
+
+[svr101]
+password= <<EOT
+<%= node['teamforge']['cli']['api_password'] %>
+
+EOT
+url=<%= node['teamforge']['cli']['api_url'] %>
+<% unless node['teamforge']['cli']['api_alias'].nil? -%>
+alias=<%= node['teamforge']['cli']['api_alias'] %>
+<% end -%>
+username=<%= node['teamforge']['cli']['api_user'] %>
+sessionId=bogus

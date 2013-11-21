@@ -1,0 +1,33 @@
+{
+  "name": "fping",
+  "description": "Installs fping",
+  "long_description": "# chef-fping\n\n## Description\n\nInstalls [fping](http://fping.sourceforge.net/), a program to ping hosts in parallel.\n\n\n## Requirements\n\n### Supported Platforms\n\nThe following platforms are supported by this cookbook, meaning that the recipes run on these platforms without error:\n\n* RedHat\n* CentOS\n\n## Recipes\n\n* `fping` - The default recipe.\n",
+  "maintainer": "David Radcliffe",
+  "maintainer_email": "radcliffe.david@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+    "yum": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "fping": "Installs fping utility"
+  },
+  "version": "0.1.0"
+}

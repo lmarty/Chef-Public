@@ -1,0 +1,49 @@
+#!/bin/sh
+# chkconfig: 345 80 20
+# description: Pinto server daemon
+
+. /etc/init.d/functions
+
+PIDFILE=/var/run/pintod.pid
+
+start() {
+	echo -n Starting Pinto server:
+    export PERL5LIB=PERL5LIB:<%= @home %>/lib/perl5
+    export PATH=$PATH:<%= @home %>/bin/
+	pintod --daemonize --pid $PIDFILE --root <%= @repo_root %> --server Starman --workers <%= @workers %> --host <%= @host %> --port <%= @port %> --user <%= @user %> --group <%= @group %> --access-log /var/log/pintod.log
+	retval=$?
+	echo
+	[ "$retval" = 0 ] && touch /var/lock/subsys/pintod
+	return $retval
+}
+
+stop() {
+	echo -n Stopping Pinto server:
+	killproc -p $PIDFILE pintod
+	retval=$?
+	echo
+	[ "$retval" = 0 ] && rm -f /var/lock/subsys/pintod
+	return $retval
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	status)
+		status -p $PIDFILE pintod
+		;;
+	restart)
+		stop
+		start
+		;;
+	*)
+		echo "Usage: pintod {start|stop|status|restart}"
+		exit 1
+		;;
+esac
+
+exit 0

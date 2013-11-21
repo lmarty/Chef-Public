@@ -1,0 +1,20 @@
+= DESCRIPTION:
+
+Deploy the scoutapp agent on your server with auto-registration  to scoutapp.com
+
+= REQUIREMENTS:
+   - A scoutapp account from www.scoutapp.com
+   - A version of the scout plugin above 5.3.2
+= ATTRIBUTES:
+
+[:scoutapp][:key] = [ "UUIDHERE" ]
+
+# only if you want auto-registration
+[:scoutapp][:email] = [ "your@beauty.com" ]
+[:scoutapp][:password] = [ "YourNotSoSecretPassword" ]
+[:scoutapp][:account] = [ "DUMMYCOMPANY" ]
+[:scoutapp][:name] = "myserver.toto.tld" if nil take the node[:fqdn] as default
+
+
+= USAGE:
+

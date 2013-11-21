@@ -1,0 +1,21 @@
+# -*- conf -*-
+# Generated and committed automatically by Chef for <%= @node[:fqdn] %>.
+# Do not edit.
+
+
+# This is used for chef to push generated config to gitolite
+repo gitolite-admin
+RW+ = gitolite 
+
+<% @rw.each_pair do |repo, users| %>
+
+repo <%= repo %>
+RW+ =  <%= users.join(' ') %> 
+R = apache
+<% end %>
+
+<% @ro.each_pair do |repo, users| %>
+
+repo <%= repo %>
+R = apache  <%= users.join(' ') %>
+<% end %>

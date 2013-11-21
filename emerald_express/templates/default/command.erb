@@ -1,0 +1,6 @@
+#!/bin/sh
+cd $(dirname $0)
+<%= @script_name.to_s != 'init' ? '. ./init' : '' %>
+<% @commands.each do |command| -%>
+<%= command %>
+<% end -%>

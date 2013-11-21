@@ -1,0 +1,29 @@
+{
+  "name": "oracle-instantclient",
+  "description": "Installs the Oracle Instant Client and SQL*Plus",
+  "long_description": "Description\n===========\n\nThis cookbook is used to configure a system with the Oracle Instant Client and, optionally, SQL*Plus. The primary objective is to let you interact with remote Oracle servers easily.\n\nRequirements\n============\n\nYou must download the RPMs in advance from Oracle yourself and accept the EULA. The RPMs must be placed on a server that can serve it up over HTTP, and you must set the URLs to the Instant Client and SQL*Plus RPMs.\n\n## Platforms\n\nOnly tested with:\n\n* Red Hat Enterprise Linux 5\n* Red Hat Enterprise Linux 6\n\nand variants (Oracle Enterprise Linux, CentOS, Scientific)\n\nUsage\n=====\n\nAdd the default recipe to your run list. This will install just Instant Client.\n\nAttributes\n==========\n\n* `node['oracle-instantclient']['public-url']` - The URL of where you are hosting the RPMs\n* `node['oracle-instantclient']['sqlplus-rpm']` - The filename of the SQL*Plus RPM\n* `node['oracle-instantclient']['basic-rpm']` - The filename of the basic Instant Client RPM\n\nRecipes\n=======\n\ndefault\n-------\n\nThe default recipe installs only the basic Instant Client.\n\nsqlplus\n-------\n\nThe sqlplus recipe will install both the Instant Client and SQL*Plus.\n\nBugs\n====\n\n`sqlplus` (or `sqlplus64` if you're on a 64-bit platform) doesn't work out of the box without setting `LD_LIBRARY_PATH`.\n\nAuthor and License\n==================\n\n- Author:: Julian C. Dunn (<jdunn@opscode.com>)\n- Copyright:: 2013, Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "jdunn@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

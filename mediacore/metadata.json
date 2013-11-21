@@ -1,0 +1,35 @@
+{
+  "name": "mediacore",
+  "description": "Installs/Configures mediacore",
+  "long_description": "Mediacore Cookbook\n==================\nThis cookbook installs and configures a mediacore server. \n\nRequirements\n------------\nThis cookbook has currently only been tested with Ubuntu 12.04LTS.\n\n#### cookbooks \n- `python` - https://github.com/opscode-cookbooks/python \n- `nginx` - https://github.com/opscode-cookbooks/nginx \n- `supervisor` - https://github.com/opscode-cookbooks/supervisor \n- `postgresql` - https://github.com/opscode-cookbooks/postgresql  \n- `database` - https://github.com/opscode-cookbooks/database\n\nAttributes\n----------\n\n#### mediacore::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['user']</tt></td>\n    <td>String</td>\n    <td>mediacore user</td>\n    <td><tt>www-data</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['group']</tt></td>\n    <td>String</td>\n    <td>mediacore group</td>\n    <td><tt>www-data</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['smtp_server']</tt></td>\n    <td>String</td>\n    <td>smtp server for mediacore to use</td>\n    <td><tt>localhost</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['error_email_from']</tt></td>\n    <td>String</td>\n    <td>email mediacore uses for errors</td>\n    <td><tt>mediacore@localhost</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['email_to']</tt></td>\n    <td>String</td>\n    <td>email mediacore sends errors to</td>\n    <td><tt>you@yourdomain.com</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['host']</tt></td>\n    <td>String</td>\n    <td>host mediacore binds to</td>\n    <td><tt>0.0.0.0</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['port']</tt></td>\n    <td>String</td>\n    <td>port mediacore binds to</td>\n    <td><tt>8080</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['db_type']</tt></td>\n    <td>String</td>\n    <td>dbms to use for mediacore</td>\n    <td><tt>postgresql</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['db_user']</tt></td>\n    <td>String</td>\n    <td>mediacore database user</td>\n    <td><tt>mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['db_pass']</tt></td>\n    <td>String</td>\n    <td>mediacore database password</td>\n    <td><tt>mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['db_address']</tt></td>\n    <td>String</td>\n    <td>database location</td>\n    <td><tt>localhost</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['database']</tt></td>\n    <td>String</td>\n    <td>mediacore database</td>\n    <td><tt>mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['sqlalchemy']['url']</tt></td>\n    <td>String</td>\n    <td>mediacore sqlalchemy url</td>\n    <td><tt>postgresql://mediacore:mediacore@localhost/mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['sqlalchemy']['echo']</tt></td>\n    <td>String</td>\n    <td>sqlalchemy loging</td>\n    <td><tt>False</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['sqlalchemy']['pool_recycle']</tt></td>\n    <td>String</td>\n    <td>sqlalchemy pool recycling time</td>\n    <td><tt>3600</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['version']</tt></td>\n    <td>String</td>\n    <td>mediacore version to use</td>\n    <td><tt>0.10.0</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['dir']</tt></td>\n    <td>String</td>\n    <td>where to install mediacore</td>\n    <td><tt>/usr/local/mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['data_storage_dir']</tt></td>\n    <td>String</td>\n    <td>where to store data files such as uploads</td>\n    <td><tt>/usr/local/mediacore/data</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['venv']</tt></td>\n    <td>String</td>\n    <td>mediacore virtualenv location</td>\n    <td><tt>/usr/local/mediacore/venv</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['git_repo']</tt></td>\n    <td>String</td>\n    <td>mediacore git repo</td>\n    <td><tt>git://github.com/mediacore/mediacore-community.git</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['log_location']</tt></td>\n    <td>String</td>\n    <td>mediacore log location</td>\n    <td><tt>/var/log/mediacore</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['plugins']</tt></td>\n    <td>String</td>\n    <td>list of plugins for config file</td>\n    <td><tt>*</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['uwsgi']['socket']</tt></td>\n    <td>String</td>\n    <td>mediacore socket for uwsgi</td>\n    <td><tt>/tmp/uwsgi-mediacore.sock</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['uwsgi']['master']</tt></td>\n    <td>String</td>\n    <td>uwsgi is master</td>\n    <td><tt>true</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['uwsgi']['processes']</tt></td>\n    <td>String</td>\n    <td>number of uwsgi processes</td>\n    <td><tt>5</tt></td>\n  </tr>\n</table>\n\n#### mediacore::web_server\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['web_server']['type']</tt></td>\n    <td>String</td>\n    <td>web server to use</td>\n    <td><tt>nginx</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['web_server']['port']</tt></td>\n    <td>String</td>\n    <td>port to bind webserver to</td>\n    <td><tt>80</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['web_server']['server_name']</tt></td>\n    <td>String</td>\n    <td>server_name to use for web server</td>\n    <td><tt>node['hostname']</tt></td>\n  </tr>\n  <tr>\n    <td><tt>['mediacore']['web_server']['client_max_body_size']</tt></td>\n    <td>String</td>\n    <td>max client body size</td>\n    <td><tt>1500M</tt></td>\n  </tr>\n</table>\n\nUsage\n-----\n#### mediacore::default\n\nJust include `mediacore` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[mediacore]\"\n  ]\n}\n```\n\nContributing\n------------\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors:\n\n* Jim Rosser - jarosser06@arch.tamu.edu \n",
+  "maintainer": "Texas A&M",
+  "maintainer_email": "jarosser06@arch.tamu.edu",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": "= 12.04"
+  },
+  "dependencies": {
+    "python": ">= 0.0.0",
+    "nginx": ">= 0.0.0",
+    "supervisor": ">= 0.0.0",
+    "postgresql": ">= 0.0.0",
+    "database": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.2.2"
+}

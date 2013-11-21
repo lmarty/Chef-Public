@@ -1,0 +1,11 @@
+{
+  "name": "dusk",
+  "version": "0.0.1",
+  "description": "Graphite/Cubism frontend",
+  "license": "Apache 2.0",
+  "maintainer": "Simple Finance",
+  "maintainer_email": "ops@simple.com",
+  "dependencies": {
+    "runit": "~> 1.1.0"
+  }
+}

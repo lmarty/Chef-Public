@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "prince",
+  "maintainer_email": "marcel@oreilly.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "O'Reilly Media, Inc.",
+  "long_description": "= DESCRIPTION:\n\nInstalls PrinceXML.\n\nPrince is software for converting XML and HTML documents into PDF files by\napplying Cascading Style Sheets.  ( http://www.princexml.com/ )\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\nPay license fee, avoiding watermark.\n\nRetrieves the package from the PrinceXML web site and installs.\n\n  # Install files/default/license.dat from cookbook foo as the license.\n  node[:prince][:license_cookbook] = \"foo\"\n\n  include_recipe \"prince\"\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs PrinceXML PDF generator",
+  "providing": {
+  }
+}

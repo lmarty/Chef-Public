@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "eye": {
+      "path": "."
+    },
+    "eye_test": {
+      "path": "./test/cookbooks/eye_test"
+    }
+  }
+}

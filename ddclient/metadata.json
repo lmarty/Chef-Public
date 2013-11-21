@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "name": "ddclient",
+  "maintainer_email": "ruanwz@gmail.com",
+  "attributes": {
+  },
+  "license": "Apache 2.0",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "David Ruan",
+  "long_description": "DESCRIPTION\n===========\nConfigures ddclient for connecting to DynDNS or other dynamic dns providers supported by ddclient. ddclient runs as a daemon.\n\nREQUIREMENTS\n============\nPlatform with a package named 'ddclient'. Tested with Ubuntu 10.04.\n\nRECIPES\n=======\ndefault\n-------\nThe `default` recipe installs ddclient and fills out the `/etc/ddclient.conf` and `/etc/default/ddclient`.\n\nUSAGE\n=====\nYou will need to set the attributes for your DynDNS user, password and domain. Check the `attributes/default.rb` for other available attributes (note the 6 hour update interval). Here is an example role:\n\n    name \"ddclient\"\n    description \"ddclient\"\n    \n    run_list [\n      \"recipe[ddclient]\"\n    ]\n    \n    override_attributes(\n      \"ddclient\" => {\n        \"login\" => \"myuser\",\n        \"password\" => \"mypassword,\n        \"domain\" => \"mydomain.dyndns-server.com\"\n      }\n    )\n\nLICENSE AND AUTHOR\n==================\n\nAuthor:: David Ruan (<ruanwz@gmail.com>)\n\nAuthor:: Matt Ray (<matt@opscode.com>)\n\nCopyright:: David Ruan (<ruanwz@gmail.com>)\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "version": "1.1.0",
+  "recommendations": {
+  },
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs ddclient",
+  "providing": {
+  }
+}

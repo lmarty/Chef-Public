@@ -1,0 +1,1 @@
+default['easyapache']['yaml'] = ''

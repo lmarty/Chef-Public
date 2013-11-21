@@ -1,0 +1,29 @@
+{
+  "name": "sortable_mash",
+  "description": "Adds sorting to Mash",
+  "long_description": "SortableMash\n============\n\nThis cookbook provides a #sorted_hash method to Mash and Attribute instances. In \nmany situations a configuration file is generated via JSON.pretty_generate or some \nother method using a Hash. The #sorted_hash option ensures that hashes are in a \nconsistent order so file contents are not changed simply due to value reordering.\n\nRuby 1.8\n--------\n\nOn system using a Ruby < 1.9, the orderedhash gem will be installed and used for\ngenerating the Hash.\n\nSupport for chef_gem?\n---------------------\n\nCooked in.\n\nCookbook Info\n=============\n\nRepo: https://github.com/chrisroberts/cookbook-sortable_mash\n",
+  "maintainer": "Chris Roberts",
+  "maintainer_email": "chrisroberts.code@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.2"
+}

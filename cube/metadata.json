@@ -1,0 +1,33 @@
+{
+  "name": "cube",
+  "description": "Installs/Configures cube",
+  "long_description": "Description\n===========\n\nInstalls and configures [Cube](http://square.github.com/cube/)\n\nRequirements\n============\n\n* Node.js\n* MongoDB\n* UFW\n* Tested on Ubuntu 11.10.\n\nUsage\n=====\n\nInclude default recipe in your run list.\n\nCube listens on ports 1080 (collector) and 1081 (evaluator) without\nany security. As such this cookbook installs the\n[Uncomplicated Firewall cookbook](http://community.opscode.com/cookbooks/ufw)\nlocking down all ports except SSH. To white list IP addresses create a\ndata bag named \"firewall\" and upload an item like the following:\n\n```javascript\n{\n  \"id\": \"cube\",\n  \"rules\": [\n    { \"collector-datacenter\":\n      { \"port\": \"1080\",\n        \"source\": \"192.168.1.1/24\" }},\n    { \"evaluator-datacenter\":\n      { \"port\": \"1081\",\n        \"source\": \"192.168.1.1/24\" }}\n  ]\n}\n```\n",
+  "maintainer": "Heavy Water Software Inc.",
+  "maintainer_email": "ops@heavywater.ca",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "mongodb": ">= 0.0.0",
+    "nodejs": ">= 0.0.0",
+    "ufw": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.4.0"
+}

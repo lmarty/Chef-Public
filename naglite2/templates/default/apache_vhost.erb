@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerAdmin     <%= node[:naglite2][:server_admin] %>
+  ServerName      <%= node[:naglite2][:server_name] %>
+  DocumentRoot    <%= node[:naglite2][:dir] %>
+  CustomLog       <%= node['apache']['log_dir'] %>/naglite2_access.log combined
+  ErrorLog        <%= node['apache']['log_dir'] %>/naglite2_error.log
+
+  <Location />
+    AuthName "Restricted Access"
+    AuthType Basic
+    AuthUserFile "<%= node[:naglite2][:htpasswd] %>"
+    require valid-user
+  </Location>
+
+</VirtualHost>

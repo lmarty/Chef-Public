@@ -1,0 +1,34 @@
+{
+  "name": "hp-tools",
+  "description": "Installs/Configures various HP tools",
+  "long_description": "Description\n===========\n\nThis cookbook installs the HP Management tools including the HP System Management Homepage\n\nRequirements\n============\n* SNMP cookbook with a configured trap server to send hardware events to\n* The following RPM's need to be available in a public or private repo configured on your nodes:\n    - cpqacuxe, hp-health, hp-smh-templates, hp-snmp-agents, hpacucli, hpdiags, hponcfg, hpsmh, hpvca\n\nPlatform\n--------\n\n* Tested on RHEL 6 / CentOS 6.2\n* Untested, but most likely functional on Fedora, Amazon, and Scientific Linux\n\n\nAttributes\n==========\n\nUsage\n=====\n\nInclude the default recipe on a node's runlist\n\n\n",
+  "maintainer": "Webtrends Inc",
+  "maintainer_email": "hostedops@webtrends.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "amazon": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.0"
+}

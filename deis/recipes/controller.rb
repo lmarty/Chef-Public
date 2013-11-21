@@ -1,0 +1,7 @@
+include_recipe 'deis::default'
+include_recipe 'deis::knife'
+include_recipe 'deis::postgresql'
+include_recipe 'deis::server'
+include_recipe 'deis::build'
+include_recipe 'deis::gitosis'
+include_recipe 'deis::logserver'
